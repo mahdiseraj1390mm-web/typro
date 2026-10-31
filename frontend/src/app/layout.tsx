@@ -6,6 +6,7 @@ import ServiceWorkerRegister from '@/components/ServiceWorkerRegister';
 import { AuthProvider } from '@/context/AuthContext';
 import AmbientBackground from '@/components/layout/AmbientBackground';
 import GlobalTrafficTracker from '@/components/common/GlobalTrafficTracker';
+import GlobalAdminMessageModal from '@/components/common/GlobalAdminMessageModal';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://typro.ir'),
@@ -320,6 +321,7 @@ export default function RootLayout({
       <body className="min-h-full flex flex-col bg-[#f8fafc] text-[#111827] font-sans selection:bg-blue-600 selection:text-white relative">
         <AuthProvider>
           <GlobalTrafficTracker />
+          <GlobalAdminMessageModal />
           <AmbientBackground />
           <ServiceWorkerRegister />
           <Header />

@@ -88,6 +88,7 @@ export class AuthController {
   }
 
   @Put('notifications/:userId/:notifId/seen')
+  @Post('notifications/:userId/:notifId/seen')
   markNotificationSeen(
     @Param('userId') userId: string,
     @Param('notifId') notifId: string,

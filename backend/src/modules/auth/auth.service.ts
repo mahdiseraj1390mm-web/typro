@@ -23,6 +23,8 @@ export interface UserNotification {
   actionLabel?: string;
   actionUrl?: string;
   createdAt?: number;
+  sender?: string;
+  subject?: string;
 }
 
 export interface UserAccount {
@@ -783,6 +785,60 @@ export class AuthService {
       }
     }
     return { success: false };
+  }
+
+  sendAdminNotification(opts: {
+    targetId?: string;
+    broadcast?: boolean;
+    title: string;
+    content: string;
+    sender?: string;
+    priority?: string;
+  }): { count: number; notifId: string } {
+    const sender = opts.sender || 'مدیر سامانه تایپرو';
+    const notifId = `notif-admin-${Date.now()}-${Math.random().toString(36).substr(2, 4)}`;
+    const newNotif: UserNotification = {
+      id: notifId,
+      category: 'system',
+      title: `پیام از طرف: ${sender}`,
+      subject: opts.title || 'پیام رسمی مدیریت سامانه',
+      desc: opts.content,
+      time: 'هم‌اکنون',
+      read: false,
+      popupShown: false,
+      actionLabel: 'مشاهده در بخش اعلان‌ها',
+      actionUrl: '/notifications',
+      createdAt: Date.now(),
+      sender: sender,
+    };
+
+    let count = 0;
+    if (opts.broadcast) {
+      for (const user of this.users.values()) {
+        if (!user.notifications) user.notifications = [];
+        // Ensure each user has a unique notif id for per-user tracking
+        user.notifications.unshift({ ...newNotif, id: `${notifId}-${user.id}` });
+        count++;
+      }
+    } else if (opts.targetId) {
+      const cleanTarget = opts.targetId.trim().toLowerCase();
+      for (const user of this.users.values()) {
+        if (
+          user.id.toLowerCase() === cleanTarget ||
+          user.username.toLowerCase() === cleanTarget ||
+          (user.mobile && user.mobile.trim() === opts.targetId.trim())
+        ) {
+          if (!user.notifications) user.notifications = [];
+          user.notifications.unshift(newNotif);
+          count++;
+          break;
+        }
+      }
+    }
+    if (count > 0) {
+      this.saveUsers();
+    }
+    return { count, notifId };
   }
 
   // Admin: Create new user

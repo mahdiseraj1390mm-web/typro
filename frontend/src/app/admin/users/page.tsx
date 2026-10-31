@@ -439,9 +439,8 @@ export default function AdminUsersPage() {
       : undefined;
 
     // 1. Update backend API
-    const apiBase = process.env.NEXT_PUBLIC_API_URL || (typeof window !== 'undefined' ? '' : 'http://127.0.0.1:4000');
     try {
-      await fetch(`${apiBase}/admin/users/${selected.id}/subscription`, {
+      await fetch(`/api/admin/users/${selected.id}/subscription`, {
         method: 'PUT',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ plan: finalPlan, days: finalDays, active }),
@@ -607,7 +606,15 @@ export default function AdminUsersPage() {
 
   const handleEdit = () => {
     if (!selected) return;
-    const updatedForm = { ...form };
+    const newXp = form.xp !== undefined ? Number(form.xp) : (selected.xp ?? 0);
+    const newLevel = form.level !== undefined ? Number(form.level) : Math.max(1, Math.floor(newXp / 100) + 1);
+
+    const updatedForm = {
+      ...form,
+      xp: newXp,
+      level: newLevel,
+    };
+
     setUsers((prev) =>
       prev.map((u) =>
         u.id === selected.id
@@ -618,7 +625,8 @@ export default function AdminUsersPage() {
               mobile: form.mobile ?? u.mobile,
               password: form.password ?? u.password,
               email: form.email ?? u.email,
-              level: form.level ?? u.level,
+              level: newLevel,
+              xp: newXp,
               coins: form.coins ?? u.coins,
               diamonds: form.diamonds ?? u.diamonds,
               status: form.status ?? u.status,
@@ -630,10 +638,10 @@ export default function AdminUsersPage() {
           : u
       )
     );
-    showToast(`✅ اطلاعات کاربر @${form.username} به‌روز شد.`);
+    showToast(`✅ اطلاعات و امتیاز کاربر @${form.username} با موفقیت ذخیره شد.`);
     closeModal();
 
-    // Persist to backend
+    // Persist to backend API & users.json
     fetch(`/api/admin/users/${selected.id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
@@ -1837,9 +1845,9 @@ function UserForm({
         </div>
       </div>
 
-      {/* Coins / Diamonds / Level */}
+      {/* Coins / Diamonds / XP / Level */}
       {includeCoins && (
-        <div className="grid grid-cols-3 gap-3">
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
           <div>
             <label className="text-xs font-bold text-amber-700 block mb-1 flex items-center gap-1">
               <Coins className="w-3 h-3" /> سکه
@@ -1848,7 +1856,7 @@ function UserForm({
               type="number"
               value={form.coins ?? 0}
               onChange={(e) => setForm((p) => ({ ...p, coins: Number(e.target.value) }))}
-              className="w-full px-3 py-2 text-xs border border-amber-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-400"
+              className="w-full px-3 py-2 text-xs border border-amber-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-amber-400 font-mono"
             />
           </div>
           <div>
@@ -1859,19 +1867,38 @@ function UserForm({
               type="number"
               value={form.diamonds ?? 0}
               onChange={(e) => setForm((p) => ({ ...p, diamonds: Number(e.target.value) }))}
-              className="w-full px-3 py-2 text-xs border border-violet-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-violet-400"
+              className="w-full px-3 py-2 text-xs border border-violet-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-violet-400 font-mono"
+            />
+          </div>
+          <div>
+            <label className="text-xs font-bold text-purple-700 block mb-1 flex items-center gap-1">
+              <Award className="w-3 h-3 text-purple-600" /> امتیاز (XP)
+            </label>
+            <input
+              type="number"
+              value={form.xp ?? 0}
+              onChange={(e) => {
+                const val = Math.max(0, Number(e.target.value));
+                setForm((p) => ({
+                  ...p,
+                  xp: val,
+                  level: Math.max(1, Math.floor(val / 100) + 1),
+                }));
+              }}
+              min={0}
+              className="w-full px-3 py-2 text-xs border border-purple-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-400 font-mono font-bold text-purple-900"
             />
           </div>
           <div>
             <label className="text-xs font-bold text-blue-700 block mb-1 flex items-center gap-1">
-              <Star className="w-3 h-3" /> لول
+              <Star className="w-3 h-3" /> سطح / لول
             </label>
             <input
               type="number"
               value={form.level ?? 1}
               onChange={(e) => setForm((p) => ({ ...p, level: Number(e.target.value) }))}
               min={1}
-              className="w-full px-3 py-2 text-xs border border-blue-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400"
+              className="w-full px-3 py-2 text-xs border border-blue-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-400 font-mono"
             />
           </div>
         </div>

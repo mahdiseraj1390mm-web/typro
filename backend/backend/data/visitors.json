@@ -3,12 +3,12 @@
     "id": "vid_mvwd6qm6_dlfuxv4",
     "ip": "127.0.0.1",
     "userAgent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/156.0.0.0 Safari/537.36",
-    "lastPath": "/live-race",
+    "lastPath": "/",
     "firstSeen": "2026-10-31T12:15:29.685Z",
-    "lastSeen": "2026-10-31T12:16:09.432Z",
-    "hits": 2,
-    "sessionsCount": 1,
-    "lastSessionId": "sid_mvwd6qm7_z611ek0",
+    "lastSeen": "2026-10-31T15:39:42.423Z",
+    "hits": 5,
+    "sessionsCount": 4,
+    "lastSessionId": "sid_mvwkhcxy_xzkjqwz",
     "referrer": "http://localhost:3000/"
   },
   {

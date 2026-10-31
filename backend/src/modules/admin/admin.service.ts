@@ -30,6 +30,20 @@ export interface CustomTypingText {
   createdByName?: string;
 }
 
+export interface AdminMessage {
+  id: string;
+  type: 'broadcast' | 'direct';
+  targetUserId?: string;
+  targetUsername?: string;
+  targetDisplayName?: string;
+  title: string;
+  content: string;
+  sender: string;
+  priority: 'normal' | 'important' | 'urgent';
+  createdAt: string;
+  seenCount: number;
+}
+
 export interface AuditLog {
   id: string;
   actor: string;
@@ -106,6 +120,7 @@ export class AdminService {
 
   private raceCustomTexts: CustomRaceText[] = [];
   private typingCustomTexts: CustomTypingText[] = [];
+  private adminMessages: AdminMessage[] = [];
 
   private systemSettings = {
     xpPerLevel: 1000,
@@ -125,6 +140,7 @@ export class AdminService {
     this.loadVisitors();
     this.loadPlatformStats();
     this.loadCustomTexts();
+    this.loadAdminMessages();
   }
 
   private resolveDataPath(filename: string): string {
@@ -655,5 +671,86 @@ export class AdminService {
       return { success: true, message: 'متن تست تایپ با موفقیت حذف شد.' };
     }
     throw new BadRequestException('متن مورد نظر یافت نشد.');
+  }
+
+  // ═══════════════ ADMIN MESSAGES & BROADCAST ═══════════════
+  private loadAdminMessages() {
+    try {
+      const p = this.resolveDataPath('admin_messages.json');
+      if (fs.existsSync(p)) {
+        this.adminMessages = JSON.parse(fs.readFileSync(p, 'utf8'));
+      }
+    } catch {
+      this.adminMessages = [];
+    }
+  }
+
+  getAdminMessages(): AdminMessage[] {
+    return this.adminMessages;
+  }
+
+  getLatestBroadcast(): AdminMessage | null {
+    return this.adminMessages.find((m) => m.type === 'broadcast') || null;
+  }
+
+  sendAdminMessage(dto: {
+    type: 'broadcast' | 'direct';
+    targetUserId?: string;
+    targetUsername?: string;
+    targetDisplayName?: string;
+    title: string;
+    content: string;
+    sender?: string;
+    priority?: 'normal' | 'important' | 'urgent';
+  }): AdminMessage {
+    const cleanContent = (dto.content || '').trim();
+    const cleanTitle = (dto.title || '').trim();
+    if (!cleanTitle) {
+      throw new BadRequestException('موضوع پیام نمی‌تواند خالی باشد.');
+    }
+    if (!cleanContent) {
+      throw new BadRequestException('متن پیام نمی‌تواند خالی باشد.');
+    }
+
+    const senderName = (dto.sender || '').trim() || 'مدیر سامانه تایپرو';
+
+    const msg: AdminMessage = {
+      id: `msg-${Date.now()}-${Math.random().toString(36).substr(2, 4)}`,
+      type: dto.type,
+      targetUserId: dto.targetUserId,
+      targetUsername: dto.targetUsername,
+      targetDisplayName: dto.targetDisplayName,
+      title: cleanTitle,
+      content: cleanContent,
+      sender: senderName,
+      priority: dto.priority || 'normal',
+      createdAt: new Date().toISOString(),
+      seenCount: 0,
+    };
+
+    this.adminMessages.unshift(msg);
+    this.mirrorSaveData('admin_messages.json', this.adminMessages);
+
+    // Inject into actual user(s) notification inbox with popupShown: false
+    this.authService.sendAdminNotification({
+      broadcast: dto.type === 'broadcast',
+      targetId: dto.targetUserId || dto.targetUsername,
+      title: cleanTitle,
+      content: cleanContent,
+      sender: senderName,
+      priority: dto.priority,
+    });
+
+    return msg;
+  }
+
+  deleteAdminMessage(id: string): { success: boolean; message: string } {
+    const idx = this.adminMessages.findIndex((m) => m.id === id);
+    if (idx >= 0) {
+      this.adminMessages.splice(idx, 1);
+      this.mirrorSaveData('admin_messages.json', this.adminMessages);
+      return { success: true, message: 'پیام با موفقیت حذف گردید.' };
+    }
+    throw new BadRequestException('پیام مورد نظر یافت نشد.');
   }
 }

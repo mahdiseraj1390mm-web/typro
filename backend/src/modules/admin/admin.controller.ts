@@ -151,6 +151,27 @@ export class AdminController {
     return this.adminService.deleteCustomTypingText(id);
   }
 
+  // Admin Messages & Broadcast System
+  @Get('messages')
+  getAdminMessages() {
+    return this.adminService.getAdminMessages();
+  }
+
+  @Post('messages')
+  sendAdminMessage(@Body() body: any) {
+    return this.adminService.sendAdminMessage(body);
+  }
+
+  @Delete('messages/:id')
+  deleteAdminMessage(@Param('id') id: string) {
+    return this.adminService.deleteAdminMessage(id);
+  }
+
+  @Get('active-broadcast')
+  getActiveBroadcast() {
+    return this.adminService.getLatestBroadcast();
+  }
+
   @Get('audit-logs')
   getAuditLogs() {
     return this.adminService.getAuditLogs();
@@ -238,6 +259,9 @@ export class AdminController {
 
       // 10. اقتصاد، سکه و اسکین‌ها
       { id: 'economy.view', module: 'economy', moduleFa: 'اقتصاد و اسکین‌ها', name: 'مشاهده تراز اقتصادی', desc: 'بررسی گردش سکه، الماس و خریدها' },
+
+      // 11. پیام‌رسانی و اعلان‌های رسمی
+      { id: 'messages.manage', module: 'communication', moduleFa: 'پیام‌رسانی و اعلان‌ها', name: 'ارسال پیام سراسری و خصوصی', desc: 'امکان ارسال پیام رسمی مدیریت به همه کاربران یا کاربر خاص با نمایش پاپ‌آپ' },
       { id: 'economy.adjust', module: 'economy', moduleFa: 'اقتصاد و اسکین‌ها', name: 'شارژ و کسر ارز بازی', desc: 'افزودن یا کسر دستی سکه و الماس به کاربران' },
       { id: 'economy.skins', module: 'economy', moduleFa: 'اقتصاد و اسکین‌ها', name: 'مدیریت و قیمت‌گذاری اسکین‌ها', desc: 'افزودن و تغییر قیمت خودروها و موتورها' },
 

@@ -172,6 +172,8 @@ export class RaceService {
       const candidates = [
         path.join(process.cwd(), 'data', 'race_custom_texts.json'),
         path.join(process.cwd(), 'backend', 'data', 'race_custom_texts.json'),
+        path.resolve(__dirname, '..', '..', '..', 'data', 'race_custom_texts.json'),
+        path.resolve(__dirname, '..', '..', 'data', 'race_custom_texts.json'),
       ];
       for (const p of candidates) {
         if (fs.existsSync(p)) {

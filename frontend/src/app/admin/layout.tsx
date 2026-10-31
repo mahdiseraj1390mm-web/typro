@@ -27,7 +27,8 @@ import {
   Gamepad2,
   Globe,
   Search,
-  ArrowRight
+  ArrowRight,
+  Bell
 } from 'lucide-react';
 import { useAuth } from '@/context/AuthContext';
 
@@ -93,6 +94,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     { href: '/admin/lessons', title: 'مدیریت دروس و آکادمی', icon: <BookOpen className="w-4 h-4" /> },
     { href: '/admin/content', title: 'محتوای متنی و قرآن CMS', icon: <FileText className="w-4 h-4" /> },
     { href: '/admin/texts', title: 'متون مسابقه و تست تایپ', icon: <FileText className="w-4 h-4 text-emerald-600" /> },
+    { href: '/admin/messages', title: 'ارسال پیام و اعلان به کاربران', icon: <Bell className="w-4 h-4 text-indigo-500" /> },
     { href: '/admin/races', title: 'مسابقات و اتاق‌های زنده', icon: <Trophy className="w-4 h-4" /> },
     { href: '/admin/games', title: 'مدیریت بازی‌ها و دسترسی کاربران', icon: <Gamepad2 className="w-4 h-4 text-purple-600" /> },
     { href: '/admin/tournaments', title: 'تورنمنت هفتگی و براکت‌ها', icon: <Swords className="w-4 h-4 text-amber-500" /> },
@@ -114,6 +116,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     '/admin/lessons': 'lessons.view',
     '/admin/content': 'content.view',
     '/admin/texts': 'content.texts.race',
+    '/admin/messages': 'messages.manage',
     '/admin/races': 'races.view',
     '/admin/games': 'games.view',
     '/admin/tournaments': 'tournaments.view',
