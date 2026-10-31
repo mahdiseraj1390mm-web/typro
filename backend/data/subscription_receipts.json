@@ -1,0 +1,15 @@
+[
+  {
+    "id": "rcpt-1792846730836-bjoyk4",
+    "userId": "usr-admin",
+    "userName": "تست کاربر",
+    "planId": "premium-monthly",
+    "planName": "اشتراک یک‌ماهه پرو",
+    "amount": 150000,
+    "trackingCode": "TRK-12345",
+    "senderCard": "",
+    "receiptImage": "",
+    "submittedAt": "2026-10-24T12:58:50.836Z",
+    "status": "approved"
+  }
+]

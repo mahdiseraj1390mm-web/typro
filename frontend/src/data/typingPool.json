@@ -1,0 +1,2302 @@
+[
+  {
+    "id": "test-quran-1",
+    "topic": "آیات نورانی قرآن کریم (تایپ روان بدون اعراب)",
+    "subCategory": "قرآنی",
+    "language": "fa",
+    "difficulty": "آسان",
+    "length": "کوتاه",
+    "lineCount": 1,
+    "text": "بسم الله الرحمن الرحیم الحمد لله رب العالمین الرحمن الرحیم مالک یوم الدین"
+  },
+  {
+    "id": "test-quran-2",
+    "topic": "آیات نورانی قرآن کریم (تایپ روان بدون اعراب)",
+    "subCategory": "قرآنی",
+    "language": "fa",
+    "difficulty": "آسان",
+    "length": "کوتاه",
+    "lineCount": 1,
+    "text": "ایاک نعبد و ایاک نستعین اهدنا الصراط المستقیم صراط الذین انعمت علیهم"
+  },
+  {
+    "id": "test-quran-3",
+    "topic": "آیات نورانی قرآن کریم (تایپ روان بدون اعراب)",
+    "subCategory": "قرآنی",
+    "language": "fa",
+    "difficulty": "آسان",
+    "length": "کوتاه",
+    "lineCount": 1,
+    "text": "قل هو الله احد الله الصمد لم یلد و لم یولد و لم یکن له کفوا احد"
+  },
+  {
+    "id": "test-quran-4",
+    "topic": "آیات نورانی قرآن کریم (تایپ روان بدون اعراب)",
+    "subCategory": "قرآنی",
+    "language": "fa",
+    "difficulty": "آسان",
+    "length": "کوتاه",
+    "lineCount": 1,
+    "text": "انا اعطیناک الکوثر فصل لربک و انحر ان شانئک هو الابتر"
+  },
+  {
+    "id": "test-quran-5",
+    "topic": "آیات نورانی قرآن کریم (تایپ روان بدون اعراب)",
+    "subCategory": "قرآنی",
+    "language": "fa",
+    "difficulty": "آسان",
+    "length": "کوتاه",
+    "lineCount": 1,
+    "text": "قل اعوذ برب الناس ملک الناس اله الناس من شر الوسواس الخناس"
+  },
+  {
+    "id": "test-quran-6",
+    "topic": "آیات نورانی قرآن کریم (تایپ روان بدون اعراب)",
+    "subCategory": "قرآنی",
+    "language": "fa",
+    "difficulty": "آسان",
+    "length": "کوتاه",
+    "lineCount": 1,
+    "text": "قل اعوذ برب الفلق من شر ما خلق و من شر غاسق اذا وقب"
+  },
+  {
+    "id": "test-quran-7",
+    "topic": "آیات نورانی قرآن کریم (تایپ روان بدون اعراب)",
+    "subCategory": "قرآنی",
+    "language": "fa",
+    "difficulty": "آسان",
+    "length": "کوتاه",
+    "lineCount": 1,
+    "text": "اذا جاء نصر الله والفتح و رایت الناس یدخلون فی دین الله افواجا"
+  },
+  {
+    "id": "test-quran-8",
+    "topic": "آیات نورانی قرآن کریم (تایپ روان بدون اعراب)",
+    "subCategory": "قرآنی",
+    "language": "fa",
+    "difficulty": "آسان",
+    "length": "کوتاه",
+    "lineCount": 1,
+    "text": "فسبح بحمد ربک واستغفره انه کان توابا"
+  },
+  {
+    "id": "test-quran-9",
+    "topic": "آیات نورانی قرآن کریم (تایپ روان بدون اعراب)",
+    "subCategory": "قرآنی",
+    "language": "fa",
+    "difficulty": "آسان",
+    "length": "کوتاه",
+    "lineCount": 1,
+    "text": "والعصر ان الانسان لفی خسر الا الذین امنوا و عملوا الصالحات"
+  },
+  {
+    "id": "test-quran-10",
+    "topic": "آیات نورانی قرآن کریم (تایپ روان بدون اعراب)",
+    "subCategory": "قرآنی",
+    "language": "fa",
+    "difficulty": "آسان",
+    "length": "کوتاه",
+    "lineCount": 1,
+    "text": "و تواصوا بالحق و تواصوا بالصبر ان مع العسر یسرا"
+  },
+  {
+    "id": "test-quran-11",
+    "topic": "آیات نورانی قرآن کریم (تایپ روان بدون اعراب)",
+    "subCategory": "قرآنی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "الم ذلک الکتاب لا ریب فیه هدی للمتقین الذین یؤمنون بالغیب و یقیمون الصلاة و مما رزقناهم ینفقون"
+  },
+  {
+    "id": "test-quran-12",
+    "topic": "آیات نورانی قرآن کریم (تایپ روان بدون اعراب)",
+    "subCategory": "قرآنی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "الله لا اله الا هو الحی القیوم لا تاخذه سنة و لا نوم له ما فی السماوات و ما فی الارض من ذا الذی یشفع عنده الا باذنه"
+  },
+  {
+    "id": "test-quran-13",
+    "topic": "آیات نورانی قرآن کریم (تایپ روان بدون اعراب)",
+    "subCategory": "قرآنی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "یعلم ما بین ایدیهم و ما خلفهم و لا یحیطون بشیء من علمه الا بما شاء وسع کرسیه السماوات و الارض و لا یئوده حفظهما و هو العلی العظیم"
+  },
+  {
+    "id": "test-quran-14",
+    "topic": "آیات نورانی قرآن کریم (تایپ روان بدون اعراب)",
+    "subCategory": "قرآنی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "شهد الله انه لا اله الا هو و الملائکة و اولوا العلم قائما بالقسط لا اله الا هو العزیز الحکیم ان الدین عند الله الاسلام"
+  },
+  {
+    "id": "test-quran-15",
+    "topic": "آیات نورانی قرآن کریم (تایپ روان بدون اعراب)",
+    "subCategory": "قرآنی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "قل اللهم مالک الملک تؤتی الملک من تشاء و تنزع الملک ممن تشاء و تعز من تشاء و تذل من تشاء بیدک الخیر انک علی کل شیء قدیر"
+  },
+  {
+    "id": "test-quran-16",
+    "topic": "آیات نورانی قرآن کریم (تایپ روان بدون اعراب)",
+    "subCategory": "قرآنی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "ربنا لا تزغ قلوبنا بعد اذ هدیتنا و هب لنا من لدنک رحمة انک انت الوهاب ربنا انک جامع الناس لیوم لا ریب فیه"
+  },
+  {
+    "id": "test-quran-17",
+    "topic": "آیات نورانی قرآن کریم (تایپ روان بدون اعراب)",
+    "subCategory": "قرآنی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "یا ایها الذین امنوا اصبروا و صابروا و رابطوا واتقوا الله لعلکم تفلحون"
+  },
+  {
+    "id": "test-quran-18",
+    "topic": "آیات نورانی قرآن کریم (تایپ روان بدون اعراب)",
+    "subCategory": "قرآنی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "ان فی خلق السماوات و الارض واختلاف اللیل و النهار لایات لاولی الالباب الذین یذکرون الله قیاما و قعودا و علی جنوبهم"
+  },
+  {
+    "id": "test-quran-19",
+    "topic": "آیات نورانی قرآن کریم (تایپ روان بدون اعراب)",
+    "subCategory": "قرآنی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "ربنا ما خلقت هذا باطلا سبحانک فقنا عذاب النار ربنا انک من تدخل النار فقد اخزیته و ما للظالمین من انصار"
+  },
+  {
+    "id": "test-quran-20",
+    "topic": "آیات نورانی قرآن کریم (تایپ روان بدون اعراب)",
+    "subCategory": "قرآنی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "فاستجاب لهم ربهم انی لا اضیع عمل عامل منکم من ذکر او انثی بعضکم من بعض فالله خیر ثوابا و عنده حسن الثواب"
+  },
+  {
+    "id": "test-quran-21",
+    "topic": "آیات نورانی قرآن کریم (تایپ روان بدون اعراب)",
+    "subCategory": "قرآنی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "بلند",
+    "lineCount": 1,
+    "text": "سبح اسم ربک الاعلی الذی خلق فسوی والذي قدر فهدی والذی اخرج المرعی فجعله غثاء احوی سنقرئک فلا تنسی"
+  },
+  {
+    "id": "test-quran-22",
+    "topic": "آیات نورانی قرآن کریم (تایپ روان بدون اعراب)",
+    "subCategory": "قرآنی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "بلند",
+    "lineCount": 1,
+    "text": "والضحی واللیل اذا سجی ما ودعک ربک و ما قلی وللاخرة خیر لک من الاولی ولسوف یعطیک ربک فترضی"
+  },
+  {
+    "id": "test-quran-23",
+    "topic": "آیات نورانی قرآن کریم (تایپ روان بدون اعراب)",
+    "subCategory": "قرآنی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "بلند",
+    "lineCount": 1,
+    "text": "الم نشرح لک صدرک و وضعنا عنک وزرک الذی انقض ظهرک و رفعنا لک ذکرک فان مع العسر یسرا ان مع العسر یسرا"
+  },
+  {
+    "id": "test-quran-24",
+    "topic": "آیات نورانی قرآن کریم (تایپ روان بدون اعراب)",
+    "subCategory": "قرآنی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "بلند",
+    "lineCount": 1,
+    "text": "والتین والزیتون و طور سینین و هذا البلد الامین لقد خلقنا الانسان فی احسن تقویم ثم رددناه اسفل سافلین"
+  },
+  {
+    "id": "test-quran-25",
+    "topic": "آیات نورانی قرآن کریم (تایپ روان بدون اعراب)",
+    "subCategory": "قرآنی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "بلند",
+    "lineCount": 1,
+    "text": "اقرا باسم ربک الذی خلق خلق الانسان من علق اقرا و ربک الاکرم الذی علم بالقلم علم الانسان ما لم یعلم"
+  },
+  {
+    "id": "test-quran-26",
+    "topic": "آیات نورانی قرآن کریم (تایپ روان بدون اعراب)",
+    "subCategory": "قرآنی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "بلند",
+    "lineCount": 1,
+    "text": "انا انزلناه فی لیلة القدر و ما ادراک ما لیلة القدر لیلة القدر خیر من الف شهر تنزل الملائکة والروح فیها باذن ربهم من کل امر سلام هی حتی مطلع الفجر"
+  },
+  {
+    "id": "test-quran-27",
+    "topic": "آیات نورانی قرآن کریم (تایپ روان بدون اعراب)",
+    "subCategory": "قرآنی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "بلند",
+    "lineCount": 1,
+    "text": "الم تر کیف فعل ربک باصحاب الفیل الم یجعل کیدهم فی تضلیل و ارسل علیهم طیرا ابابیل ترمیهم بحجارة من سجیل فجعلهم کعصف ماکول"
+  },
+  {
+    "id": "test-quran-28",
+    "topic": "آیات نورانی قرآن کریم (تایپ روان بدون اعراب)",
+    "subCategory": "قرآنی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "بلند",
+    "lineCount": 1,
+    "text": "لایلاف قریش ایلافهم رحلة الشتاء والصیف فلیعبدوا رب هذا البیت الذی اطعمهم من جوع و امنهم من خوف"
+  },
+  {
+    "id": "test-quran-29",
+    "topic": "آیات نورانی قرآن کریم (تایپ روان بدون اعراب)",
+    "subCategory": "قرآنی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "بلند",
+    "lineCount": 1,
+    "text": "ارایت الذی یکذب بالدین فذلک الذی یدع الیتیم و لا یحض علی طعام المسکین فویل للمصلین الذین هم عن صلاتهم ساهون الذین هم یراؤون و یمنعون الماعون"
+  },
+  {
+    "id": "test-quran-30",
+    "topic": "آیات نورانی قرآن کریم (تایپ روان بدون اعراب)",
+    "subCategory": "قرآنی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "بلند",
+    "lineCount": 1,
+    "text": "تبارک الذی بیده الملک و هو علی کل شیء قدیر الذی خلق الموت و الحیاة لیبلوکم ایکم احسن عملا و هو العزیز الغفور"
+  },
+  {
+    "id": "test-relig-1",
+    "topic": "معارف اسلامی و حکمت پیشوایان",
+    "subCategory": "مذهبی",
+    "language": "fa",
+    "difficulty": "آسان",
+    "length": "کوتاه",
+    "lineCount": 1,
+    "text": "پیامبر اکرم فرمودند نیکی به پدر و مادر بالاترین عمل نزد پروردگار و سبب فزونی رزق است."
+  },
+  {
+    "id": "test-relig-2",
+    "topic": "معارف اسلامی و حکمت پیشوایان",
+    "subCategory": "مذهبی",
+    "language": "fa",
+    "difficulty": "آسان",
+    "length": "کوتاه",
+    "lineCount": 1,
+    "text": "امیرالمومنین علی علیه السلام فرمودند توانا بودن به دانایی و بزرگی به ادب و عقل است."
+  },
+  {
+    "id": "test-relig-3",
+    "topic": "معارف اسلامی و حکمت پیشوایان",
+    "subCategory": "مذهبی",
+    "language": "fa",
+    "difficulty": "آسان",
+    "length": "کوتاه",
+    "lineCount": 1,
+    "text": "صداقت و راستی مایه آرامش دل است و دروغ گفتن موجب اضطراب و آشفتگی درون می شود."
+  },
+  {
+    "id": "test-relig-4",
+    "topic": "معارف اسلامی و حکمت پیشوایان",
+    "subCategory": "مذهبی",
+    "language": "fa",
+    "difficulty": "آسان",
+    "length": "کوتاه",
+    "lineCount": 1,
+    "text": "خوش اخلاقی نیمی از دین است و پیوندهای دوستی و محبت را میان مردمان استوار می سازد."
+  },
+  {
+    "id": "test-relig-5",
+    "topic": "معارف اسلامی و حکمت پیشوایان",
+    "subCategory": "مذهبی",
+    "language": "fa",
+    "difficulty": "آسان",
+    "length": "کوتاه",
+    "lineCount": 1,
+    "text": "کمک به نیازمندان و برآوردن نیازهای برادران دینی گناهان را پاک و روزی را پربرکت می کند."
+  },
+  {
+    "id": "test-relig-6",
+    "topic": "معارف اسلامی و حکمت پیشوایان",
+    "subCategory": "مذهبی",
+    "language": "fa",
+    "difficulty": "آسان",
+    "length": "کوتاه",
+    "lineCount": 1,
+    "text": "امام صادق علیه السلام فرمودند علم با عمل سنجیده می شود و دانای بی عمل سودمند نیست."
+  },
+  {
+    "id": "test-relig-7",
+    "topic": "معارف اسلامی و حکمت پیشوایان",
+    "subCategory": "مذهبی",
+    "language": "fa",
+    "difficulty": "آسان",
+    "length": "کوتاه",
+    "lineCount": 1,
+    "text": "شکر نعمت موجب فزونی روزی و کفران نعمت باعث زوال فرصت ها و افتادن در سختی است."
+  },
+  {
+    "id": "test-relig-8",
+    "topic": "معارف اسلامی و حکمت پیشوایان",
+    "subCategory": "مذهبی",
+    "language": "fa",
+    "difficulty": "آسان",
+    "length": "کوتاه",
+    "lineCount": 1,
+    "text": "آرامش قلب در گرو یاد خدا و توکل بر اراده خیر و مهربانی پروردگار جهانیان است."
+  },
+  {
+    "id": "test-relig-9",
+    "topic": "معارف اسلامی و حکمت پیشوایان",
+    "subCategory": "مذهبی",
+    "language": "fa",
+    "difficulty": "آسان",
+    "length": "کوتاه",
+    "lineCount": 1,
+    "text": "حق الناس امانتی الهی است و رعایت انصاف در کار و معامله واجب ترین وظیفه هر انسان است."
+  },
+  {
+    "id": "test-relig-10",
+    "topic": "معارف اسلامی و حکمت پیشوایان",
+    "subCategory": "مذهبی",
+    "language": "fa",
+    "difficulty": "آسان",
+    "length": "کوتاه",
+    "lineCount": 1,
+    "text": "صله رحم و جویا شدن احوال خویشاوندان طول عمر را فزونی می بخشد و کدورت ها را می زداید."
+  },
+  {
+    "id": "test-relig-11",
+    "topic": "معارف اسلامی و حکمت پیشوایان",
+    "subCategory": "مذهبی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "امام رضا علیه السلام می فرمایند خرد و عقل بزرگ ترین هدیه خداوند به بندگان است."
+  },
+  {
+    "id": "test-relig-12",
+    "topic": "معارف اسلامی و حکمت پیشوایان",
+    "subCategory": "مذهبی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "صبوری در برابر سختی ها و استقامت در راه حق نشانه ایمان و جوانمردی است."
+  },
+  {
+    "id": "test-relig-13",
+    "topic": "معارف اسلامی و حکمت پیشوایان",
+    "subCategory": "مذهبی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "در سخنان پیشوایان آمده است که دانشمندترین مردم کسی است که دانش دیگران را بر دانش خود بیفزاید."
+  },
+  {
+    "id": "test-relig-14",
+    "topic": "معارف اسلامی و حکمت پیشوایان",
+    "subCategory": "مذهبی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "حسن خلق و گشاده رویی در دیدار با مردم کینه ها را از سینه ها می شوید و الفت می آفریند."
+  },
+  {
+    "id": "test-relig-15",
+    "topic": "معارف اسلامی و حکمت پیشوایان",
+    "subCategory": "مذهبی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "امانتداری و وفای به عهد دو نشانه روشن از شخصیت والای انسان مومن است."
+  },
+  {
+    "id": "test-relig-16",
+    "topic": "معارف اسلامی و حکمت پیشوایان",
+    "subCategory": "مذهبی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "قرآن کریم اهل ایمان را به گفتار نیکو و پیراسته از سخنان گزاف و نیشدار فرا می خواند."
+  },
+  {
+    "id": "test-relig-17",
+    "topic": "معارف اسلامی و حکمت پیشوایان",
+    "subCategory": "مذهبی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "طلب علم بر هر مسلمان واجبی است که انسان را از تاریکی جهل به سوی نور هدایت می برد."
+  },
+  {
+    "id": "test-relig-18",
+    "topic": "معارف اسلامی و حکمت پیشوایان",
+    "subCategory": "مذهبی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "عدالت مایه ثبات و برپایی ارکان جامعه است و ستم بنیان هر دولتی را ویران می کند."
+  },
+  {
+    "id": "test-relig-19",
+    "topic": "معارف اسلامی و حکمت پیشوایان",
+    "subCategory": "مذهبی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "توکل به معنای بی تفاوتی نیست بلکه تلاش بی وقفه و سپردن سرانجام امور به پروردگار است."
+  },
+  {
+    "id": "test-relig-20",
+    "topic": "معارف اسلامی و حکمت پیشوایان",
+    "subCategory": "مذهبی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "نهج البلاغه گنجینه ای ماندگار از اندیشه های توحیدی و راهنمای عدالت و حکومت داری پاک است."
+  },
+  {
+    "id": "test-relig-21",
+    "topic": "معارف اسلامی و حکمت پیشوایان",
+    "subCategory": "مذهبی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "بلند",
+    "lineCount": 1,
+    "text": "رسول خدا فرمودند دو نعمت بزرگ وجود دارند که بسیاری از مردم از آن غافل هستند: تندرستی و آسایش خیال."
+  },
+  {
+    "id": "test-relig-22",
+    "topic": "معارف اسلامی و حکمت پیشوایان",
+    "subCategory": "مذهبی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "بلند",
+    "lineCount": 1,
+    "text": "صحیفه سجادیه منظومه ای بی همتا از راز و نیاز عارفانه و آموزش والاترین سجایای اخلاقی است."
+  },
+  {
+    "id": "test-relig-23",
+    "topic": "معارف اسلامی و حکمت پیشوایان",
+    "subCategory": "مذهبی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "بلند",
+    "lineCount": 1,
+    "text": "فرصت های زندگی مانند ابرهای بهاری می گذرند و انسان خردمند از هر ثانیه برای خودسازی بهره می برد."
+  },
+  {
+    "id": "test-relig-24",
+    "topic": "معارف اسلامی و حکمت پیشوایان",
+    "subCategory": "مذهبی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "بلند",
+    "lineCount": 1,
+    "text": "تقوا چراغ هدایتی است که مسیرهای تاریک و شبهه ناک فتنه ها را برای انسان روشن می سازد."
+  },
+  {
+    "id": "test-relig-25",
+    "topic": "معارف اسلامی و حکمت پیشوایان",
+    "subCategory": "مذهبی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "بلند",
+    "lineCount": 1,
+    "text": "اخلاق شایسته در کار و روابط اجتماعی برترین سفیر برای معرفی آموزه های نجات بخش اسلام است."
+  },
+  {
+    "id": "test-relig-26",
+    "topic": "معارف اسلامی و حکمت پیشوایان",
+    "subCategory": "مذهبی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "بلند",
+    "lineCount": 1,
+    "text": "نماز ستون دین و معراج مومن است که انسان را از گناهان و بدی ها بازمی دارد."
+  },
+  {
+    "id": "test-relig-27",
+    "topic": "معارف اسلامی و حکمت پیشوایان",
+    "subCategory": "مذهبی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "بلند",
+    "lineCount": 1,
+    "text": "انفاق در راه خدا نه تنها مال انسان را کم نمی کند بلکه آن را پاکیزه و چندین برابر می گرداند."
+  },
+  {
+    "id": "test-relig-28",
+    "topic": "معارف اسلامی و حکمت پیشوایان",
+    "subCategory": "مذهبی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "بلند",
+    "lineCount": 1,
+    "text": "وفاداری یاران حضرت سیدالشهدا در کربلا درس جاودانه شجاعت و آزادگی برای تمامی عصرهاست."
+  },
+  {
+    "id": "test-relig-29",
+    "topic": "معارف اسلامی و حکمت پیشوایان",
+    "subCategory": "مذهبی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "بلند",
+    "lineCount": 1,
+    "text": "قناعت گنجی تمام نشدنی است که دارنده آن را از منت کشیدن پیش این و آن بی نیاز می سازد."
+  },
+  {
+    "id": "test-relig-30",
+    "topic": "معارف اسلامی و حکمت پیشوایان",
+    "subCategory": "مذهبی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "بلند",
+    "lineCount": 1,
+    "text": "مادران و پدران فرشتگان زمینی هستند که دعای خیرشان سپری استوار در برابر حوادث روزگار است."
+  },
+  {
+    "id": "test-code-1",
+    "topic": "Code Snippets & Algorithms",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "medium",
+    "length": "short",
+    "lineCount": 1,
+    "text": "const greeting = (name: string): string => `Hello, ${name}! Welcome to coding.`;"
+  },
+  {
+    "id": "test-code-2",
+    "topic": "Code Snippets & Algorithms",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "medium",
+    "length": "short",
+    "lineCount": 1,
+    "text": "const totalScore = scores.reduce((sum, current) => sum + current, 0);"
+  },
+  {
+    "id": "test-code-3",
+    "topic": "Code Snippets & Algorithms",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "medium",
+    "length": "short",
+    "lineCount": 1,
+    "text": "export default function calculateVelocity(distance: number, time: number): number { return distance / time; }"
+  },
+  {
+    "id": "test-code-4",
+    "topic": "Code Snippets & Algorithms",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "medium",
+    "length": "short",
+    "lineCount": 1,
+    "text": "const activeUsers = users.filter(user => user.isOnline && user.verified);"
+  },
+  {
+    "id": "test-code-5",
+    "topic": "Code Snippets & Algorithms",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "medium",
+    "length": "short",
+    "lineCount": 1,
+    "text": "git commit -m 'feat: improve typing performance and reduce input latency'"
+  },
+  {
+    "id": "test-code-6",
+    "topic": "Code Snippets & Algorithms",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "medium",
+    "length": "short",
+    "lineCount": 1,
+    "text": "const sortedNumbers = [...rawList].sort((first, second) => first - second);"
+  },
+  {
+    "id": "test-code-7",
+    "topic": "Code Snippets & Algorithms",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "medium",
+    "length": "short",
+    "lineCount": 1,
+    "text": "interface UserProfile { id: string; username: string; email: string; level: number; }"
+  },
+  {
+    "id": "test-code-8",
+    "topic": "Code Snippets & Algorithms",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "medium",
+    "length": "short",
+    "lineCount": 1,
+    "text": "const response = await fetch('/api/leaderboard', { method: 'GET' });"
+  },
+  {
+    "id": "test-code-9",
+    "topic": "Code Snippets & Algorithms",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "medium",
+    "length": "short",
+    "lineCount": 1,
+    "text": "const isPalindrome = (str: string): boolean => str === str.split('').reverse().join('');"
+  },
+  {
+    "id": "test-code-10",
+    "topic": "Code Snippets & Algorithms",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "medium",
+    "length": "short",
+    "lineCount": 1,
+    "text": "const [currentWpm, setCurrentWpm] = useState<number>(0);"
+  },
+  {
+    "id": "test-code-11",
+    "topic": "Code Snippets & Algorithms",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 1,
+    "text": "function binarySearch(arr: number[], target: number): number { return arr.indexOf(target); }"
+  },
+  {
+    "id": "test-code-12",
+    "topic": "Code Snippets & Algorithms",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 1,
+    "text": "while (left <= right) { const mid = Math.floor((left + right) / 2); }"
+  },
+  {
+    "id": "test-code-13",
+    "topic": "Code Snippets & Algorithms",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 1,
+    "text": "const express = require('express'); const app = express(); app.listen(3000);"
+  },
+  {
+    "id": "test-code-14",
+    "topic": "Code Snippets & Algorithms",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 1,
+    "text": "type Direction = 'north' | 'south' | 'east' | 'west'; const move = (d: Direction) => d;"
+  },
+  {
+    "id": "test-code-15",
+    "topic": "Code Snippets & Algorithms",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 1,
+    "text": "const debounce = (fn: Function, ms: number) => { let timer: any; return (...args: any[]) => clearTimeout(timer); };"
+  },
+  {
+    "id": "test-code-16",
+    "topic": "Code Snippets & Algorithms",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 1,
+    "text": "const numbers = [1, 2, 3, 4, 5]; const squares = numbers.map(n => n * n);"
+  },
+  {
+    "id": "test-code-17",
+    "topic": "Code Snippets & Algorithms",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 1,
+    "text": "export async function getLeaderboard(): Promise<User[]> { const res = await fetch('/api/rankings'); return res.json(); }"
+  },
+  {
+    "id": "test-code-18",
+    "topic": "Code Snippets & Algorithms",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 1,
+    "text": "const isValidEmail = (email: string): boolean => /^[^\\s@]+@[^\\s@]+\\.[^\\s@]+$/.test(email);"
+  },
+  {
+    "id": "test-code-19",
+    "topic": "Code Snippets & Algorithms",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 1,
+    "text": "const handleSubmit = async (e: React.FormEvent) => { e.preventDefault(); await api.save(data); };"
+  },
+  {
+    "id": "test-code-20",
+    "topic": "Code Snippets & Algorithms",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 1,
+    "text": "const deepClone = <T>(obj: T): T => JSON.parse(JSON.stringify(obj));"
+  },
+  {
+    "id": "test-code-21",
+    "topic": "Code Snippets & Algorithms",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "hard",
+    "length": "short",
+    "lineCount": 1,
+    "text": "async function fetchData(url: string) { const res = await fetch(url); return res.json(); }"
+  },
+  {
+    "id": "test-code-22",
+    "topic": "Code Snippets & Algorithms",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "hard",
+    "length": "short",
+    "lineCount": 1,
+    "text": "class Stack<T> { private items: T[] = []; push(item: T) { this.items.push(item); } }"
+  },
+  {
+    "id": "test-code-23",
+    "topic": "Code Snippets & Algorithms",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "hard",
+    "length": "short",
+    "lineCount": 1,
+    "text": "interface KeyMetric { speedWpm: number; accuracyPct: number; errorCount: number; }"
+  },
+  {
+    "id": "test-code-24",
+    "topic": "Code Snippets & Algorithms",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "hard",
+    "length": "short",
+    "lineCount": 1,
+    "text": "const calcAccuracy = (chars: number, errors: number): number => Math.max(0, Math.round(((chars - errors) / chars) * 100));"
+  },
+  {
+    "id": "test-code-25",
+    "topic": "Code Snippets & Algorithms",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "hard",
+    "length": "short",
+    "lineCount": 1,
+    "text": "const useTypingTimer = (seconds: number) => { const [left, setLeft] = useState(seconds); return { left }; };"
+  },
+  {
+    "id": "test-code-26",
+    "topic": "Code Snippets & Algorithms",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "hard",
+    "length": "short",
+    "lineCount": 1,
+    "text": "function bubbleSort(arr: number[]): number[] { return arr.slice().sort((a, b) => a - b); }"
+  },
+  {
+    "id": "test-code-27",
+    "topic": "Code Snippets & Algorithms",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "hard",
+    "length": "short",
+    "lineCount": 1,
+    "text": "const formatDuration = (sec: number): string => `${Math.floor(sec / 60)}:${sec % 60 < 10 ? '0' : ''}${sec % 60}`;"
+  },
+  {
+    "id": "test-code-28",
+    "topic": "Code Snippets & Algorithms",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "hard",
+    "length": "short",
+    "lineCount": 1,
+    "text": "export const apiRouter = express.Router(); apiRouter.get('/status', (req, res) => res.json({ status: 'ok' }));"
+  },
+  {
+    "id": "test-code-29",
+    "topic": "Code Snippets & Algorithms",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "hard",
+    "length": "short",
+    "lineCount": 1,
+    "text": "type Action = { type: 'INCREMENT' } | { type: 'DECREMENT' }; function reducer(state: number, action: Action) { return state; }"
+  },
+  {
+    "id": "test-code-30",
+    "topic": "Code Snippets & Algorithms",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "hard",
+    "length": "short",
+    "lineCount": 1,
+    "text": "class VehicleSimulator { constructor(public model: string, public maxSpeed: number) {} }"
+  },
+  {
+    "id": "test-sci-1",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "نظریه نسبیت عام انیشتین گرانش را حاصل انحنای فضا و زمان در حضور جرم می داند."
+  },
+  {
+    "id": "test-sci-2",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "مولکول دی ان ای نردبانی پیچ خورده است که دستورالعمل های حیات را در سلول ها حمل می کند."
+  },
+  {
+    "id": "test-sci-3",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "سیاه چاله ها اجرامی در فضا هستند که نیروی گرانش آن ها حتی مانع خروج نور می شود."
+  },
+  {
+    "id": "test-sci-4",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "تلسکوپ فضایی جیمز وب تصاویر بی نظیری از کهکشان های آغازین جهان ثبت کرده است."
+  },
+  {
+    "id": "test-sci-5",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "فتوسنتز فرایندی حیاتی است که طی آن گیاهان نور خورشید را به انرژی شیمیایی تبدیل می کنند."
+  },
+  {
+    "id": "test-sci-6",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "امواج الکترومغناطیسی با سرعت نور در خلأ حرکت کرده و انرژی را در کیهان منتقل می سازند."
+  },
+  {
+    "id": "test-sci-7",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "مغز انسان بیش از هشتاد میلیارد نورون دارد که پیام ها را با تکانه های الکتریکی مخابره می کنند."
+  },
+  {
+    "id": "test-sci-8",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "همجوشی هسته ای در هسته خورشید هیدروژن را به هلیوم تبدیل کرده و گرمای بیکران می آفریند."
+  },
+  {
+    "id": "test-sci-9",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "لایه ازن همانند سپری نامرئی پرتوهای فرابنفش زیان بار خورشید را جذب می کند."
+  },
+  {
+    "id": "test-sci-10",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "فیزیک کوانتوم نشان می دهد که ذرات زیراتمی می توانند همزمان در حالت های مختلفی قرار گیرند."
+  },
+  {
+    "id": "test-sci-11",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "سیاره مریخ دارای بزرگ ترین آتشفشان منظومه شمسی به نام کوه المپوس است."
+  },
+  {
+    "id": "test-sci-12",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "سیستم ایمنی بدن ارتشی مجهز از گلبول های سفید است که میکروب ها را نابود می سازد."
+  },
+  {
+    "id": "test-sci-13",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "فناوری نانو امکان دستکاری مواد در مقیاس اتمی برای ساخت ابزارهای نوین را میسر می کند."
+  },
+  {
+    "id": "test-sci-14",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "حرکت ورقه های پوسته زمین عامل اصلی پیدایش زلزله ها و شکل گیری رشته کوه ها است."
+  },
+  {
+    "id": "test-sci-15",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "میدان مغناطیسی زمین سیاره ما را در برابر بادهای خطرناک خورشیدی محافظت می کند."
+  },
+  {
+    "id": "test-sci-16",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "سرعت صوت در آب تقریبا چهار برابر سریع تر از سرعت حرکت آن در هوا است."
+  },
+  {
+    "id": "test-sci-17",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "گرافن ماده ای با ضخامت یک اتم کربن است که استحکام آن صدها برابر فولاد است."
+  },
+  {
+    "id": "test-sci-18",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "سلول های بنیادی توانایی شگفت انگیز تمایز به انواع مختلف بافت های بدن را دارا هستند."
+  },
+  {
+    "id": "test-sci-19",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "تلسکوپ هابل به بشر کمک کرد تا نرخ انبساط جهان هستی را با دقت اندازه گیری کند."
+  },
+  {
+    "id": "test-sci-20",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "پادتن ها پروتئین های هوشمندی هستند که به عوامل بیگانه چسبیده و آن ها را خنثی می کنند."
+  },
+  {
+    "id": "test-sci-21",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "اتم ها بیشتر از فضای خالی تشکیل شده اند و هسته سنگین در مرکز آن ها قرار دارد."
+  },
+  {
+    "id": "test-sci-22",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "پدید آمدن شفق قطبی حاصل برخورد ذرات باردار خورشیدی با گازهای جو زمین است."
+  },
+  {
+    "id": "test-sci-23",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "نور خورشید برای رسیدن به سطح کره زمین حدود هشت دقیقه و بیست ثانیه در سفر است."
+  },
+  {
+    "id": "test-sci-24",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "ابررساناها موادی هستند که در دماهای بسیار پایین الکتریسیته را بدون کمترین مقاومت منتقل می کنند."
+  },
+  {
+    "id": "test-sci-25",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "انرژی ژئوترمال گرمای پاک و تجدیدپذیر نهفته در اعماق پوسته زمین است."
+  },
+  {
+    "id": "test-sci-26",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "امواج گرانشی چین و شکن هایی در بافت کیهان هستند که بر اثر برخورد ستاره های نوترونی ایجاد می شوند."
+  },
+  {
+    "id": "test-sci-27",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "هورمون های بدن پیک های شیمیایی هستند که رشد و سوخت و ساز اندام ها را تنظیم می کنند."
+  },
+  {
+    "id": "test-sci-28",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "رایانش کوانتومی با بهره گیری از بیت های کوانتومی مسائل محاسباتی کلان را حل می نماید."
+  },
+  {
+    "id": "test-sci-29",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "سرعت گریز از سطح زمین حدود یازده کیلومتر در هر ثانیه برای ورود به مدار فضا است."
+  },
+  {
+    "id": "test-sci-30",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "چرخه آب در طبیعت با تبخیر از اقیانوس ها آغاز شده و به بارش باران ختم می شود."
+  },
+  {
+    "id": "test-sci-31",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "ستاره های نوترونی پس از انفجار ابرنواختری چگال ترین اجرام شناخته شده کیهان هستند."
+  },
+  {
+    "id": "test-sci-32",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "انعطاف پذیری عصبی به مغز انسان توانایی یادگیری مداوم و تغییر ساختار پس از تجربیات را می دهد."
+  },
+  {
+    "id": "test-sci-33",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "سنسورهای نوری فوتون های نور را دریافت کرده و به سیگنال های الکترونیکی دیجیتال تبدیل می نمایند."
+  },
+  {
+    "id": "test-sci-34",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "نقطه صفر مطلق سردترین دمای ممکن در جهان فیزیکی است که حرکت ذرات در آن متوقف می شود."
+  },
+  {
+    "id": "test-sci-35",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "قطب های مغناطیسی زمین در طول تاریخ زمین شناسی چندین بار جای خود را عوض کرده اند."
+  },
+  {
+    "id": "test-sci-36",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "میتوکندری موتورخانه تولید انرژی در تمامی سلول های جانوری و گیاهی به شمار می رود."
+  },
+  {
+    "id": "test-sci-37",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "طیف سنجی نوری به دانشمندان اجازه می دهد ترکیبات شیمیایی ستاره های دوردست را تشخیص دهند."
+  },
+  {
+    "id": "test-sci-38",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "پدیده درهم تنیدگی کوانتومی ارتباط آنی میان ذرات مستقل از فاصله را به نمایش می گذارد."
+  },
+  {
+    "id": "test-sci-39",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "فشار اتمسفر در سطح دریا ناشی از وزن کل ستون هوای بالای سر ما است."
+  },
+  {
+    "id": "test-sci-40",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "کشف آنتی بیوتیک ها در قرن بیستم انقلابی عظیم در درمان بیماری های عفونی رقم زد."
+  },
+  {
+    "id": "test-sci-41",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "پلاسما حالت چهارم ماده است که در آتش و صاعقه و ستاره های درخشان آسمان یافت می شود."
+  },
+  {
+    "id": "test-sci-42",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "پیوند هیدروژنی عامل خواص شگفت انگیز آب مانند نقطه جوش بالا و شناور ماندن یخ است."
+  },
+  {
+    "id": "test-sci-43",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "آندومتر و بافت های زیستی پیوسته سلول های فرسوده را بازسازی و جایگزین می نمایند."
+  },
+  {
+    "id": "test-sci-44",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "کاوشگرهای وویجر دورترین دست ساخته های بشر هستند که وارد فضای میان ستاره ای شده اند."
+  },
+  {
+    "id": "test-sci-45",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "قانون اول ترمودینامیک بیان می کند که انرژی نه خلق می شود و نه هرگز از بین می رود."
+  },
+  {
+    "id": "test-sci-46",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "رادیواکتیویته حاصل فروپاشی خودبه خودی هسته های ناپایدار و تابش پرتوهای پرانرژی است."
+  },
+  {
+    "id": "test-sci-47",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "میدان دید چشم انسان نتیجه انکسار دقیق نور در قرنیه و عدسی و ثبت در شبکیه است."
+  },
+  {
+    "id": "test-sci-48",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "الگوریتم های فراابتکاری از رفتارهای گروهی پرندگان و مورچه ها برای حل مسائل الهام می گیرند."
+  },
+  {
+    "id": "test-sci-49",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "یخچال های طبیعی قطب ها بزرگ ترین ذخایر آب شیرین در سیاره خاکی محسوب می شوند."
+  },
+  {
+    "id": "test-sci-50",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "شکافت هسته ای انرژی بسیار عظیمی را با تقسیم هسته اتم های سنگین اورانیوم آزاد می کند."
+  },
+  {
+    "id": "test-sci-51",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "نیروی اصطکاک گرچه بخشی از انرژی را هدر می دهد اما راه رفتن و ایستادن بدون آن ناممکن است."
+  },
+  {
+    "id": "test-sci-52",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "پدید آمدن رنگین کمان حاصل شکست و بازتاب نور خورشید در قطرات ریز باران معلق در هوا است."
+  },
+  {
+    "id": "test-sci-53",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "زیست تابی توانایی جالب برخی موجودات دریایی در تولید و تابش نور سرد در تاریکی اعماق است."
+  },
+  {
+    "id": "test-sci-54",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "ساعت زیستی بدن چرخه بیست و چهار ساعته خواب و بیداری را با ترشح ملاتونین تنظیم می کند."
+  },
+  {
+    "id": "test-sci-55",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "ماده تاریک بخش عمده جرم جهان را تشکیل می دهد اما نوری از خود بازتاب نمی کند."
+  },
+  {
+    "id": "test-sci-56",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "سلول های مخروطی شبکیه چشم مسئولیت تشخیص دقیق رنگ ها در روشنایی روز را بر عهده دارند."
+  },
+  {
+    "id": "test-sci-57",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "گرانش ماه عامل اصلی بالا و پایین رفتن آب اقیانوس ها در پدیده جزر و مد است."
+  },
+  {
+    "id": "test-sci-58",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "شتاب دهنده بزرگ هادرونی ذرات بنیادی را در سرعت های نزدیک به نور به یکدیگر برخورد می دهد."
+  },
+  {
+    "id": "test-sci-59",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "مهندسی ژنتیک امکان اصلاح بیماری های وراثتی را در مقیاس سلولی فراهم ساخته است."
+  },
+  {
+    "id": "test-sci-60",
+    "topic": "علوم تجربی و دانش نوین",
+    "subCategory": "علمی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "خورشید در هر ثانیه میلیون ها تن ماده را به انرژی خالص نور و گرما تبدیل می کند."
+  },
+  {
+    "id": "test-hist-1",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "منشور کوروش بزرگ کهن ترین بیانیه حقوق بشر جهان در احترام به آزادی و عقاید ملت ها است."
+  },
+  {
+    "id": "test-hist-2",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "تخت جمشید شاهکار معماری هخامنشیان نماد شکوه و هنر اصیل ایران باستان در جهان به شمار می رود."
+  },
+  {
+    "id": "test-hist-3",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "جاده ابریشم کهن ترین شاهراه تجاری بود که کاروان ها فرهنگ و کالای شرق و غرب را پیوند می دادند."
+  },
+  {
+    "id": "test-hist-4",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "دانشگاه جندی شاپور در عهد باستان بزرگ ترین مرکز گردهمایی دانشمندان و پزشکان جهان بود."
+  },
+  {
+    "id": "test-hist-5",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "کتاب قانون ابن سینا قرن ها در معتبرترین دانشگاه های جهان تدریس می شد و مرجع پزشکی بود."
+  },
+  {
+    "id": "test-hist-6",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "رصدخانه کهن مراغه به همت خواجه نصیرالدین طوسی دقیق ترین ابزارهای ستاره شناسی را در خود داشت."
+  },
+  {
+    "id": "test-hist-7",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "ابوریحان بیرونی شعاع کره زمین را با دانشی شگفت انگیز در کوه های نندنه محاسبه کرد."
+  },
+  {
+    "id": "test-hist-8",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "اختراع صنعت چاپ توسط گوتنبرگ آغازگر تحول فکری و گسترش همگانی علم در سراسر قاره اروپا شد."
+  },
+  {
+    "id": "test-hist-9",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "کتابخانه بزرگ اسکندریه مشعل علم دنیای باستان بود که صدها هزار طومار خطی را در خود نگه می داشت."
+  },
+  {
+    "id": "test-hist-10",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "تمدن ایلام با ساخت زیگورات چغازنبیل اوج هنر معماری و شهرسازی کهن خوزستان را به نمایش گذاشت."
+  },
+  {
+    "id": "test-hist-11",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "نهضت ترجمه در سده های نخستین اسلامی پیوند دهنده خرد یونان و ایران با علوم جهان اسلام گردید."
+  },
+  {
+    "id": "test-hist-12",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "شاه عباس صفوی اصفهان را به پایتختی شکوهمند با بناهای میدان نقش جهان و پل های تاریخی بدل ساخت."
+  },
+  {
+    "id": "test-hist-13",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "محمد زکریای رازی کاشف الکل و بنیان گذار روش های آزمایشگاهی نوین در دانش شیمی جهان بود."
+  },
+  {
+    "id": "test-hist-14",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "پاسارگاد و آرامگاه ساده کوروش نشانه ماندگار هویت و فروتنی در معماری پارسیان کهن است."
+  },
+  {
+    "id": "test-hist-15",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "داریوش بزرگ نخستین سامانه استاندارد سکه و شبکه راهداری منظم به نام راه شاهی را تاسیس کرد."
+  },
+  {
+    "id": "test-hist-16",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "کتیبه بیستون در دل کوه پرآوازه ترین سند تاریخی پیروزی های عهد هخامنشی به سه خط کهن است."
+  },
+  {
+    "id": "test-hist-17",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "سفرنامه مارکوپولو شگفتی های مشرق زمین و جاده ابریشم را به گوش مردمان مغرب رساند."
+  },
+  {
+    "id": "test-hist-18",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "فردوسی نامدار زبان پارسی و تاریخ حماسی نیاکان را با آفرینش شاهنامه جاودانه ساخت."
+  },
+  {
+    "id": "test-hist-19",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "پل خواجو و سی و سه پل شاهکارهای چشم نواز معماری و مهندسی هیدرولیک در عهد صفویان هستند."
+  },
+  {
+    "id": "test-hist-20",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "تمدن دره نیل و سازندگان اهرام مصر باستان دانش ریاضی و هندسه پیشرفته ای در اختیار داشتند."
+  },
+  {
+    "id": "test-hist-21",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "قلعه الموت در دل کوهستان البرز نماد مقاومت و داستان های شگفت انگیز دوران اسماعیلیان است."
+  },
+  {
+    "id": "test-hist-22",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "دیوار بزرگ چین یادگاری استوار از نبوغ انسان در ساخت موانع دفاعی در برابر تهاجم قبایل است."
+  },
+  {
+    "id": "test-hist-23",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "ابن بطوطه جهانگرد نامدار با پیمودن هزاران کیلومتر تصویری روشن از تمدن قرون وسطی نگاشت."
+  },
+  {
+    "id": "test-hist-24",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "عصر رنسانس در فلورانس ایتالیا نویدبخش احیای فلسفه و نقاشی و شکوفایی علم پس از دوران تاریک بود."
+  },
+  {
+    "id": "test-hist-25",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "شهر سوخته در سیستان کهن ترین نشانه های جراحی جمجمه و چشم مصنوعی را در تاریخ دارد."
+  },
+  {
+    "id": "test-hist-26",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "خیام نیشابوری دانشمند برجسته گاهشمار جلالی را به عنوان دقیق ترین تقویم خورشیدی ابداع کرد."
+  },
+  {
+    "id": "test-hist-27",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "انقلاب علمی قرن هفدهم با دیدگاه های کوپرنیک و نیوتن دیدگاه بشر درباره آسمان ها را متحول کرد."
+  },
+  {
+    "id": "test-hist-28",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "هنر کاشی کاری در مسجد شیخ لطف الله جلوه گاه نور و هارمونی بی نظیر رنگ های فیروزه ای است."
+  },
+  {
+    "id": "test-hist-29",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "تاسیس دارالفنون به دست امیرکبیر نقطه عطف ورود علوم و فناوری نوین به خاک ایران بود."
+  },
+  {
+    "id": "test-hist-30",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "تمدن بابل و حمورابی نخستین مجموعه مدون قوانین مدنی و جزایی تاریخ بشر را به نگارش درآوردند."
+  },
+  {
+    "id": "test-hist-31",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "دولت ساسانی با ایجاد نظام اداری منسجم و ارتش مجهز مرزهای ایران را قرن ها پایدار نگه داشت."
+  },
+  {
+    "id": "test-hist-32",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "گنبد سلطانیه در زنجان بزرگ ترین گنبد آجری جهان و الگوی ساخت بناهای تاریخی شرق است."
+  },
+  {
+    "id": "test-hist-33",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "ابن خلدون در کتاب مقدمه بنیان های جامعه شناسی و تحلیل علمی تاریخ را پی ریزی نمود."
+  },
+  {
+    "id": "test-hist-34",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "معماری قناتی ایرانیان آب خنک را از دل کوهستان به کویرهای تشنه هدایت می کرد."
+  },
+  {
+    "id": "test-hist-35",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "آکروپولیس آتن نماد شکوفایی فلسفه و زادگاه اندیشه های دموکراسی و خردورزی باستان بود."
+  },
+  {
+    "id": "test-hist-36",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "کشف نقشه جغرافیایی پیری رئیس در سده های قبل دقت دریانوردان کهن در نقشه برداری را نشان داد."
+  },
+  {
+    "id": "test-hist-37",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "طاق بستان در کرمانشاه روایتگر آیین های خسروپرویز و نقش برجسته های شکار در دوران باستان است."
+  },
+  {
+    "id": "test-hist-38",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "پترای باستانی در دل صخره های سرخ کوهستان شاهکار تمدن نبطی ها در بیابان های اردن است."
+  },
+  {
+    "id": "test-hist-39",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "ایرج میرزا و ملک الشعرای بهار با اشعار خود پیشگام تحولات فرهنگی دوران مشروطه در ایران بودند."
+  },
+  {
+    "id": "test-hist-40",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "تاج محل در هند شکوهی ماندگار از هنر معماری ایرانی و اسلامی در پاسداشت عشق است."
+  },
+  {
+    "id": "test-hist-41",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "دوران طلایی آندلس در اسپانیا پلی ارزشمند برای انتقال علوم مشرق زمین به اروپای باستان بود."
+  },
+  {
+    "id": "test-hist-42",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "فارابی به عنوان معلم ثانی منطق ارسطو را بازخوانی کرد و اصول مدینه فاضله را نگاشت."
+  },
+  {
+    "id": "test-hist-43",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "سکه های اشکانی اسنادی معتبر از استقلال و مقاومت دلاورانه پارتیان در برابر یونانیان هستند."
+  },
+  {
+    "id": "test-hist-44",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "حکیم عمر خیام در کنار سرودن رباعیات هندسه جبری و حل معادلات درجه سوم را بنیان نهاد."
+  },
+  {
+    "id": "test-hist-45",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "کاخ آپادانا با ستون های بلند بیست متری هنر سنگ تراشان شهرهای مختلف شاهنشاهی کهن بود."
+  },
+  {
+    "id": "test-hist-46",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "تمدن بین النهرین مخترع چرخ و خط میخی بود که پایه های نخستین ثبت اسناد در تاریخ را ساخت."
+  },
+  {
+    "id": "test-hist-47",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "سلسله افشاریه به فرماندهی نادرشاه امنیت کاروان ها و تمامیت ارضی کشور را بازگرداند."
+  },
+  {
+    "id": "test-hist-48",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "شهر یزد با بادگیرهای خشتی بلند شاهکار مهندسی همزیستی انسان با اقلیم کویر است."
+  },
+  {
+    "id": "test-hist-49",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "مورخان روم باستان رشادت های سورنا سردار ایرانی در نبرد حران را با شگفتی ستوده اند."
+  },
+  {
+    "id": "test-hist-50",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "مسجد جامع اصفهان آلبوم جامع سیر تحول معماری اسلامی در طول هزار سال تاریخ ایران است."
+  },
+  {
+    "id": "test-hist-51",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "کشف منشور حقوق بشر در بابل نام ایران را در ردیف نخستین پاسداران کرامت انسانی ثبت کرد."
+  },
+  {
+    "id": "test-hist-52",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "آئین پهلوانی و ورزش باستانی در زورخانه های کهن مظهر جوانمردی و ایثار نیاکان ما است."
+  },
+  {
+    "id": "test-hist-53",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "حمله اسکندر گرچه تخت جمشید را سوزاند اما فرهنگ پارسی همچنان زنده و بارور باقی ماند."
+  },
+  {
+    "id": "test-hist-54",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "باغ های ایرانی با ساختار چهارباغ و جریان آب روان نگین ثبت شده در میراث یونسکو هستند."
+  },
+  {
+    "id": "test-hist-55",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "تمدن کارتاژ با ناوگان دریایی قدرتمند خود تجارت در دریای مدیترانه باستان را در دست داشت."
+  },
+  {
+    "id": "test-hist-56",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "نبرد ترموپیل و دلاوری های سپاهیان باستان نمونه ای از رویارویی های نظامی تاریخ است."
+  },
+  {
+    "id": "test-hist-57",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "سفالینه های تپه سیلک کاشان قدمتی فراتر از هفت هزار سال از هنر و مدنیت در فلات ایران دارند."
+  },
+  {
+    "id": "test-hist-58",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "بازرگانان ونیزی در قرون وسطی با سفر به بنادر ایران ابریشم و ادویه را به اروپا منتقل می کردند."
+  },
+  {
+    "id": "test-hist-59",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "دانشگاه های نظامیه در بغداد و نیشابور معتبرترین کانون های تدریس علوم دینی و ادبی بودند."
+  },
+  {
+    "id": "test-hist-60",
+    "topic": "تاریخ و تمدن کهن",
+    "subCategory": "تاریخی",
+    "language": "fa",
+    "difficulty": "متوسط",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "تاریخ نگاران باستان صلح طلبی و مدارای کوروش با ملل مغلوب را در متون خویش ستایش کرده اند."
+  },
+  {
+    "id": "test-num-1",
+    "topic": "پد عددی و تایپ اعداد سرعتی",
+    "subCategory": "اعداد",
+    "language": "en",
+    "difficulty": "سخت",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "98866 556954 594544 1436244 575270 867 69642 5587 3561537 466 44492 544567 964 565"
+  },
+  {
+    "id": "test-num-2",
+    "topic": "پد عددی و تایپ اعداد سرعتی",
+    "subCategory": "اعداد",
+    "language": "en",
+    "difficulty": "سخت",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "74219 883501 294713 6501832 941208 359 81045 9214 4729103 812 30584 719283 540 682"
+  },
+  {
+    "id": "test-num-3",
+    "topic": "پد عددی و تایپ اعداد سرعتی",
+    "subCategory": "اعداد",
+    "language": "en",
+    "difficulty": "سخت",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "12948 673920 847291 3859201 472019 923 58194 7731 2948175 634 91823 482910 871 493"
+  },
+  {
+    "id": "test-num-4",
+    "topic": "پد عددی و تایپ اعداد سرعتی",
+    "subCategory": "اعداد",
+    "language": "en",
+    "difficulty": "سخت",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "85921 401928 739104 9182736 502918 647 38192 6604 8192047 529 74019 638291 428 915"
+  },
+  {
+    "id": "test-num-5",
+    "topic": "پد عددی و تایپ اعداد سرعتی",
+    "subCategory": "اعداد",
+    "language": "en",
+    "difficulty": "سخت",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "39481 720194 618293 4910283 839102 751 94820 4429 6182940 371 85920 501928 693 847"
+  },
+  {
+    "id": "test-num-6",
+    "topic": "پد عددی و تایپ اعداد سرعتی",
+    "subCategory": "اعداد",
+    "language": "en",
+    "difficulty": "سخت",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "60192 849201 372910 8274019 294810 482 71938 8852 3948102 916 48291 740192 315 726"
+  },
+  {
+    "id": "test-num-7",
+    "topic": "پد عددی و تایپ اعداد سرعتی",
+    "subCategory": "اعداد",
+    "language": "en",
+    "difficulty": "سخت",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "48291 910284 582910 6381920 740192 839 20491 3375 9182048 482 63910 819204 750 934"
+  },
+  {
+    "id": "test-num-8",
+    "topic": "پد عددی و تایپ اعداد سرعتی",
+    "subCategory": "اعداد",
+    "language": "en",
+    "difficulty": "سخت",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "91823 374910 829401 5019283 619284 947 83910 5519 7291048 625 91028 472910 839 612"
+  },
+  {
+    "id": "test-num-9",
+    "topic": "پد عددی و تایپ اعداد سرعتی",
+    "subCategory": "اعداد",
+    "language": "en",
+    "difficulty": "سخت",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "20491 839102 472910 9182730 384910 562 61928 2284 5019283 749 82910 639102 918 503"
+  },
+  {
+    "id": "test-num-10",
+    "topic": "پد عددی و تایپ اعداد سرعتی",
+    "subCategory": "اعداد",
+    "language": "en",
+    "difficulty": "سخت",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "57391 619284 948201 2839104 819204 385 47291 9940 8192037 416 50291 938102 674 825"
+  },
+  {
+    "id": "test-num-11",
+    "topic": "پد عددی و تایپ اعداد سرعتی",
+    "subCategory": "اعداد",
+    "language": "en",
+    "difficulty": "سخت",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "83920 472910 619284 7401928 928301 673 50192 7738 4920183 835 38491 619284 529 741"
+  },
+  {
+    "id": "test-num-12",
+    "topic": "پد عددی و تایپ اعداد سرعتی",
+    "subCategory": "اعداد",
+    "language": "en",
+    "difficulty": "سخت",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "19284 938102 740192 8592014 384910 928 63910 4419 2049183 952 71928 849201 483 695"
+  },
+  {
+    "id": "test-num-13",
+    "topic": "پد عددی و تایپ اعداد سرعتی",
+    "subCategory": "اعداد",
+    "language": "en",
+    "difficulty": "سخت",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "64820 501928 839102 3948102 719284 416 92830 8827 5019284 638 94820 374910 827 914"
+  },
+  {
+    "id": "test-num-14",
+    "topic": "پد عددی و تایپ اعداد سرعتی",
+    "subCategory": "اعداد",
+    "language": "en",
+    "difficulty": "سخت",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "38491 729104 501928 9182037 648291 850 47291 6639 8192047 714 83920 501928 936 482"
+  },
+  {
+    "id": "test-num-15",
+    "topic": "پد عددی و تایپ اعداد سرعتی",
+    "subCategory": "اعداد",
+    "language": "en",
+    "difficulty": "سخت",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "92018 639102 482910 7401928 501928 734 81920 3381 6482910 829 37491 928301 517 763"
+  },
+  {
+    "id": "test-num-16",
+    "topic": "پد عددی و تایپ اعداد سرعتی",
+    "subCategory": "اعداد",
+    "language": "en",
+    "difficulty": "سخت",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "47291 819204 938102 6192840 284910 691 50192 5594 7391048 941 62849 819203 840 529"
+  },
+  {
+    "id": "test-num-17",
+    "topic": "پد عددی و تایپ اعداد سرعتی",
+    "subCategory": "اعداد",
+    "language": "en",
+    "difficulty": "سخت",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "71928 501928 648291 8392014 918204 427 37491 7715 9283014 563 48291 740192 692 830"
+  },
+  {
+    "id": "test-num-18",
+    "topic": "پد عددی و تایپ اعداد سرعتی",
+    "subCategory": "اعداد",
+    "language": "en",
+    "difficulty": "سخت",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "83910 948201 374910 5019284 628491 859 91820 4462 3849102 817 73910 619284 945 371"
+  },
+  {
+    "id": "test-num-19",
+    "topic": "پد عددی و تایپ اعداد سرعتی",
+    "subCategory": "اعداد",
+    "language": "en",
+    "difficulty": "سخت",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "50192 638291 819204 4729103 739104 936 48291 8830 6192840 729 94820 501928 814 693"
+  },
+  {
+    "id": "test-num-20",
+    "topic": "پد عددی و تایپ اعداد سرعتی",
+    "subCategory": "اعداد",
+    "language": "en",
+    "difficulty": "سخت",
+    "length": "متوسط",
+    "lineCount": 1,
+    "text": "28491 740192 501928 9381024 819204 672 63910 2275 4729103 954 81920 374910 583 916"
+  }
+]

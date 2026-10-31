@@ -1,0 +1,395 @@
+// Typro.ir - Complete PostgreSQL Prisma Schema
+// Conforming strictly to Section 161 (DATA MODEL)
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// 1. User & Authentication Models
+model User {
+  id               String       @id @default(uuid())
+  mobile           String       @unique
+  username         String       @unique
+  displayName      String
+  passwordHash     String
+  isVerified       Boolean      @default(false)
+  role             String       @default("USER") // USER, MODERATOR, ADMIN, SUPER_ADMIN
+  createdAt        DateTime     @default(now())
+  updatedAt        DateTime     @updatedAt
+
+  profile          Profile?
+  typingSkills     TypingSkill?
+  wallet           Wallet?
+  inventory        InventoryItem[]
+  sessions         UserSession[]
+  typingSessions   TypingSession[]
+  typingResults    TypingResult[]
+  lessonProgress   LessonProgress[]
+  gameResults      GameResult[]
+  raceParticipants RaceParticipant[]
+  raceResults      RaceResult[]
+  achievements     UserAchievement[]
+  medals           UserMedal[]
+  badges           UserBadge[]
+  cups             UserCup[]
+  ordersAsClient   Order[]      @relation("ClientOrders")
+  ordersAsFreelancer Order[]    @relation("FreelancerOrders")
+  posts            ExperiencePost[]
+  comments         Comment[]
+  certificates     Certificate[]
+  competitionSelection UserCompetitionSelection?
+}
+
+model Profile {
+  id                   String   @id @default(uuid())
+  userId               String   @unique
+  user                 User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  bio                  String?
+  avatarUrl            String?
+  completionPercentage Int      @default(40)
+  level                Int      @default(1)
+  xp                   Int      @default(0)
+  stars                Int      @default(0)
+  streakDays           Int      @default(1)
+  isPremium            Boolean  @default(false)
+  freelancerProfile    FreelancerProfile?
+}
+
+model UserSession {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  token     String   @unique
+  device    String
+  ip        String
+  createdAt DateTime @default(now())
+}
+
+// 2. Typing Skills & Verified Metrics (Section 27 & 150)
+model TypingSkill {
+  id                   String   @id @default(uuid())
+  userId               String   @unique
+  user                 User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  verifiedWpm          Int      @default(0)
+  verifiedAccuracy     Float    @default(0.0)
+  verifiedConsistency  Float    @default(0.0)
+  bestWpm              Int      @default(0)
+  totalTypedChars      Int      @default(0)
+  totalTypingSeconds   Int      @default(0)
+  updatedAt            DateTime @updatedAt
+}
+
+model TypingSession {
+  id          String   @id @default(uuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  mode        String   // TEST, LESSON, PRACTICE, RACE
+  language    String   // fa, en
+  rawWpm      Int
+  netWpm      Int
+  accuracy    Float
+  consistency Float
+  errors      Int
+  elapsedSec  Int
+  createdAt   DateTime @default(now())
+}
+
+model TypingResult {
+  id          String   @id @default(uuid())
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  wpm         Int
+  accuracy    Float
+  errors      Int
+  contentId   String?
+  createdAt   DateTime @default(now())
+}
+
+// 3. Curriculum & Central Content Library (Section 26, 27, 28)
+model Content {
+  id           String      @id @default(uuid())
+  title        String
+  text         String
+  category     String      // quran, hadith, literature, science, technology, code
+  language     String      // fa, en
+  difficulty   String      // easy, medium, hard
+  status       String      @default("published")
+  author       String?
+  createdAt    DateTime    @default(now())
+}
+
+model QuranSurah {
+  id           Int         @id
+  nameFa       String
+  nameAr       String
+  totalAyahs   Int
+  ayahs        QuranAyah[]
+}
+
+model QuranAyah {
+  id           String      @id @default(uuid())
+  surahId      Int
+  surah        QuranSurah  @relation(fields: [surahId], references: [id])
+  ayahNumber   Int
+  textAr       String
+  translationFa String
+}
+
+model Lesson {
+  id             String           @id @default(uuid())
+  title          String
+  titleFa        String
+  level          String           // foundation, beginner, advanced
+  language       String           // fa, en
+  category       String
+  content        String
+  targetWpm      Int
+  targetAccuracy Float
+  isFixed        Boolean          @default(true)
+  progress       LessonProgress[]
+}
+
+model LessonProgress {
+  id         String   @id @default(uuid())
+  userId     String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  lessonId   String
+  lesson     Lesson   @relation(fields: [lessonId], references: [id], onDelete: Cascade)
+  isCompleted Boolean @default(false)
+  masteryPct Float    @default(0.0)
+  bestWpm    Int      @default(0)
+  updatedAt  DateTime @updatedAt
+}
+
+// 4. Live Race & Multiplayer (Section 45-66)
+model RaceRoom {
+  id               String            @id @default(uuid())
+  title            String
+  topic            String
+  language         String            // fa, en
+  mode             String
+  capacity         Int               @default(8)
+  state            String            @default("LOBBY") // LOBBY, READY, COUNTDOWN, ACTIVE, RESULT
+  text             String
+  participants     RaceParticipant[]
+  cycles           RaceCycle[]
+}
+
+model RaceCycle {
+  id         String     @id @default(uuid())
+  roomId     String
+  room       RaceRoom   @relation(fields: [roomId], references: [id], onDelete: Cascade)
+  cycleNumber Int       @default(1)
+  startedAt  DateTime?
+  finishedAt DateTime?
+  results    RaceResult[]
+}
+
+model RaceParticipant {
+  id              String   @id @default(uuid())
+  roomId          String
+  room            RaceRoom @relation(fields: [roomId], references: [id], onDelete: Cascade)
+  userId          String
+  user            User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  progressPercent Float    @default(0.0)
+  wpm             Int      @default(0)
+  accuracy        Float    @default(100.0)
+  errors          Int      @default(0)
+  isActive        Boolean  @default(true)
+  isAbandoned     Boolean  @default(false)
+  isFinished      Boolean  @default(false)
+}
+
+model RaceResult {
+  id             String    @id @default(uuid())
+  cycleId        String
+  cycle          RaceCycle @relation(fields: [cycleId], references: [id], onDelete: Cascade)
+  userId         String
+  user           User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  finishPosition Int
+  wpm            Int
+  accuracy       Float
+  score          Int
+  xpGained       Int
+  createdAt      DateTime  @default(now())
+}
+
+// 5. Economy & Wallet (Section 113 & 114)
+model Wallet {
+  id           String               @id @default(uuid())
+  userId       String               @unique
+  user         User                 @relation(fields: [userId], references: [id], onDelete: Cascade)
+  coins        Int                  @default(0)
+  banknotes    Int                  @default(0)
+  transactions WalletTransaction[]
+}
+
+model WalletTransaction {
+  id          String   @id @default(uuid())
+  walletId    String
+  wallet      Wallet   @relation(fields: [walletId], references: [id], onDelete: Cascade)
+  amount      Int
+  currency    String   // COIN, BANKNOTE
+  type        String   // REWARD, PURCHASE, SPEND, GIFT
+  description String
+  createdAt   DateTime @default(now())
+}
+
+// 6. Gamification, Skins & Chests (Section 84 & 89)
+model Skin {
+  id          String   @id
+  nameFa      String
+  category    String   // Supercars, Cars, Cyber, Persian
+  color       String
+  priceCoins  Int      @default(0)
+}
+
+model UserCompetitionSelection {
+  id         String   @id @default(uuid())
+  userId     String   @unique
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  skinId     String   @default("classic-racer")
+  trackTheme String   @default("Cyber City")
+}
+
+model InventoryItem {
+  id         String   @id @default(uuid())
+  userId     String
+  user       User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  itemId     String
+  itemType   String   // SKIN, TRACK, CHEST, BADGE
+  acquiredAt DateTime @default(now())
+}
+
+model Chest {
+  id         String   @id @default(uuid())
+  type       String   // Wooden, Silver, Gold, Diamond, Legendary
+  name       String
+  priceCoins Int
+}
+
+// 7. Gamification Badges, Medals, Cups (Section 103, 107, 108)
+model Medal {
+  id       String      @id
+  titleFa  String
+  category String      // speed, accuracy, volume, race, streak
+  icon     String
+}
+
+model UserMedal {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  medalId   String
+  unlockedAt DateTime @default(now())
+}
+
+model UserBadge {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  badgeId   String
+  unlockedAt DateTime @default(now())
+}
+
+model UserCup {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  cupName   String
+  season    String
+}
+
+model UserAchievement {
+  id            String   @id @default(uuid())
+  userId        String
+  user          User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  achievementId String
+  unlockedAt    DateTime @default(now())
+}
+
+// 8. Freelancer Marketplace & Orders (Section 108 & 120 & 121)
+model FreelancerProfile {
+  id             String   @id @default(uuid())
+  profileId      String   @unique
+  profile        Profile  @relation(fields: [profileId], references: [id], onDelete: Cascade)
+  services       String[]
+  pricePerPage   String
+  trustScore     Int      @default(100)
+  completedCount Int      @default(0)
+  rating         Float    @default(5.0)
+}
+
+model Order {
+  id           String   @id @default(uuid())
+  title        String
+  clientId     String
+  client       User     @relation("ClientOrders", fields: [clientId], references: [id])
+  freelancerId String
+  freelancer   User     @relation("FreelancerOrders", fields: [freelancerId], references: [id])
+  amountToman  Int
+  status       String   @default("Pending") // Pending, Accepted, In Progress, Submitted, Revision, Completed, Cancelled, Disputed
+  deadline     DateTime
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+// 9. Community & Social (Section 118 & 148)
+model ExperiencePost {
+  id        String    @id @default(uuid())
+  userId    String
+  user      User      @relation(fields: [userId], references: [id], onDelete: Cascade)
+  title     String
+  content   String
+  likes     Int       @default(0)
+  comments  Comment[]
+  status    String    @default("approved")
+  createdAt DateTime  @default(now())
+}
+
+model Comment {
+  id        String         @id @default(uuid())
+  postId    String
+  post      ExperiencePost @relation(fields: [postId], references: [id], onDelete: Cascade)
+  userId    String
+  user      User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+  text      String
+  createdAt DateTime       @default(now())
+}
+
+// 10. Certificates (Section 109)
+model Certificate {
+  id           String   @id // e.g. TYPRO-CERT-2026-8849
+  userId       String
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  wpm          Int
+  accuracy     Float
+  consistency  Float
+  level        Int
+  issueDate    DateTime @default(now())
+}
+
+// 11. Admin & Immutable Audit Logs (Section 139 & 140)
+model AuditLog {
+  id        String   @id @default(uuid())
+  actor     String
+  action    String
+  object    String
+  before    String?
+  after     String?
+  timestamp DateTime @default(now())
+}
+
+model GameResult {
+  id        String   @id @default(uuid())
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  gameName  String
+  score     Int
+  createdAt DateTime @default(now())
+}

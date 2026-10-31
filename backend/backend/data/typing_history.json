@@ -1,0 +1,1190 @@
+[
+  {
+    "id": "res-1793441692141-487",
+    "userId": "user-active",
+    "netWpm": 135,
+    "rawWpm": 135,
+    "cpm": 540,
+    "accuracy": 100,
+    "consistency": 100,
+    "totalChars": 81,
+    "errorChars": 0,
+    "elapsedSeconds": 9,
+    "isVerified": true,
+    "cheatSuspicion": false,
+    "fingerWeaknesses": [
+      {
+        "finger": "انگشت کوچک دست چپ",
+        "errorRate": 4
+      },
+      {
+        "finger": "انگشت حلقه دست راست",
+        "errorRate": 2
+      }
+    ],
+    "earnedXp": 233,
+    "earnedCoins": 93,
+    "createdAt": "2026-10-31T10:14:52.141Z"
+  },
+  {
+    "id": "res-1793432581909-788",
+    "userId": "user-active",
+    "netWpm": 77,
+    "rawWpm": 77,
+    "cpm": 308,
+    "accuracy": 100,
+    "consistency": 100,
+    "totalChars": 77,
+    "errorChars": 0,
+    "elapsedSeconds": 15,
+    "isVerified": true,
+    "cheatSuspicion": false,
+    "fingerWeaknesses": [
+      {
+        "finger": "انگشت کوچک دست چپ",
+        "errorRate": 4
+      },
+      {
+        "finger": "انگشت حلقه دست راست",
+        "errorRate": 2
+      }
+    ],
+    "earnedXp": 146,
+    "earnedCoins": 64,
+    "createdAt": "2026-10-31T07:43:01.909Z"
+  },
+  {
+    "id": "res-1793432310815-664",
+    "userId": "user-active",
+    "netWpm": 82,
+    "rawWpm": 82,
+    "cpm": 328,
+    "accuracy": 100,
+    "consistency": 100,
+    "totalChars": 82,
+    "errorChars": 0,
+    "elapsedSeconds": 15,
+    "isVerified": true,
+    "cheatSuspicion": false,
+    "fingerWeaknesses": [
+      {
+        "finger": "انگشت کوچک دست چپ",
+        "errorRate": 4
+      },
+      {
+        "finger": "انگشت حلقه دست راست",
+        "errorRate": 2
+      }
+    ],
+    "earnedXp": 153,
+    "earnedCoins": 66,
+    "createdAt": "2026-10-31T07:38:30.815Z"
+  },
+  {
+    "id": "res-1793432279711-228",
+    "userId": "user-active",
+    "netWpm": 83,
+    "rawWpm": 83,
+    "cpm": 332,
+    "accuracy": 100,
+    "consistency": 100,
+    "totalChars": 83,
+    "errorChars": 0,
+    "elapsedSeconds": 15,
+    "isVerified": true,
+    "cheatSuspicion": false,
+    "fingerWeaknesses": [
+      {
+        "finger": "انگشت کوچک دست چپ",
+        "errorRate": 4
+      },
+      {
+        "finger": "انگشت حلقه دست راست",
+        "errorRate": 2
+      }
+    ],
+    "earnedXp": 155,
+    "earnedCoins": 67,
+    "createdAt": "2026-10-31T07:37:59.711Z"
+  },
+  {
+    "id": "res-1793432260140-136",
+    "userId": "user-active",
+    "netWpm": 73,
+    "rawWpm": 73,
+    "cpm": 293,
+    "accuracy": 100,
+    "consistency": 100,
+    "totalChars": 88,
+    "errorChars": 0,
+    "elapsedSeconds": 18,
+    "isVerified": true,
+    "cheatSuspicion": false,
+    "fingerWeaknesses": [
+      {
+        "finger": "انگشت کوچک دست چپ",
+        "errorRate": 4
+      },
+      {
+        "finger": "انگشت حلقه دست راست",
+        "errorRate": 2
+      }
+    ],
+    "earnedXp": 140,
+    "earnedCoins": 62,
+    "createdAt": "2026-10-31T07:37:40.140Z"
+  },
+  {
+    "id": "res-1793432239514-894",
+    "userId": "user-active",
+    "netWpm": 51,
+    "rawWpm": 51,
+    "cpm": 204,
+    "accuracy": 100,
+    "consistency": 100,
+    "totalChars": 85,
+    "errorChars": 0,
+    "elapsedSeconds": 25,
+    "isVerified": true,
+    "cheatSuspicion": false,
+    "fingerWeaknesses": [
+      {
+        "finger": "انگشت کوچک دست چپ",
+        "errorRate": 4
+      },
+      {
+        "finger": "انگشت حلقه دست راست",
+        "errorRate": 2
+      }
+    ],
+    "earnedXp": 107,
+    "earnedCoins": 51,
+    "createdAt": "2026-10-31T07:37:19.514Z"
+  },
+  {
+    "id": "res-1793432193937-46",
+    "userId": "user-active",
+    "netWpm": 51,
+    "rawWpm": 51,
+    "cpm": 203,
+    "accuracy": 100,
+    "consistency": 100,
+    "totalChars": 81,
+    "errorChars": 0,
+    "elapsedSeconds": 24,
+    "isVerified": true,
+    "cheatSuspicion": false,
+    "fingerWeaknesses": [
+      {
+        "finger": "انگشت کوچک دست چپ",
+        "errorRate": 4
+      },
+      {
+        "finger": "انگشت حلقه دست راست",
+        "errorRate": 2
+      }
+    ],
+    "earnedXp": 107,
+    "earnedCoins": 51,
+    "createdAt": "2026-10-31T07:36:33.937Z"
+  },
+  {
+    "id": "res-1793432141916-740",
+    "userId": "user-active",
+    "netWpm": 63,
+    "rawWpm": 63,
+    "cpm": 254,
+    "accuracy": 100,
+    "consistency": 100,
+    "totalChars": 93,
+    "errorChars": 0,
+    "elapsedSeconds": 22,
+    "isVerified": true,
+    "cheatSuspicion": false,
+    "fingerWeaknesses": [
+      {
+        "finger": "انگشت کوچک دست چپ",
+        "errorRate": 4
+      },
+      {
+        "finger": "انگشت حلقه دست راست",
+        "errorRate": 2
+      }
+    ],
+    "earnedXp": 125,
+    "earnedCoins": 57,
+    "createdAt": "2026-10-31T07:35:41.916Z"
+  },
+  {
+    "id": "res-1793432116871-178",
+    "userId": "user-active",
+    "netWpm": 66,
+    "rawWpm": 66,
+    "cpm": 264,
+    "accuracy": 100,
+    "consistency": 100,
+    "totalChars": 88,
+    "errorChars": 0,
+    "elapsedSeconds": 20,
+    "isVerified": true,
+    "cheatSuspicion": false,
+    "fingerWeaknesses": [
+      {
+        "finger": "انگشت کوچک دست چپ",
+        "errorRate": 4
+      },
+      {
+        "finger": "انگشت حلقه دست راست",
+        "errorRate": 2
+      }
+    ],
+    "earnedXp": 129,
+    "earnedCoins": 58,
+    "createdAt": "2026-10-31T07:35:16.871Z"
+  },
+  {
+    "id": "res-1793432092297-423",
+    "userId": "user-active",
+    "netWpm": 88,
+    "rawWpm": 88,
+    "cpm": 350,
+    "accuracy": 100,
+    "consistency": 100,
+    "totalChars": 70,
+    "errorChars": 0,
+    "elapsedSeconds": 12,
+    "isVerified": true,
+    "cheatSuspicion": false,
+    "fingerWeaknesses": [
+      {
+        "finger": "انگشت کوچک دست چپ",
+        "errorRate": 4
+      },
+      {
+        "finger": "انگشت حلقه دست راست",
+        "errorRate": 2
+      }
+    ],
+    "earnedXp": 162,
+    "earnedCoins": 69,
+    "createdAt": "2026-10-31T07:34:52.297Z"
+  },
+  {
+    "id": "res-1793432076965-783",
+    "userId": "user-active",
+    "netWpm": 84,
+    "rawWpm": 84,
+    "cpm": 337,
+    "accuracy": 100,
+    "consistency": 100,
+    "totalChars": 73,
+    "errorChars": 0,
+    "elapsedSeconds": 13,
+    "isVerified": true,
+    "cheatSuspicion": false,
+    "fingerWeaknesses": [
+      {
+        "finger": "انگشت کوچک دست چپ",
+        "errorRate": 4
+      },
+      {
+        "finger": "انگشت حلقه دست راست",
+        "errorRate": 2
+      }
+    ],
+    "earnedXp": 156,
+    "earnedCoins": 67,
+    "createdAt": "2026-10-31T07:34:36.965Z"
+  },
+  {
+    "id": "res-1793432059440-332",
+    "userId": "user-active",
+    "netWpm": 71,
+    "rawWpm": 71,
+    "cpm": 285,
+    "accuracy": 100,
+    "consistency": 100,
+    "totalChars": 95,
+    "errorChars": 0,
+    "elapsedSeconds": 20,
+    "isVerified": true,
+    "cheatSuspicion": false,
+    "fingerWeaknesses": [
+      {
+        "finger": "انگشت کوچک دست چپ",
+        "errorRate": 4
+      },
+      {
+        "finger": "انگشت حلقه دست راست",
+        "errorRate": 2
+      }
+    ],
+    "earnedXp": 137,
+    "earnedCoins": 61,
+    "createdAt": "2026-10-31T07:34:19.440Z"
+  },
+  {
+    "id": "res-1793432029830-612",
+    "userId": "user-active",
+    "netWpm": 68,
+    "rawWpm": 68,
+    "cpm": 272,
+    "accuracy": 100,
+    "consistency": 100,
+    "totalChars": 77,
+    "errorChars": 0,
+    "elapsedSeconds": 17,
+    "isVerified": true,
+    "cheatSuspicion": false,
+    "fingerWeaknesses": [
+      {
+        "finger": "انگشت کوچک دست چپ",
+        "errorRate": 4
+      },
+      {
+        "finger": "انگشت حلقه دست راست",
+        "errorRate": 2
+      }
+    ],
+    "earnedXp": 132,
+    "earnedCoins": 59,
+    "createdAt": "2026-10-31T07:33:49.831Z"
+  },
+  {
+    "id": "res-1793431998173-496",
+    "userId": "user-active",
+    "netWpm": 78,
+    "rawWpm": 78,
+    "cpm": 311,
+    "accuracy": 100,
+    "consistency": 100,
+    "totalChars": 88,
+    "errorChars": 0,
+    "elapsedSeconds": 17,
+    "isVerified": true,
+    "cheatSuspicion": false,
+    "fingerWeaknesses": [
+      {
+        "finger": "انگشت کوچک دست چپ",
+        "errorRate": 4
+      },
+      {
+        "finger": "انگشت حلقه دست راست",
+        "errorRate": 2
+      }
+    ],
+    "earnedXp": 147,
+    "earnedCoins": 64,
+    "createdAt": "2026-10-31T07:33:18.173Z"
+  },
+  {
+    "id": "res-1793431972532-883",
+    "userId": "user-active",
+    "netWpm": 63,
+    "rawWpm": 63,
+    "cpm": 253,
+    "accuracy": 100,
+    "consistency": 100,
+    "totalChars": 76,
+    "errorChars": 0,
+    "elapsedSeconds": 18,
+    "isVerified": true,
+    "cheatSuspicion": false,
+    "fingerWeaknesses": [
+      {
+        "finger": "انگشت کوچک دست چپ",
+        "errorRate": 4
+      },
+      {
+        "finger": "انگشت حلقه دست راست",
+        "errorRate": 2
+      }
+    ],
+    "earnedXp": 125,
+    "earnedCoins": 57,
+    "createdAt": "2026-10-31T07:32:52.532Z"
+  },
+  {
+    "id": "res-1793431671349-513",
+    "userId": "user-active",
+    "netWpm": 24,
+    "rawWpm": 24,
+    "cpm": 120,
+    "accuracy": 100,
+    "consistency": 100,
+    "totalChars": 88,
+    "errorChars": 0,
+    "elapsedSeconds": 44,
+    "isVerified": true,
+    "cheatSuspicion": false,
+    "fingerWeaknesses": [
+      {
+        "finger": "انگشت کوچک دست چپ",
+        "errorRate": 4
+      },
+      {
+        "finger": "انگشت حلقه دست راست",
+        "errorRate": 2
+      }
+    ],
+    "earnedXp": 66,
+    "earnedCoins": 37,
+    "createdAt": "2026-10-31T07:27:51.349Z"
+  },
+  {
+    "id": "res-1793431441410-215",
+    "userId": "user-active",
+    "netWpm": 15,
+    "rawWpm": 15,
+    "cpm": 73,
+    "accuracy": 100,
+    "consistency": 100,
+    "totalChars": 73,
+    "errorChars": 0,
+    "elapsedSeconds": 60,
+    "isVerified": true,
+    "cheatSuspicion": false,
+    "fingerWeaknesses": [
+      {
+        "finger": "انگشت کوچک دست چپ",
+        "errorRate": 4
+      },
+      {
+        "finger": "انگشت حلقه دست راست",
+        "errorRate": 2
+      }
+    ],
+    "earnedXp": 53,
+    "earnedCoins": 33,
+    "createdAt": "2026-10-31T07:24:01.410Z"
+  },
+  {
+    "id": "res-1793346280023-156",
+    "userId": "user-active",
+    "netWpm": 88,
+    "rawWpm": 88,
+    "cpm": 352,
+    "accuracy": 100,
+    "consistency": 100,
+    "totalChars": 88,
+    "errorChars": 0,
+    "elapsedSeconds": 15,
+    "isVerified": true,
+    "cheatSuspicion": false,
+    "fingerWeaknesses": [
+      {
+        "finger": "انگشت کوچک دست چپ",
+        "errorRate": 4
+      },
+      {
+        "finger": "انگشت حلقه دست راست",
+        "errorRate": 2
+      }
+    ],
+    "earnedXp": 162,
+    "earnedCoins": 69,
+    "createdAt": "2026-10-30T07:44:40.023Z"
+  },
+  {
+    "id": "res-1793346267002-803",
+    "userId": "user-active",
+    "netWpm": 85,
+    "rawWpm": 85,
+    "cpm": 341,
+    "accuracy": 100,
+    "consistency": 100,
+    "totalChars": 91,
+    "errorChars": 0,
+    "elapsedSeconds": 16,
+    "isVerified": true,
+    "cheatSuspicion": false,
+    "fingerWeaknesses": [
+      {
+        "finger": "انگشت کوچک دست چپ",
+        "errorRate": 4
+      },
+      {
+        "finger": "انگشت حلقه دست راست",
+        "errorRate": 2
+      }
+    ],
+    "earnedXp": 158,
+    "earnedCoins": 68,
+    "createdAt": "2026-10-30T07:44:27.002Z"
+  },
+  {
+    "id": "res-1793296288173-383",
+    "userId": "user-active",
+    "netWpm": 105,
+    "rawWpm": 105,
+    "cpm": 420,
+    "accuracy": 100,
+    "consistency": 100,
+    "totalChars": 84,
+    "errorChars": 0,
+    "elapsedSeconds": 12,
+    "isVerified": true,
+    "cheatSuspicion": false,
+    "fingerWeaknesses": [
+      {
+        "finger": "انگشت کوچک دست چپ",
+        "errorRate": 4
+      },
+      {
+        "finger": "انگشت حلقه دست راست",
+        "errorRate": 2
+      }
+    ],
+    "earnedXp": 188,
+    "earnedCoins": 78,
+    "createdAt": "2026-10-29T17:51:28.173Z"
+  },
+  {
+    "id": "res-1793296274286-249",
+    "userId": "user-active",
+    "netWpm": 88,
+    "rawWpm": 88,
+    "cpm": 352,
+    "accuracy": 100,
+    "consistency": 100,
+    "totalChars": 88,
+    "errorChars": 0,
+    "elapsedSeconds": 15,
+    "isVerified": true,
+    "cheatSuspicion": false,
+    "fingerWeaknesses": [
+      {
+        "finger": "انگشت کوچک دست چپ",
+        "errorRate": 4
+      },
+      {
+        "finger": "انگشت حلقه دست راست",
+        "errorRate": 2
+      }
+    ],
+    "earnedXp": 162,
+    "earnedCoins": 69,
+    "createdAt": "2026-10-29T17:51:14.286Z"
+  },
+  {
+    "id": "res-1793296257004-220",
+    "userId": "user-active",
+    "netWpm": 105,
+    "rawWpm": 105,
+    "cpm": 420,
+    "accuracy": 100,
+    "consistency": 100,
+    "totalChars": 70,
+    "errorChars": 0,
+    "elapsedSeconds": 10,
+    "isVerified": true,
+    "cheatSuspicion": false,
+    "fingerWeaknesses": [
+      {
+        "finger": "انگشت کوچک دست چپ",
+        "errorRate": 4
+      },
+      {
+        "finger": "انگشت حلقه دست راست",
+        "errorRate": 2
+      }
+    ],
+    "earnedXp": 188,
+    "earnedCoins": 78,
+    "createdAt": "2026-10-29T17:50:57.004Z"
+  },
+  {
+    "id": "res-1793296244395-370",
+    "userId": "user-active",
+    "netWpm": 83,
+    "rawWpm": 83,
+    "cpm": 332,
+    "accuracy": 100,
+    "consistency": 100,
+    "totalChars": 105,
+    "errorChars": 0,
+    "elapsedSeconds": 19,
+    "isVerified": true,
+    "cheatSuspicion": false,
+    "fingerWeaknesses": [
+      {
+        "finger": "انگشت کوچک دست چپ",
+        "errorRate": 4
+      },
+      {
+        "finger": "انگشت حلقه دست راست",
+        "errorRate": 2
+      }
+    ],
+    "earnedXp": 155,
+    "earnedCoins": 67,
+    "createdAt": "2026-10-29T17:50:44.395Z"
+  },
+  {
+    "id": "res-1793285626320-849",
+    "userId": "user-active",
+    "netWpm": 85,
+    "rawWpm": 85,
+    "cpm": 423,
+    "accuracy": 100,
+    "consistency": 100,
+    "totalChars": 134,
+    "errorChars": 0,
+    "elapsedSeconds": 19,
+    "isVerified": true,
+    "cheatSuspicion": false,
+    "fingerWeaknesses": [
+      {
+        "finger": "انگشت کوچک دست چپ",
+        "errorRate": 4
+      },
+      {
+        "finger": "انگشت حلقه دست راست",
+        "errorRate": 2
+      }
+    ],
+    "earnedXp": 158,
+    "earnedCoins": 68,
+    "createdAt": "2026-10-29T14:53:46.320Z"
+  },
+  {
+    "id": "res-1793204023941-997",
+    "userId": "user-active",
+    "netWpm": 98,
+    "rawWpm": 98,
+    "cpm": 390,
+    "accuracy": 100,
+    "consistency": 100,
+    "totalChars": 91,
+    "errorChars": 0,
+    "elapsedSeconds": 14,
+    "isVerified": true,
+    "cheatSuspicion": false,
+    "fingerWeaknesses": [
+      {
+        "finger": "انگشت کوچک دست چپ",
+        "errorRate": 4
+      },
+      {
+        "finger": "انگشت حلقه دست راست",
+        "errorRate": 2
+      }
+    ],
+    "earnedXp": 177,
+    "earnedCoins": 74,
+    "createdAt": "2026-10-28T16:13:43.941Z"
+  },
+  {
+    "id": "res-1793204002289-984",
+    "userId": "user-active",
+    "netWpm": 98,
+    "rawWpm": 98,
+    "cpm": 390,
+    "accuracy": 100,
+    "consistency": 100,
+    "totalChars": 91,
+    "errorChars": 0,
+    "elapsedSeconds": 14,
+    "isVerified": true,
+    "cheatSuspicion": false,
+    "fingerWeaknesses": [
+      {
+        "finger": "انگشت کوچک دست چپ",
+        "errorRate": 4
+      },
+      {
+        "finger": "انگشت حلقه دست راست",
+        "errorRate": 2
+      }
+    ],
+    "earnedXp": 177,
+    "earnedCoins": 74,
+    "createdAt": "2026-10-28T16:13:22.289Z"
+  },
+  {
+    "id": "res-1793203966905-627",
+    "userId": "user-active",
+    "netWpm": 98,
+    "rawWpm": 98,
+    "cpm": 390,
+    "accuracy": 100,
+    "consistency": 100,
+    "totalChars": 91,
+    "errorChars": 0,
+    "elapsedSeconds": 14,
+    "isVerified": true,
+    "cheatSuspicion": false,
+    "fingerWeaknesses": [
+      {
+        "finger": "انگشت کوچک دست چپ",
+        "errorRate": 4
+      },
+      {
+        "finger": "انگشت حلقه دست راست",
+        "errorRate": 2
+      }
+    ],
+    "earnedXp": 177,
+    "earnedCoins": 74,
+    "createdAt": "2026-10-28T16:12:46.906Z"
+  },
+  {
+    "id": "res-1793198485479-110",
+    "userId": "user-active",
+    "netWpm": 78,
+    "rawWpm": 78,
+    "cpm": 313,
+    "accuracy": 100,
+    "consistency": 100,
+    "totalChars": 73,
+    "errorChars": 0,
+    "elapsedSeconds": 14,
+    "isVerified": true,
+    "cheatSuspicion": false,
+    "fingerWeaknesses": [
+      {
+        "finger": "انگشت کوچک دست چپ",
+        "errorRate": 4
+      },
+      {
+        "finger": "انگشت حلقه دست راست",
+        "errorRate": 2
+      }
+    ],
+    "earnedXp": 147,
+    "earnedCoins": 64,
+    "createdAt": "2026-10-28T14:41:25.479Z"
+  },
+  {
+    "id": "res-1793198380748-232",
+    "userId": "user-active",
+    "netWpm": 104,
+    "rawWpm": 104,
+    "cpm": 415,
+    "accuracy": 100,
+    "consistency": 100,
+    "totalChars": 76,
+    "errorChars": 0,
+    "elapsedSeconds": 11,
+    "isVerified": true,
+    "cheatSuspicion": false,
+    "fingerWeaknesses": [
+      {
+        "finger": "انگشت کوچک دست چپ",
+        "errorRate": 4
+      },
+      {
+        "finger": "انگشت حلقه دست راست",
+        "errorRate": 2
+      }
+    ],
+    "earnedXp": 186,
+    "earnedCoins": 77,
+    "createdAt": "2026-10-28T14:39:40.749Z"
+  },
+  {
+    "id": "res-1793198350955-702",
+    "userId": "user-active",
+    "netWpm": 88,
+    "rawWpm": 88,
+    "cpm": 351,
+    "accuracy": 100,
+    "consistency": 100,
+    "totalChars": 76,
+    "errorChars": 0,
+    "elapsedSeconds": 13,
+    "isVerified": true,
+    "cheatSuspicion": false,
+    "fingerWeaknesses": [
+      {
+        "finger": "انگشت کوچک دست چپ",
+        "errorRate": 4
+      },
+      {
+        "finger": "انگشت حلقه دست راست",
+        "errorRate": 2
+      }
+    ],
+    "earnedXp": 162,
+    "earnedCoins": 69,
+    "createdAt": "2026-10-28T14:39:10.955Z"
+  },
+  {
+    "id": "res-1793191204906-179",
+    "userId": "user-active",
+    "netWpm": 131,
+    "rawWpm": 131,
+    "cpm": 525,
+    "accuracy": 100,
+    "consistency": 100,
+    "totalChars": 70,
+    "errorChars": 0,
+    "elapsedSeconds": 8,
+    "isVerified": true,
+    "cheatSuspicion": false,
+    "fingerWeaknesses": [
+      {
+        "finger": "انگشت کوچک دست چپ",
+        "errorRate": 4
+      },
+      {
+        "finger": "انگشت حلقه دست راست",
+        "errorRate": 2
+      }
+    ],
+    "earnedXp": 227,
+    "earnedCoins": 91,
+    "createdAt": "2026-10-28T12:40:04.906Z"
+  },
+  {
+    "id": "res-1793191193441-963",
+    "userId": "user-active",
+    "netWpm": 84,
+    "rawWpm": 84,
+    "cpm": 334,
+    "accuracy": 100,
+    "consistency": 100,
+    "totalChars": 78,
+    "errorChars": 0,
+    "elapsedSeconds": 14,
+    "isVerified": true,
+    "cheatSuspicion": false,
+    "fingerWeaknesses": [
+      {
+        "finger": "انگشت کوچک دست چپ",
+        "errorRate": 4
+      },
+      {
+        "finger": "انگشت حلقه دست راست",
+        "errorRate": 2
+      }
+    ],
+    "earnedXp": 156,
+    "earnedCoins": 67,
+    "createdAt": "2026-10-28T12:39:53.441Z"
+  },
+  {
+    "id": "res-1793181239323-857",
+    "userId": "user-active",
+    "netWpm": 128,
+    "rawWpm": 128,
+    "cpm": 510,
+    "accuracy": 100,
+    "consistency": 100,
+    "totalChars": 85,
+    "errorChars": 0,
+    "elapsedSeconds": 10,
+    "isVerified": true,
+    "cheatSuspicion": false,
+    "fingerWeaknesses": [
+      {
+        "finger": "انگشت کوچک دست چپ",
+        "errorRate": 4
+      },
+      {
+        "finger": "انگشت حلقه دست راست",
+        "errorRate": 2
+      }
+    ],
+    "earnedXp": 222,
+    "earnedCoins": 89,
+    "createdAt": "2026-10-28T09:53:59.323Z"
+  },
+  {
+    "id": "res-1793181186263-947",
+    "userId": "user-active",
+    "netWpm": 146,
+    "rawWpm": 146,
+    "cpm": 585,
+    "accuracy": 100,
+    "consistency": 100,
+    "totalChars": 78,
+    "errorChars": 0,
+    "elapsedSeconds": 8,
+    "isVerified": true,
+    "cheatSuspicion": false,
+    "fingerWeaknesses": [
+      {
+        "finger": "انگشت کوچک دست چپ",
+        "errorRate": 4
+      },
+      {
+        "finger": "انگشت حلقه دست راست",
+        "errorRate": 2
+      }
+    ],
+    "earnedXp": 249,
+    "earnedCoins": 98,
+    "createdAt": "2026-10-28T09:53:06.263Z"
+  },
+  {
+    "id": "res-1793181172501-108",
+    "userId": "user-active",
+    "netWpm": 116,
+    "rawWpm": 116,
+    "cpm": 462,
+    "accuracy": 100,
+    "consistency": 100,
+    "totalChars": 77,
+    "errorChars": 0,
+    "elapsedSeconds": 10,
+    "isVerified": true,
+    "cheatSuspicion": false,
+    "fingerWeaknesses": [
+      {
+        "finger": "انگشت کوچک دست چپ",
+        "errorRate": 4
+      },
+      {
+        "finger": "انگشت حلقه دست راست",
+        "errorRate": 2
+      }
+    ],
+    "earnedXp": 204,
+    "earnedCoins": 83,
+    "createdAt": "2026-10-28T09:52:52.501Z"
+  },
+  {
+    "id": "res-1793181150564-105",
+    "userId": "user-active",
+    "netWpm": 138,
+    "rawWpm": 138,
+    "cpm": 552,
+    "accuracy": 100,
+    "consistency": 100,
+    "totalChars": 92,
+    "errorChars": 0,
+    "elapsedSeconds": 10,
+    "isVerified": true,
+    "cheatSuspicion": false,
+    "fingerWeaknesses": [
+      {
+        "finger": "انگشت کوچک دست چپ",
+        "errorRate": 4
+      },
+      {
+        "finger": "انگشت حلقه دست راست",
+        "errorRate": 2
+      }
+    ],
+    "earnedXp": 237,
+    "earnedCoins": 94,
+    "createdAt": "2026-10-28T09:52:30.564Z"
+  },
+  {
+    "id": "res-1793181137612-67",
+    "userId": "user-active",
+    "netWpm": 109,
+    "rawWpm": 109,
+    "cpm": 436,
+    "accuracy": 100,
+    "consistency": 100,
+    "totalChars": 109,
+    "errorChars": 0,
+    "elapsedSeconds": 15,
+    "isVerified": true,
+    "cheatSuspicion": false,
+    "fingerWeaknesses": [
+      {
+        "finger": "انگشت کوچک دست چپ",
+        "errorRate": 4
+      },
+      {
+        "finger": "انگشت حلقه دست راست",
+        "errorRate": 2
+      }
+    ],
+    "earnedXp": 194,
+    "earnedCoins": 80,
+    "createdAt": "2026-10-28T09:52:17.612Z"
+  },
+  {
+    "id": "res-1793180960057-548",
+    "userId": "user-active",
+    "netWpm": 89,
+    "rawWpm": 89,
+    "cpm": 356,
+    "accuracy": 100,
+    "consistency": 100,
+    "totalChars": 83,
+    "errorChars": 0,
+    "elapsedSeconds": 14,
+    "isVerified": true,
+    "cheatSuspicion": false,
+    "fingerWeaknesses": [
+      {
+        "finger": "انگشت کوچک دست چپ",
+        "errorRate": 4
+      },
+      {
+        "finger": "انگشت حلقه دست راست",
+        "errorRate": 2
+      }
+    ],
+    "earnedXp": 164,
+    "earnedCoins": 70,
+    "createdAt": "2026-10-28T09:49:20.057Z"
+  },
+  {
+    "id": "res-1793180952596-867",
+    "userId": "user-active",
+    "netWpm": 95,
+    "rawWpm": 95,
+    "cpm": 381,
+    "accuracy": 100,
+    "consistency": 100,
+    "totalChars": 108,
+    "errorChars": 0,
+    "elapsedSeconds": 17,
+    "isVerified": true,
+    "cheatSuspicion": false,
+    "fingerWeaknesses": [
+      {
+        "finger": "انگشت کوچک دست چپ",
+        "errorRate": 4
+      },
+      {
+        "finger": "انگشت حلقه دست راست",
+        "errorRate": 2
+      }
+    ],
+    "earnedXp": 173,
+    "earnedCoins": 73,
+    "createdAt": "2026-10-28T09:49:12.596Z"
+  },
+  {
+    "id": "res-1793180924598-567",
+    "userId": "user-active",
+    "netWpm": 95,
+    "rawWpm": 95,
+    "cpm": 381,
+    "accuracy": 100,
+    "consistency": 100,
+    "totalChars": 108,
+    "errorChars": 0,
+    "elapsedSeconds": 17,
+    "isVerified": true,
+    "cheatSuspicion": false,
+    "fingerWeaknesses": [
+      {
+        "finger": "انگشت کوچک دست چپ",
+        "errorRate": 4
+      },
+      {
+        "finger": "انگشت حلقه دست راست",
+        "errorRate": 2
+      }
+    ],
+    "earnedXp": 173,
+    "earnedCoins": 73,
+    "createdAt": "2026-10-28T09:48:44.598Z"
+  },
+  {
+    "id": "res-1793180827358-693",
+    "userId": "user-active",
+    "netWpm": 115,
+    "rawWpm": 115,
+    "cpm": 458,
+    "accuracy": 100,
+    "consistency": 100,
+    "totalChars": 84,
+    "errorChars": 0,
+    "elapsedSeconds": 11,
+    "isVerified": true,
+    "cheatSuspicion": false,
+    "fingerWeaknesses": [
+      {
+        "finger": "انگشت کوچک دست چپ",
+        "errorRate": 4
+      },
+      {
+        "finger": "انگشت حلقه دست راست",
+        "errorRate": 2
+      }
+    ],
+    "earnedXp": 203,
+    "earnedCoins": 83,
+    "createdAt": "2026-10-28T09:47:07.358Z"
+  },
+  {
+    "id": "res-1793180804276-73",
+    "userId": "user-active",
+    "netWpm": 115,
+    "rawWpm": 115,
+    "cpm": 458,
+    "accuracy": 100,
+    "consistency": 100,
+    "totalChars": 84,
+    "errorChars": 0,
+    "elapsedSeconds": 11,
+    "isVerified": true,
+    "cheatSuspicion": false,
+    "fingerWeaknesses": [
+      {
+        "finger": "انگشت کوچک دست چپ",
+        "errorRate": 4
+      },
+      {
+        "finger": "انگشت حلقه دست راست",
+        "errorRate": 2
+      }
+    ],
+    "earnedXp": 203,
+    "earnedCoins": 83,
+    "createdAt": "2026-10-28T09:46:44.276Z"
+  },
+  {
+    "id": "res-1793180770507-632",
+    "userId": "user-active",
+    "netWpm": 157,
+    "rawWpm": 157,
+    "cpm": 627,
+    "accuracy": 100,
+    "consistency": 100,
+    "totalChars": 94,
+    "errorChars": 0,
+    "elapsedSeconds": 9,
+    "isVerified": true,
+    "cheatSuspicion": false,
+    "fingerWeaknesses": [
+      {
+        "finger": "انگشت کوچک دست چپ",
+        "errorRate": 4
+      },
+      {
+        "finger": "انگشت حلقه دست راست",
+        "errorRate": 2
+      }
+    ],
+    "earnedXp": 266,
+    "earnedCoins": 104,
+    "createdAt": "2026-10-28T09:46:10.507Z"
+  },
+  {
+    "id": "res-1793180757059-51",
+    "userId": "user-active",
+    "netWpm": 117,
+    "rawWpm": 117,
+    "cpm": 467,
+    "accuracy": 100,
+    "consistency": 100,
+    "totalChars": 70,
+    "errorChars": 0,
+    "elapsedSeconds": 9,
+    "isVerified": true,
+    "cheatSuspicion": false,
+    "fingerWeaknesses": [
+      {
+        "finger": "انگشت کوچک دست چپ",
+        "errorRate": 4
+      },
+      {
+        "finger": "انگشت حلقه دست راست",
+        "errorRate": 2
+      }
+    ],
+    "earnedXp": 206,
+    "earnedCoins": 84,
+    "createdAt": "2026-10-28T09:45:57.060Z"
+  }
+]
