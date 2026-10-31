@@ -349,3 +349,30 @@ export function getFullLevelProgress(xp: number) {
     isMaxLevel,
   };
 }
+
+/**
+ * Format large numbers cleanly and gracefully in Persian without breaking UI layouts.
+ * - Under 10,000,000: full comma-separated Persian digits (e.g. ۱۰۱,۰۶۴)
+ * - 10M to 999M: e.g. ۲۵ میلیون
+ * - 1B to 999B: e.g. ۳.۵ میلیارد
+ * - 1T+: e.g. ۱.۲ تریلیون
+ */
+export function formatTyproNumber(num: number | string | undefined | null): string {
+  if (num === undefined || num === null || num === '') return '۰';
+  const val = Number(num);
+  if (isNaN(val) || val < 0) return '۰';
+  if (val >= 1_000_000_000_000) {
+    const t = val / 1_000_000_000_000;
+    return (t >= 100 ? Math.round(t) : Number(t.toFixed(1))).toLocaleString('fa-IR') + ' تریلیون';
+  }
+  if (val >= 1_000_000_000) {
+    const b = val / 1_000_000_000;
+    return (b >= 100 ? Math.round(b) : Number(b.toFixed(1))).toLocaleString('fa-IR') + ' میلیارد';
+  }
+  if (val >= 10_000_000) {
+    const m = val / 1_000_000;
+    return (m >= 100 ? Math.round(m) : Number(m.toFixed(1))).toLocaleString('fa-IR') + ' میلیون';
+  }
+  return Math.floor(val).toLocaleString('fa-IR');
+}
+

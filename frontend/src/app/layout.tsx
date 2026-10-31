@@ -318,7 +318,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
       </head>
-      <body className="min-h-full flex flex-col bg-[#f8fafc] text-[#111827] font-sans selection:bg-blue-600 selection:text-white relative">
+      <body className="min-h-full flex flex-col bg-[#f8fafc] text-[#111827] font-sans selection:bg-blue-600 selection:text-white relative overflow-x-hidden">
         <AuthProvider>
           <GlobalTrafficTracker />
           <GlobalAdminMessageModal />

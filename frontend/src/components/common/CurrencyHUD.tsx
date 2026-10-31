@@ -1,6 +1,7 @@
 'use client';
 
 import GamingLevelBadge from '@/components/common/GamingLevelBadge';
+import { formatTyproNumber } from '@/lib/levelTiers';
 
 import React from 'react';
 import { Coins, Gem, Star, Sparkles } from 'lucide-react';
@@ -73,25 +74,25 @@ export default function CurrencyHUD({
           <span className="w-1.5 h-1.5 rounded-full bg-amber-300 animate-ping absolute -top-0.5 -right-0.5 pointer-events-none opacity-75" />
         </div>
 
-        <div className="flex items-baseline gap-1">
+        <div className="flex items-baseline gap-1 whitespace-nowrap">
           <span
             className="font-mono font-black tracking-tight"
             suppressHydrationWarning
           >
-            {coins.toLocaleString('fa-IR')}
+            {formatTyproNumber(coins)}
           </span>
           <span className="text-[10px] font-bold opacity-80">سکه</span>
         </div>
       </div>
 
-      <div className="w-px h-4 bg-slate-300/40 dark:bg-white/15" />
+      <div className="w-px h-4 bg-slate-300/40 dark:bg-white/15 shrink-0" />
 
       {/* 2. Ultra-Luxurious Crystal Diamond Badge */}
       <div
-        className={`group relative flex items-center gap-2 px-3 py-1.5 rounded-xl font-black transition-all duration-300 overflow-hidden shadow-xs ${diamondBgClasses} ${
+        className={`group relative flex items-center gap-2 px-3 py-1.5 rounded-xl font-black transition-all duration-300 overflow-hidden shadow-xs whitespace-nowrap shrink-0 ${diamondBgClasses} ${
           isSm ? 'text-[11px]' : isLg ? 'text-sm sm:text-base px-4 py-2' : 'text-xs sm:text-sm'
         }`}
-        title="موجودی الماس‌های کریستالی شما"
+        title={`موجودی الماس‌های شما: ${(Number(diamonds) || 0).toLocaleString('fa-IR')} الماس`}
       >
         {/* Crystal Refraction Shimmer effect */}
         <div className="absolute inset-0 -translate-x-full group-hover:translate-x-full transition-transform duration-1000 bg-gradient-to-r from-transparent via-white/30 to-transparent pointer-events-none" />
@@ -103,12 +104,12 @@ export default function CurrencyHUD({
           <span className="w-1.5 h-1.5 rounded-full bg-cyan-300 animate-ping absolute -top-0.5 -right-0.5 pointer-events-none opacity-75" />
         </div>
 
-        <div className="flex items-baseline gap-1">
+        <div className="flex items-baseline gap-1 whitespace-nowrap">
           <span
             className="font-mono font-black tracking-tight"
             suppressHydrationWarning
           >
-            {diamonds.toLocaleString('fa-IR')}
+            {formatTyproNumber(diamonds)}
           </span>
           <span className="text-[10px] font-bold opacity-80">الماس</span>
         </div>
@@ -117,21 +118,21 @@ export default function CurrencyHUD({
       {/* 3. XP Score Badge (نمایش عددی امتیاز کل کاربر در کنار لول) */}
       {xp !== undefined && (
         <>
-          <div className="w-px h-4 bg-slate-300/40 dark:bg-white/15" />
+          <div className="w-px h-4 bg-slate-300/40 dark:bg-white/15 shrink-0" />
           <div
-            className={`group relative flex items-center gap-1.5 px-3 py-1.5 rounded-xl font-black transition-all duration-300 overflow-hidden shadow-xs ${xpBgClasses} ${
+            className={`group relative flex items-center gap-1.5 px-3 py-1.5 rounded-xl font-black transition-all duration-300 overflow-hidden shadow-xs whitespace-nowrap shrink-0 ${xpBgClasses} ${
               isSm ? 'text-[11px]' : isLg ? 'text-sm sm:text-base px-3.5 py-2' : 'text-xs sm:text-sm'
             }`}
-            title="مجموع امتیازات (XP) شما - هر ۱۰۰ امتیاز = ۱ لول ارتقا"
+            title={`مجموع امتیازات (XP): ${(Number(xp) || 0).toLocaleString('fa-IR')} امتیاز`}
           >
             <div className="relative flex items-center justify-center">
               <div className="w-5 h-5 rounded-full bg-gradient-to-tr from-purple-600 via-indigo-500 to-pink-500 flex items-center justify-center text-white shadow-sm shadow-purple-500/50 group-hover:scale-110 transition-transform">
                 <Sparkles className="w-3.5 h-3.5 text-white" />
               </div>
             </div>
-            <div className="flex items-baseline gap-1">
+            <div className="flex items-baseline gap-1 whitespace-nowrap">
               <span className="font-mono font-black tracking-tight" suppressHydrationWarning>
-                {xp.toLocaleString('fa-IR')}
+                {formatTyproNumber(xp)}
               </span>
               <span className="text-[10px] font-bold opacity-80">امتیاز</span>
             </div>
@@ -142,9 +143,9 @@ export default function CurrencyHUD({
       {/* 4. Authentic 3D Gaming Level Badge */}
       {level !== undefined && (
         <>
-          <div className="w-px h-4 bg-slate-300/40 dark:bg-white/15" />
+          <div className="w-px h-4 bg-slate-300/40 dark:bg-white/15 shrink-0" />
           <GamingLevelBadge
-            level={level}
+            level={Math.min(1000000, Math.max(1, level))}
             xp={xp}
             size={isSm ? 'xs' : isLg ? 'md' : 'sm'}
             showStars={true}

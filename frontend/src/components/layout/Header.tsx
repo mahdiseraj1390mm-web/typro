@@ -26,6 +26,7 @@ import {
   CheckCheck,
 } from 'lucide-react';
 import { useAuth } from '@/context/AuthContext';
+import { formatTyproNumber } from '@/lib/levelTiers';
 import VipWelcomeModal from '@/components/subscription/VipWelcomeModal';
 import VipActivatedModal from '@/components/subscription/VipActivatedModal';
 
@@ -230,7 +231,7 @@ export default function Header() {
   ];
 
   return (
-    <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/80 transition-all shadow-xs">
+    <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-xl border-b border-slate-200/80 transition-all shadow-xs overflow-x-clip">
       <div className="max-w-[1550px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Brand Logo & Live Activity Indicator */}
@@ -320,21 +321,32 @@ export default function Header() {
           <div className="flex items-center gap-3">
             {isAuthenticated && user ? (
               <>
-                {/* Coins & XP & Level status */}
-                <div className="hidden sm:flex items-center gap-3 px-3 py-1.5 rounded-xl bg-slate-100/90 border border-slate-200 text-xs font-bold text-slate-700">
-                  <div className="flex items-center gap-1 text-amber-600" title="موجودی سکه">
-                    <Coins className="w-3.5 h-3.5" />
-                    <span>{(user.coins ?? 0).toLocaleString('fa-IR')}</span>
+                {/* Coins & XP & Level status (Protected against overflow, wrapping, and giant numbers) */}
+                <div className="hidden sm:flex items-center gap-2.5 px-3 py-1.5 rounded-xl bg-slate-100/95 border border-slate-200 text-xs font-bold text-slate-700 whitespace-nowrap shrink-0 shadow-2xs select-none">
+                  <div
+                    className="flex items-center gap-1 text-amber-600 whitespace-nowrap shrink-0 cursor-default"
+                    title={`موجودی سکه: ${(Number(user.coins) || 0).toLocaleString('fa-IR')} سکه`}
+                  >
+                    <Coins className="w-3.5 h-3.5 text-amber-600 shrink-0" />
+                    <span className="font-mono tracking-tight font-black">{formatTyproNumber(user.coins)}</span>
+                    <span className="text-[10px] text-amber-700/80 font-bold">سکه</span>
                   </div>
-                  <div className="w-px h-3 bg-slate-300" />
-                  <div className="flex items-center gap-1 text-purple-600" title="امتیاز کل (XP)">
-                    <Sparkles className="w-3.5 h-3.5 text-purple-500" />
-                    <span>{(user.xp ?? 0).toLocaleString('fa-IR')} امتیاز</span>
+                  <div className="w-px h-3.5 bg-slate-300 shrink-0" />
+                  <div
+                    className="flex items-center gap-1 text-purple-600 whitespace-nowrap shrink-0 cursor-default"
+                    title={`امتیاز کل (XP): ${(Number(user.xp) || 0).toLocaleString('fa-IR')} امتیاز`}
+                  >
+                    <Sparkles className="w-3.5 h-3.5 text-purple-500 shrink-0" />
+                    <span className="font-mono tracking-tight font-black">{formatTyproNumber(user.xp)}</span>
+                    <span className="text-[10px] text-purple-700/80 font-bold">امتیاز</span>
                   </div>
-                  <div className="w-px h-3 bg-slate-300" />
-                  <div className="flex items-center gap-1 text-blue-600" title="سطح کاربری">
-                    <Award className="w-3.5 h-3.5" />
-                    <span>سطح {user.level ?? 1}</span>
+                  <div className="w-px h-3.5 bg-slate-300 shrink-0" />
+                  <div
+                    className="flex items-center gap-1 text-blue-600 whitespace-nowrap shrink-0 cursor-default"
+                    title={`سطح کاربری: ${(Math.min(1000000, Math.max(1, Number(user.level) || Math.floor((Number(user.xp) || 0) / 100) + 1))).toLocaleString('fa-IR')}`}
+                  >
+                    <Award className="w-3.5 h-3.5 text-blue-600 shrink-0" />
+                    <span className="font-mono font-black">سطح {(Math.min(1000000, Math.max(1, Number(user.level) || Math.floor((Number(user.xp) || 0) / 100) + 1))).toLocaleString('fa-IR')}</span>
                   </div>
                 </div>
 

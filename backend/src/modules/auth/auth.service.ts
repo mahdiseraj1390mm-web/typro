@@ -619,8 +619,8 @@ export class AuthService {
         u.username.toLowerCase() === clean ||
         (u.mobile && u.mobile.trim() === identifier.trim())
       ) {
-        const userXp = typeof u.xp === 'number' ? u.xp : (Number(u.xp) || 0);
-        const userLevel = typeof u.level === 'number' ? u.level : Math.max(1, Math.floor(userXp / 100) + 1);
+        const userXp = typeof u.xp === 'number' ? Math.min(1_000_000_000, Math.max(0, u.xp)) : Math.min(1_000_000_000, Math.max(0, Number(u.xp) || 0));
+        const userLevel = typeof u.level === 'number' && u.level > 0 ? Math.min(1_000_000, u.level) : Math.min(1_000_000, Math.max(1, Math.floor(userXp / 100) + 1));
         return {
           id: u.id,
           username: u.username,
@@ -919,11 +919,11 @@ export class AuthService {
         if (updates.bio !== undefined) user.bio = updates.bio;
         if (updates.role) user.role = updates.role;
         if (updates.xp !== undefined) {
-          user.xp = Math.max(0, Number(updates.xp));
-          user.level = Math.max(1, Math.floor(user.xp / 100) + 1);
+          user.xp = Math.min(1_000_000_000, Math.max(0, Number(updates.xp)));
+          user.level = Math.min(1_000_000, Math.max(1, Math.floor(user.xp / 100) + 1));
         } else if (updates.level !== undefined) {
-          user.level = Math.max(1, Number(updates.level));
-          user.xp = Math.max(user.xp || 0, (user.level - 1) * 100);
+          user.level = Math.min(1_000_000, Math.max(1, Number(updates.level)));
+          user.xp = Math.min(1_000_000_000, Math.max(user.xp || 0, (user.level - 1) * 100));
         }
         if (updates.coins !== undefined) user.coins = updates.coins;
         if (updates.diamonds !== undefined) user.diamonds = updates.diamonds;

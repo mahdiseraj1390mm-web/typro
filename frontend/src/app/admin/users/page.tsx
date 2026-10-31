@@ -526,8 +526,8 @@ export default function AdminUsersPage() {
   const handleSaveXp = async () => {
     if (!xpUser) return;
     setIsSavingXp(true);
-    const newXp = Math.max(0, targetXp);
-    const newLevel = Math.max(1, Math.floor(newXp / 100) + 1);
+    const newXp = Math.min(1_000_000_000, Math.max(0, targetXp));
+    const newLevel = Math.min(1_000_000, Math.max(1, Math.floor(newXp / 100) + 1));
 
     try {
       const res = await fetch(`/api/admin/users/${xpUser.id}`, {
@@ -625,8 +625,8 @@ export default function AdminUsersPage() {
 
   const handleEdit = () => {
     if (!selected) return;
-    const newXp = form.xp !== undefined ? Number(form.xp) : (selected.xp ?? 0);
-    const newLevel = form.level !== undefined ? Number(form.level) : Math.max(1, Math.floor(newXp / 100) + 1);
+    const newXp = Math.min(1_000_000_000, Math.max(0, form.xp !== undefined ? Number(form.xp) : (selected.xp ?? 0)));
+    const newLevel = Math.min(1_000_000, Math.max(1, form.level !== undefined ? Number(form.level) : Math.floor(newXp / 100) + 1));
 
     const updatedForm = {
       ...form,
