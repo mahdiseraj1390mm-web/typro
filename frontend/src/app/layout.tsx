@@ -61,12 +61,14 @@ export const metadata: Metadata = {
   manifest: '/manifest.json',
   icons: {
     icon: [
-      { url: '/favicon.ico' },
-      { url: '/images/typro-logo.png', type: 'image/png' }
+      { url: '/favicon.ico', sizes: 'any' },
+      { url: '/icon-192.png', type: 'image/png', sizes: '192x192' },
+      { url: '/icon-512.png', type: 'image/png', sizes: '512x512' },
     ],
     apple: [
-      { url: '/images/typro-logo.png' }
-    ]
+      { url: '/icon-192.png', sizes: '192x192', type: 'image/png' },
+    ],
+    shortcut: ['/favicon.ico'],
   },
   openGraph: {
     title: 'آموزش تایپ ده انگشتی و یادگیری تایپ سریع | تایپرو',

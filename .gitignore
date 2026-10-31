@@ -27,6 +27,9 @@ yarn-error.log*
 backend/*.tsbuildinfo
 frontend/*.tsbuildinfo
 
+# Helper scripts
+*.bat
+
 # OS Metadata
 .DS_Store
 Thumbs.db
