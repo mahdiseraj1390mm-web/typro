@@ -619,11 +619,20 @@ export class AuthService {
         u.username.toLowerCase() === clean ||
         (u.mobile && u.mobile.trim() === identifier.trim())
       ) {
+        const userXp = typeof u.xp === 'number' ? u.xp : (Number(u.xp) || 0);
+        const userLevel = typeof u.level === 'number' ? u.level : Math.max(1, Math.floor(userXp / 100) + 1);
         return {
           id: u.id,
           username: u.username,
           displayName: u.displayName,
           role: u.role,
+          xp: userXp,
+          level: userLevel,
+          coins: Number(u.coins) || 0,
+          diamonds: Number(u.diamonds) || 0,
+          racesWon: Number(u.racesWon) || 0,
+          bestWpm: Number(u.bestWpm || u.wpm) || 0,
+          bestAccuracy: Number(u.bestAccuracy || u.accuracy) || 0,
           isSubscribed: !!u.isSubscribed,
           subscriptionTier: u.subscriptionTier || (u.isSubscribed ? 'VIP' : 'FREE'),
           subscriptionPlan: u.subscriptionPlan || (u.isSubscribed ? 'VIP طلایی' : 'رایگان'),

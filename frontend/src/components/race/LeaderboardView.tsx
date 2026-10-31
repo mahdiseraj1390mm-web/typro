@@ -367,53 +367,40 @@ export default function LeaderboardView({
 
         const rawList = Array.from(combinedMap.values());
         if (isMounted && rawList.length > 0) {
-          // Strictly remove admin / super_admin from list
-          const regularUsersOnly = rawList.filter(
-            (u: any) =>
-              u &&
-              u.id !== 'usr-admin' &&
-              u.username !== 'typro_admin' &&
-              u.role !== 'SUPER_ADMIN' &&
-              u.role !== 'ADMIN' &&
-              (!u.displayName || (!u.displayName.includes('مدیر کل') && !u.displayName.includes('ادمین')))
-          );
+          // All registered players eligible for leaderboard
+          const allEligibleUsers = rawList.filter((u: any) => u && (u.displayName || u.username || u.mobile));
 
-          if (regularUsersOnly.length > 0) {
+          if (allEligibleUsers.length > 0) {
             const localBestWpm = typeof window !== 'undefined' ? Number(localStorage.getItem('typro_best_wpm') || '0') : 0;
             const localBestAcc = typeof window !== 'undefined' ? Number(localStorage.getItem('typro_best_accuracy') || '0') : 0;
             const localRacesWon = typeof window !== 'undefined' ? Number(localStorage.getItem('typro_races_won') || '0') : 0;
             const localCoins = typeof window !== 'undefined' ? Number(localStorage.getItem('typro_user_coins') || '0') : 0;
             const localXp = typeof window !== 'undefined' ? Number(localStorage.getItem('typro_user_xp') || '0') : 0;
-            const realActiveXp = Math.max(localXp, localCoins, currentUserXp || 0);
 
             const storedUserId = typeof window !== 'undefined' ? localStorage.getItem('typro_user_id') : null;
             const storedUsername = typeof window !== 'undefined' ? localStorage.getItem('typro_username') : null;
 
-            const enriched = regularUsersOnly.map((u: any) => {
+            const enriched = allEligibleUsers.map((u: any) => {
               const isMe =
                 (currentUserId && u.id === currentUserId) ||
                 (storedUserId && u.id === storedUserId) ||
                 (storedUsername && u.username === storedUsername);
 
-              if (isMe) {
-                const myXp = Math.max(Number(u.xp) || 0, realActiveXp);
-                const myLevel = Math.max(Number(u.level) || 1, Math.floor(myXp / 100) + 1);
-                return {
-                  ...u,
-                  xp: myXp,
-                  level: myLevel,
-                  wpm: Number(u.wpm) > 0 ? Number(u.wpm) : (localBestWpm > 0 ? localBestWpm : 0),
-                  accuracy: Number(u.accuracy) > 0 ? Number(u.accuracy) : (localBestAcc > 0 ? localBestAcc : 0),
-                  racesWon: Number(u.racesWon) > 0 ? Number(u.racesWon) : (localRacesWon > 0 ? localRacesWon : 0),
-                };
-              }
+              const uXp = (u.xp !== undefined && u.xp !== null && !isNaN(Number(u.xp)))
+                ? Number(u.xp)
+                : (isMe && localXp > 0 ? localXp : (Number(u.coins) || 0));
 
-              const uXp = Math.max(Number(u.xp) || 0, Number(u.coins) || 0, ((Number(u.level) || 1) - 1) * 100);
-              const uLevel = Math.max(1, Math.floor(uXp / 100) + 1);
+              const uLevel = (u.level !== undefined && u.level !== null && !isNaN(Number(u.level)) && Number(u.level) > 0)
+                ? Number(u.level)
+                : Math.max(1, Math.floor(uXp / 100) + 1);
+
               return {
                 ...u,
                 xp: uXp,
                 level: uLevel,
+                wpm: Number(u.wpm) > 0 ? Number(u.wpm) : (isMe && localBestWpm > 0 ? localBestWpm : (u.bestWpm ? Number(u.bestWpm) : 0)),
+                accuracy: Number(u.accuracy) > 0 ? Number(u.accuracy) : (isMe && localBestAcc > 0 ? localBestAcc : (u.bestAccuracy ? Number(u.bestAccuracy) : 0)),
+                racesWon: Number(u.racesWon) > 0 ? Number(u.racesWon) : (isMe && localRacesWon > 0 ? localRacesWon : 0),
               };
             });
 

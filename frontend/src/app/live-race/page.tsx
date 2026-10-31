@@ -167,12 +167,13 @@ export default function LiveRacePage() {
         ? user.diamonds
         : Number(localStorage.getItem('typro_user_diamonds') || '0');
 
-      const x = user && typeof user.xp === 'number'
+      const effectiveXp = user && typeof user.xp === 'number'
         ? user.xp
-        : Number(localStorage.getItem('typro_user_xp') || String(c));
+        : Number(localStorage.getItem('typro_user_xp') || '0');
 
-      const effectiveXp = Math.max(x, c);
-      const effectiveLvl = Math.max(1, Math.floor(effectiveXp / 100) + 1);
+      const effectiveLvl = user && typeof user.level === 'number'
+        ? user.level
+        : Math.max(1, Math.floor(effectiveXp / 100) + 1);
 
       localStorage.setItem('typro_user_coins', String(c));
       localStorage.setItem('typro_user_diamonds', String(d));
@@ -188,9 +189,11 @@ export default function LiveRacePage() {
     syncEconomy();
     window.addEventListener('storage', syncEconomy);
     window.addEventListener('typro_economy_updated', syncEconomy);
+    window.addEventListener('focus', syncEconomy);
     return () => {
       window.removeEventListener('storage', syncEconomy);
       window.removeEventListener('typro_economy_updated', syncEconomy);
+      window.removeEventListener('focus', syncEconomy);
     };
   }, [user]);
 

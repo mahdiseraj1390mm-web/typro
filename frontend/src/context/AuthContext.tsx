@@ -117,9 +117,10 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
         }
         setUser(parsed);
 
-        // Background sync user VIP subscription status & notifications from database
-        const userIdentifier = parsed.id || parsed.username || parsed.mobile;
-        if (userIdentifier) {
+        // Background sync user VIP subscription, XP, Level & notifications from database
+        const syncUserFromServer = () => {
+          const userIdentifier = parsed.id || parsed.username || parsed.mobile;
+          if (!userIdentifier) return;
           fetch(`${API_BASE}/auth/status/${encodeURIComponent(userIdentifier)}`)
             .then((r) => (r.ok ? r.json() : null))
             .then((statusData) => {
@@ -131,8 +132,17 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
                 setUser((prev) => {
                   if (!prev) return prev;
+                  const newXp = typeof statusData.xp === 'number' ? statusData.xp : prev.xp;
+                  const newLevel = typeof statusData.level === 'number' ? statusData.level : (typeof newXp === 'number' ? Math.max(1, Math.floor(newXp / 100) + 1) : prev.level);
+                  const newCoins = typeof statusData.coins === 'number' ? statusData.coins : prev.coins;
+                  const newDiamonds = typeof statusData.diamonds === 'number' ? statusData.diamonds : prev.diamonds;
+
                   const merged = {
                     ...prev,
+                    xp: newXp,
+                    level: newLevel,
+                    coins: newCoins,
+                    diamonds: newDiamonds,
                     isSubscribed: isSub,
                     subscription: planName,
                     subscriptionPlan: planName,
@@ -146,6 +156,18 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
                   } catch {}
                   return merged;
                 });
+
+                if (typeof statusData.xp === 'number') {
+                  localStorage.setItem('typro_user_xp', String(statusData.xp));
+                  localStorage.setItem('typro_user_level', String(statusData.level || Math.max(1, Math.floor(statusData.xp / 100) + 1)));
+                }
+                if (typeof statusData.coins === 'number') {
+                  localStorage.setItem('typro_user_coins', String(statusData.coins));
+                }
+                if (typeof statusData.diamonds === 'number') {
+                  localStorage.setItem('typro_user_diamonds', String(statusData.diamonds));
+                }
+                window.dispatchEvent(new Event('typro_economy_updated'));
 
                 if (isSub) {
                   localStorage.setItem('typro_user_is_subscribed', 'true');
@@ -182,7 +204,11 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
               }
             })
             .catch(() => {});
-        }
+        };
+
+        syncUserFromServer();
+        const pollInterval = setInterval(syncUserFromServer, 6000);
+        window.addEventListener('focus', syncUserFromServer);
 
         // ── اسکین‌های پیش‌فرض رایگان: حداقل ۲ اسکین برای کاربر/مهمان ──
         const DEFAULT_SKIN_1 = 'skin-vw-beetle';

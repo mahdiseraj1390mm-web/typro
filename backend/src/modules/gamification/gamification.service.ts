@@ -189,29 +189,17 @@ export class GamificationService {
       return [];
     }
 
-    // STRICTLY REAL NORMAL USERS ONLY - EXCLUDE ADMINS & MANAGERS
+    // Map and enrich all users with their exact registered XP & level
     const mapped = usersList
-      .filter((u) => {
-        if (!u || (!u.displayName && !u.username)) return false;
-        // Strictly exclude system administrators and general managers
-        if (
-          u.role === 'SUPER_ADMIN' ||
-          u.role === 'ADMIN' ||
-          u.id === 'usr-admin' ||
-          u.username === 'typro_admin' ||
-          (u.displayName && (u.displayName.includes('مدیر کل') || u.displayName.includes('ادمین')))
-        ) {
-          return false;
-        }
-        return true;
-      })
+      .filter((u) => u && (u.displayName || u.username || u.mobile))
       .map((u) => {
-        // Enforce 1:1 Coin-to-XP baseline parity: Points (XP) equal coins unless spent
         const userCoins = Number(u.coins) || 0;
-        const recordedXp = Number(u.xp) || ((Number(u.level) || 1) - 1) * 100;
-        const effectiveXp = Math.max(recordedXp, userCoins);
-        const level = Math.max(1, Math.floor(effectiveXp / 100) + 1);
-        // Strictly return real recorded stats. If not recorded yet, return 0 (no fake 65 / 98.5 defaults)
+        const effectiveXp = (u.xp !== undefined && u.xp !== null && !isNaN(Number(u.xp)))
+          ? Number(u.xp)
+          : Math.max(userCoins, ((Number(u.level) || 1) - 1) * 100);
+        const level = (u.level !== undefined && u.level !== null && !isNaN(Number(u.level)) && Number(u.level) > 0)
+          ? Number(u.level)
+          : Math.max(1, Math.floor(effectiveXp / 100) + 1);
         const wpm = (u.wpm !== undefined && u.wpm !== null && u.wpm !== '') ? Number(u.wpm) : (u.bestWpm ? Number(u.bestWpm) : 0);
         const accuracy = (u.accuracy !== undefined && u.accuracy !== null && u.accuracy !== '') ? Number(u.accuracy) : (u.bestAccuracy ? Number(u.bestAccuracy) : 0);
         return {

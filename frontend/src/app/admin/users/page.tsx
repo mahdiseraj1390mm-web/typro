@@ -282,7 +282,7 @@ function getPageName(path?: string): string {
 /* ─────────────────────────────── Main Component ─────────────────────────────── */
 
 export default function AdminUsersPage() {
-  useAuth(); // ensure context is available
+  const { user } = useAuth();
 
   const [users, setUsers] = useState<ManagedUser[]>([]);
   const [search, setSearch] = useState('');
@@ -540,6 +540,25 @@ export default function AdminUsersPage() {
       setUsers((prev) =>
         prev.map((u) => (u.id === xpUser.id ? { ...u, xp: newXp, level: newLevel } : u))
       );
+
+      // Immediately synchronize local storage & UI if this is the current active session
+      const isCurrentUser = user && (user.id === xpUser.id || user.username === xpUser.username || user.mobile === xpUser.mobile);
+      if (isCurrentUser) {
+        localStorage.setItem('typro_user_xp', String(newXp));
+        localStorage.setItem('typro_user_level', String(newLevel));
+        try {
+          const rawUser = localStorage.getItem('typro_user');
+          if (rawUser) {
+            const uObj = JSON.parse(rawUser);
+            uObj.xp = newXp;
+            uObj.level = newLevel;
+            localStorage.setItem('typro_user', JSON.stringify(uObj));
+          }
+        } catch {}
+      }
+      window.dispatchEvent(new Event('typro_economy_updated'));
+      window.dispatchEvent(new Event('storage'));
+
       showToast(`🎉 امتیاز کاربر @${xpUser.username} به ${newXp.toLocaleString('fa-IR')} XP (سطح ${newLevel}) بروزرسانی شد.`);
       closeModal();
     } catch (e: any) {
@@ -640,6 +659,28 @@ export default function AdminUsersPage() {
     );
     showToast(`✅ اطلاعات و امتیاز کاربر @${form.username} با موفقیت ذخیره شد.`);
     closeModal();
+
+    // Immediately synchronize local storage & UI if this is the current active session
+    const isCurrentUser = user && (user.id === selected.id || user.username === selected.username || user.mobile === selected.mobile);
+    if (isCurrentUser) {
+      localStorage.setItem('typro_user_xp', String(newXp));
+      localStorage.setItem('typro_user_level', String(newLevel));
+      if (form.coins !== undefined) localStorage.setItem('typro_user_coins', String(form.coins));
+      if (form.diamonds !== undefined) localStorage.setItem('typro_user_diamonds', String(form.diamonds));
+      try {
+        const rawUser = localStorage.getItem('typro_user');
+        if (rawUser) {
+          const uObj = JSON.parse(rawUser);
+          uObj.xp = newXp;
+          uObj.level = newLevel;
+          if (form.coins !== undefined) uObj.coins = form.coins;
+          if (form.diamonds !== undefined) uObj.diamonds = form.diamonds;
+          localStorage.setItem('typro_user', JSON.stringify(uObj));
+        }
+      } catch {}
+    }
+    window.dispatchEvent(new Event('typro_economy_updated'));
+    window.dispatchEvent(new Event('storage'));
 
     // Persist to backend API & users.json
     fetch(`/api/admin/users/${selected.id}`, {

@@ -320,16 +320,21 @@ export default function Header() {
           <div className="flex items-center gap-3">
             {isAuthenticated && user ? (
               <>
-                {/* Coins & Banknotes status */}
+                {/* Coins & XP & Level status */}
                 <div className="hidden sm:flex items-center gap-3 px-3 py-1.5 rounded-xl bg-slate-100/90 border border-slate-200 text-xs font-bold text-slate-700">
                   <div className="flex items-center gap-1 text-amber-600" title="موجودی سکه">
                     <Coins className="w-3.5 h-3.5" />
                     <span>{(user.coins ?? 0).toLocaleString('fa-IR')}</span>
                   </div>
                   <div className="w-px h-3 bg-slate-300" />
+                  <div className="flex items-center gap-1 text-purple-600" title="امتیاز کل (XP)">
+                    <Sparkles className="w-3.5 h-3.5 text-purple-500" />
+                    <span>{(user.xp ?? 0).toLocaleString('fa-IR')} امتیاز</span>
+                  </div>
+                  <div className="w-px h-3 bg-slate-300" />
                   <div className="flex items-center gap-1 text-blue-600" title="سطح کاربری">
                     <Award className="w-3.5 h-3.5" />
-                    <span>سطح {user.level}</span>
+                    <span>سطح {user.level ?? 1}</span>
                   </div>
                 </div>
 
