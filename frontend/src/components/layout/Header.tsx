@@ -321,40 +321,11 @@ export default function Header() {
           <div className="flex items-center gap-3">
             {isAuthenticated && user ? (
               <>
-                {/* Coins & XP & Level status (Protected against overflow, wrapping, and giant numbers) */}
-                <div className="hidden sm:flex items-center gap-2.5 px-3 py-1.5 rounded-xl bg-slate-100/95 border border-slate-200 text-xs font-bold text-slate-700 whitespace-nowrap shrink-0 shadow-2xs select-none">
-                  <div
-                    className="flex items-center gap-1 text-amber-600 whitespace-nowrap shrink-0 cursor-default"
-                    title={`موجودی سکه: ${(Number(user.coins) || 0).toLocaleString('fa-IR')} سکه`}
-                  >
-                    <Coins className="w-3.5 h-3.5 text-amber-600 shrink-0" />
-                    <span className="font-mono tracking-tight font-black">{formatTyproNumber(user.coins)}</span>
-                    <span className="text-[10px] text-amber-700/80 font-bold">سکه</span>
-                  </div>
-                  <div className="w-px h-3.5 bg-slate-300 shrink-0" />
-                  <div
-                    className="flex items-center gap-1 text-purple-600 whitespace-nowrap shrink-0 cursor-default"
-                    title={`امتیاز کل (XP): ${(Number(user.xp) || 0).toLocaleString('fa-IR')} امتیاز`}
-                  >
-                    <Sparkles className="w-3.5 h-3.5 text-purple-500 shrink-0" />
-                    <span className="font-mono tracking-tight font-black">{formatTyproNumber(user.xp)}</span>
-                    <span className="text-[10px] text-purple-700/80 font-bold">امتیاز</span>
-                  </div>
-                  <div className="w-px h-3.5 bg-slate-300 shrink-0" />
-                  <div
-                    className="flex items-center gap-1 text-blue-600 whitespace-nowrap shrink-0 cursor-default"
-                    title={`سطح کاربری: ${(Math.min(1000000, Math.max(1, Number(user.level) || Math.floor((Number(user.xp) || 0) / 100) + 1))).toLocaleString('fa-IR')}`}
-                  >
-                    <Award className="w-3.5 h-3.5 text-blue-600 shrink-0" />
-                    <span className="font-mono font-black">سطح {(Math.min(1000000, Math.max(1, Number(user.level) || Math.floor((Number(user.xp) || 0) / 100) + 1))).toLocaleString('fa-IR')}</span>
-                  </div>
-                </div>
-
                 {/* User Dropdown Menu */}
                 <div className="relative">
                   <button
                     onClick={() => setUserMenuOpen(!userMenuOpen)}
-                    className="flex items-center gap-2 p-1 pl-2.5 rounded-full bg-slate-100 hover:bg-slate-200 border border-slate-300 transition cursor-pointer"
+                    className="flex items-center gap-2 p-1.5 pl-3 rounded-full bg-slate-100 hover:bg-slate-200 border border-slate-300 transition cursor-pointer select-none"
                   >
                     <div className="w-8 h-8 rounded-full overflow-hidden bg-slate-100 border border-slate-300 text-slate-400 flex items-center justify-center font-bold text-xs shadow-xs">
                       {user.avatar ? (
@@ -363,7 +334,7 @@ export default function Header() {
                         <User className="w-4 h-4 text-slate-400" />
                       )}
                     </div>
-                    <span className="text-xs font-bold text-slate-800 max-w-[100px] truncate hidden md:inline">
+                    <span className="text-xs font-bold text-slate-800 max-w-[120px] truncate hidden md:inline">
                       {user.displayName || user.username}
                     </span>
                     <ChevronDown className="w-3 h-3 text-slate-500" />
@@ -371,10 +342,10 @@ export default function Header() {
 
                   {userMenuOpen && (
                     <div
-                      className="absolute top-full left-0 mt-2 w-56 bg-white rounded-2xl shadow-xl border border-slate-200 py-2 z-50 animate-in fade-in slide-in-from-top-2"
+                      className="absolute top-full left-0 mt-2 w-64 bg-white rounded-2xl shadow-xl border border-slate-200 py-2 z-50 animate-in fade-in slide-in-from-top-2"
                       onMouseLeave={() => setUserMenuOpen(false)}
                     >
-                      <div className="px-4 py-2 border-b border-slate-100">
+                      <div className="px-4 py-2.5 border-b border-slate-100">
                         <div className="font-bold text-xs text-slate-900 truncate">
                           {user.displayName || user.username}
                         </div>
@@ -385,7 +356,7 @@ export default function Header() {
                             </span>
                           ) : (
                             <span className="px-2 py-0.5 rounded-md bg-blue-100 text-blue-700 text-[10px] font-bold">
-                              تایپیست سطح {user.level}
+                              تایپیست سطح {(Math.min(1000000, Math.max(1, Number(user.level) || Math.floor((Number(user.xp) || 0) / 100) + 1))).toLocaleString('fa-IR')}
                             </span>
                           )}
                           {(user.isSubscribed || (user.subscription && user.subscription !== 'رایگان')) && (
@@ -394,6 +365,39 @@ export default function Header() {
                               <span>VIP فعال</span>
                             </span>
                           )}
+                        </div>
+                      </div>
+
+                      {/* Economy, XP & Level Summary (نمایش در منوی پروفایل کاربر) */}
+                      <div className="px-3 py-2.5 bg-slate-50/80 border-b border-slate-100 grid grid-cols-3 gap-1.5 text-center">
+                        <div className="bg-white p-2 rounded-xl border border-slate-200/90 shadow-2xs" title={`موجودی سکه: ${(Number(user.coins) || 0).toLocaleString('fa-IR')}`}>
+                          <div className="flex items-center justify-center gap-1 text-[10px] text-amber-600 font-bold mb-0.5">
+                            <Coins className="w-3 h-3 text-amber-500 shrink-0" />
+                            <span>سکه</span>
+                          </div>
+                          <span className="font-mono text-xs font-black text-slate-800 tracking-tight block truncate">
+                            {formatTyproNumber(user.coins)}
+                          </span>
+                        </div>
+
+                        <div className="bg-white p-2 rounded-xl border border-slate-200/90 shadow-2xs" title={`امتیاز کل (XP): ${(Number(user.xp) || 0).toLocaleString('fa-IR')}`}>
+                          <div className="flex items-center justify-center gap-1 text-[10px] text-purple-600 font-bold mb-0.5">
+                            <Sparkles className="w-3 h-3 text-purple-500 shrink-0" />
+                            <span>امتیاز</span>
+                          </div>
+                          <span className="font-mono text-xs font-black text-slate-800 tracking-tight block truncate">
+                            {formatTyproNumber(user.xp)}
+                          </span>
+                        </div>
+
+                        <div className="bg-white p-2 rounded-xl border border-slate-200/90 shadow-2xs" title={`سطح کاربری: ${(Math.min(1000000, Math.max(1, Number(user.level) || Math.floor((Number(user.xp) || 0) / 100) + 1))).toLocaleString('fa-IR')}`}>
+                          <div className="flex items-center justify-center gap-1 text-[10px] text-blue-600 font-bold mb-0.5">
+                            <Award className="w-3 h-3 text-blue-500 shrink-0" />
+                            <span>سطح</span>
+                          </div>
+                          <span className="font-mono text-xs font-black text-slate-800 tracking-tight block truncate">
+                            {(Math.min(1000000, Math.max(1, Number(user.level) || Math.floor((Number(user.xp) || 0) / 100) + 1))).toLocaleString('fa-IR')}
+                          </span>
                         </div>
                       </div>
 

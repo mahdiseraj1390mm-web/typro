@@ -628,40 +628,6 @@ export default function TypingTestPage() {
               <Play className="w-3.5 h-3.5 fill-current" />
             </button>
           </div>
-
-          {/* Card 5: Numbers (پد عددی - بدون نیاز به کلید فاصله) */}
-          <div
-            onClick={() => setSelectedCategory('numbers')}
-            className={`p-5 rounded-2xl border-2 transition cursor-pointer relative space-y-2.5 ${
-              selectedCategory === 'numbers'
-                ? 'border-emerald-600 bg-emerald-50/50 shadow-md shadow-emerald-500/10'
-                : 'border-slate-200 hover:border-slate-300 hover:bg-slate-50/50'
-            }`}
-          >
-            <div className="flex items-center justify-between">
-              <span className="text-2xl">🔢</span>
-              {selectedCategory === 'numbers' && (
-                <span className="w-6 h-6 rounded-full bg-emerald-600 text-white flex items-center justify-center text-xs font-bold">
-                  ✓
-                </span>
-              )}
-            </div>
-            <h3 className="font-black text-sm text-slate-900">پد عددی (بدون فاصله)</h3>
-            <p className="text-[11px] text-slate-500 leading-relaxed">
-              تایپ سرعتی ارقام چند رقمی با پرش هوشمند و بدون نیاز به فشردن کلید فاصله.
-            </p>
-            <button
-              type="button"
-              onClick={(e) => {
-                e.stopPropagation();
-                handleStartTest('numbers');
-              }}
-              className="w-full mt-2 py-2 rounded-xl bg-emerald-600 hover:bg-emerald-700 text-white text-xs font-bold transition flex items-center justify-center gap-1 shadow-xs"
-            >
-              <span>شروع تست پد عددی</span>
-              <Play className="w-3.5 h-3.5 fill-current" />
-            </button>
-          </div>
         </div>
 
 

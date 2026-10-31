@@ -29,7 +29,9 @@ import {
   MapPin,
   Trash2,
   Info,
-  Crown
+  Crown,
+  Coins,
+  Gem
 } from 'lucide-react';
 
 export default function ProfilePage() {
@@ -765,6 +767,32 @@ export default function ProfilePage() {
               <p className="text-xs text-slate-600 max-w-lg leading-relaxed">
                 {bio}
               </p>
+
+              {/* Economy Stats Badges (امتیاز، سکه، سطح و الماس) */}
+              <div className="pt-2 flex flex-wrap items-center gap-2 select-none">
+                <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-amber-500/10 border border-amber-300/80 text-amber-900 text-xs font-bold shadow-2xs">
+                  <Coins className="w-3.5 h-3.5 text-amber-600 shrink-0" />
+                  <span className="font-mono font-black">{(Number(user?.coins) || 0).toLocaleString('fa-IR')}</span>
+                  <span className="text-[10px] text-amber-700">سکه</span>
+                </div>
+
+                <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-purple-500/10 border border-purple-300/80 text-purple-900 text-xs font-bold shadow-2xs">
+                  <Sparkles className="w-3.5 h-3.5 text-purple-600 shrink-0" />
+                  <span className="font-mono font-black">{(Number(user?.xp) || 0).toLocaleString('fa-IR')}</span>
+                  <span className="text-[10px] text-purple-700">امتیاز کل (XP)</span>
+                </div>
+
+                <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-blue-500/10 border border-blue-300/80 text-blue-900 text-xs font-bold shadow-2xs">
+                  <Award className="w-3.5 h-3.5 text-blue-600 shrink-0" />
+                  <span className="font-mono font-black">سطح {(Math.min(1000000, Math.max(1, Number(user?.level) || Math.floor((Number(user?.xp) || 0) / 100) + 1))).toLocaleString('fa-IR')}</span>
+                </div>
+
+                <div className="flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-cyan-500/10 border border-cyan-300/80 text-cyan-900 text-xs font-bold shadow-2xs">
+                  <Gem className="w-3.5 h-3.5 text-cyan-600 shrink-0" />
+                  <span className="font-mono font-black">{(Number(user?.diamonds) || 0).toLocaleString('fa-IR')}</span>
+                  <span className="text-[10px] text-cyan-700">الماس</span>
+                </div>
+              </div>
 
               {/* Live Race Identity Notice */}
               <div className="pt-2 flex items-center gap-1.5 text-[11px] font-bold text-emerald-700 bg-emerald-50 border border-emerald-200 px-3 py-1.5 rounded-xl w-fit">
