@@ -1,6 +1,7 @@
 import * as fs from 'fs';
 import * as path from 'path';
-import { Injectable } from '@nestjs/common';
+import { Injectable, Optional, Inject } from '@nestjs/common';
+import { AuthService } from '../auth/auth.service';
 
 export interface Achievement {
   id: string;
@@ -129,6 +130,8 @@ export class GamificationService {
     },
   ];
 
+  constructor(@Optional() private readonly authService?: AuthService) {}
+
   getAllAchievements(): Achievement[] {
     return this.achievements;
   }
@@ -163,17 +166,22 @@ export class GamificationService {
 
   getLeaderboard(period: string = 'day') {
     let usersList: any[] = [];
-    const possiblePaths = [
-      path.join(process.cwd(), 'data', 'users.json'),
-      path.join(process.cwd(), 'backend', 'data', 'users.json'),
-      path.resolve(__dirname, '..', '..', '..', 'data', 'users.json'),
-    ];
-    for (const p of possiblePaths) {
-      if (fs.existsSync(p)) {
-        try {
-          usersList = JSON.parse(fs.readFileSync(p, 'utf8'));
-          break;
-        } catch (e) {}
+    if (this.authService) {
+      usersList = this.authService.getAllUsers();
+    }
+    if (!usersList || usersList.length === 0) {
+      const possiblePaths = [
+        path.join(process.cwd(), 'data', 'users.json'),
+        path.join(process.cwd(), 'backend', 'data', 'users.json'),
+        path.resolve(__dirname, '..', '..', '..', 'data', 'users.json'),
+      ];
+      for (const p of possiblePaths) {
+        if (fs.existsSync(p)) {
+          try {
+            usersList = JSON.parse(fs.readFileSync(p, 'utf8'));
+            break;
+          } catch (e) {}
+        }
       }
     }
 
@@ -235,7 +243,15 @@ export class GamificationService {
     wonRace?: boolean;
     wpm?: number;
     accuracy?: number;
+    lessonId?: string;
+    lessonTitle?: string;
+    stars?: number;
+    currentPath?: string;
   }) {
+    if (this.authService) {
+      return this.authService.recordUserProgress(dto);
+    }
+
     let usersList: any[] = [];
     let targetPath = path.join(process.cwd(), 'data', 'users.json');
     const altPath = path.join(process.cwd(), 'backend', 'data', 'users.json');

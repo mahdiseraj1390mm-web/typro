@@ -1,4 +1,6 @@
 import { Injectable, Logger } from '@nestjs/common';
+import * as fs from 'fs';
+import * as path from 'path';
 import { 
   ROOM_1_TEXTS, 
   ROOM_2_TEXTS, 
@@ -161,6 +163,48 @@ export class RaceService {
       45,
       ROOM_NUMBERS_TEXTS
     );
+
+    this.loadCustomTexts();
+  }
+
+  loadCustomTexts() {
+    try {
+      const candidates = [
+        path.join(process.cwd(), 'data', 'race_custom_texts.json'),
+        path.join(process.cwd(), 'backend', 'data', 'race_custom_texts.json'),
+      ];
+      for (const p of candidates) {
+        if (fs.existsSync(p)) {
+          const list = JSON.parse(fs.readFileSync(p, 'utf8'));
+          if (Array.isArray(list)) {
+            for (const item of list) {
+              if (item.text && item.roomId) {
+                this.addTextToRoom(item.roomId, item.text);
+              }
+            }
+          }
+          break;
+        }
+      }
+    } catch (e) {
+      this.logger.warn('Failed loading custom race texts: ' + e);
+    }
+  }
+
+  addTextToRoom(roomId: string, text: string) {
+    if (!text) return;
+    if (roomId === 'all') {
+      for (const room of this.rooms.values()) {
+        if (!room.textPool.includes(text)) {
+          room.textPool.push(text);
+        }
+      }
+      return;
+    }
+    const room = this.rooms.get(roomId);
+    if (room && !room.textPool.includes(text)) {
+      room.textPool.push(text);
+    }
   }
 
   createRoom(

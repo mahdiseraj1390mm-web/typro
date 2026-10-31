@@ -56,6 +56,14 @@ export interface UserAccount {
   racesWon?: number;
   wpm?: number;
   accuracy?: number;
+  bestWpm?: number;
+  bestAccuracy?: number;
+  isOnline?: boolean;
+  lastActivePath?: string;
+  lastActiveAt?: number;
+  completedLessons?: Array<{ id: string; title?: string; stars?: number; wpm?: number; accuracy?: number; completedAt: string }>;
+  lastLessonId?: string;
+  lastLessonTitle?: string;
 }
 
 @Injectable()
@@ -193,10 +201,24 @@ export class AuthService {
   // Real-time Active Presence Tracking
   private activeHeartbeats: Map<string, number> = new Map();
 
-  recordHeartbeat(clientId: string): number {
+  getUsersMap(): Map<string, UserAccount> {
+    return this.users;
+  }
+
+  recordHeartbeat(clientId: string, currentPath?: string): number {
     const now = Date.now();
     this.activeHeartbeats.set(clientId, now);
     this.cleanupHeartbeats(now);
+
+    // Update real user active state if clientId matches user
+    for (const u of this.users.values()) {
+      if (u.id === clientId || u.username === clientId || u.mobile === clientId) {
+        u.lastActiveAt = now;
+        if (currentPath) u.lastActivePath = currentPath;
+        break;
+      }
+    }
+
     return Math.max(1, this.activeHeartbeats.size);
   }
 
@@ -831,8 +853,13 @@ export class AuthService {
         if (updates.mobile) user.mobile = updates.mobile.trim();
         if (updates.bio !== undefined) user.bio = updates.bio;
         if (updates.role) user.role = updates.role;
-        if (updates.level !== undefined) user.level = updates.level;
-        if (updates.xp !== undefined) user.xp = updates.xp;
+        if (updates.xp !== undefined) {
+          user.xp = Math.max(0, Number(updates.xp));
+          user.level = Math.max(1, Math.floor(user.xp / 100) + 1);
+        } else if (updates.level !== undefined) {
+          user.level = Math.max(1, Number(updates.level));
+          user.xp = Math.max(user.xp || 0, (user.level - 1) * 100);
+        }
         if (updates.coins !== undefined) user.coins = updates.coins;
         if (updates.diamonds !== undefined) user.diamonds = updates.diamonds;
         if (updates.isBanned !== undefined) user.isBanned = updates.isBanned;
@@ -865,6 +892,137 @@ export class AuthService {
       return { success: true, message: 'کاربر با موفقیت حذف شد.' };
     }
     throw new BadRequestException('کاربر مورد نظر یافت نشد.');
+  }
+
+  // Synchronized User Progress Handler (Strictly Monotonic Lifetime XP, Never Resets!)
+  recordUserProgress(data: {
+    userId?: string;
+    username?: string;
+    displayName?: string;
+    earnedXp?: number;
+    earnedCoins?: number;
+    earnedDiamonds?: number;
+    wonRace?: boolean;
+    wpm?: number;
+    accuracy?: number;
+    lessonId?: string;
+    lessonTitle?: string;
+    stars?: number;
+    currentPath?: string;
+  }) {
+    let targetUser: UserAccount | undefined;
+    for (const u of this.users.values()) {
+      if (
+        (data.userId && (u.id === data.userId || u.username === data.userId || u.mobile === data.userId)) ||
+        (data.username && (u.username === data.username || u.id === data.username)) ||
+        (data.displayName && u.displayName === data.displayName)
+      ) {
+        targetUser = u;
+        break;
+      }
+    }
+
+    if (!targetUser) {
+      if (data.userId || data.username || data.displayName) {
+        const id = data.userId || `usr-${Date.now()}`;
+        targetUser = {
+          id,
+          mobile: '',
+          username: data.username || `user_${Date.now().toString().slice(-4)}`,
+          displayName: data.displayName || data.username || 'کاربر تایپرو',
+          bio: '',
+          passwordHash: 'TP_AUTOGEN_' + Math.random().toString(36).substring(2, 8),
+          role: 'USER',
+          level: 1,
+          xp: 0,
+          coins: 0,
+          diamonds: 0,
+          banknotes: 0,
+          isVerified: true,
+          sessions: [],
+          profileCompletion: 50,
+          racesWon: 0,
+        };
+        this.users.set(targetUser.id, targetUser);
+      } else {
+        return { success: false, message: 'کاربر یافت نشد' };
+      }
+    }
+
+    // Cumulative Lifetime XP: strictly increase, never reset or wrap around!
+    const addedXp = Math.max(0, Number(data.earnedXp) || 0);
+    const currentXp = Number(targetUser.xp) || 0;
+    const newXp = currentXp + addedXp;
+    const newLevel = Math.max(1, Math.floor(newXp / 100) + 1);
+
+    targetUser.xp = newXp;
+    targetUser.level = newLevel;
+
+    // Coins: 1:1 with earned XP or earnedCoins
+    const addedCoins = Math.max(0, Number(data.earnedCoins) || addedXp || 0);
+    if (addedCoins > 0) {
+      targetUser.coins = (Number(targetUser.coins) || 0) + addedCoins;
+    }
+
+    if (data.earnedDiamonds && Number(data.earnedDiamonds) > 0) {
+      targetUser.diamonds = (Number(targetUser.diamonds) || 0) + Number(data.earnedDiamonds);
+    }
+
+    if (data.wonRace) {
+      targetUser.racesWon = (Number(targetUser.racesWon) || 0) + 1;
+    }
+
+    if (data.wpm && Number(data.wpm) > 0) {
+      targetUser.wpm = Number(data.wpm);
+      if (!targetUser.bestWpm || Number(data.wpm) > Number(targetUser.bestWpm)) {
+        targetUser.bestWpm = Number(data.wpm);
+      }
+    }
+
+    if (data.accuracy && Number(data.accuracy) > 0) {
+      targetUser.accuracy = Number(data.accuracy);
+      if (!targetUser.bestAccuracy || Number(data.accuracy) > Number(targetUser.bestAccuracy)) {
+        targetUser.bestAccuracy = Number(data.accuracy);
+      }
+    }
+
+    if (data.lessonId) {
+      if (!targetUser.completedLessons) targetUser.completedLessons = [];
+      const existingLessonIdx = targetUser.completedLessons.findIndex((l) => l.id === data.lessonId);
+      const lessonEntry = {
+        id: data.lessonId,
+        title: data.lessonTitle || `درس ${data.lessonId}`,
+        stars: data.stars || 3,
+        wpm: data.wpm || 0,
+        accuracy: data.accuracy || 100,
+        completedAt: new Date().toISOString(),
+      };
+      if (existingLessonIdx >= 0) {
+        targetUser.completedLessons[existingLessonIdx] = lessonEntry;
+      } else {
+        targetUser.completedLessons.push(lessonEntry);
+      }
+      targetUser.lastLessonId = data.lessonId;
+      targetUser.lastLessonTitle = lessonEntry.title;
+    }
+
+    if (data.currentPath) {
+      targetUser.lastActivePath = data.currentPath;
+    }
+    targetUser.lastActiveAt = Date.now();
+
+    this.saveUsers();
+
+    return {
+      success: true,
+      xp: targetUser.xp,
+      level: targetUser.level,
+      coins: targetUser.coins,
+      diamonds: targetUser.diamonds,
+      racesWon: targetUser.racesWon,
+      completedLessons: targetUser.completedLessons,
+      lastLessonTitle: targetUser.lastLessonTitle,
+    };
   }
 
   // Admin: Bulk sync users from client
@@ -918,10 +1076,20 @@ export class AuthService {
     return this.getAllUsers();
   }
 
-  // Sanitize: Never expose passwordHash!
+  // Sanitize: Never expose passwordHash! Enrich with real online status & activity
   private sanitizeUser(user: UserAccount): Partial<UserAccount> {
     const { passwordHash, ...safe } = user;
-    return safe;
+    const now = Date.now();
+    const isOnline = Boolean(user.lastActiveAt && (now - user.lastActiveAt < 90000));
+    return {
+      ...safe,
+      isOnline,
+      lastActivePath: user.lastActivePath || '/',
+      lastActiveAt: user.lastActiveAt || undefined,
+      completedLessons: user.completedLessons || [],
+      lastLessonId: user.lastLessonId,
+      lastLessonTitle: user.lastLessonTitle,
+    };
   }
 
   getPublicProfile(userId: string) {

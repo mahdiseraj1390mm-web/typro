@@ -68,6 +68,8 @@ export const ALL_PERMISSIONS: GranularPermission[] = [
   // 7. محتوای متنی و قرآن CMS
   { id: 'content.view', module: 'content', moduleFa: 'محتوای متنی و قرآن CMS', name: 'مشاهده بانک متون و قرآن', desc: 'بررسی متون تست تایپ و سوره‌های قرآن' },
   { id: 'content.edit', module: 'content', moduleFa: 'محتوای متنی و قرآن CMS', name: 'افزودن و ویرایش متون و آیات', desc: 'ورود متون جدید، تصحیح اعراب و اشعار' },
+  { id: 'content.texts.race', module: 'content', moduleFa: 'محتوای متنی و قرآن CMS', name: 'افزودن و مدیریت متون مسابقه زنده', desc: 'امکان افزودن، ویرایش و حذف متون اتاق‌های مسابقه زنده اتومبیل‌رانی' },
+  { id: 'content.texts.typing', module: 'content', moduleFa: 'محتوای متنی و قرآن CMS', name: 'افزودن و مدیریت متون تست تایپ', desc: 'امکان افزودن، ویرایش و حذف متون سامانه تست تایپ و رکوردگیری' },
 
   // 8. بازی‌ها و سرگرمی
   { id: 'games.view', module: 'games', moduleFa: 'بازی‌ها و سرگرمی', name: 'مشاهده فهرست بازی‌ها', desc: 'بررسی وضعیت بازی‌های مهارتی تایپ' },

@@ -29,19 +29,33 @@
     "bio": "علاقه‌مند به یادگیری تایپ ده‌انگشتی و افزایش سرعت",
     "passwordHash": "TP934205",
     "role": "USER",
-    "level": 502,
-    "xp": 50156,
-    "coins": 50156,
+    "level": 29,
+    "xp": 2805,
+    "coins": 50251,
     "diamonds": 27,
     "banknotes": 0,
     "isVerified": true,
     "sessions": [],
     "profileCompletion": 80,
-    "racesWon": 0,
-    "wpm": 97,
-    "bestWpm": 97,
-    "accuracy": 91,
-    "bestAccuracy": 91
+    "racesWon": 1,
+    "wpm": 45,
+    "bestWpm": 98,
+    "accuracy": 100,
+    "bestAccuracy": 100,
+    "lastActiveAt": 1793458713757,
+    "completedLessons": [
+      {
+        "id": "fa-row-home-1",
+        "title": "????? ???? ????: ??????? ? ? ?",
+        "stars": 3,
+        "wpm": 45,
+        "accuracy": 100,
+        "completedAt": "2026-10-31T14:58:33.757Z"
+      }
+    ],
+    "lastLessonId": "fa-row-home-1",
+    "lastLessonTitle": "????? ???? ????: ??????? ? ? ?",
+    "lastActivePath": "/lessons"
   },
   {
     "id": "usr-1792434996508",

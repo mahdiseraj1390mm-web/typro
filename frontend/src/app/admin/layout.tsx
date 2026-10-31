@@ -92,6 +92,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     { href: '/admin/roles', title: 'ادمین‌های فرعی و سطوح دسترسی (RBAC)', icon: <ShieldAlert className="w-4 h-4 text-red-600" /> },
     { href: '/admin/lessons', title: 'مدیریت دروس و آکادمی', icon: <BookOpen className="w-4 h-4" /> },
     { href: '/admin/content', title: 'محتوای متنی و قرآن CMS', icon: <FileText className="w-4 h-4" /> },
+    { href: '/admin/texts', title: 'متون مسابقه و تست تایپ', icon: <FileText className="w-4 h-4 text-emerald-600" /> },
     { href: '/admin/races', title: 'مسابقات و اتاق‌های زنده', icon: <Trophy className="w-4 h-4" /> },
     { href: '/admin/games', title: 'مدیریت بازی‌ها و دسترسی کاربران', icon: <Gamepad2 className="w-4 h-4 text-purple-600" /> },
     { href: '/admin/tournaments', title: 'تورنمنت هفتگی و براکت‌ها', icon: <Swords className="w-4 h-4 text-amber-500" /> },
@@ -112,6 +113,7 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
     '/admin/roles': 'roles.view',
     '/admin/lessons': 'lessons.view',
     '/admin/content': 'content.view',
+    '/admin/texts': 'content.texts.race',
     '/admin/races': 'races.view',
     '/admin/games': 'games.view',
     '/admin/tournaments': 'tournaments.view',
@@ -130,6 +132,9 @@ export default function AdminLayout({ children }: { children: React.ReactNode })
 
   const hasAccessTo = (permKey: string) => {
     if (isSuperAdmin) return true;
+    if (permKey === 'content.texts.race') {
+      return userPermissions.includes('content.texts.race') || userPermissions.includes('content.texts.typing');
+    }
     return userPermissions.includes(permKey);
   };
 

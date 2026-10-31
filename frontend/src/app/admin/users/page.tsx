@@ -33,10 +33,21 @@ import {
   RefreshCw,
   Crown,
   Check,
+  Award,
+  BookOpen,
 } from 'lucide-react';
 import { useAuth } from '@/context/AuthContext';
 
 /* ─────────────────────────────── Types ─────────────────────────────── */
+
+interface LessonProgressRecord {
+  id: string;
+  title?: string;
+  stars?: number;
+  wpm?: number;
+  accuracy?: number;
+  completedAt: string;
+}
 
 interface ManagedUser {
   id: string;
@@ -50,6 +61,7 @@ interface ManagedUser {
   workplaceAddress?: string;
   bio?: string;
   level: number;
+  xp: number;
   coins: number;
   diamonds: number;
   status: 'active' | 'suspended';
@@ -60,9 +72,14 @@ interface ManagedUser {
   joinedDate: string;
   liveRoomBanUntil?: string;
   featureRestrictions?: string[];
+  isOnline?: boolean;
+  lastActivePath?: string;
+  lastActiveAt?: number;
+  completedLessons?: LessonProgressRecord[];
+  lastLessonTitle?: string;
 }
 
-type ModalMode = 'add' | 'edit' | 'profile' | 'restrict' | 'delete' | 'subscription' | null;
+type ModalMode = 'add' | 'edit' | 'profile' | 'restrict' | 'delete' | 'subscription' | 'xp' | 'lessons' | null;
 
 const SUBSCRIPTION_PLANS = [
   { id: 'VIP طلایی', name: 'VIP طلایی' },
@@ -170,6 +187,7 @@ function loadUsers(): ManagedUser[] {
           workplaceAddress: r.workplaceAddress,
           bio: r.bio,
           level: r.level ?? 1,
+          xp: r.xp ?? (r.level ? (r.level - 1) * 100 : 0),
           coins: r.coins ?? 0,
           diamonds: r.diamonds ?? 0,
           status: 'active',
@@ -234,6 +252,33 @@ function PasswordCell({ pw }: { pw: string }) {
   );
 }
 
+function formatTimeAgo(ts?: number): string {
+  if (!ts) return 'نامشخص';
+  const diffSec = Math.floor((Date.now() - ts) / 1000);
+  if (diffSec < 60) return 'هم‌اکنون';
+  const diffMin = Math.floor(diffSec / 60);
+  if (diffMin < 60) return `${diffMin} دقیقه پیش`;
+  const diffHours = Math.floor(diffMin / 60);
+  if (diffHours < 24) return `${diffHours} ساعت پیش`;
+  const diffDays = Math.floor(diffHours / 24);
+  return `${diffDays} روز پیش`;
+}
+
+function getPageName(path?: string): string {
+  if (!path) return 'صفحه اصلی';
+  if (path === '/') return 'صفحه اصلی';
+  if (path.startsWith('/live-race')) return 'مسابقه زنده';
+  if (path.startsWith('/typing-test')) return 'تست تایپ';
+  if (path.startsWith('/lessons')) return 'آکادمی دروس';
+  if (path.startsWith('/quran')) return 'تایپ قرآن';
+  if (path.startsWith('/admin')) return 'پنل مدیریت';
+  if (path.startsWith('/profile')) return 'پروفایل';
+  if (path.startsWith('/store')) return 'فروشگاه';
+  if (path.startsWith('/games')) return 'بازی‌ها';
+  if (path.startsWith('/subscription')) return 'خرید اشتراک';
+  return path;
+}
+
 /* ─────────────────────────────── Main Component ─────────────────────────────── */
 
 export default function AdminUsersPage() {
@@ -256,7 +301,15 @@ export default function AdminUsersPage() {
   /* delete confirm */
   const [deleteConfirmText, setDeleteConfirmText] = useState('');
 
-  /* ── Load on mount ── */
+  /* XP & Level Modal State */
+  const [xpUser, setXpUser] = useState<ManagedUser | null>(null);
+  const [targetXp, setTargetXp] = useState<number>(0);
+  const [isSavingXp, setIsSavingXp] = useState(false);
+
+  /* Lessons Progress Modal State */
+  const [lessonsUser, setLessonsUser] = useState<ManagedUser | null>(null);
+
+  /* ── Load on mount & Poll live status ── */
   useEffect(() => {
     const local = loadUsers();
     setUsers(local);
@@ -270,48 +323,55 @@ export default function AdminUsersPage() {
       }).catch(() => {});
     }
 
-    // Try fetching from backend API if available
-    const apiBase = process.env.NEXT_PUBLIC_API_URL || (typeof window !== 'undefined' ? '' : 'http://127.0.0.1:4000');
-    fetch(`${apiBase}/auth/admin/users`)
-      .then((res) => (res.ok ? res.json() : []))
-      .then((backendUsers: any[]) => {
-        if (Array.isArray(backendUsers) && backendUsers.length > 0) {
-          setUsers((prev) => {
-            const existingKeys = new Set(prev.map((u) => u.id || u.username || u.mobile));
-            const merged = [...prev];
-            for (const bu of backendUsers) {
-              const key = bu.id || bu.username || bu.mobile;
-              if (!existingKeys.has(key)) {
-                existingKeys.add(key);
-                merged.push({
-                  id: bu.id || `api-${Date.now()}`,
-                  username: bu.username || 'user',
-                  displayName: bu.displayName || bu.username || 'کاربر سیستم',
-                  mobile: bu.mobile || '',
-                  password: '••••••',
-                  email: bu.email,
-                  gender: bu.gender,
-                  workplace: bu.workplace,
-                  workplaceAddress: bu.workplaceAddress,
-                  bio: bu.bio,
-                  level: bu.level ?? 1,
-                  coins: bu.coins ?? 0,
-                  diamonds: bu.diamonds ?? 0,
-                  status: bu.isBanned ? 'suspended' : 'active',
-                  subscription: bu.subscriptionPlan || (bu.isSubscribed ? 'VIP' : 'رایگان'),
-                  isSubscribed: !!bu.isSubscribed,
+    const loadServerUsers = () => {
+      fetch('/api/admin/users')
+        .then((res) => (res.ok ? res.json() : []))
+        .then((backendUsers: any[]) => {
+          if (Array.isArray(backendUsers) && backendUsers.length > 0) {
+            setUsers((prev) => {
+              const prevMap = new Map(prev.map((u) => [u.id || u.username || u.mobile, u]));
+              return backendUsers.map((bu) => {
+                const key = bu.id || bu.username || bu.mobile;
+                const existing = prevMap.get(key);
+                return {
+                  id: bu.id || existing?.id || `usr-${Date.now()}`,
+                  username: bu.username || existing?.username || 'user',
+                  displayName: bu.displayName || existing?.displayName || bu.username || 'کاربر سیستم',
+                  mobile: bu.mobile || existing?.mobile || '',
+                  password: existing?.password || '••••••',
+                  email: bu.email || existing?.email,
+                  gender: bu.gender || existing?.gender,
+                  workplace: bu.workplace || existing?.workplace,
+                  workplaceAddress: bu.workplaceAddress || existing?.workplaceAddress,
+                  bio: bu.bio || existing?.bio,
+                  level: bu.level ?? existing?.level ?? 1,
+                  xp: bu.xp ?? existing?.xp ?? 0,
+                  coins: bu.coins ?? existing?.coins ?? 0,
+                  diamonds: bu.diamonds ?? existing?.diamonds ?? 0,
+                  status: bu.isBanned ? 'suspended' : (existing?.status || 'active'),
+                  subscription: bu.subscriptionPlan || bu.subscription || (bu.isSubscribed ? 'VIP' : 'رایگان'),
+                  isSubscribed: Boolean(bu.isSubscribed),
                   subscriptionPlan: bu.subscriptionPlan,
                   subscriptionExpiresAt: bu.subscriptionExpiresAt,
-                  joinedDate: new Date().toISOString().slice(0, 10),
-                  featureRestrictions: [],
-                });
-              }
-            }
-            return merged;
-          });
-        }
-      })
-      .catch(() => {});
+                  joinedDate: existing?.joinedDate || new Date().toISOString().slice(0, 10),
+                  featureRestrictions: existing?.featureRestrictions || [],
+                  isOnline: Boolean(bu.isOnline),
+                  lastActivePath: bu.lastActivePath || '/',
+                  lastActiveAt: bu.lastActiveAt,
+                  completedLessons: bu.completedLessons || [],
+                  lastLessonTitle: bu.lastLessonTitle,
+                };
+              });
+            });
+          }
+        })
+        .catch(() => {});
+    };
+
+    loadServerUsers();
+    // Poll real-time online status and active pages every 15 seconds
+    const interval = setInterval(loadServerUsers, 15000);
+    return () => clearInterval(interval);
   }, []);
 
   /* ── Toast helper ── */
@@ -451,6 +511,45 @@ export default function AdminUsersPage() {
     closeModal();
   };
 
+  const openXpEdit = (u: ManagedUser) => {
+    setSelected(u);
+    setXpUser(u);
+    setTargetXp(u.xp ?? ((u.level || 1) - 1) * 100);
+    setModal('xp');
+  };
+
+  const openLessonsView = (u: ManagedUser) => {
+    setSelected(u);
+    setLessonsUser(u);
+    setModal('lessons');
+  };
+
+  const handleSaveXp = async () => {
+    if (!xpUser) return;
+    setIsSavingXp(true);
+    const newXp = Math.max(0, targetXp);
+    const newLevel = Math.max(1, Math.floor(newXp / 100) + 1);
+
+    try {
+      const res = await fetch(`/api/admin/users/${xpUser.id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ xp: newXp, level: newLevel }),
+      });
+      if (!res.ok) throw new Error('خطا در ذخیره امتیاز');
+
+      setUsers((prev) =>
+        prev.map((u) => (u.id === xpUser.id ? { ...u, xp: newXp, level: newLevel } : u))
+      );
+      showToast(`🎉 امتیاز کاربر @${xpUser.username} به ${newXp.toLocaleString('fa-IR')} XP (سطح ${newLevel}) بروزرسانی شد.`);
+      closeModal();
+    } catch (e: any) {
+      showToast('خطا در ذخیره امتیاز: ' + (e.message || ''));
+    } finally {
+      setIsSavingXp(false);
+    }
+  };
+
   const openRestrict = (u: ManagedUser) => {
     setSelected(u);
     setBanDuration('1d');
@@ -487,6 +586,7 @@ export default function AdminUsersPage() {
       password: form.password!,
       email: form.email,
       level: form.level ?? 1,
+      xp: form.xp ?? ((form.level ? form.level - 1 : 0) * 100),
       coins: form.coins ?? 0,
       diamonds: form.diamonds ?? 0,
       status: 'active',
@@ -709,25 +809,30 @@ export default function AdminUsersPage() {
             <table className="w-full text-right text-xs">
               <thead className="bg-slate-50 text-slate-500 border-b border-slate-200">
                 <tr>
-                  <th className="py-3 px-4 font-bold">نام کاربری</th>
+                  <th className="py-3 px-4 font-bold">نام و شناسه</th>
                   <th className="py-3 px-4 font-bold">شماره موبایل</th>
-                  <th className="py-3 px-4 font-bold">رمز عبور</th>
+                  <th className="py-3 px-4 font-bold text-center">
+                    <span className="flex items-center gap-1 justify-center text-indigo-600 font-black">
+                      <Award className="w-3.5 h-3.5" />
+                      امتیاز (XP) و سطح
+                    </span>
+                  </th>
+                  <th className="py-3 px-4 font-bold text-center">
+                    <span className="flex items-center gap-1 justify-center text-emerald-600 font-black">
+                      <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+                      وضعیت زنده و صفحه
+                    </span>
+                  </th>
+                  <th className="py-3 px-4 font-bold text-center">
+                    <span className="flex items-center gap-1 justify-center text-blue-600 font-bold">
+                      <BookOpen className="w-3.5 h-3.5" />
+                      پیشرفت دروس
+                    </span>
+                  </th>
                   <th className="py-3 px-4 font-bold text-center">
                     <span className="flex items-center gap-1 justify-center">
                       <Coins className="w-3.5 h-3.5 text-amber-500" />
-                      سکه
-                    </span>
-                  </th>
-                  <th className="py-3 px-4 font-bold text-center">
-                    <span className="flex items-center gap-1 justify-center">
-                      <Gem className="w-3.5 h-3.5 text-violet-500" />
-                      الماس
-                    </span>
-                  </th>
-                  <th className="py-3 px-4 font-bold text-center">
-                    <span className="flex items-center gap-1 justify-center">
-                      <Star className="w-3.5 h-3.5 text-blue-500" />
-                      لول
+                      دارایی (سکه / الماس)
                     </span>
                   </th>
                   <th className="py-3 px-4 font-bold text-center">وضعیت</th>
@@ -756,20 +861,66 @@ export default function AdminUsersPage() {
                       <div className="font-mono text-blue-600 text-[10px]">@{u.username}</div>
                     </td>
                     <td className="py-3 px-4 font-mono text-slate-600">{u.mobile}</td>
-                    <td className="py-3 px-4">
-                      <PasswordCell pw={u.password} />
-                    </td>
-                    <td className="py-3 px-4 text-center font-bold text-amber-600">
-                      {u.coins.toLocaleString('fa-IR')}
-                    </td>
-                    <td className="py-3 px-4 text-center font-bold text-violet-600">
-                      {u.diamonds.toLocaleString('fa-IR')}
-                    </td>
+                    
+                    {/* XP & Level Cell (Click to Edit) */}
                     <td className="py-3 px-4 text-center">
-                      <span className="inline-flex items-center justify-center w-8 h-8 rounded-full bg-blue-50 text-blue-700 font-black text-xs">
-                        {u.level}
-                      </span>
+                      <button
+                        onClick={() => openXpEdit(u)}
+                        className="group inline-flex flex-col items-center p-1.5 rounded-xl hover:bg-indigo-50 border border-slate-200 hover:border-indigo-300 transition cursor-pointer shadow-2xs"
+                        title="کلیک برای ویرایش و کم/زیاد کردن امتیاز و سطح"
+                      >
+                        <div className="flex items-center gap-1 font-black text-xs text-indigo-700 font-mono">
+                          <Award className="w-3.5 h-3.5 text-indigo-600 group-hover:scale-110 transition" />
+                          <span>{(u.xp ?? 0).toLocaleString('fa-IR')} XP</span>
+                        </div>
+                        <span className="text-[10px] text-slate-500 font-bold mt-0.5">
+                          سطح {u.level ?? 1}
+                        </span>
+                      </button>
                     </td>
+
+                    {/* Real-time Online Presence & Active Page */}
+                    <td className="py-3 px-4 text-center">
+                      {u.isOnline ? (
+                        <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-50 text-emerald-700 text-[10px] font-bold border border-emerald-200 shadow-xs">
+                          <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
+                          <span className="max-w-[130px] truncate" title={u.lastActivePath}>
+                            آنلاین در {getPageName(u.lastActivePath)}
+                          </span>
+                        </div>
+                      ) : (
+                        <div className="text-[10px] text-slate-400 font-medium">
+                          {u.lastActiveAt ? `آفلاین (${formatTimeAgo(u.lastActiveAt)})` : 'آفلاین'}
+                        </div>
+                      )}
+                    </td>
+
+                    {/* Real Lesson Progress */}
+                    <td className="py-3 px-4 text-center">
+                      {u.completedLessons && u.completedLessons.length > 0 ? (
+                        <button
+                          onClick={() => openLessonsView(u)}
+                          className="inline-flex items-center gap-1 px-2.5 py-1 rounded-xl bg-blue-50 text-blue-700 text-[10px] font-bold border border-blue-200 hover:bg-blue-100 transition shadow-2xs cursor-pointer"
+                          title="مشاهده جزییات دروس پاس شده"
+                        >
+                          <BookOpen className="w-3.5 h-3.5 text-blue-600" />
+                          <span>{u.completedLessons.length.toLocaleString('fa-IR')} درس تکمیل</span>
+                        </button>
+                      ) : (
+                        <span className="text-[10px] text-slate-400">بدون درس</span>
+                      )}
+                    </td>
+
+                    {/* Coins & Diamonds */}
+                    <td className="py-3 px-4 text-center">
+                      <div className="font-bold text-amber-600 font-mono text-[11px]">
+                        {u.coins.toLocaleString('fa-IR')} سکه
+                      </div>
+                      <div className="font-bold text-violet-600 font-mono text-[10px]">
+                        {u.diamonds.toLocaleString('fa-IR')} الماس
+                      </div>
+                    </td>
+
                     <td className="py-3 px-4 text-center">
                       <StatusBadge status={u.status} />
                     </td>
@@ -802,6 +953,13 @@ export default function AdminUsersPage() {
                     </td>
                     <td className="py-3 px-4">
                       <div className="flex items-center justify-center gap-1">
+                        <button
+                          onClick={() => openXpEdit(u)}
+                          className="p-1.5 rounded-lg bg-indigo-50 text-indigo-600 hover:bg-indigo-100 hover:shadow-xs transition border border-indigo-200"
+                          title="ویرایش و کم/زیاد کردن امتیاز XP و سطح"
+                        >
+                          <Award className="w-4 h-4 text-indigo-600" />
+                        </button>
                         <button
                           onClick={() => openSubscription(u)}
                           className="p-1.5 rounded-lg bg-amber-50 text-amber-600 hover:bg-amber-100 hover:shadow-xs transition border border-amber-200"
@@ -1341,6 +1499,201 @@ export default function AdminUsersPage() {
               confirmLabel={isSubmittingSub ? 'در حال ذخیره...' : 'ثبت و اعمال اشتراک'}
               confirmClass="bg-gradient-to-r from-amber-500 to-amber-600 text-white hover:from-amber-600 hover:to-amber-700 shadow-sm"
             />
+          </div>
+        </ModalWrapper>
+      )}
+
+      {/* ── MODAL: EDIT XP & LEVEL ── */}
+      {modal === 'xp' && xpUser && (
+        <ModalWrapper
+          title={`ویرایش و تنظیم امتیاز (XP) و سطح: ${xpUser.displayName} (@${xpUser.username})`}
+          onClose={closeModal}
+        >
+          <div className="space-y-5">
+            <div className="p-4 rounded-2xl bg-indigo-50/60 border border-indigo-100 flex items-center justify-between">
+              <div>
+                <span className="text-[11px] text-slate-500 font-bold block">امتیاز و لول فعلی کاربر:</span>
+                <div className="flex items-center gap-2 mt-1">
+                  <span className="text-xl font-black text-indigo-700 font-mono">
+                    {(xpUser.xp ?? 0).toLocaleString('fa-IR')} XP
+                  </span>
+                  <span className="px-2.5 py-0.5 rounded-full bg-indigo-200 text-indigo-900 text-xs font-black">
+                    سطح {xpUser.level ?? 1}
+                  </span>
+                </div>
+              </div>
+              <div className="w-12 h-12 rounded-2xl bg-indigo-100 flex items-center justify-center text-indigo-600 shadow-xs">
+                <Award className="w-6 h-6" />
+              </div>
+            </div>
+
+            {/* Input exact XP */}
+            <div>
+              <label className="block text-xs font-bold text-slate-700 mb-2">
+                مقدار جدید امتیاز کل (XP):
+              </label>
+              <div className="relative">
+                <input
+                  type="number"
+                  min="0"
+                  step="10"
+                  value={targetXp}
+                  onChange={(e) => setTargetXp(Math.max(0, parseInt(e.target.value) || 0))}
+                  className="w-full px-4 py-2.5 text-base font-black text-slate-900 font-mono bg-white border border-slate-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  placeholder="مثلاً: 2500"
+                />
+                <span className="absolute left-3 top-3 text-xs font-bold text-slate-400">XP</span>
+              </div>
+            </div>
+
+            {/* Quick Increment/Decrement Buttons */}
+            <div>
+              <span className="block text-xs font-bold text-slate-600 mb-2">تغییر سریع امتیاز (کم / زیاد):</span>
+              <div className="grid grid-cols-3 sm:grid-cols-6 gap-2">
+                {[
+                  { label: '+۱۰۰', delta: 100 },
+                  { label: '+۵۰۰', delta: 500 },
+                  { label: '+۱,۰۰۰', delta: 1000 },
+                  { label: '+۲,۵۰۰', delta: 2500 },
+                  { label: '-۱۰۰', delta: -100 },
+                  { label: '-۵۰۰', delta: -500 },
+                ].map((btn) => (
+                  <button
+                    key={btn.label}
+                    type="button"
+                    onClick={() => setTargetXp((prev) => Math.max(0, prev + btn.delta))}
+                    className={`py-2 px-2 rounded-xl text-xs font-black border transition ${
+                      btn.delta > 0
+                        ? 'bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border-emerald-200'
+                        : 'bg-rose-50 hover:bg-rose-100 text-rose-800 border-rose-200'
+                    }`}
+                  >
+                    {btn.label}
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Dynamic Level Calculation Preview */}
+            <div className="p-4 rounded-2xl bg-slate-50 border border-slate-200">
+              <span className="text-[11px] text-slate-500 font-bold block mb-1">
+                پیش‌نمایش سطح پس از ذخیره:
+              </span>
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <span className="text-2xl font-black text-slate-900 font-mono">
+                    سطح {Math.max(1, Math.floor(targetXp / 100) + 1)}
+                  </span>
+                  <span className="text-xs text-slate-500">
+                    ({targetXp % 100} / 100 XP در این سطح)
+                  </span>
+                </div>
+                <span className="text-xs font-bold text-indigo-600">
+                  فرمول: هر ۱۰۰ امتیاز = ۱ لول
+                </span>
+              </div>
+            </div>
+
+            <ModalFooter
+              onCancel={closeModal}
+              onConfirm={handleSaveXp}
+              confirmLabel={isSavingXp ? 'در حال ذخیره...' : 'ذخیره و اعمال امتیاز جدید'}
+              confirmClass="bg-gradient-to-r from-indigo-600 to-purple-600 text-white hover:from-indigo-700 hover:to-purple-700 shadow-sm"
+            />
+          </div>
+        </ModalWrapper>
+      )}
+
+      {/* ── MODAL: USER COMPLETED LESSONS PROGRESS ── */}
+      {modal === 'lessons' && lessonsUser && (
+        <ModalWrapper
+          title={`کارنامه و تاریخچه دروس: ${lessonsUser.displayName} (@${lessonsUser.username})`}
+          onClose={closeModal}
+          wide
+        >
+          <div className="space-y-4">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+              <div className="p-3 bg-blue-50/70 border border-blue-100 rounded-2xl">
+                <span className="text-[10px] text-blue-600 font-bold">تعداد دروس گذرانده شده</span>
+                <div className="text-xl font-black text-blue-950 font-mono mt-0.5">
+                  {(lessonsUser.completedLessons?.length || 0).toLocaleString('fa-IR')} درس
+                </div>
+              </div>
+              <div className="p-3 bg-amber-50/70 border border-amber-100 rounded-2xl">
+                <span className="text-[10px] text-amber-600 font-bold">آخرین فعالیت کاربر</span>
+                <div className="text-xs font-black text-amber-950 truncate mt-1" title={lessonsUser.lastActivePath}>
+                  {lessonsUser.isOnline ? `آنلاین در ${getPageName(lessonsUser.lastActivePath)}` : (lessonsUser.lastActiveAt ? formatTimeAgo(lessonsUser.lastActiveAt) : 'آفلاین')}
+                </div>
+              </div>
+              <div className="p-3 bg-purple-50/70 border border-purple-100 rounded-2xl col-span-2 sm:col-span-1">
+                <span className="text-[10px] text-purple-600 font-bold">آخرین عنوان درس</span>
+                <div className="text-xs font-black text-purple-950 truncate mt-1">
+                  {lessonsUser.lastLessonTitle || (lessonsUser.completedLessons?.[lessonsUser.completedLessons.length - 1]?.title) || '—'}
+                </div>
+              </div>
+            </div>
+
+            {/* Lessons Table */}
+            <div className="border border-slate-200 rounded-2xl overflow-hidden max-h-80 overflow-y-auto">
+              <table className="w-full text-right text-xs">
+                <thead className="bg-slate-50 text-slate-500 border-b border-slate-200 sticky top-0">
+                  <tr>
+                    <th className="py-2.5 px-3 font-bold">عنوان درس</th>
+                    <th className="py-2.5 px-3 font-bold text-center">امتیاز و ستاره</th>
+                    <th className="py-2.5 px-3 font-bold text-center">سرعت (WPM)</th>
+                    <th className="py-2.5 px-3 font-bold text-center">دقت</th>
+                    <th className="py-2.5 px-3 font-bold text-left">تاریخ تکمیل</th>
+                  </tr>
+                </thead>
+                <tbody className="divide-y divide-slate-100">
+                  {(!lessonsUser.completedLessons || lessonsUser.completedLessons.length === 0) ? (
+                    <tr>
+                      <td colSpan={5} className="py-12 text-center text-slate-400 text-xs">
+                        این کاربر هنوز درسی را در سامانه به پایان نرسانده است.
+                      </td>
+                    </tr>
+                  ) : (
+                    lessonsUser.completedLessons.map((l, idx) => (
+                      <tr key={l.id + '-' + idx} className="hover:bg-slate-50/80 transition">
+                        <td className="py-2.5 px-3 font-bold text-slate-900">
+                          {l.title || `درس شماره ${l.id}`}
+                        </td>
+                        <td className="py-2.5 px-3 text-center">
+                          <span className="text-amber-500 font-mono font-black text-xs">
+                            {'⭐'.repeat(Math.min(5, Math.max(1, l.stars || 3)))}
+                          </span>
+                        </td>
+                        <td className="py-2.5 px-3 text-center font-bold text-slate-700 font-mono">
+                          {l.wpm || '—'} WPM
+                        </td>
+                        <td className="py-2.5 px-3 text-center font-bold text-emerald-600 font-mono">
+                          {l.accuracy ? `${l.accuracy}٪` : '۱۰۰٪'}
+                        </td>
+                        <td className="py-2.5 px-3 text-left font-mono text-[11px] text-slate-500">
+                          {l.completedAt ? new Date(l.completedAt).toLocaleDateString('fa-IR', {
+                            year: 'numeric',
+                            month: 'numeric',
+                            day: 'numeric',
+                            hour: '2-digit',
+                            minute: '2-digit',
+                          }) : '—'}
+                        </td>
+                      </tr>
+                    ))
+                  )}
+                </tbody>
+              </table>
+            </div>
+
+            <div className="flex justify-end pt-2">
+              <button
+                type="button"
+                onClick={closeModal}
+                className="px-5 py-2 rounded-xl bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs transition"
+              >
+                بستن پنجره
+              </button>
+            </div>
           </div>
         </ModalWrapper>
       )}

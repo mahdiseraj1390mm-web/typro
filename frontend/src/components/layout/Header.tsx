@@ -114,10 +114,12 @@ export default function Header() {
 
     const sendHeartbeat = async () => {
       try {
+        const activeUid = user?.id || (typeof window !== 'undefined' ? localStorage.getItem('typro_user_id') : undefined) || undefined;
+        const currentPath = typeof window !== 'undefined' ? window.location.pathname : '/';
         const res = await fetch('/auth/heartbeat', {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ clientId: presenceId }),
+          body: JSON.stringify({ clientId: presenceId, userId: activeUid, path: currentPath }),
         });
         if (res.ok) {
           const data = await res.json();

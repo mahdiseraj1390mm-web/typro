@@ -6,10 +6,15 @@ export class AuthController {
   constructor(private readonly authService: AuthService) {}
 
   @Post('heartbeat')
-  heartbeat(@Req() req: any, @Body('clientId') clientId?: string) {
+  heartbeat(
+    @Req() req: any,
+    @Body('clientId') clientId?: string,
+    @Body('path') path?: string,
+    @Body('userId') userId?: string
+  ) {
     const ip = (req.headers['x-forwarded-for'] as string)?.split(',')[0] || req.socket?.remoteAddress || '127.0.0.1';
-    const id = clientId || `${ip}`;
-    return { onlineCount: this.authService.recordHeartbeat(id) };
+    const id = userId || clientId || `${ip}`;
+    return { onlineCount: this.authService.recordHeartbeat(id, path) };
   }
 
   @Get('online-count')

@@ -121,6 +121,36 @@ export class AdminController {
     return this.adminService.getActiveRoomsMonitoring();
   }
 
+  // Content Management: Texts for Live Races and Typing Tests
+  @Get('texts')
+  getCustomTexts() {
+    return this.adminService.getCustomTexts();
+  }
+
+  @Post('texts/race')
+  addCustomRaceText(
+    @Body() body: { roomId: string; title: string; category?: string; text: string; createdByName?: string }
+  ) {
+    return this.adminService.addCustomRaceText(body);
+  }
+
+  @Delete('texts/race/:id')
+  deleteCustomRaceText(@Param('id') id: string) {
+    return this.adminService.deleteCustomRaceText(id);
+  }
+
+  @Post('texts/typing')
+  addCustomTypingText(
+    @Body() body: { title: string; category?: string; difficulty?: 'آسان' | 'متوسط' | 'سخت'; text: string; createdByName?: string }
+  ) {
+    return this.adminService.addCustomTypingText(body);
+  }
+
+  @Delete('texts/typing/:id')
+  deleteCustomTypingText(@Param('id') id: string) {
+    return this.adminService.deleteCustomTypingText(id);
+  }
+
   @Get('audit-logs')
   getAuditLogs() {
     return this.adminService.getAuditLogs();
@@ -195,6 +225,8 @@ export class AdminController {
       // 7. محتوای متنی و قرآن CMS
       { id: 'content.view', module: 'content', moduleFa: 'محتوای متنی و قرآن CMS', name: 'مشاهده بانک متون و قرآن', desc: 'بررسی متون تست تایپ و سوره‌های قرآن' },
       { id: 'content.edit', module: 'content', moduleFa: 'محتوای متنی و قرآن CMS', name: 'افزودن و ویرایش متون و آیات', desc: 'ورود متون جدید، تصحیح اعراب و اشعار' },
+      { id: 'content.texts.race', module: 'content', moduleFa: 'محتوای متنی و قرآن CMS', name: 'افزودن و مدیریت متون مسابقه زنده', desc: 'امکان افزودن، ویرایش و حذف متون اتاق‌های مسابقه زنده اتومبیل‌رانی' },
+      { id: 'content.texts.typing', module: 'content', moduleFa: 'محتوای متنی و قرآن CMS', name: 'افزودن و مدیریت متون تست تایپ', desc: 'امکان افزودن، ویرایش و حذف متون سامانه تست تایپ و رکوردگیری' },
 
       // 8. بازی‌ها و سرگرمی
       { id: 'games.view', module: 'games', moduleFa: 'بازی‌ها و سرگرمی', name: 'مشاهده فهرست بازی‌ها', desc: 'بررسی وضعیت بازی‌های مهارتی تایپ' },

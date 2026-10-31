@@ -371,6 +371,39 @@ export default function LessonsPage() {
         const updatedHistory = [newRecord, ...prevHistory].slice(0, 500);
         localStorage.setItem('typro_lesson_telemetry_history', JSON.stringify(updatedHistory));
         setTelemetryRecords(updatedHistory);
+
+        // Update local lifetime cumulative XP and level
+        const curXp = Number(localStorage.getItem('typro_user_xp') || '0');
+        const nextXp = curXp + earnedXp;
+        const nextLvl = Math.max(1, Math.floor(nextXp / 100) + 1);
+        localStorage.setItem('typro_user_xp', String(nextXp));
+        localStorage.setItem('typro_user_level', String(nextLvl));
+        window.dispatchEvent(new Event('typro_economy_updated'));
+      } catch {}
+
+      // Persist real lesson completion and progress to backend database
+      try {
+        const storedUserId = user?.id || localStorage.getItem('typro_user_id') || undefined;
+        const storedUsername = user?.username || localStorage.getItem('typro_username') || undefined;
+        const storedName = user?.displayName || localStorage.getItem('typro_profile_name') || undefined;
+
+        fetch('/api/gamification/record-progress', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            userId: storedUserId,
+            username: storedUsername,
+            displayName: storedName,
+            earnedXp,
+            earnedCoins,
+            lessonId: activeLesson.id,
+            lessonTitle: activeLesson.title,
+            stars,
+            wpm: Math.round(metrics.netWpm),
+            accuracy: Math.round(metrics.accuracy),
+            currentPath: '/lessons',
+          }),
+        }).catch((e) => console.warn('Failed recording lesson progress to backend:', e));
       } catch {}
     }
 

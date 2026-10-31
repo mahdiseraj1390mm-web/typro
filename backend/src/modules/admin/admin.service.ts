@@ -6,6 +6,30 @@ import { CertificateService } from '../certificate/certificate.service';
 import * as fs from 'fs';
 import * as path from 'path';
 
+export interface CustomRaceText {
+  id: string;
+  roomId: string;
+  title: string;
+  category: string;
+  text: string;
+  charCount: number;
+  wordCount: number;
+  createdAt: string;
+  createdByName?: string;
+}
+
+export interface CustomTypingText {
+  id: string;
+  title: string;
+  category: string;
+  difficulty: 'آسان' | 'متوسط' | 'سخت';
+  text: string;
+  charCount: number;
+  wordCount: number;
+  createdAt: string;
+  createdByName?: string;
+}
+
 export interface AuditLog {
   id: string;
   actor: string;
@@ -80,6 +104,9 @@ export class AdminService {
     },
   ];
 
+  private raceCustomTexts: CustomRaceText[] = [];
+  private typingCustomTexts: CustomTypingText[] = [];
+
   private systemSettings = {
     xpPerLevel: 1000,
     maxLevel: 1000,
@@ -97,6 +124,7 @@ export class AdminService {
     this.loadReceipts();
     this.loadVisitors();
     this.loadPlatformStats();
+    this.loadCustomTexts();
   }
 
   private resolveDataPath(filename: string): string {
@@ -164,7 +192,7 @@ export class AdminService {
     const now = new Date().toISOString();
 
     if (this.authService) {
-      this.authService.recordHeartbeat(userId || visitorId || cleanIp);
+      this.authService.recordHeartbeat(userId || visitorId || cleanIp, currentPath);
     }
 
     // Identify existing visitor:
@@ -523,5 +551,109 @@ export class AdminService {
     });
 
     return this.systemSettings;
+  }
+
+  private loadCustomTexts() {
+    try {
+      const racePath = this.resolveDataPath('race_custom_texts.json');
+      if (fs.existsSync(racePath)) {
+        this.raceCustomTexts = JSON.parse(fs.readFileSync(racePath, 'utf8'));
+      }
+    } catch {}
+
+    try {
+      const typingPath = this.resolveDataPath('typing_custom_texts.json');
+      if (fs.existsSync(typingPath)) {
+        this.typingCustomTexts = JSON.parse(fs.readFileSync(typingPath, 'utf8'));
+      }
+    } catch {}
+  }
+
+  getCustomTexts() {
+    return {
+      raceTexts: this.raceCustomTexts,
+      typingTexts: this.typingCustomTexts,
+    };
+  }
+
+  addCustomRaceText(dto: {
+    roomId: string;
+    title: string;
+    category?: string;
+    text: string;
+    createdByName?: string;
+  }): CustomRaceText {
+    const cleanText = (dto.text || '').trim();
+    if (!cleanText) {
+      throw new BadRequestException('متن ارسالی نمی‌تواند خالی باشد.');
+    }
+    const words = cleanText.split(/\s+/).filter(Boolean).length;
+    const item: CustomRaceText = {
+      id: `rtxt-${Date.now()}-${Math.random().toString(36).substr(2, 4)}`,
+      roomId: dto.roomId || 'all',
+      title: (dto.title || '').trim() || 'متن مسابقه جدید',
+      category: (dto.category || '').trim() || 'عمومی',
+      text: cleanText,
+      charCount: cleanText.length,
+      wordCount: words,
+      createdAt: new Date().toISOString(),
+      createdByName: dto.createdByName || 'ادمین',
+    };
+    this.raceCustomTexts.unshift(item);
+    this.mirrorSaveData('race_custom_texts.json', this.raceCustomTexts);
+
+    // Immediately inject into live race room
+    if (this.raceService) {
+      this.raceService.addTextToRoom(item.roomId, item.text);
+    }
+    return item;
+  }
+
+  deleteCustomRaceText(id: string): { success: boolean; message: string } {
+    const idx = this.raceCustomTexts.findIndex((t) => t.id === id);
+    if (idx >= 0) {
+      this.raceCustomTexts.splice(idx, 1);
+      this.mirrorSaveData('race_custom_texts.json', this.raceCustomTexts);
+      return { success: true, message: 'متن مسابقه با موفقیت حذف شد.' };
+    }
+    throw new BadRequestException('متن مورد نظر یافت نشد.');
+  }
+
+  addCustomTypingText(dto: {
+    title: string;
+    category?: string;
+    difficulty?: 'آسان' | 'متوسط' | 'سخت';
+    text: string;
+    createdByName?: string;
+  }): CustomTypingText {
+    const cleanText = (dto.text || '').trim();
+    if (!cleanText) {
+      throw new BadRequestException('متن تست تایپ نمی‌تواند خالی باشد.');
+    }
+    const words = cleanText.split(/\s+/).filter(Boolean).length;
+    const item: CustomTypingText = {
+      id: `ttxt-${Date.now()}-${Math.random().toString(36).substr(2, 4)}`,
+      title: (dto.title || '').trim() || 'متن تست تایپ',
+      category: (dto.category || '').trim() || 'عمومی',
+      difficulty: dto.difficulty || 'متوسط',
+      text: cleanText,
+      charCount: cleanText.length,
+      wordCount: words,
+      createdAt: new Date().toISOString(),
+      createdByName: dto.createdByName || 'ادمین',
+    };
+    this.typingCustomTexts.unshift(item);
+    this.mirrorSaveData('typing_custom_texts.json', this.typingCustomTexts);
+    return item;
+  }
+
+  deleteCustomTypingText(id: string): { success: boolean; message: string } {
+    const idx = this.typingCustomTexts.findIndex((t) => t.id === id);
+    if (idx >= 0) {
+      this.typingCustomTexts.splice(idx, 1);
+      this.mirrorSaveData('typing_custom_texts.json', this.typingCustomTexts);
+      return { success: true, message: 'متن تست تایپ با موفقیت حذف شد.' };
+    }
+    throw new BadRequestException('متن مورد نظر یافت نشد.');
   }
 }
