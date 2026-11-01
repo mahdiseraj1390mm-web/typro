@@ -16,7 +16,10 @@ import {
   Hash,
   ShieldCheck,
   Lock,
-  ArrowRight
+  ArrowRight,
+  ChevronLeft,
+  ChevronRight,
+  Loader2
 } from 'lucide-react';
 import Link from 'next/link';
 import { useAuth } from '@/context/AuthContext';
@@ -56,6 +59,8 @@ const ROOM_OPTIONS = [
   { id: 'room-numbers', title: 'اتاق ۷: پد عددی و سرعت ارقام (بدون فاصله)' },
 ];
 
+const ITEMS_PER_PAGE = 24;
+
 export default function AdminTextsPage() {
   const { user } = useAuth();
 
@@ -71,6 +76,10 @@ export default function AdminTextsPage() {
   const [search, setSearch] = useState('');
   const [selectedRoomFilter, setSelectedRoomFilter] = useState('all_filter');
   const [toast, setToast] = useState<string | null>(null);
+
+  // Pagination states
+  const [racePage, setRacePage] = useState(1);
+  const [typingPage, setTypingPage] = useState(1);
 
   // Modals
   const [isAddRaceModalOpen, setIsAddRaceModalOpen] = useState(false);
@@ -103,8 +112,51 @@ export default function AdminTextsPage() {
       const res = await fetch('/api/admin/texts');
       if (res.ok) {
         const data = await res.json();
-        setRaceTexts(data.raceTexts || []);
-        setTypingTexts(data.typingTexts || []);
+        
+        // Defensive normalization for race texts
+        const safeRace: CustomRaceTextItem[] = (data.raceTexts || []).map((t: any, index: number) => {
+          const text = String(t.text || '');
+          const title = String(t.title || t.topic || `متن مسابقه #${index + 1}`);
+          const category = String(t.category || t.subCategory || 'علمی و فناوری');
+          const roomId = String(t.roomId || 'room-1');
+          return {
+            id: String(t.id || `race-${index + 1}`),
+            roomId,
+            title,
+            category,
+            text,
+            charCount: Number(t.charCount) || text.length,
+            wordCount: Number(t.wordCount) || text.trim().split(/\s+/).filter(Boolean).length,
+            createdAt: t.createdAt || new Date().toISOString(),
+            createdByName: t.createdByName || 'ادمین',
+          };
+        });
+
+        // Defensive normalization for typing texts
+        const safeTyping: CustomTypingTextItem[] = (data.typingTexts || []).map((t: any, index: number) => {
+          const text = String(t.text || '');
+          const title = String(t.title || t.topic || `متن تمرین تایپ #${index + 1}`);
+          const category = String(t.category || t.subCategory || 'عمومی');
+          
+          let difficulty: 'آسان' | 'متوسط' | 'سخت' = 'متوسط';
+          if (t.difficulty === 'easy' || t.difficulty === 'آسان') difficulty = 'آسان';
+          else if (t.difficulty === 'hard' || t.difficulty === 'سخت') difficulty = 'سخت';
+
+          return {
+            id: String(t.id || `typing-${index + 1}`),
+            title,
+            category,
+            difficulty,
+            text,
+            charCount: Number(t.charCount) || text.length,
+            wordCount: Number(t.wordCount) || text.trim().split(/\s+/).filter(Boolean).length,
+            createdAt: t.createdAt || new Date().toISOString(),
+            createdByName: t.createdByName || 'ادمین',
+          };
+        });
+
+        setRaceTexts(safeRace);
+        setTypingTexts(safeTyping);
       }
     } catch (e) {
       console.warn('Failed loading texts:', e);
@@ -209,11 +261,12 @@ export default function AdminTextsPage() {
 
   // Filter Race Texts
   const filteredRaceTexts = useMemo(() => {
+    const q = (search || '').trim().toLowerCase();
     return raceTexts.filter((t) => {
-      const matchSearch =
-        t.title.toLowerCase().includes(search.toLowerCase()) ||
-        t.text.toLowerCase().includes(search.toLowerCase()) ||
-        t.category.toLowerCase().includes(search.toLowerCase());
+      const title = (t.title || '').toLowerCase();
+      const text = (t.text || '').toLowerCase();
+      const category = (t.category || '').toLowerCase();
+      const matchSearch = !q || title.includes(q) || text.includes(q) || category.includes(q);
       const matchRoom = selectedRoomFilter === 'all_filter' || t.roomId === selectedRoomFilter;
       return matchSearch && matchRoom;
     });
@@ -221,15 +274,38 @@ export default function AdminTextsPage() {
 
   // Filter Typing Texts
   const filteredTypingTexts = useMemo(() => {
+    const q = (search || '').trim().toLowerCase();
     return typingTexts.filter((t) => {
-      return (
-        t.title.toLowerCase().includes(search.toLowerCase()) ||
-        t.text.toLowerCase().includes(search.toLowerCase()) ||
-        t.category.toLowerCase().includes(search.toLowerCase()) ||
-        t.difficulty.includes(search)
-      );
+      const title = (t.title || '').toLowerCase();
+      const text = (t.text || '').toLowerCase();
+      const category = (t.category || '').toLowerCase();
+      const diff = (t.difficulty || '').toLowerCase();
+      return !q || title.includes(q) || text.includes(q) || category.includes(q) || diff.includes(q);
     });
   }, [typingTexts, search]);
+
+  // Reset page when search or tab or filter changes
+  useEffect(() => {
+    setRacePage(1);
+  }, [search, selectedRoomFilter]);
+
+  useEffect(() => {
+    setTypingPage(1);
+  }, [search]);
+
+  // Paginated Race Texts
+  const totalRacePages = Math.max(1, Math.ceil(filteredRaceTexts.length / ITEMS_PER_PAGE));
+  const paginatedRaceTexts = useMemo(() => {
+    const start = (racePage - 1) * ITEMS_PER_PAGE;
+    return filteredRaceTexts.slice(start, start + ITEMS_PER_PAGE);
+  }, [filteredRaceTexts, racePage]);
+
+  // Paginated Typing Texts
+  const totalTypingPages = Math.max(1, Math.ceil(filteredTypingTexts.length / ITEMS_PER_PAGE));
+  const paginatedTypingTexts = useMemo(() => {
+    const start = (typingPage - 1) * ITEMS_PER_PAGE;
+    return filteredTypingTexts.slice(start, start + ITEMS_PER_PAGE);
+  }, [filteredTypingTexts, typingPage]);
 
   const getRoomTitle = (roomId: string) => {
     return ROOM_OPTIONS.find((r) => r.id === roomId)?.title || roomId;
@@ -298,8 +374,8 @@ export default function AdminTextsPage() {
         >
           <Trophy className="w-4 h-4 text-emerald-600" />
           <span>متون مسابقه زنده (پیست‌ها)</span>
-          <span className="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-mono">
-            {raceTexts.length}
+          <span className="px-2 py-0.5 rounded-full bg-emerald-100 text-emerald-800 text-[10px] font-mono font-bold">
+            {raceTexts.length.toLocaleString('fa-IR')}
           </span>
           {!canManageRaceTexts && <Lock className="w-3.5 h-3.5 text-slate-400" />}
         </button>
@@ -314,8 +390,8 @@ export default function AdminTextsPage() {
         >
           <Keyboard className="w-4 h-4 text-blue-600" />
           <span>متون تست تایپ و رکوردگیری</span>
-          <span className="px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 text-[10px] font-mono">
-            {typingTexts.length}
+          <span className="px-2 py-0.5 rounded-full bg-blue-100 text-blue-800 text-[10px] font-mono font-bold">
+            {typingTexts.length.toLocaleString('fa-IR')}
           </span>
           {!canManageTypingTexts && <Lock className="w-3.5 h-3.5 text-slate-400" />}
         </button>
@@ -348,7 +424,7 @@ export default function AdminTextsPage() {
 
       {/* Filter & Search Bar */}
       {((activeTab === 'race' && canManageRaceTexts) || (activeTab === 'typing' && canManageTypingTexts)) && (
-        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 bg-white p-3 rounded-2xl border border-slate-200">
+        <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 bg-white p-3 rounded-2xl border border-slate-200 shadow-2xs">
           <div className="relative flex-1">
             <Search className="w-4 h-4 text-slate-400 absolute right-3 top-3" />
             <input
@@ -368,160 +444,297 @@ export default function AdminTextsPage() {
                 onChange={(e) => setSelectedRoomFilter(e.target.value)}
                 className="px-3 py-2 text-xs bg-slate-50 border border-slate-200 rounded-xl font-bold text-slate-700 focus:outline-none focus:ring-2 focus:ring-emerald-500"
               >
-                <option value="all_filter">همه اتاق‌ها</option>
-                {ROOM_OPTIONS.map((r) => (
-                  <option key={r.id} value={r.id}>
-                    {r.title}
-                  </option>
-                ))}
+                <option value="all_filter">همه اتاق‌ها ({raceTexts.length})</option>
+                {ROOM_OPTIONS.map((r) => {
+                  const count = raceTexts.filter((t) => t.roomId === r.id).length;
+                  return (
+                    <option key={r.id} value={r.id}>
+                      {r.title} ({count})
+                    </option>
+                  );
+                })}
               </select>
             </div>
           )}
         </div>
       )}
 
-      {/* TAB 1: RACE TEXTS */}
-      {activeTab === 'race' && canManageRaceTexts && (
-        <div className="space-y-4">
-          {filteredRaceTexts.length === 0 ? (
-            <div className="bg-white rounded-3xl p-12 border border-slate-200 text-center space-y-3">
-              <div className="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto">
-                <Trophy className="w-6 h-6" />
-              </div>
-              <div className="font-black text-slate-900 text-sm">هیچ متن سفارشی در این اتاق ثبت نشده است.</div>
-              <p className="text-xs text-slate-500 max-w-md mx-auto">
-                متون پیش‌فرض سیستم (۱۴۰+ متن علمی، تاریخی و تکنولوژی) به صورت خودکار در پیست‌ها فعال هستند. می‌توانید با زدن دکمه «افزودن متن به مسابقه زنده»، متون جدید و اختصاصی دلخواه خود را نیز اضافه کنید.
-              </p>
-              <button
-                onClick={() => setIsAddRaceModalOpen(true)}
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-emerald-600 text-white font-bold text-xs"
-              >
-                <Plus className="w-4 h-4" />
-                <span>افزودن اولین متن</span>
-              </button>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {filteredRaceTexts.map((item) => (
-                <div
-                  key={item.id}
-                  className="bg-white rounded-2xl border border-slate-200 p-4 space-y-3 shadow-2xs hover:shadow-xs transition"
-                >
-                  <div className="flex items-start justify-between gap-2">
-                    <div>
-                      <h3 className="font-black text-slate-900 text-sm">{item.title}</h3>
-                      <div className="flex items-center gap-2 mt-1">
-                        <span className="px-2 py-0.5 rounded-md bg-emerald-50 text-emerald-700 text-[10px] font-bold border border-emerald-200">
-                          {getRoomTitle(item.roomId)}
-                        </span>
-                        <span className="text-[10px] text-slate-400 font-medium">
-                          دسته‌بندی: {item.category}
-                        </span>
-                      </div>
-                    </div>
-
-                    <button
-                      onClick={() => handleDeleteRaceText(item.id)}
-                      className="p-1.5 rounded-lg text-slate-400 hover:text-rose-600 hover:bg-rose-50 transition"
-                      title="حذف متن از پیست"
-                    >
-                      <Trash2 className="w-4 h-4" />
-                    </button>
+      {/* Loading state */}
+      {isLoading ? (
+        <div className="bg-white rounded-3xl p-12 border border-slate-200 text-center space-y-3">
+          <Loader2 className="w-8 h-8 text-emerald-600 animate-spin mx-auto" />
+          <div className="text-xs font-bold text-slate-600">در حال بارگذاری متون سامانه...</div>
+        </div>
+      ) : (
+        <>
+          {/* TAB 1: RACE TEXTS */}
+          {activeTab === 'race' && canManageRaceTexts && (
+            <div className="space-y-4">
+              {filteredRaceTexts.length === 0 ? (
+                <div className="bg-white rounded-3xl p-12 border border-slate-200 text-center space-y-3">
+                  <div className="w-12 h-12 rounded-2xl bg-emerald-50 text-emerald-600 flex items-center justify-center mx-auto">
+                    <Trophy className="w-6 h-6" />
                   </div>
-
-                  <p className="text-xs text-slate-700 leading-relaxed bg-slate-50/70 p-3 rounded-xl border border-slate-100 font-mono line-clamp-3">
-                    {item.text}
+                  <div className="font-black text-slate-900 text-sm">هیچ متنی با فیلتر انتخاب شده یافت نشد.</div>
+                  <p className="text-xs text-slate-500 max-w-md mx-auto">
+                    می‌توانید عبارت جستجو را پاک کنید یا متنی جدید به این بخش اضافه نمایید.
                   </p>
-
-                  <div className="flex items-center justify-between text-[11px] text-slate-400 border-t border-slate-100 pt-2 font-mono">
-                    <div className="flex items-center gap-3">
-                      <span>{item.charCount} نویسه</span>
-                      <span>•</span>
-                      <span>{item.wordCount} کلمه</span>
-                    </div>
-                    <span>ثبت توسط: {item.createdByName || 'ادمین'}</span>
-                  </div>
+                  <button
+                    onClick={() => setIsAddRaceModalOpen(true)}
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-emerald-600 text-white font-bold text-xs"
+                  >
+                    <Plus className="w-4 h-4" />
+                    <span>افزودن متن به این اتاق</span>
+                  </button>
                 </div>
-              ))}
+              ) : (
+                <>
+                  <div className="flex items-center justify-between text-xs text-slate-500 font-medium px-1">
+                    <span>
+                      نمایش {((racePage - 1) * ITEMS_PER_PAGE + 1).toLocaleString('fa-IR')} تا{' '}
+                      {Math.min(racePage * ITEMS_PER_PAGE, filteredRaceTexts.length).toLocaleString('fa-IR')} از{' '}
+                      {filteredRaceTexts.length.toLocaleString('fa-IR')} متن
+                    </span>
+                    <span>صفحه {racePage.toLocaleString('fa-IR')} از {totalRacePages.toLocaleString('fa-IR')}</span>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {paginatedRaceTexts.map((item) => (
+                      <div
+                        key={item.id}
+                        className="bg-white rounded-2xl border border-slate-200 p-4 space-y-3 shadow-2xs hover:shadow-xs transition"
+                      >
+                        <div className="flex items-start justify-between gap-2">
+                          <div className="space-y-1">
+                            <h3 className="font-black text-slate-900 text-sm leading-snug">{item.title}</h3>
+                            <div className="flex flex-wrap items-center gap-1.5">
+                              <span className="px-2 py-0.5 rounded-md bg-emerald-50 text-emerald-700 text-[10px] font-bold border border-emerald-200">
+                                {getRoomTitle(item.roomId)}
+                              </span>
+                              <span className="text-[10px] text-slate-400 font-medium">
+                                دسته‌بندی: {item.category}
+                              </span>
+                            </div>
+                          </div>
+
+                          <button
+                            onClick={() => handleDeleteRaceText(item.id)}
+                            className="p-1.5 rounded-lg text-slate-400 hover:text-rose-600 hover:bg-rose-50 transition shrink-0"
+                            title="حذف متن از پیست"
+                          >
+                            <Trash2 className="w-4 h-4" />
+                          </button>
+                        </div>
+
+                        <p className="text-xs text-slate-700 leading-relaxed bg-slate-50/70 p-3 rounded-xl border border-slate-100 font-mono line-clamp-3">
+                          {item.text}
+                        </p>
+
+                        <div className="flex items-center justify-between text-[11px] text-slate-400 border-t border-slate-100 pt-2 font-mono">
+                          <div className="flex items-center gap-3">
+                            <span>{item.charCount.toLocaleString('fa-IR')} نویسه</span>
+                            <span>•</span>
+                            <span>{item.wordCount.toLocaleString('fa-IR')} کلمه</span>
+                          </div>
+                          <span>ثبت: {item.createdByName || 'ادمین'}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Pagination Controls */}
+                  {totalRacePages > 1 && (
+                    <div className="flex items-center justify-center gap-2 pt-4">
+                      <button
+                        onClick={() => setRacePage((p) => Math.max(1, p - 1))}
+                        disabled={racePage === 1}
+                        className="px-3 py-1.5 rounded-xl border border-slate-200 text-xs font-bold text-slate-600 hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-1"
+                      >
+                        <ChevronRight className="w-3.5 h-3.5" />
+                        <span>قبلی</span>
+                      </button>
+
+                      <div className="flex items-center gap-1">
+                        {Array.from({ length: Math.min(7, totalRacePages) }, (_, i) => {
+                          let pageNum = i + 1;
+                          if (totalRacePages > 7) {
+                            if (racePage <= 4) {
+                              pageNum = i + 1;
+                            } else if (racePage >= totalRacePages - 3) {
+                              pageNum = totalRacePages - 6 + i;
+                            } else {
+                              pageNum = racePage - 3 + i;
+                            }
+                          }
+                          return (
+                            <button
+                              key={pageNum}
+                              onClick={() => setRacePage(pageNum)}
+                              className={`w-8 h-8 rounded-xl text-xs font-bold transition ${
+                                racePage === pageNum
+                                  ? 'bg-emerald-600 text-white shadow-xs'
+                                  : 'text-slate-600 hover:bg-slate-100 border border-slate-200'
+                              }`}
+                            >
+                              {pageNum.toLocaleString('fa-IR')}
+                            </button>
+                          );
+                        })}
+                      </div>
+
+                      <button
+                        onClick={() => setRacePage((p) => Math.min(totalRacePages, p + 1))}
+                        disabled={racePage === totalRacePages}
+                        className="px-3 py-1.5 rounded-xl border border-slate-200 text-xs font-bold text-slate-600 hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-1"
+                      >
+                        <span>بعدی</span>
+                        <ChevronLeft className="w-3.5 h-3.5" />
+                      </button>
+                    </div>
+                  )}
+                </>
+              )}
             </div>
           )}
-        </div>
-      )}
 
-      {/* TAB 2: TYPING TEST TEXTS */}
-      {activeTab === 'typing' && canManageTypingTexts && (
-        <div className="space-y-4">
-          {filteredTypingTexts.length === 0 ? (
-            <div className="bg-white rounded-3xl p-12 border border-slate-200 text-center space-y-3">
-              <div className="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mx-auto">
-                <Keyboard className="w-6 h-6" />
-              </div>
-              <div className="font-black text-slate-900 text-sm">متن سفارشی برای تست تایپ یافت نشد.</div>
-              <p className="text-xs text-slate-500 max-w-md mx-auto">
-                متون استاندارد سیستم در آزمون تایپ فعال هستند. شما می‌توانید متون رسمی جدید را به بانک آزمون اضافه کنید تا کاربران هنگام تست تایپ آن‌ها را مشاهده و تایپ کنند.
-              </p>
-              <button
-                onClick={() => setIsAddTypingModalOpen(true)}
-                className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-blue-600 text-white font-bold text-xs"
-              >
-                <Plus className="w-4 h-4" />
-                <span>افزودن متن به تست تایپ</span>
-              </button>
-            </div>
-          ) : (
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {filteredTypingTexts.map((item) => (
-                <div
-                  key={item.id}
-                  className="bg-white rounded-2xl border border-slate-200 p-4 space-y-3 shadow-2xs hover:shadow-xs transition"
-                >
-                  <div className="flex items-start justify-between gap-2">
-                    <div>
-                      <h3 className="font-black text-slate-900 text-sm">{item.title}</h3>
-                      <div className="flex items-center gap-2 mt-1">
-                        <span
-                          className={`px-2 py-0.5 rounded-md text-[10px] font-bold border ${
-                            item.difficulty === 'آسان'
-                              ? 'bg-emerald-50 text-emerald-700 border-emerald-200'
-                              : item.difficulty === 'متوسط'
-                              ? 'bg-amber-50 text-amber-700 border-amber-200'
-                              : 'bg-rose-50 text-rose-700 border-rose-200'
-                          }`}
-                        >
-                          سطح {item.difficulty}
-                        </span>
-                        <span className="text-[10px] text-slate-400 font-medium">
-                          دسته‌بندی: {item.category}
-                        </span>
-                      </div>
-                    </div>
-
-                    <button
-                      onClick={() => handleDeleteTypingText(item.id)}
-                      className="p-1.5 rounded-lg text-slate-400 hover:text-rose-600 hover:bg-rose-50 transition"
-                      title="حذف متن از آزمون"
-                    >
-                      <Trash2 className="w-4 h-4" />
-                    </button>
+          {/* TAB 2: TYPING TEST TEXTS */}
+          {activeTab === 'typing' && canManageTypingTexts && (
+            <div className="space-y-4">
+              {filteredTypingTexts.length === 0 ? (
+                <div className="bg-white rounded-3xl p-12 border border-slate-200 text-center space-y-3">
+                  <div className="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center mx-auto">
+                    <Keyboard className="w-6 h-6" />
                   </div>
-
-                  <p className="text-xs text-slate-700 leading-relaxed bg-slate-50/70 p-3 rounded-xl border border-slate-100 font-mono line-clamp-3">
-                    {item.text}
+                  <div className="font-black text-slate-900 text-sm">هیچ متنی با فیلتر مشخص شده یافت نشد.</div>
+                  <p className="text-xs text-slate-500 max-w-md mx-auto">
+                    شما می‌توانید عبارت جستجو را پاک کنید یا با استفاده از دکمه زیر متن جدیدی اضافه نمایید.
                   </p>
-
-                  <div className="flex items-center justify-between text-[11px] text-slate-400 border-t border-slate-100 pt-2 font-mono">
-                    <div className="flex items-center gap-3">
-                      <span>{item.charCount} نویسه</span>
-                      <span>•</span>
-                      <span>{item.wordCount} کلمه</span>
-                    </div>
-                    <span>ثبت توسط: {item.createdByName || 'ادمین'}</span>
-                  </div>
+                  <button
+                    onClick={() => setIsAddTypingModalOpen(true)}
+                    className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-blue-600 text-white font-bold text-xs"
+                  >
+                    <Plus className="w-4 h-4" />
+                    <span>افزودن متن به تست تایپ</span>
+                  </button>
                 </div>
-              ))}
+              ) : (
+                <>
+                  <div className="flex items-center justify-between text-xs text-slate-500 font-medium px-1">
+                    <span>
+                      نمایش {((typingPage - 1) * ITEMS_PER_PAGE + 1).toLocaleString('fa-IR')} تا{' '}
+                      {Math.min(typingPage * ITEMS_PER_PAGE, filteredTypingTexts.length).toLocaleString('fa-IR')} از{' '}
+                      {filteredTypingTexts.length.toLocaleString('fa-IR')} متن
+                    </span>
+                    <span>صفحه {typingPage.toLocaleString('fa-IR')} از {totalTypingPages.toLocaleString('fa-IR')}</span>
+                  </div>
+
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    {paginatedTypingTexts.map((item) => (
+                      <div
+                        key={item.id}
+                        className="bg-white rounded-2xl border border-slate-200 p-4 space-y-3 shadow-2xs hover:shadow-xs transition"
+                      >
+                        <div className="flex items-start justify-between gap-2">
+                          <div className="space-y-1">
+                            <h3 className="font-black text-slate-900 text-sm leading-snug">{item.title}</h3>
+                            <div className="flex flex-wrap items-center gap-1.5">
+                              <span
+                                className={`px-2 py-0.5 rounded-md text-[10px] font-bold border ${
+                                  item.difficulty === 'آسان'
+                                    ? 'bg-emerald-50 text-emerald-700 border-emerald-200'
+                                    : item.difficulty === 'متوسط'
+                                    ? 'bg-amber-50 text-amber-700 border-amber-200'
+                                    : 'bg-rose-50 text-rose-700 border-rose-200'
+                                }`}
+                              >
+                                سطح {item.difficulty}
+                              </span>
+                              <span className="text-[10px] text-slate-400 font-medium">
+                                دسته‌بندی: {item.category}
+                              </span>
+                            </div>
+                          </div>
+
+                          <button
+                            onClick={() => handleDeleteTypingText(item.id)}
+                            className="p-1.5 rounded-lg text-slate-400 hover:text-rose-600 hover:bg-rose-50 transition shrink-0"
+                            title="حذف متن از آزمون"
+                          >
+                            <Trash2 className="w-4 h-4" />
+                          </button>
+                        </div>
+
+                        <p className="text-xs text-slate-700 leading-relaxed bg-slate-50/70 p-3 rounded-xl border border-slate-100 font-mono line-clamp-3">
+                          {item.text}
+                        </p>
+
+                        <div className="flex items-center justify-between text-[11px] text-slate-400 border-t border-slate-100 pt-2 font-mono">
+                          <div className="flex items-center gap-3">
+                            <span>{item.charCount.toLocaleString('fa-IR')} نویسه</span>
+                            <span>•</span>
+                            <span>{item.wordCount.toLocaleString('fa-IR')} کلمه</span>
+                          </div>
+                          <span>ثبت: {item.createdByName || 'ادمین'}</span>
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+
+                  {/* Pagination Controls */}
+                  {totalTypingPages > 1 && (
+                    <div className="flex items-center justify-center gap-2 pt-4">
+                      <button
+                        onClick={() => setTypingPage((p) => Math.max(1, p - 1))}
+                        disabled={typingPage === 1}
+                        className="px-3 py-1.5 rounded-xl border border-slate-200 text-xs font-bold text-slate-600 hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-1"
+                      >
+                        <ChevronRight className="w-3.5 h-3.5" />
+                        <span>قبلی</span>
+                      </button>
+
+                      <div className="flex items-center gap-1">
+                        {Array.from({ length: Math.min(7, totalTypingPages) }, (_, i) => {
+                          let pageNum = i + 1;
+                          if (totalTypingPages > 7) {
+                            if (typingPage <= 4) {
+                              pageNum = i + 1;
+                            } else if (typingPage >= totalTypingPages - 3) {
+                              pageNum = totalTypingPages - 6 + i;
+                            } else {
+                              pageNum = typingPage - 3 + i;
+                            }
+                          }
+                          return (
+                            <button
+                              key={pageNum}
+                              onClick={() => setTypingPage(pageNum)}
+                              className={`w-8 h-8 rounded-xl text-xs font-bold transition ${
+                                typingPage === pageNum
+                                  ? 'bg-blue-600 text-white shadow-xs'
+                                  : 'text-slate-600 hover:bg-slate-100 border border-slate-200'
+                              }`}
+                            >
+                              {pageNum.toLocaleString('fa-IR')}
+                            </button>
+                          );
+                        })}
+                      </div>
+
+                      <button
+                        onClick={() => setTypingPage((p) => Math.min(totalTypingPages, p + 1))}
+                        disabled={typingPage === totalTypingPages}
+                        className="px-3 py-1.5 rounded-xl border border-slate-200 text-xs font-bold text-slate-600 hover:bg-slate-50 disabled:opacity-40 disabled:cursor-not-allowed flex items-center gap-1"
+                      >
+                        <span>بعدی</span>
+                        <ChevronLeft className="w-3.5 h-3.5" />
+                      </button>
+                    </div>
+                  )}
+                </>
+              )}
             </div>
           )}
-        </div>
+        </>
       )}
 
       {/* ── MODAL: ADD RACE TEXT ── */}

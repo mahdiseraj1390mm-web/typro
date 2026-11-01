@@ -586,6 +586,7 @@ export class AdminService {
   }
 
   getCustomTexts() {
+    this.loadCustomTexts();
     return {
       raceTexts: this.raceCustomTexts,
       typingTexts: this.typingCustomTexts,
