@@ -2100,206 +2100,6 @@
     "text": "تاریخ نگاران باستان صلح طلبی و مدارای کوروش با ملل مغلوب را در متون خویش ستایش کرده اند."
   },
   {
-    "id": "test-num-1",
-    "topic": "پد عددی و تایپ اعداد سرعتی",
-    "subCategory": "اعداد",
-    "language": "en",
-    "difficulty": "سخت",
-    "length": "متوسط",
-    "lineCount": 1,
-    "text": "98866 556954 594544 1436244 575270 867 69642 5587 3561537 466 44492 544567 964 565"
-  },
-  {
-    "id": "test-num-2",
-    "topic": "پد عددی و تایپ اعداد سرعتی",
-    "subCategory": "اعداد",
-    "language": "en",
-    "difficulty": "سخت",
-    "length": "متوسط",
-    "lineCount": 1,
-    "text": "74219 883501 294713 6501832 941208 359 81045 9214 4729103 812 30584 719283 540 682"
-  },
-  {
-    "id": "test-num-3",
-    "topic": "پد عددی و تایپ اعداد سرعتی",
-    "subCategory": "اعداد",
-    "language": "en",
-    "difficulty": "سخت",
-    "length": "متوسط",
-    "lineCount": 1,
-    "text": "12948 673920 847291 3859201 472019 923 58194 7731 2948175 634 91823 482910 871 493"
-  },
-  {
-    "id": "test-num-4",
-    "topic": "پد عددی و تایپ اعداد سرعتی",
-    "subCategory": "اعداد",
-    "language": "en",
-    "difficulty": "سخت",
-    "length": "متوسط",
-    "lineCount": 1,
-    "text": "85921 401928 739104 9182736 502918 647 38192 6604 8192047 529 74019 638291 428 915"
-  },
-  {
-    "id": "test-num-5",
-    "topic": "پد عددی و تایپ اعداد سرعتی",
-    "subCategory": "اعداد",
-    "language": "en",
-    "difficulty": "سخت",
-    "length": "متوسط",
-    "lineCount": 1,
-    "text": "39481 720194 618293 4910283 839102 751 94820 4429 6182940 371 85920 501928 693 847"
-  },
-  {
-    "id": "test-num-6",
-    "topic": "پد عددی و تایپ اعداد سرعتی",
-    "subCategory": "اعداد",
-    "language": "en",
-    "difficulty": "سخت",
-    "length": "متوسط",
-    "lineCount": 1,
-    "text": "60192 849201 372910 8274019 294810 482 71938 8852 3948102 916 48291 740192 315 726"
-  },
-  {
-    "id": "test-num-7",
-    "topic": "پد عددی و تایپ اعداد سرعتی",
-    "subCategory": "اعداد",
-    "language": "en",
-    "difficulty": "سخت",
-    "length": "متوسط",
-    "lineCount": 1,
-    "text": "48291 910284 582910 6381920 740192 839 20491 3375 9182048 482 63910 819204 750 934"
-  },
-  {
-    "id": "test-num-8",
-    "topic": "پد عددی و تایپ اعداد سرعتی",
-    "subCategory": "اعداد",
-    "language": "en",
-    "difficulty": "سخت",
-    "length": "متوسط",
-    "lineCount": 1,
-    "text": "91823 374910 829401 5019283 619284 947 83910 5519 7291048 625 91028 472910 839 612"
-  },
-  {
-    "id": "test-num-9",
-    "topic": "پد عددی و تایپ اعداد سرعتی",
-    "subCategory": "اعداد",
-    "language": "en",
-    "difficulty": "سخت",
-    "length": "متوسط",
-    "lineCount": 1,
-    "text": "20491 839102 472910 9182730 384910 562 61928 2284 5019283 749 82910 639102 918 503"
-  },
-  {
-    "id": "test-num-10",
-    "topic": "پد عددی و تایپ اعداد سرعتی",
-    "subCategory": "اعداد",
-    "language": "en",
-    "difficulty": "سخت",
-    "length": "متوسط",
-    "lineCount": 1,
-    "text": "57391 619284 948201 2839104 819204 385 47291 9940 8192037 416 50291 938102 674 825"
-  },
-  {
-    "id": "test-num-11",
-    "topic": "پد عددی و تایپ اعداد سرعتی",
-    "subCategory": "اعداد",
-    "language": "en",
-    "difficulty": "سخت",
-    "length": "متوسط",
-    "lineCount": 1,
-    "text": "83920 472910 619284 7401928 928301 673 50192 7738 4920183 835 38491 619284 529 741"
-  },
-  {
-    "id": "test-num-12",
-    "topic": "پد عددی و تایپ اعداد سرعتی",
-    "subCategory": "اعداد",
-    "language": "en",
-    "difficulty": "سخت",
-    "length": "متوسط",
-    "lineCount": 1,
-    "text": "19284 938102 740192 8592014 384910 928 63910 4419 2049183 952 71928 849201 483 695"
-  },
-  {
-    "id": "test-num-13",
-    "topic": "پد عددی و تایپ اعداد سرعتی",
-    "subCategory": "اعداد",
-    "language": "en",
-    "difficulty": "سخت",
-    "length": "متوسط",
-    "lineCount": 1,
-    "text": "64820 501928 839102 3948102 719284 416 92830 8827 5019284 638 94820 374910 827 914"
-  },
-  {
-    "id": "test-num-14",
-    "topic": "پد عددی و تایپ اعداد سرعتی",
-    "subCategory": "اعداد",
-    "language": "en",
-    "difficulty": "سخت",
-    "length": "متوسط",
-    "lineCount": 1,
-    "text": "38491 729104 501928 9182037 648291 850 47291 6639 8192047 714 83920 501928 936 482"
-  },
-  {
-    "id": "test-num-15",
-    "topic": "پد عددی و تایپ اعداد سرعتی",
-    "subCategory": "اعداد",
-    "language": "en",
-    "difficulty": "سخت",
-    "length": "متوسط",
-    "lineCount": 1,
-    "text": "92018 639102 482910 7401928 501928 734 81920 3381 6482910 829 37491 928301 517 763"
-  },
-  {
-    "id": "test-num-16",
-    "topic": "پد عددی و تایپ اعداد سرعتی",
-    "subCategory": "اعداد",
-    "language": "en",
-    "difficulty": "سخت",
-    "length": "متوسط",
-    "lineCount": 1,
-    "text": "47291 819204 938102 6192840 284910 691 50192 5594 7391048 941 62849 819203 840 529"
-  },
-  {
-    "id": "test-num-17",
-    "topic": "پد عددی و تایپ اعداد سرعتی",
-    "subCategory": "اعداد",
-    "language": "en",
-    "difficulty": "سخت",
-    "length": "متوسط",
-    "lineCount": 1,
-    "text": "71928 501928 648291 8392014 918204 427 37491 7715 9283014 563 48291 740192 692 830"
-  },
-  {
-    "id": "test-num-18",
-    "topic": "پد عددی و تایپ اعداد سرعتی",
-    "subCategory": "اعداد",
-    "language": "en",
-    "difficulty": "سخت",
-    "length": "متوسط",
-    "lineCount": 1,
-    "text": "83910 948201 374910 5019284 628491 859 91820 4462 3849102 817 73910 619284 945 371"
-  },
-  {
-    "id": "test-num-19",
-    "topic": "پد عددی و تایپ اعداد سرعتی",
-    "subCategory": "اعداد",
-    "language": "en",
-    "difficulty": "سخت",
-    "length": "متوسط",
-    "lineCount": 1,
-    "text": "50192 638291 819204 4729103 739104 936 48291 8830 6192840 729 94820 501928 814 693"
-  },
-  {
-    "id": "test-num-20",
-    "topic": "پد عددی و تایپ اعداد سرعتی",
-    "subCategory": "اعداد",
-    "language": "en",
-    "difficulty": "سخت",
-    "length": "متوسط",
-    "lineCount": 1,
-    "text": "28491 740192 501928 9381024 819204 672 63910 2275 4729103 954 81920 374910 583 916"
-  },
-  {
     "id": "rich-typing-231",
     "language": "fa",
     "category": "fa",
@@ -8243,5 +8043,2005 @@
     "length": "medium",
     "lineCount": 3,
     "text": "از اوراق زرین تمدن، تاریخ مفاخر و ادبیات دیرین (واقعه 100): نگاره‌های تپه حسنلو و سفال‌های منقوش شوش، سرآغاز جوشش ذوق هنری و مدنیت شکوفای سرزمین کهن ایران را روایت می‌کنند."
+  },
+  {
+    "id": "tp-code-adv-1",
+    "topic": "الگوریتم و کدنویسی پیشرفته - شماره 1",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "hard",
+    "length": "long",
+    "lineCount": 1,
+    "text": "const debounce = <T extends (...args: any[]) => void>(fn: T, delay: number) => { let timer: NodeJS.Timeout; return (...args: Parameters<T>) => { clearTimeout(timer); timer = setTimeout(() => fn(...args), delay); }; };"
+  },
+  {
+    "id": "tp-code-adv-2",
+    "topic": "الگوریتم و کدنویسی پیشرفته - شماره 2",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "easy",
+    "length": "long",
+    "lineCount": 1,
+    "text": "export async function fetchUserData(userId: string): Promise<User> { const res = await fetch(`/api/users/${userId}`); if (!res.ok) throw new Error('Failed to load user profile'); return res.json(); }"
+  },
+  {
+    "id": "tp-code-adv-3",
+    "topic": "الگوریتم و کدنویسی پیشرفته - شماره 3",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "medium",
+    "length": "medium",
+    "lineCount": 1,
+    "text": "const filteredItems = items.filter(item => item.isActive && item.price >= minPrice).sort((a, b) => b.rating - a.rating);"
+  },
+  {
+    "id": "tp-code-adv-4",
+    "topic": "الگوریتم و کدنویسی پیشرفته - شماره 4",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 1,
+    "text": "type DeepPartial<T> = { [P in keyof T]?: T[P] extends object ? DeepPartial<T[P]> : T[P]; };"
+  },
+  {
+    "id": "tp-code-adv-5",
+    "topic": "الگوریتم و کدنویسی پیشرفته - شماره 5",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "medium",
+    "length": "medium",
+    "lineCount": 1,
+    "text": "const sleep = (ms: number): Promise<void> => new Promise(resolve => setTimeout(resolve, ms));"
+  },
+  {
+    "id": "tp-code-adv-6",
+    "topic": "الگوریتم و کدنویسی پیشرفته - شماره 6",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 1,
+    "text": "const memoizedValue = useMemo(() => computeHeavyCalculation(data, threshold), [data, threshold]);"
+  },
+  {
+    "id": "tp-code-adv-7",
+    "topic": "الگوریتم و کدنویسی پیشرفته - شماره 7",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 1,
+    "text": "const [state, setState] = useState<AppState>({ isLoading: false, data: null, error: null });"
+  },
+  {
+    "id": "tp-code-adv-8",
+    "topic": "الگوریتم و کدنویسی پیشرفته - شماره 8",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "easy",
+    "length": "long",
+    "lineCount": 1,
+    "text": "useEffect(() => { const handler = () => setIsScrolled(window.scrollY > 50); window.addEventListener('scroll', handler); return () => window.removeEventListener('scroll', handler); }, []);"
+  },
+  {
+    "id": "tp-code-adv-9",
+    "topic": "الگوریتم و کدنویسی پیشرفته - شماره 9",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "medium",
+    "length": "long",
+    "lineCount": 1,
+    "text": "export const useLocalStorage = <T>(key: string, initialValue: T) => { const [storedValue, setStoredValue] = useState<T>(() => { try { const item = localStorage.getItem(key); return item ? JSON.parse(item) : initialValue; } catch { return initialValue; } }); return [storedValue, setStoredValue] as const; };"
+  },
+  {
+    "id": "tp-code-adv-10",
+    "topic": "الگوریتم و کدنویسی پیشرفته - شماره 10",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 1,
+    "text": "const uniqueTags = Array.from(new Set(articles.flatMap(article => article.tags)));"
+  },
+  {
+    "id": "tp-code-adv-11",
+    "topic": "الگوریتم و کدنویسی پیشرفته - شماره 11",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "medium",
+    "length": "medium",
+    "lineCount": 1,
+    "text": "interface ApiResponse<T> { success: boolean; data: T; message?: string; statusCode: number; timestamp: string; }"
+  },
+  {
+    "id": "tp-code-adv-12",
+    "topic": "الگوریتم و کدنویسی پیشرفته - شماره 12",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 1,
+    "text": "const sanitizedInput = rawInput.trim().replace(/<[^>]*>?/gm, '').toLowerCase();"
+  },
+  {
+    "id": "tp-code-adv-13",
+    "topic": "الگوریتم و کدنویسی پیشرفته - شماره 13",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "hard",
+    "length": "long",
+    "lineCount": 1,
+    "text": "export function formatCurrency(amount: number, currency: string = 'USD'): string { return new Intl.NumberFormat('en-US', { style: 'currency', currency }).format(amount); }"
+  },
+  {
+    "id": "tp-code-adv-14",
+    "topic": "الگوریتم و کدنویسی پیشرفته - شماره 14",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "easy",
+    "length": "long",
+    "lineCount": 1,
+    "text": "const chunkArray = <T>(arr: T[], size: number): T[][] => Array.from({ length: Math.ceil(arr.length / size) }, (_, i) => arr.slice(i * size, i * size + size));"
+  },
+  {
+    "id": "tp-code-adv-15",
+    "topic": "الگوریتم و کدنویسی پیشرفته - شماره 15",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "medium",
+    "length": "long",
+    "lineCount": 1,
+    "text": "async function retryOperation<T>(fn: () => Promise<T>, retries: number = 3): Promise<T> { try { return await fn(); } catch (err) { if (retries <= 1) throw err; return retryOperation(fn, retries - 1); } }"
+  },
+  {
+    "id": "tp-code-adv-16",
+    "topic": "الگوریتم و کدنویسی پیشرفته - شماره 16",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 1,
+    "text": "const isObject = (item: any): item is Record<string, any> => Boolean(item && typeof item === 'object' && !Array.isArray(item));"
+  },
+  {
+    "id": "tp-code-adv-17",
+    "topic": "الگوریتم و کدنویسی پیشرفته - شماره 17",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "medium",
+    "length": "medium",
+    "lineCount": 1,
+    "text": "const mergedConfig = Object.assign({}, defaultConfig, userOverrides, { updatedAt: Date.now() });"
+  },
+  {
+    "id": "tp-code-adv-18",
+    "topic": "الگوریتم و کدنویسی پیشرفته - شماره 18",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 1,
+    "text": "export const clamp = (value: number, min: number, max: number): number => Math.min(Math.max(value, min), max);"
+  },
+  {
+    "id": "tp-code-adv-19",
+    "topic": "الگوریتم و کدنویسی پیشرفته - شماره 19",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "hard",
+    "length": "long",
+    "lineCount": 1,
+    "text": "const eventBus = { listeners: new Map<string, Function[]>(), on(e: string, fn: Function) { this.listeners.set(e, [...(this.listeners.get(e) || []), fn]); }, emit(e: string, d: any) { (this.listeners.get(e) || []).forEach(fn => fn(d)); } };"
+  },
+  {
+    "id": "tp-code-adv-20",
+    "topic": "الگوریتم و کدنویسی پیشرفته - شماره 20",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 1,
+    "text": "export const truncateString = (str: string, maxLength: number): string => str.length > maxLength ? `${str.slice(0, maxLength)}...` : str;"
+  },
+  {
+    "id": "tp-code-adv-21",
+    "topic": "الگوریتم و کدنویسی پیشرفته - شماره 21",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "medium",
+    "length": "long",
+    "lineCount": 1,
+    "text": "export default function ProductCard({ title, price, inStock }: ProductProps) { return <div className='p-4 rounded-xl border border-slate-200 shadow-sm'><h3>{title}</h3><p>${price}</p>{inStock ? <Badge>In Stock</Badge> : <Badge variant='destructive'>Sold Out</Badge>}</div>; }"
+  },
+  {
+    "id": "tp-code-adv-22",
+    "topic": "الگوریتم و کدنویسی پیشرفته - شماره 22",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "hard",
+    "length": "long",
+    "lineCount": 1,
+    "text": "export async function generateMetadata({ params }: PageProps): Promise<Metadata> { const post = await getPost(params.id); return { title: post.title, description: post.excerpt }; }"
+  },
+  {
+    "id": "tp-code-adv-23",
+    "topic": "الگوریتم و کدنویسی پیشرفته - شماره 23",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "medium",
+    "length": "long",
+    "lineCount": 1,
+    "text": "const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => { e.preventDefault(); setIsSubmitting(true); try { await api.post('/orders', formData); toast.success('Order placed!'); } finally { setIsSubmitting(false); } };"
+  },
+  {
+    "id": "tp-code-adv-24",
+    "topic": "الگوریتم و کدنویسی پیشرفته - شماره 24",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "easy",
+    "length": "long",
+    "lineCount": 1,
+    "text": "export const AuthContext = createContext<AuthContextType | null>(null); export const useAuth = () => { const context = useContext(AuthContext); if (!context) throw new Error('useAuth must be used inside AuthProvider'); return context; };"
+  },
+  {
+    "id": "tp-code-adv-25",
+    "topic": "الگوریتم و کدنویسی پیشرفته - شماره 25",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 1,
+    "text": "const ref = useRef<HTMLInputElement>(null); useEffect(() => { if (autoFocus) ref.current?.focus(); }, [autoFocus]);"
+  },
+  {
+    "id": "tp-code-adv-26",
+    "topic": "الگوریتم و کدنویسی پیشرفته - شماره 26",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "easy",
+    "length": "long",
+    "lineCount": 1,
+    "text": "export async function middleware(req: NextRequest) { const token = req.cookies.get('session_token')?.value; if (!token && req.nextUrl.pathname.startsWith('/dashboard')) return NextResponse.redirect(new URL('/login', req.url)); return NextResponse.next(); }"
+  },
+  {
+    "id": "tp-code-adv-27",
+    "topic": "الگوریتم و کدنویسی پیشرفته - شماره 27",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "medium",
+    "length": "medium",
+    "lineCount": 1,
+    "text": "const toggleTheme = useCallback(() => { setTheme(prev => prev === 'dark' ? 'light' : 'dark'); }, []);"
+  },
+  {
+    "id": "tp-code-adv-28",
+    "topic": "الگوریتم و کدنویسی پیشرفته - شماره 28",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 1,
+    "text": "const { data, error, isLoading } = useSWR('/api/metrics', fetcher, { refreshInterval: 5000 });"
+  },
+  {
+    "id": "tp-code-adv-29",
+    "topic": "الگوریتم و کدنویسی پیشرفته - شماره 29",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "medium",
+    "length": "long",
+    "lineCount": 1,
+    "text": "export function useIntersectionObserver(elementRef: RefObject<Element>, options: IntersectionObserverInit = {}) { const [isIntersecting, setIsIntersecting] = useState(false); useEffect(() => { const observer = new IntersectionObserver(([entry]) => setIsIntersecting(entry.isIntersecting), options); if (elementRef.current) observer.observe(elementRef.current); return () => observer.disconnect(); }, [elementRef, options]); return isIntersecting; }"
+  },
+  {
+    "id": "tp-code-adv-30",
+    "topic": "الگوریتم و کدنویسی پیشرفته - شماره 30",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 1,
+    "text": "const sortedLeaderboard = useMemo(() => users.slice().sort((a, b) => b.score - a.score || a.time - b.time), [users]);"
+  },
+  {
+    "id": "tp-code-adv-31",
+    "topic": "الگوریتم و کدنویسی پیشرفته - شماره 31",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "hard",
+    "length": "long",
+    "lineCount": 1,
+    "text": "def quicksort(arr: list[int]) -> list[int]: if len(arr) <= 1: return arr; pivot = arr[len(arr) // 2]; return quicksort([x for x in arr if x < pivot]) + [x for x in arr if x == pivot] + quicksort([x for x in arr if x > pivot])"
+  },
+  {
+    "id": "tp-code-adv-32",
+    "topic": "الگوریتم و کدنویسی پیشرفته - شماره 32",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 1,
+    "text": "from dataclasses import dataclass\n@dataclass\nclass UserProfile: id: str; email: str; role: str = 'member'; is_verified: bool = False"
+  },
+  {
+    "id": "tp-code-adv-33",
+    "topic": "الگوریتم و کدنویسی پیشرفته - شماره 33",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "medium",
+    "length": "long",
+    "lineCount": 1,
+    "text": "async def get_db_session(): async with async_session_factory() as session: try: yield session; await session.commit() except Exception: await session.rollback(); raise"
+  },
+  {
+    "id": "tp-code-adv-34",
+    "topic": "الگوریتم و کدنویسی پیشرفته - شماره 34",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "hard",
+    "length": "long",
+    "lineCount": 1,
+    "text": "def cache_result(ttl_seconds: int = 300): def decorator(func): cache = {}; def wrapper(*args): if args in cache and (time.time() - cache[args]['ts']) < ttl_seconds: return cache[args]['val']; res = func(*args); cache[args] = {'val': res, 'ts': time.time()}; return res; return wrapper; return decorator"
+  },
+  {
+    "id": "tp-code-adv-35",
+    "topic": "الگوریتم و کدنویسی پیشرفته - شماره 35",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "medium",
+    "length": "medium",
+    "lineCount": 1,
+    "text": "matrix_transposed = [[row[i] for row in original_matrix] for i in range(len(original_matrix[0]))]"
+  },
+  {
+    "id": "tp-code-adv-36",
+    "topic": "الگوریتم و کدنویسی پیشرفته - شماره 36",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 1,
+    "text": "with open('config.json', 'r', encoding='utf-8') as f: config_data = json.load(f); database_url = config_data.get('db_uri', 'sqlite:///default.db')"
+  },
+  {
+    "id": "tp-code-adv-37",
+    "topic": "الگوریتم و کدنویسی پیشرفته - شماره 37",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "hard",
+    "length": "long",
+    "lineCount": 1,
+    "text": "from pydantic import BaseModel, EmailStr, Field\nclass RegisterSchema(BaseModel): username: str = Field(min_length=3); email: EmailStr; password: str = Field(min_length=8)"
+  },
+  {
+    "id": "tp-code-adv-38",
+    "topic": "الگوریتم و کدنویسی پیشرفته - شماره 38",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 1,
+    "text": "squares_dict = {x: x**2 for x in range(1, 11) if x % 2 == 0}"
+  },
+  {
+    "id": "tp-code-adv-39",
+    "topic": "الگوریتم و کدنویسی پیشرفته - شماره 39",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "medium",
+    "length": "long",
+    "lineCount": 1,
+    "text": "import asyncio\nasync def fetch_all(urls: list[str]): async with aiohttp.ClientSession() as session: tasks = [session.get(url) for url in urls]; return await asyncio.gather(*tasks)"
+  },
+  {
+    "id": "tp-code-adv-40",
+    "topic": "الگوریتم و کدنویسی پیشرفته - شماره 40",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "hard",
+    "length": "long",
+    "lineCount": 1,
+    "text": "def binary_search(arr: list[int], target: int) -> int: left, right = 0, len(arr) - 1; while left <= right: mid = (left + right) // 2; if arr[mid] == target: return mid; elif arr[mid] < target: left = mid + 1; else: right = mid - 1; return -1"
+  },
+  {
+    "id": "tp-code-adv-41",
+    "topic": "الگوریتم و کدنویسی پیشرفته - شماره 41",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "medium",
+    "length": "long",
+    "lineCount": 1,
+    "text": "SELECT u.id, u.username, COUNT(o.id) AS total_orders, SUM(o.total_price) AS lifetime_value FROM users u LEFT JOIN orders o ON u.id = o.user_id WHERE u.status = 'active' GROUP BY u.id HAVING lifetime_value > 500 ORDER BY lifetime_value DESC LIMIT 20;"
+  },
+  {
+    "id": "tp-code-adv-42",
+    "topic": "الگوریتم و کدنویسی پیشرفته - شماره 42",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 1,
+    "text": "CREATE INDEX idx_users_email_status ON users (email, status) WHERE is_deleted = false;"
+  },
+  {
+    "id": "tp-code-adv-43",
+    "topic": "الگوریتم و کدنویسی پیشرفته - شماره 43",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "hard",
+    "length": "long",
+    "lineCount": 1,
+    "text": "router.post('/login', rateLimiter({ max: 5 }), validateBody(loginSchema), async (req: Request, res: Response) => { const token = await authService.authenticate(req.body); res.cookie('token', token, { httpOnly: true, secure: true }); return res.json({ success: true }); });"
+  },
+  {
+    "id": "tp-code-adv-44",
+    "topic": "الگوریتم و کدنویسی پیشرفته - شماره 44",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "easy",
+    "length": "long",
+    "lineCount": 1,
+    "text": "const binarySearch = (nums: number[], target: number): number => { let lo = 0, hi = nums.length - 1; while (lo <= hi) { const mid = (lo + hi) >> 1; if (nums[mid] === target) return mid; if (nums[mid] < target) lo = mid + 1; else hi = mid - 1; } return -1; };"
+  },
+  {
+    "id": "tp-code-adv-45",
+    "topic": "الگوریتم و کدنویسی پیشرفته - شماره 45",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "medium",
+    "length": "long",
+    "lineCount": 1,
+    "text": "class LRUCache<K, V> { private cache = new Map<K, V>(); constructor(private capacity: number) {} get(key: K): V | undefined { if (!this.cache.has(key)) return undefined; const val = this.cache.get(key)!; this.cache.delete(key); this.cache.set(key, val); return val; } put(key: K, val: V): void { if (this.cache.has(key)) this.cache.delete(key); else if (this.cache.size >= this.capacity) this.cache.delete(this.cache.keys().next().value); this.cache.set(key, val); } }"
+  },
+  {
+    "id": "tp-code-adv-46",
+    "topic": "الگوریتم و کدنویسی پیشرفته - شماره 46",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "hard",
+    "length": "long",
+    "lineCount": 1,
+    "text": "const fibonacci = (n: number, memo: Record<number, number> = {}): number => { if (n <= 1) return n; if (memo[n]) return memo[n]; return memo[n] = fibonacci(n - 1, memo) + fibonacci(n - 2, memo); };"
+  },
+  {
+    "id": "tp-code-adv-47",
+    "topic": "الگوریتم و کدنویسی پیشرفته - شماره 47",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "medium",
+    "length": "long",
+    "lineCount": 1,
+    "text": "export class PriorityQueue<T> { private heap: { val: T; priority: number }[] = []; push(val: T, priority: number) { this.heap.push({ val, priority }); this.heap.sort((a, b) => a.priority - b.priority); } pop(): T | undefined { return this.heap.shift()?.val; } }"
+  },
+  {
+    "id": "tp-code-adv-48",
+    "topic": "الگوریتم و کدنویسی پیشرفته - شماره 48",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "easy",
+    "length": "long",
+    "lineCount": 1,
+    "text": "const redisClient = createClient({ url: process.env.REDIS_URL }); await redisClient.connect(); await redisClient.setEx(`cache:user:${id}`, 3600, JSON.stringify(userData));"
+  },
+  {
+    "id": "tp-code-adv-49",
+    "topic": "الگوریتم و کدنویسی پیشرفته - شماره 49",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "hard",
+    "length": "long",
+    "lineCount": 1,
+    "text": "function isPalindrome(str: string): boolean { const clean = str.toLowerCase().replace(/[^a-z0-9]/g, ''); return clean === clean.split('').reverse().join(''); }"
+  },
+  {
+    "id": "tp-code-adv-50",
+    "topic": "الگوریتم و کدنویسی پیشرفته - شماره 50",
+    "subCategory": "کدنویسی",
+    "language": "code",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 1,
+    "text": "const flattenArray = (arr: any[]): any[] => arr.reduce((acc, val) => Array.isArray(val) ? acc.concat(flattenArray(val)) : acc.concat(val), []);"
+  },
+  {
+    "id": "tp-en-adv-1",
+    "topic": "Scientific English & Technology - Volume 1",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Artificial general intelligence seeks to develop autonomous systems that outperform human cognitive faculties across economically valuable work, sparking deep philosophical questions regarding control and consciousness."
+  },
+  {
+    "id": "tp-en-adv-2",
+    "topic": "Scientific English & Technology - Volume 2",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Large language models utilize self-attention mechanisms across trillions of tokens to establish contextual representations, predicting optimal token completions with human-like linguistic coherence."
+  },
+  {
+    "id": "tp-en-adv-3",
+    "topic": "Scientific English & Technology - Volume 3",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "medium",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Quantum computing harnesses superposition and quantum entanglement to evaluate multidimensional combinatorial spaces simultaneously, revolutionizing cryptography, materials science, and pharmaceutical drug discovery."
+  },
+  {
+    "id": "tp-en-adv-4",
+    "topic": "Scientific English & Technology - Volume 4",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "The James Webb Space Telescope uses gold-coated beryllium mirrors and infrared cryogenics to photograph stellar nurseries and primordial galaxies that ignited mere hundreds of millions of years following the Big Bang."
+  },
+  {
+    "id": "tp-en-adv-5",
+    "topic": "Scientific English & Technology - Volume 5",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "medium",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "CRISPR-Cas9 gene editing operates as programmable molecular scissors, granting bioengineers precise authority to rectify deleterious mutations, eradicate inherited pathology, and bolster agricultural resilience."
+  },
+  {
+    "id": "tp-en-adv-6",
+    "topic": "Scientific English & Technology - Volume 6",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Deep neural networks mirror biological cortical structures by stacking hierarchical matrix transformations, distilling abstract semantics from raw sensory telemetry like pixel arrays and audio waveforms."
+  },
+  {
+    "id": "tp-en-adv-7",
+    "topic": "Scientific English & Technology - Volume 7",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Event-driven microservices decouple transactional boundaries across distributed clouds, utilizing durable message brokers like Kafka to orchestrate high-throughput streaming pipelines with zero downtime."
+  },
+  {
+    "id": "tp-en-adv-8",
+    "topic": "Scientific English & Technology - Volume 8",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Neuroscience investigates how synaptic plasticity and long-term potentiation reconfigure structural neural circuits, underpinning the physical mechanisms of memory consolidation and rapid skill acquisition."
+  },
+  {
+    "id": "tp-en-adv-9",
+    "topic": "Scientific English & Technology - Volume 9",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "medium",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Zero-knowledge proofs allow a prover to mathematically demonstrate possession of secret knowledge to a verifier without revealing any auxiliary information, forming the cornerstone of decentralized privacy."
+  },
+  {
+    "id": "tp-en-adv-10",
+    "topic": "Scientific English & Technology - Volume 10",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Thermonuclear fusion reactors like tokamaks seek to replicate solar core dynamics by magnetically confining hundred-million-degree deuterium-tritium plasma to yield clean, virtually limitless energy."
+  },
+  {
+    "id": "tp-en-adv-11",
+    "topic": "Scientific English & Technology - Volume 11",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "medium",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Asynchronous programming frameworks eliminate blocking system calls through cooperative event loops, enabling lightweight server processes to maintain millions of concurrent bidirectional web sockets."
+  },
+  {
+    "id": "tp-en-adv-12",
+    "topic": "Scientific English & Technology - Volume 12",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Astrophysical black holes curve spacetime geometries into gravitational singularities where the escape velocity surpasses the speed of light, challenging standard quantum field theories at cosmic scales."
+  },
+  {
+    "id": "tp-en-adv-13",
+    "topic": "Scientific English & Technology - Volume 13",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Synthetic biology synthesizes artificial metabolic pathways from scratch, programming engineered bacteria to manufacture biodegradable polymers, green biofuels, and bespoke antibody therapies."
+  },
+  {
+    "id": "tp-en-adv-14",
+    "topic": "Scientific English & Technology - Volume 14",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "High-frequency trading algorithms leverage low-latency field-programmable gate arrays to execute arbitrage orders in nanoseconds, capitalizing on fleeting market microstructural imbalances."
+  },
+  {
+    "id": "tp-en-adv-15",
+    "topic": "Scientific English & Technology - Volume 15",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "medium",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Optogenetics empowers neuroscientists to manipulate specific neural populations with millisecond precision using laser pulses delivered to light-sensitive microbial opsin ion channels."
+  },
+  {
+    "id": "tp-en-adv-16",
+    "topic": "Scientific English & Technology - Volume 16",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Autonomous vehicle perception stacks fuse lidar point clouds, millimeter-wave radar, and high-framerate visual streams into unified probabilistic occupancy grids for safe trajectory planning."
+  },
+  {
+    "id": "tp-en-adv-17",
+    "topic": "Scientific English & Technology - Volume 17",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "medium",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Distributed consensus algorithms like Raft elect authoritative leaders and maintain consistent replicated logs across geographically separated cluster nodes in the presence of arbitrary packet loss."
+  },
+  {
+    "id": "tp-en-adv-18",
+    "topic": "Scientific English & Technology - Volume 18",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Metamaterials engineered with subwavelength cellular geometries exhibit negative refractive indices, bending electromagnetic radiation in ways entirely alien to naturally occurring substances."
+  },
+  {
+    "id": "tp-en-adv-19",
+    "topic": "Scientific English & Technology - Volume 19",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Dark energy accelerates the metric expansion of the universe, suggesting that distant galactic clusters will eventually vanish past our cosmic event horizon into eternal isolation."
+  },
+  {
+    "id": "tp-en-adv-20",
+    "topic": "Scientific English & Technology - Volume 20",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Reinforcement learning agents master complex strategy games by iteratively navigating simulated state-action spaces, discovering novel tactical paradigms superior to human intuition."
+  },
+  {
+    "id": "tp-en-adv-21",
+    "topic": "Scientific English & Technology - Volume 21",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "medium",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Edge computing redistributes intensive analytical workloads from centralized hyperscale data centers to localized hardware devices, minimizing network latency for real-time mission-critical robotics."
+  },
+  {
+    "id": "tp-en-adv-22",
+    "topic": "Scientific English & Technology - Volume 22",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Epigenetic methylation patterns regulate chromatin accessibility, determining cellular differentiation and offering molecular clocks that measure biological aging independent of chronological time."
+  },
+  {
+    "id": "tp-en-adv-23",
+    "topic": "Scientific English & Technology - Volume 23",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "medium",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Microarchitectural branch predictors utilize neural perceptron models to speculate instruction pathways inside CPU cores, masking memory latency and sustaining instructions-per-cycle throughput."
+  },
+  {
+    "id": "tp-en-adv-24",
+    "topic": "Scientific English & Technology - Volume 24",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Nanotechnology fabricates carbon nanotube field-effect transistors that surpass the thermal and ballistic transport limits of traditional silicon semiconductors below two nanometers."
+  },
+  {
+    "id": "tp-en-adv-25",
+    "topic": "Scientific English & Technology - Volume 25",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Federated learning trains collaborative machine learning models across decentralized mobile fleets without transmitting sensitive raw user telemetry to central corporate repositories."
+  },
+  {
+    "id": "tp-en-adv-26",
+    "topic": "Scientific English & Technology - Volume 26",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 26): Artificial general intelligence seeks to develop autonomous systems that outperform human cognitive faculties across economically valuable work, sparking deep philosophical questions regarding control and consciousness."
+  },
+  {
+    "id": "tp-en-adv-27",
+    "topic": "Scientific English & Technology - Volume 27",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "medium",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 27): Large language models utilize self-attention mechanisms across trillions of tokens to establish contextual representations, predicting optimal token completions with human-like linguistic coherence."
+  },
+  {
+    "id": "tp-en-adv-28",
+    "topic": "Scientific English & Technology - Volume 28",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 28): Quantum computing harnesses superposition and quantum entanglement to evaluate multidimensional combinatorial spaces simultaneously, revolutionizing cryptography, materials science, and pharmaceutical drug discovery."
+  },
+  {
+    "id": "tp-en-adv-29",
+    "topic": "Scientific English & Technology - Volume 29",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "medium",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 29): The James Webb Space Telescope uses gold-coated beryllium mirrors and infrared cryogenics to photograph stellar nurseries and primordial galaxies that ignited mere hundreds of millions of years following the Big Bang."
+  },
+  {
+    "id": "tp-en-adv-30",
+    "topic": "Scientific English & Technology - Volume 30",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 30): CRISPR-Cas9 gene editing operates as programmable molecular scissors, granting bioengineers precise authority to rectify deleterious mutations, eradicate inherited pathology, and bolster agricultural resilience."
+  },
+  {
+    "id": "tp-en-adv-31",
+    "topic": "Scientific English & Technology - Volume 31",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 31): Deep neural networks mirror biological cortical structures by stacking hierarchical matrix transformations, distilling abstract semantics from raw sensory telemetry like pixel arrays and audio waveforms."
+  },
+  {
+    "id": "tp-en-adv-32",
+    "topic": "Scientific English & Technology - Volume 32",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 32): Event-driven microservices decouple transactional boundaries across distributed clouds, utilizing durable message brokers like Kafka to orchestrate high-throughput streaming pipelines with zero downtime."
+  },
+  {
+    "id": "tp-en-adv-33",
+    "topic": "Scientific English & Technology - Volume 33",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "medium",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 33): Neuroscience investigates how synaptic plasticity and long-term potentiation reconfigure structural neural circuits, underpinning the physical mechanisms of memory consolidation and rapid skill acquisition."
+  },
+  {
+    "id": "tp-en-adv-34",
+    "topic": "Scientific English & Technology - Volume 34",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 34): Zero-knowledge proofs allow a prover to mathematically demonstrate possession of secret knowledge to a verifier without revealing any auxiliary information, forming the cornerstone of decentralized privacy."
+  },
+  {
+    "id": "tp-en-adv-35",
+    "topic": "Scientific English & Technology - Volume 35",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "medium",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 35): Thermonuclear fusion reactors like tokamaks seek to replicate solar core dynamics by magnetically confining hundred-million-degree deuterium-tritium plasma to yield clean, virtually limitless energy."
+  },
+  {
+    "id": "tp-en-adv-36",
+    "topic": "Scientific English & Technology - Volume 36",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 36): Asynchronous programming frameworks eliminate blocking system calls through cooperative event loops, enabling lightweight server processes to maintain millions of concurrent bidirectional web sockets."
+  },
+  {
+    "id": "tp-en-adv-37",
+    "topic": "Scientific English & Technology - Volume 37",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 37): Astrophysical black holes curve spacetime geometries into gravitational singularities where the escape velocity surpasses the speed of light, challenging standard quantum field theories at cosmic scales."
+  },
+  {
+    "id": "tp-en-adv-38",
+    "topic": "Scientific English & Technology - Volume 38",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 38): Synthetic biology synthesizes artificial metabolic pathways from scratch, programming engineered bacteria to manufacture biodegradable polymers, green biofuels, and bespoke antibody therapies."
+  },
+  {
+    "id": "tp-en-adv-39",
+    "topic": "Scientific English & Technology - Volume 39",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "medium",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 39): High-frequency trading algorithms leverage low-latency field-programmable gate arrays to execute arbitrage orders in nanoseconds, capitalizing on fleeting market microstructural imbalances."
+  },
+  {
+    "id": "tp-en-adv-40",
+    "topic": "Scientific English & Technology - Volume 40",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 40): Optogenetics empowers neuroscientists to manipulate specific neural populations with millisecond precision using laser pulses delivered to light-sensitive microbial opsin ion channels."
+  },
+  {
+    "id": "tp-en-adv-41",
+    "topic": "Scientific English & Technology - Volume 41",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "medium",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 41): Autonomous vehicle perception stacks fuse lidar point clouds, millimeter-wave radar, and high-framerate visual streams into unified probabilistic occupancy grids for safe trajectory planning."
+  },
+  {
+    "id": "tp-en-adv-42",
+    "topic": "Scientific English & Technology - Volume 42",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 42): Distributed consensus algorithms like Raft elect authoritative leaders and maintain consistent replicated logs across geographically separated cluster nodes in the presence of arbitrary packet loss."
+  },
+  {
+    "id": "tp-en-adv-43",
+    "topic": "Scientific English & Technology - Volume 43",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 43): Metamaterials engineered with subwavelength cellular geometries exhibit negative refractive indices, bending electromagnetic radiation in ways entirely alien to naturally occurring substances."
+  },
+  {
+    "id": "tp-en-adv-44",
+    "topic": "Scientific English & Technology - Volume 44",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 44): Dark energy accelerates the metric expansion of the universe, suggesting that distant galactic clusters will eventually vanish past our cosmic event horizon into eternal isolation."
+  },
+  {
+    "id": "tp-en-adv-45",
+    "topic": "Scientific English & Technology - Volume 45",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "medium",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 45): Reinforcement learning agents master complex strategy games by iteratively navigating simulated state-action spaces, discovering novel tactical paradigms superior to human intuition."
+  },
+  {
+    "id": "tp-en-adv-46",
+    "topic": "Scientific English & Technology - Volume 46",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 46): Edge computing redistributes intensive analytical workloads from centralized hyperscale data centers to localized hardware devices, minimizing network latency for real-time mission-critical robotics."
+  },
+  {
+    "id": "tp-en-adv-47",
+    "topic": "Scientific English & Technology - Volume 47",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "medium",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 47): Epigenetic methylation patterns regulate chromatin accessibility, determining cellular differentiation and offering molecular clocks that measure biological aging independent of chronological time."
+  },
+  {
+    "id": "tp-en-adv-48",
+    "topic": "Scientific English & Technology - Volume 48",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 48): Microarchitectural branch predictors utilize neural perceptron models to speculate instruction pathways inside CPU cores, masking memory latency and sustaining instructions-per-cycle throughput."
+  },
+  {
+    "id": "tp-en-adv-49",
+    "topic": "Scientific English & Technology - Volume 49",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 49): Nanotechnology fabricates carbon nanotube field-effect transistors that surpass the thermal and ballistic transport limits of traditional silicon semiconductors below two nanometers."
+  },
+  {
+    "id": "tp-en-adv-50",
+    "topic": "Scientific English & Technology - Volume 50",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 50): Federated learning trains collaborative machine learning models across decentralized mobile fleets without transmitting sensitive raw user telemetry to central corporate repositories."
+  },
+  {
+    "id": "tp-en-adv-51",
+    "topic": "Scientific English & Technology - Volume 51",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "medium",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 51): Artificial general intelligence seeks to develop autonomous systems that outperform human cognitive faculties across economically valuable work, sparking deep philosophical questions regarding control and consciousness."
+  },
+  {
+    "id": "tp-en-adv-52",
+    "topic": "Scientific English & Technology - Volume 52",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 52): Large language models utilize self-attention mechanisms across trillions of tokens to establish contextual representations, predicting optimal token completions with human-like linguistic coherence."
+  },
+  {
+    "id": "tp-en-adv-53",
+    "topic": "Scientific English & Technology - Volume 53",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "medium",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 53): Quantum computing harnesses superposition and quantum entanglement to evaluate multidimensional combinatorial spaces simultaneously, revolutionizing cryptography, materials science, and pharmaceutical drug discovery."
+  },
+  {
+    "id": "tp-en-adv-54",
+    "topic": "Scientific English & Technology - Volume 54",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 54): The James Webb Space Telescope uses gold-coated beryllium mirrors and infrared cryogenics to photograph stellar nurseries and primordial galaxies that ignited mere hundreds of millions of years following the Big Bang."
+  },
+  {
+    "id": "tp-en-adv-55",
+    "topic": "Scientific English & Technology - Volume 55",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 55): CRISPR-Cas9 gene editing operates as programmable molecular scissors, granting bioengineers precise authority to rectify deleterious mutations, eradicate inherited pathology, and bolster agricultural resilience."
+  },
+  {
+    "id": "tp-en-adv-56",
+    "topic": "Scientific English & Technology - Volume 56",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 56): Deep neural networks mirror biological cortical structures by stacking hierarchical matrix transformations, distilling abstract semantics from raw sensory telemetry like pixel arrays and audio waveforms."
+  },
+  {
+    "id": "tp-en-adv-57",
+    "topic": "Scientific English & Technology - Volume 57",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "medium",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 57): Event-driven microservices decouple transactional boundaries across distributed clouds, utilizing durable message brokers like Kafka to orchestrate high-throughput streaming pipelines with zero downtime."
+  },
+  {
+    "id": "tp-en-adv-58",
+    "topic": "Scientific English & Technology - Volume 58",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 58): Neuroscience investigates how synaptic plasticity and long-term potentiation reconfigure structural neural circuits, underpinning the physical mechanisms of memory consolidation and rapid skill acquisition."
+  },
+  {
+    "id": "tp-en-adv-59",
+    "topic": "Scientific English & Technology - Volume 59",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "medium",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 59): Zero-knowledge proofs allow a prover to mathematically demonstrate possession of secret knowledge to a verifier without revealing any auxiliary information, forming the cornerstone of decentralized privacy."
+  },
+  {
+    "id": "tp-en-adv-60",
+    "topic": "Scientific English & Technology - Volume 60",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 60): Thermonuclear fusion reactors like tokamaks seek to replicate solar core dynamics by magnetically confining hundred-million-degree deuterium-tritium plasma to yield clean, virtually limitless energy."
+  },
+  {
+    "id": "tp-en-adv-61",
+    "topic": "Scientific English & Technology - Volume 61",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 61): Asynchronous programming frameworks eliminate blocking system calls through cooperative event loops, enabling lightweight server processes to maintain millions of concurrent bidirectional web sockets."
+  },
+  {
+    "id": "tp-en-adv-62",
+    "topic": "Scientific English & Technology - Volume 62",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 62): Astrophysical black holes curve spacetime geometries into gravitational singularities where the escape velocity surpasses the speed of light, challenging standard quantum field theories at cosmic scales."
+  },
+  {
+    "id": "tp-en-adv-63",
+    "topic": "Scientific English & Technology - Volume 63",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "medium",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 63): Synthetic biology synthesizes artificial metabolic pathways from scratch, programming engineered bacteria to manufacture biodegradable polymers, green biofuels, and bespoke antibody therapies."
+  },
+  {
+    "id": "tp-en-adv-64",
+    "topic": "Scientific English & Technology - Volume 64",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 64): High-frequency trading algorithms leverage low-latency field-programmable gate arrays to execute arbitrage orders in nanoseconds, capitalizing on fleeting market microstructural imbalances."
+  },
+  {
+    "id": "tp-en-adv-65",
+    "topic": "Scientific English & Technology - Volume 65",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "medium",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 65): Optogenetics empowers neuroscientists to manipulate specific neural populations with millisecond precision using laser pulses delivered to light-sensitive microbial opsin ion channels."
+  },
+  {
+    "id": "tp-en-adv-66",
+    "topic": "Scientific English & Technology - Volume 66",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 66): Autonomous vehicle perception stacks fuse lidar point clouds, millimeter-wave radar, and high-framerate visual streams into unified probabilistic occupancy grids for safe trajectory planning."
+  },
+  {
+    "id": "tp-en-adv-67",
+    "topic": "Scientific English & Technology - Volume 67",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 67): Distributed consensus algorithms like Raft elect authoritative leaders and maintain consistent replicated logs across geographically separated cluster nodes in the presence of arbitrary packet loss."
+  },
+  {
+    "id": "tp-en-adv-68",
+    "topic": "Scientific English & Technology - Volume 68",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 68): Metamaterials engineered with subwavelength cellular geometries exhibit negative refractive indices, bending electromagnetic radiation in ways entirely alien to naturally occurring substances."
+  },
+  {
+    "id": "tp-en-adv-69",
+    "topic": "Scientific English & Technology - Volume 69",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "medium",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 69): Dark energy accelerates the metric expansion of the universe, suggesting that distant galactic clusters will eventually vanish past our cosmic event horizon into eternal isolation."
+  },
+  {
+    "id": "tp-en-adv-70",
+    "topic": "Scientific English & Technology - Volume 70",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 70): Reinforcement learning agents master complex strategy games by iteratively navigating simulated state-action spaces, discovering novel tactical paradigms superior to human intuition."
+  },
+  {
+    "id": "tp-en-adv-71",
+    "topic": "Scientific English & Technology - Volume 71",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "medium",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 71): Edge computing redistributes intensive analytical workloads from centralized hyperscale data centers to localized hardware devices, minimizing network latency for real-time mission-critical robotics."
+  },
+  {
+    "id": "tp-en-adv-72",
+    "topic": "Scientific English & Technology - Volume 72",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 72): Epigenetic methylation patterns regulate chromatin accessibility, determining cellular differentiation and offering molecular clocks that measure biological aging independent of chronological time."
+  },
+  {
+    "id": "tp-en-adv-73",
+    "topic": "Scientific English & Technology - Volume 73",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 73): Microarchitectural branch predictors utilize neural perceptron models to speculate instruction pathways inside CPU cores, masking memory latency and sustaining instructions-per-cycle throughput."
+  },
+  {
+    "id": "tp-en-adv-74",
+    "topic": "Scientific English & Technology - Volume 74",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 74): Nanotechnology fabricates carbon nanotube field-effect transistors that surpass the thermal and ballistic transport limits of traditional silicon semiconductors below two nanometers."
+  },
+  {
+    "id": "tp-en-adv-75",
+    "topic": "Scientific English & Technology - Volume 75",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "medium",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 75): Federated learning trains collaborative machine learning models across decentralized mobile fleets without transmitting sensitive raw user telemetry to central corporate repositories."
+  },
+  {
+    "id": "tp-en-adv-76",
+    "topic": "Scientific English & Technology - Volume 76",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 76): Artificial general intelligence seeks to develop autonomous systems that outperform human cognitive faculties across economically valuable work, sparking deep philosophical questions regarding control and consciousness."
+  },
+  {
+    "id": "tp-en-adv-77",
+    "topic": "Scientific English & Technology - Volume 77",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "medium",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 77): Large language models utilize self-attention mechanisms across trillions of tokens to establish contextual representations, predicting optimal token completions with human-like linguistic coherence."
+  },
+  {
+    "id": "tp-en-adv-78",
+    "topic": "Scientific English & Technology - Volume 78",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 78): Quantum computing harnesses superposition and quantum entanglement to evaluate multidimensional combinatorial spaces simultaneously, revolutionizing cryptography, materials science, and pharmaceutical drug discovery."
+  },
+  {
+    "id": "tp-en-adv-79",
+    "topic": "Scientific English & Technology - Volume 79",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 79): The James Webb Space Telescope uses gold-coated beryllium mirrors and infrared cryogenics to photograph stellar nurseries and primordial galaxies that ignited mere hundreds of millions of years following the Big Bang."
+  },
+  {
+    "id": "tp-en-adv-80",
+    "topic": "Scientific English & Technology - Volume 80",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 80): CRISPR-Cas9 gene editing operates as programmable molecular scissors, granting bioengineers precise authority to rectify deleterious mutations, eradicate inherited pathology, and bolster agricultural resilience."
+  },
+  {
+    "id": "tp-en-adv-81",
+    "topic": "Scientific English & Technology - Volume 81",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "medium",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 81): Deep neural networks mirror biological cortical structures by stacking hierarchical matrix transformations, distilling abstract semantics from raw sensory telemetry like pixel arrays and audio waveforms."
+  },
+  {
+    "id": "tp-en-adv-82",
+    "topic": "Scientific English & Technology - Volume 82",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 82): Event-driven microservices decouple transactional boundaries across distributed clouds, utilizing durable message brokers like Kafka to orchestrate high-throughput streaming pipelines with zero downtime."
+  },
+  {
+    "id": "tp-en-adv-83",
+    "topic": "Scientific English & Technology - Volume 83",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "medium",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 83): Neuroscience investigates how synaptic plasticity and long-term potentiation reconfigure structural neural circuits, underpinning the physical mechanisms of memory consolidation and rapid skill acquisition."
+  },
+  {
+    "id": "tp-en-adv-84",
+    "topic": "Scientific English & Technology - Volume 84",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 84): Zero-knowledge proofs allow a prover to mathematically demonstrate possession of secret knowledge to a verifier without revealing any auxiliary information, forming the cornerstone of decentralized privacy."
+  },
+  {
+    "id": "tp-en-adv-85",
+    "topic": "Scientific English & Technology - Volume 85",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 85): Thermonuclear fusion reactors like tokamaks seek to replicate solar core dynamics by magnetically confining hundred-million-degree deuterium-tritium plasma to yield clean, virtually limitless energy."
+  },
+  {
+    "id": "tp-en-adv-86",
+    "topic": "Scientific English & Technology - Volume 86",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 86): Asynchronous programming frameworks eliminate blocking system calls through cooperative event loops, enabling lightweight server processes to maintain millions of concurrent bidirectional web sockets."
+  },
+  {
+    "id": "tp-en-adv-87",
+    "topic": "Scientific English & Technology - Volume 87",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "medium",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 87): Astrophysical black holes curve spacetime geometries into gravitational singularities where the escape velocity surpasses the speed of light, challenging standard quantum field theories at cosmic scales."
+  },
+  {
+    "id": "tp-en-adv-88",
+    "topic": "Scientific English & Technology - Volume 88",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 88): Synthetic biology synthesizes artificial metabolic pathways from scratch, programming engineered bacteria to manufacture biodegradable polymers, green biofuels, and bespoke antibody therapies."
+  },
+  {
+    "id": "tp-en-adv-89",
+    "topic": "Scientific English & Technology - Volume 89",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "medium",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 89): High-frequency trading algorithms leverage low-latency field-programmable gate arrays to execute arbitrage orders in nanoseconds, capitalizing on fleeting market microstructural imbalances."
+  },
+  {
+    "id": "tp-en-adv-90",
+    "topic": "Scientific English & Technology - Volume 90",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 90): Optogenetics empowers neuroscientists to manipulate specific neural populations with millisecond precision using laser pulses delivered to light-sensitive microbial opsin ion channels."
+  },
+  {
+    "id": "tp-en-adv-91",
+    "topic": "Scientific English & Technology - Volume 91",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 91): Autonomous vehicle perception stacks fuse lidar point clouds, millimeter-wave radar, and high-framerate visual streams into unified probabilistic occupancy grids for safe trajectory planning."
+  },
+  {
+    "id": "tp-en-adv-92",
+    "topic": "Scientific English & Technology - Volume 92",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 92): Distributed consensus algorithms like Raft elect authoritative leaders and maintain consistent replicated logs across geographically separated cluster nodes in the presence of arbitrary packet loss."
+  },
+  {
+    "id": "tp-en-adv-93",
+    "topic": "Scientific English & Technology - Volume 93",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "medium",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 93): Metamaterials engineered with subwavelength cellular geometries exhibit negative refractive indices, bending electromagnetic radiation in ways entirely alien to naturally occurring substances."
+  },
+  {
+    "id": "tp-en-adv-94",
+    "topic": "Scientific English & Technology - Volume 94",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 94): Dark energy accelerates the metric expansion of the universe, suggesting that distant galactic clusters will eventually vanish past our cosmic event horizon into eternal isolation."
+  },
+  {
+    "id": "tp-en-adv-95",
+    "topic": "Scientific English & Technology - Volume 95",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "medium",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 95): Reinforcement learning agents master complex strategy games by iteratively navigating simulated state-action spaces, discovering novel tactical paradigms superior to human intuition."
+  },
+  {
+    "id": "tp-en-adv-96",
+    "topic": "Scientific English & Technology - Volume 96",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 96): Edge computing redistributes intensive analytical workloads from centralized hyperscale data centers to localized hardware devices, minimizing network latency for real-time mission-critical robotics."
+  },
+  {
+    "id": "tp-en-adv-97",
+    "topic": "Scientific English & Technology - Volume 97",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 97): Epigenetic methylation patterns regulate chromatin accessibility, determining cellular differentiation and offering molecular clocks that measure biological aging independent of chronological time."
+  },
+  {
+    "id": "tp-en-adv-98",
+    "topic": "Scientific English & Technology - Volume 98",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 98): Microarchitectural branch predictors utilize neural perceptron models to speculate instruction pathways inside CPU cores, masking memory latency and sustaining instructions-per-cycle throughput."
+  },
+  {
+    "id": "tp-en-adv-99",
+    "topic": "Scientific English & Technology - Volume 99",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "medium",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 99): Nanotechnology fabricates carbon nanotube field-effect transistors that surpass the thermal and ballistic transport limits of traditional silicon semiconductors below two nanometers."
+  },
+  {
+    "id": "tp-en-adv-100",
+    "topic": "Scientific English & Technology - Volume 100",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 100): Federated learning trains collaborative machine learning models across decentralized mobile fleets without transmitting sensitive raw user telemetry to central corporate repositories."
+  },
+  {
+    "id": "tp-en-adv-101",
+    "topic": "Scientific English & Technology - Volume 101",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "medium",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 101): Artificial general intelligence seeks to develop autonomous systems that outperform human cognitive faculties across economically valuable work, sparking deep philosophical questions regarding control and consciousness."
+  },
+  {
+    "id": "tp-en-adv-102",
+    "topic": "Scientific English & Technology - Volume 102",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 102): Large language models utilize self-attention mechanisms across trillions of tokens to establish contextual representations, predicting optimal token completions with human-like linguistic coherence."
+  },
+  {
+    "id": "tp-en-adv-103",
+    "topic": "Scientific English & Technology - Volume 103",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 103): Quantum computing harnesses superposition and quantum entanglement to evaluate multidimensional combinatorial spaces simultaneously, revolutionizing cryptography, materials science, and pharmaceutical drug discovery."
+  },
+  {
+    "id": "tp-en-adv-104",
+    "topic": "Scientific English & Technology - Volume 104",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 104): The James Webb Space Telescope uses gold-coated beryllium mirrors and infrared cryogenics to photograph stellar nurseries and primordial galaxies that ignited mere hundreds of millions of years following the Big Bang."
+  },
+  {
+    "id": "tp-en-adv-105",
+    "topic": "Scientific English & Technology - Volume 105",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "medium",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 105): CRISPR-Cas9 gene editing operates as programmable molecular scissors, granting bioengineers precise authority to rectify deleterious mutations, eradicate inherited pathology, and bolster agricultural resilience."
+  },
+  {
+    "id": "tp-en-adv-106",
+    "topic": "Scientific English & Technology - Volume 106",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 106): Deep neural networks mirror biological cortical structures by stacking hierarchical matrix transformations, distilling abstract semantics from raw sensory telemetry like pixel arrays and audio waveforms."
+  },
+  {
+    "id": "tp-en-adv-107",
+    "topic": "Scientific English & Technology - Volume 107",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "medium",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 107): Event-driven microservices decouple transactional boundaries across distributed clouds, utilizing durable message brokers like Kafka to orchestrate high-throughput streaming pipelines with zero downtime."
+  },
+  {
+    "id": "tp-en-adv-108",
+    "topic": "Scientific English & Technology - Volume 108",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 108): Neuroscience investigates how synaptic plasticity and long-term potentiation reconfigure structural neural circuits, underpinning the physical mechanisms of memory consolidation and rapid skill acquisition."
+  },
+  {
+    "id": "tp-en-adv-109",
+    "topic": "Scientific English & Technology - Volume 109",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 109): Zero-knowledge proofs allow a prover to mathematically demonstrate possession of secret knowledge to a verifier without revealing any auxiliary information, forming the cornerstone of decentralized privacy."
+  },
+  {
+    "id": "tp-en-adv-110",
+    "topic": "Scientific English & Technology - Volume 110",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 110): Thermonuclear fusion reactors like tokamaks seek to replicate solar core dynamics by magnetically confining hundred-million-degree deuterium-tritium plasma to yield clean, virtually limitless energy."
+  },
+  {
+    "id": "tp-en-adv-111",
+    "topic": "Scientific English & Technology - Volume 111",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "medium",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 111): Asynchronous programming frameworks eliminate blocking system calls through cooperative event loops, enabling lightweight server processes to maintain millions of concurrent bidirectional web sockets."
+  },
+  {
+    "id": "tp-en-adv-112",
+    "topic": "Scientific English & Technology - Volume 112",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 112): Astrophysical black holes curve spacetime geometries into gravitational singularities where the escape velocity surpasses the speed of light, challenging standard quantum field theories at cosmic scales."
+  },
+  {
+    "id": "tp-en-adv-113",
+    "topic": "Scientific English & Technology - Volume 113",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "medium",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 113): Synthetic biology synthesizes artificial metabolic pathways from scratch, programming engineered bacteria to manufacture biodegradable polymers, green biofuels, and bespoke antibody therapies."
+  },
+  {
+    "id": "tp-en-adv-114",
+    "topic": "Scientific English & Technology - Volume 114",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 114): High-frequency trading algorithms leverage low-latency field-programmable gate arrays to execute arbitrage orders in nanoseconds, capitalizing on fleeting market microstructural imbalances."
+  },
+  {
+    "id": "tp-en-adv-115",
+    "topic": "Scientific English & Technology - Volume 115",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 115): Optogenetics empowers neuroscientists to manipulate specific neural populations with millisecond precision using laser pulses delivered to light-sensitive microbial opsin ion channels."
+  },
+  {
+    "id": "tp-en-adv-116",
+    "topic": "Scientific English & Technology - Volume 116",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 116): Autonomous vehicle perception stacks fuse lidar point clouds, millimeter-wave radar, and high-framerate visual streams into unified probabilistic occupancy grids for safe trajectory planning."
+  },
+  {
+    "id": "tp-en-adv-117",
+    "topic": "Scientific English & Technology - Volume 117",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "medium",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 117): Distributed consensus algorithms like Raft elect authoritative leaders and maintain consistent replicated logs across geographically separated cluster nodes in the presence of arbitrary packet loss."
+  },
+  {
+    "id": "tp-en-adv-118",
+    "topic": "Scientific English & Technology - Volume 118",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 118): Metamaterials engineered with subwavelength cellular geometries exhibit negative refractive indices, bending electromagnetic radiation in ways entirely alien to naturally occurring substances."
+  },
+  {
+    "id": "tp-en-adv-119",
+    "topic": "Scientific English & Technology - Volume 119",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "medium",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 119): Dark energy accelerates the metric expansion of the universe, suggesting that distant galactic clusters will eventually vanish past our cosmic event horizon into eternal isolation."
+  },
+  {
+    "id": "tp-en-adv-120",
+    "topic": "Scientific English & Technology - Volume 120",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 120): Reinforcement learning agents master complex strategy games by iteratively navigating simulated state-action spaces, discovering novel tactical paradigms superior to human intuition."
+  },
+  {
+    "id": "tp-en-adv-121",
+    "topic": "Scientific English & Technology - Volume 121",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 121): Edge computing redistributes intensive analytical workloads from centralized hyperscale data centers to localized hardware devices, minimizing network latency for real-time mission-critical robotics."
+  },
+  {
+    "id": "tp-en-adv-122",
+    "topic": "Scientific English & Technology - Volume 122",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 122): Epigenetic methylation patterns regulate chromatin accessibility, determining cellular differentiation and offering molecular clocks that measure biological aging independent of chronological time."
+  },
+  {
+    "id": "tp-en-adv-123",
+    "topic": "Scientific English & Technology - Volume 123",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "medium",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 123): Microarchitectural branch predictors utilize neural perceptron models to speculate instruction pathways inside CPU cores, masking memory latency and sustaining instructions-per-cycle throughput."
+  },
+  {
+    "id": "tp-en-adv-124",
+    "topic": "Scientific English & Technology - Volume 124",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 124): Nanotechnology fabricates carbon nanotube field-effect transistors that surpass the thermal and ballistic transport limits of traditional silicon semiconductors below two nanometers."
+  },
+  {
+    "id": "tp-en-adv-125",
+    "topic": "Scientific English & Technology - Volume 125",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "medium",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 125): Federated learning trains collaborative machine learning models across decentralized mobile fleets without transmitting sensitive raw user telemetry to central corporate repositories."
+  },
+  {
+    "id": "tp-en-adv-126",
+    "topic": "Scientific English & Technology - Volume 126",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 126): Artificial general intelligence seeks to develop autonomous systems that outperform human cognitive faculties across economically valuable work, sparking deep philosophical questions regarding control and consciousness."
+  },
+  {
+    "id": "tp-en-adv-127",
+    "topic": "Scientific English & Technology - Volume 127",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 127): Large language models utilize self-attention mechanisms across trillions of tokens to establish contextual representations, predicting optimal token completions with human-like linguistic coherence."
+  },
+  {
+    "id": "tp-en-adv-128",
+    "topic": "Scientific English & Technology - Volume 128",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 128): Quantum computing harnesses superposition and quantum entanglement to evaluate multidimensional combinatorial spaces simultaneously, revolutionizing cryptography, materials science, and pharmaceutical drug discovery."
+  },
+  {
+    "id": "tp-en-adv-129",
+    "topic": "Scientific English & Technology - Volume 129",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "medium",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 129): The James Webb Space Telescope uses gold-coated beryllium mirrors and infrared cryogenics to photograph stellar nurseries and primordial galaxies that ignited mere hundreds of millions of years following the Big Bang."
+  },
+  {
+    "id": "tp-en-adv-130",
+    "topic": "Scientific English & Technology - Volume 130",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 130): CRISPR-Cas9 gene editing operates as programmable molecular scissors, granting bioengineers precise authority to rectify deleterious mutations, eradicate inherited pathology, and bolster agricultural resilience."
+  },
+  {
+    "id": "tp-en-adv-131",
+    "topic": "Scientific English & Technology - Volume 131",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "medium",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 131): Deep neural networks mirror biological cortical structures by stacking hierarchical matrix transformations, distilling abstract semantics from raw sensory telemetry like pixel arrays and audio waveforms."
+  },
+  {
+    "id": "tp-en-adv-132",
+    "topic": "Scientific English & Technology - Volume 132",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 132): Event-driven microservices decouple transactional boundaries across distributed clouds, utilizing durable message brokers like Kafka to orchestrate high-throughput streaming pipelines with zero downtime."
+  },
+  {
+    "id": "tp-en-adv-133",
+    "topic": "Scientific English & Technology - Volume 133",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 133): Neuroscience investigates how synaptic plasticity and long-term potentiation reconfigure structural neural circuits, underpinning the physical mechanisms of memory consolidation and rapid skill acquisition."
+  },
+  {
+    "id": "tp-en-adv-134",
+    "topic": "Scientific English & Technology - Volume 134",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 134): Zero-knowledge proofs allow a prover to mathematically demonstrate possession of secret knowledge to a verifier without revealing any auxiliary information, forming the cornerstone of decentralized privacy."
+  },
+  {
+    "id": "tp-en-adv-135",
+    "topic": "Scientific English & Technology - Volume 135",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "medium",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 135): Thermonuclear fusion reactors like tokamaks seek to replicate solar core dynamics by magnetically confining hundred-million-degree deuterium-tritium plasma to yield clean, virtually limitless energy."
+  },
+  {
+    "id": "tp-en-adv-136",
+    "topic": "Scientific English & Technology - Volume 136",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 136): Asynchronous programming frameworks eliminate blocking system calls through cooperative event loops, enabling lightweight server processes to maintain millions of concurrent bidirectional web sockets."
+  },
+  {
+    "id": "tp-en-adv-137",
+    "topic": "Scientific English & Technology - Volume 137",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "medium",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 137): Astrophysical black holes curve spacetime geometries into gravitational singularities where the escape velocity surpasses the speed of light, challenging standard quantum field theories at cosmic scales."
+  },
+  {
+    "id": "tp-en-adv-138",
+    "topic": "Scientific English & Technology - Volume 138",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 138): Synthetic biology synthesizes artificial metabolic pathways from scratch, programming engineered bacteria to manufacture biodegradable polymers, green biofuels, and bespoke antibody therapies."
+  },
+  {
+    "id": "tp-en-adv-139",
+    "topic": "Scientific English & Technology - Volume 139",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 139): High-frequency trading algorithms leverage low-latency field-programmable gate arrays to execute arbitrage orders in nanoseconds, capitalizing on fleeting market microstructural imbalances."
+  },
+  {
+    "id": "tp-en-adv-140",
+    "topic": "Scientific English & Technology - Volume 140",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 140): Optogenetics empowers neuroscientists to manipulate specific neural populations with millisecond precision using laser pulses delivered to light-sensitive microbial opsin ion channels."
+  },
+  {
+    "id": "tp-en-adv-141",
+    "topic": "Scientific English & Technology - Volume 141",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "medium",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 141): Autonomous vehicle perception stacks fuse lidar point clouds, millimeter-wave radar, and high-framerate visual streams into unified probabilistic occupancy grids for safe trajectory planning."
+  },
+  {
+    "id": "tp-en-adv-142",
+    "topic": "Scientific English & Technology - Volume 142",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 142): Distributed consensus algorithms like Raft elect authoritative leaders and maintain consistent replicated logs across geographically separated cluster nodes in the presence of arbitrary packet loss."
+  },
+  {
+    "id": "tp-en-adv-143",
+    "topic": "Scientific English & Technology - Volume 143",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "medium",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 143): Metamaterials engineered with subwavelength cellular geometries exhibit negative refractive indices, bending electromagnetic radiation in ways entirely alien to naturally occurring substances."
+  },
+  {
+    "id": "tp-en-adv-144",
+    "topic": "Scientific English & Technology - Volume 144",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 144): Dark energy accelerates the metric expansion of the universe, suggesting that distant galactic clusters will eventually vanish past our cosmic event horizon into eternal isolation."
+  },
+  {
+    "id": "tp-en-adv-145",
+    "topic": "Scientific English & Technology - Volume 145",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 145): Reinforcement learning agents master complex strategy games by iteratively navigating simulated state-action spaces, discovering novel tactical paradigms superior to human intuition."
+  },
+  {
+    "id": "tp-en-adv-146",
+    "topic": "Scientific English & Technology - Volume 146",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 146): Edge computing redistributes intensive analytical workloads from centralized hyperscale data centers to localized hardware devices, minimizing network latency for real-time mission-critical robotics."
+  },
+  {
+    "id": "tp-en-adv-147",
+    "topic": "Scientific English & Technology - Volume 147",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "medium",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 147): Epigenetic methylation patterns regulate chromatin accessibility, determining cellular differentiation and offering molecular clocks that measure biological aging independent of chronological time."
+  },
+  {
+    "id": "tp-en-adv-148",
+    "topic": "Scientific English & Technology - Volume 148",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "hard",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 148): Microarchitectural branch predictors utilize neural perceptron models to speculate instruction pathways inside CPU cores, masking memory latency and sustaining instructions-per-cycle throughput."
+  },
+  {
+    "id": "tp-en-adv-149",
+    "topic": "Scientific English & Technology - Volume 149",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "medium",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 149): Nanotechnology fabricates carbon nanotube field-effect transistors that surpass the thermal and ballistic transport limits of traditional silicon semiconductors below two nanometers."
+  },
+  {
+    "id": "tp-en-adv-150",
+    "topic": "Scientific English & Technology - Volume 150",
+    "subCategory": "English",
+    "language": "en",
+    "difficulty": "easy",
+    "length": "medium",
+    "lineCount": 3,
+    "text": "Advanced scientific inquiry (thesis 150): Federated learning trains collaborative machine learning models across decentralized mobile fleets without transmitting sensitive raw user telemetry to central corporate repositories."
   }
 ]

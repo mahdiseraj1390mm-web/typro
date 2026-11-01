@@ -114,6 +114,8 @@ export default function TypingTestPage() {
   }, []);
 
   const activeEnPool = useMemo(() => {
+    const list = TYPING_TEST_POOL.filter(item => item.language === 'en');
+    if (list.length > 0) return list.map(item => item.text);
     return [
       'Touch typing is the ability to use muscle memory to find keys fast, without using the sense of sight, and with all the available fingers.',
       'Consistency and accuracy always outweigh rushed speed. Focus on clean rhythm and the natural velocity of fingers will steadily follow.',
