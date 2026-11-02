@@ -35,6 +35,7 @@ export const typroApi = {
       elapsedSeconds: number;
       mode: string;
       language: string;
+      category?: string;
     }) {
       return fetchWithFallback(
         '/api/typing/submit-session',

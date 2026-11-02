@@ -62,6 +62,7 @@ export default function TypingTestPage() {
     bestWpm: number;
     bestAccuracy: number;
     bestLanguage: string;
+    categoryLabel: string;
     averageWpm: number;
     averageAccuracy: number;
     averageConsistency: number;
@@ -71,6 +72,7 @@ export default function TypingTestPage() {
     bestWpm: 0,
     bestAccuracy: 0,
     bestLanguage: 'فارسی',
+    categoryLabel: 'زبان فارسی استاندارد',
     averageWpm: 0,
     averageAccuracy: 0,
     averageConsistency: 0,
@@ -88,14 +90,35 @@ export default function TypingTestPage() {
     accuracy: number;
   } | null>(null);
 
-  // Load authentic records and statistics
-  const loadAuthenticStats = useCallback(async () => {
+  const getCategoryLabel = (cat: TestCategory) => {
+    switch (cat) {
+      case 'en': return 'زبان انگلیسی استاندارد';
+      case 'code': return 'زبان کدنویسی تخصصی';
+      case 'numbers': return 'پد عددی و ارقام';
+      default: return 'زبان فارسی استاندارد';
+    }
+  };
+
+  // Load authentic records and statistics filtered strictly by category
+  const loadAuthenticStats = useCallback(async (cat: TestCategory = selectedCategory) => {
     try {
+      const categoryLabel = getCategoryLabel(cat);
       let localHistory: any[] = [];
       if (typeof window !== 'undefined') {
         try {
           const raw = localStorage.getItem('typro_test_history');
-          if (raw) localHistory = JSON.parse(raw);
+          if (raw) {
+            const parsed = JSON.parse(raw);
+            if (Array.isArray(parsed)) {
+              localHistory = parsed.filter((item: any) => {
+                if (item.category) return item.category === cat;
+                if (cat === 'code') return item.category === 'code';
+                if (cat === 'en') return item.language === 'en';
+                if (cat === 'fa') return !item.language || item.language === 'fa';
+                return false;
+              });
+            }
+          }
         } catch {}
       }
 
@@ -103,13 +126,13 @@ export default function TypingTestPage() {
       const targetUserId = user?.id || (isAuthenticated ? 'usr-admin' : 'user-active');
       let apiStats: any = null;
       try {
-        let res = await fetch(`/api/typing/user-stats/${targetUserId}`);
+        let res = await fetch(`/api/typing/user-stats/${targetUserId}?category=${cat}`);
         if (res.ok) {
           apiStats = await res.json();
         }
         // If 0 tests found for specific ID, try fallback to 'user-active'
         if ((!apiStats || apiStats.totalTests === 0) && targetUserId !== 'user-active') {
-          const fallbackRes = await fetch('/api/typing/user-stats/user-active');
+          const fallbackRes = await fetch(`/api/typing/user-stats/user-active?category=${cat}`);
           if (fallbackRes.ok) {
             const fallbackData = await fallbackRes.json();
             if (fallbackData && fallbackData.totalTests > 0) {
@@ -121,10 +144,9 @@ export default function TypingTestPage() {
         console.warn('Could not fetch user stats from API:', err);
       }
 
-      // Read single values from localStorage
-      const storedBestWpm = typeof window !== 'undefined' ? Number(localStorage.getItem('typro_best_wpm') || 0) : 0;
-      const storedBestAcc = typeof window !== 'undefined' ? Number(localStorage.getItem('typro_best_accuracy') || 0) : 0;
-      const storedConsistency = typeof window !== 'undefined' ? Number(localStorage.getItem('typro_consistency_accuracy') || 0) : 0;
+      // Read single values from localStorage for category
+      const storedBestWpm = typeof window !== 'undefined' ? Number(localStorage.getItem(`typro_best_wpm_${cat}`) || 0) : 0;
+      const storedBestAcc = typeof window !== 'undefined' ? Number(localStorage.getItem(`typro_best_accuracy_${cat}`) || 0) : 0;
 
       let totalTests = apiStats?.totalTests || 0;
       let bestWpmVal = apiStats?.bestWpm || 0;
@@ -132,7 +154,6 @@ export default function TypingTestPage() {
       let averageWpm = apiStats?.averageWpm || 0;
       let averageAccuracy = apiStats?.averageAccuracy || 0;
       let averageConsistency = apiStats?.averageConsistency || 0;
-      let bestLanguage = 'فارسی';
 
       if (localHistory.length > 0) {
         const historyWpms = localHistory.map((h: any) => Number(h.netWpm) || 0);
@@ -145,9 +166,6 @@ export default function TypingTestPage() {
         const localAvgCons = Math.round(historyCons.reduce((a: number, b: number) => a + b, 0) / historyCons.length);
 
         const bestItem = [...localHistory].sort((a, b) => (Number(b.netWpm) || 0) - (Number(a.netWpm) || 0))[0];
-        if (bestItem?.language) {
-          bestLanguage = bestItem.language;
-        }
 
         if (localHistory.length >= totalTests) {
           totalTests = localHistory.length;
@@ -165,14 +183,15 @@ export default function TypingTestPage() {
         bestAccuracy = storedBestAcc || 100;
         averageWpm = storedBestWpm;
         averageAccuracy = storedBestAcc || 100;
-        averageConsistency = storedConsistency || storedBestAcc || 100;
+        averageConsistency = storedBestAcc || 100;
       }
 
       setUserStats({
         totalTests,
         bestWpm: bestWpmVal,
         bestAccuracy: bestAccuracy || (bestWpmVal > 0 ? 100 : 0),
-        bestLanguage,
+        bestLanguage: cat === 'en' ? 'English' : cat === 'code' ? 'Code' : 'فارسی',
+        categoryLabel,
         averageWpm,
         averageAccuracy,
         averageConsistency: averageConsistency || (averageAccuracy ? Math.round(averageAccuracy) : 0),
@@ -183,11 +202,11 @@ export default function TypingTestPage() {
     } catch (e) {
       console.warn('Error loading authentic stats:', e);
     }
-  }, [user, isAuthenticated]);
+  }, [user, isAuthenticated, selectedCategory]);
 
   useEffect(() => {
-    loadAuthenticStats();
-  }, [loadAuthenticStats]);
+    loadAuthenticStats(selectedCategory);
+  }, [selectedCategory, loadAuthenticStats]);
 
   // Sync display config from Admin & localStorage
   useEffect(() => {
@@ -323,11 +342,19 @@ export default function TypingTestPage() {
         rawWpm: metrics.rawWpm,
         accuracy: metrics.accuracy,
         consistency: metrics.consistency || metrics.accuracy,
+        category: selectedCategory,
         language: selectedCategory === 'en' ? 'انگلیسی' : selectedCategory === 'code' ? 'کدنویسی' : 'فارسی',
         elapsedSeconds: metrics.elapsedSeconds,
         date: new Date().toISOString(),
       });
       localStorage.setItem('typro_test_history', JSON.stringify(history));
+
+      // Category-specific bests
+      const prevCatBestWpm = Number(localStorage.getItem(`typro_best_wpm_${selectedCategory}`) || 0);
+      if (metrics.netWpm > prevCatBestWpm) {
+        localStorage.setItem(`typro_best_wpm_${selectedCategory}`, String(metrics.netWpm));
+        localStorage.setItem(`typro_best_accuracy_${selectedCategory}`, String(metrics.accuracy));
+      }
 
       const prevBestWpm = Number(localStorage.getItem('typro_best_wpm') || 0);
       if (metrics.netWpm > prevBestWpm) {
@@ -452,14 +479,15 @@ export default function TypingTestPage() {
         typedText: activeTargetText,
         elapsedSeconds: metrics.elapsedSeconds,
         mode: 'TEST',
+        category: selectedCategory,
         language: selectedCategory === 'en' || selectedCategory === 'code' ? 'en' : 'fa',
       });
     } catch {
       // Offline fallback
     }
 
-    // Refresh authentic statistics
-    await loadAuthenticStats();
+    // Refresh authentic statistics for this category
+    await loadAuthenticStats(selectedCategory);
   };
 
   const isQualifiedForCert = lastMetrics && lastMetrics.netWpm >= 50 && lastMetrics.accuracy >= 95;
@@ -492,7 +520,6 @@ export default function TypingTestPage() {
             onBackToSetup={() => setIsTesting(false)}
             title={getTestTitle()}
             isLesson={false}
-            timeLimitSeconds={testDuration * 60}
           />
 
           {/* Real-time Session Reward Banner on Finish */}
@@ -838,8 +865,8 @@ export default function TypingTestPage() {
             </span>
             <span className="text-[10px] text-emerald-600 font-semibold">
               {userStats.bestWpm > 0
-                ? `دقت ${userStats.bestAccuracy.toLocaleString('fa-IR')}٪ • زبان ${userStats.bestLanguage} استاندارد`
-                : 'هنوز رکوردی ثبت نشده است'}
+                ? `دقت ${userStats.bestAccuracy.toLocaleString('fa-IR')}٪ • ${userStats.categoryLabel}`
+                : `هنوز رکوردی در ${userStats.categoryLabel} ثبت نشده است`}
             </span>
           </div>
         </div>
@@ -856,7 +883,7 @@ export default function TypingTestPage() {
             <span className="text-[10px] text-slate-500 font-semibold">
               {userStats.totalTests > 0
                 ? `ثبت‌شده در ${userStats.totalTests.toLocaleString('fa-IR')} آزمون رسمی`
-                : 'هنوز آزمونی ثبت نشده است'}
+                : 'هنوز آزمونی در این بخش ثبت نشده است'}
             </span>
           </div>
         </div>
@@ -868,7 +895,7 @@ export default function TypingTestPage() {
           <div>
             <span className="text-xs text-slate-500">شاخص پایداری و ریتم ضربه</span>
             <span className="text-2xl font-black text-slate-900 font-mono block">
-              {userStats.averageConsistency > 0 ? `${userStats.averageConsistency.toLocaleString('fa-IR')}٪` : '۰٪'}
+              {userStats.totalTests > 0 && userStats.averageConsistency > 0 ? `${userStats.averageConsistency.toLocaleString('fa-IR')}٪` : '۱۰۰٪'}
             </span>
             <span
               className={`text-[10px] font-semibold ${
@@ -880,7 +907,7 @@ export default function TypingTestPage() {
               }`}
             >
               {userStats.totalTests === 0
-                ? 'پس از اولین آزمون محاسبه می‌شود'
+                ? 'نیازمند ثبت حداقل ۱ آزمون'
                 : userStats.averageConsistency >= 95
                 ? 'توزیع ضربه‌زنی پایدار و یکدست'
                 : userStats.averageConsistency >= 85

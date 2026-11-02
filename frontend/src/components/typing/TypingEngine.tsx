@@ -176,6 +176,7 @@ export default function TypingEngine({
   const errorKeysRef = useRef<number>(0);
   const totalKeysRef = useRef<number>(0);
   const keystrokeTimestampsRef = useRef<{ time: number; isCorrect: boolean }[]>([]);
+  const lastSpeedUpdateSecRef = useRef<number>(0);
   const inputRef = useRef<HTMLInputElement>(null);
   const activeCharRef = useRef<HTMLSpanElement>(null);
   const canvasContainerRef = useRef<HTMLDivElement>(null);
@@ -297,6 +298,7 @@ export default function TypingEngine({
     errorKeysRef.current = 0;
     totalKeysRef.current = 0;
     keystrokeTimestampsRef.current = [];
+    lastSpeedUpdateSecRef.current = 0;
     setLiveInstantWpm(0);
     setLiveNetWpm(0);
   }, [cleanTargetText]);
@@ -311,18 +313,33 @@ export default function TypingEngine({
         const elapsedSec = activeElapsedMs / 1000;
         setElapsedSeconds(Math.floor(elapsedSec));
 
-        // Countdown check: If time limit reached, finish test immediately!
-        if (timeLimitSeconds && elapsedSec >= timeLimitSeconds) {
+        // In paragraph tests, tests NEVER cut off mid-text before the text is finished!
+        // Only in lesson drills with a strict time limit does time cutoff apply:
+        if (isLesson && timeLimitSeconds && elapsedSec >= timeLimitSeconds) {
           finishSession(timeLimitSeconds * 1000);
           return;
         }
 
-        // 1. Cumulative Net WPM (استاندارد تایپو):
-        const effectiveSec = Math.max(2.5, elapsedSec);
-        const elapsedMinutes = effectiveSec / 60;
-        const netChars = Math.max(0, correctKeysRef.current - errorKeysRef.current);
-        const netWpmCalc = Math.max(0, Math.round((netChars / 5) / elapsedMinutes));
-        setLiveNetWpm(netWpmCalc);
+        // 1. Stable, calm Cumulative Net WPM (استاندارد بدون نوسان و دقیق):
+        // Only calculate and display after at least 3 seconds so the number doesn't jump wildly.
+        // Update cadence: 1 second with exponential smoothing (EMA).
+        const currentSecond = Math.floor(elapsedSec);
+        if (elapsedSec >= 2.5 && currentSecond !== lastSpeedUpdateSecRef.current) {
+          lastSpeedUpdateSecRef.current = currentSecond;
+          const elapsedMinutes = elapsedSec / 60;
+          const netChars = Math.max(0, correctKeysRef.current - errorKeysRef.current);
+          const rawNetWpm = Math.max(0, Math.round((netChars / 5) / elapsedMinutes));
+
+          setLiveNetWpm((prev) => {
+            if (prev === 0) return rawNetWpm;
+            return Math.round(prev * 0.4 + rawNetWpm * 0.6);
+          });
+
+          // sample speed every 2 seconds for consistency calculation
+          if (currentSecond % 2 === 0) {
+            setSpeedSamples((s) => [...s, rawNetWpm]);
+          }
+        }
 
         // 2. Instantaneous Speed (سرعت لحظه‌ای ۳ ثانیه اخیر):
         const windowMs = 3000;
@@ -336,16 +353,11 @@ export default function TypingEngine({
           instant = Math.max(0, Math.round(instant * Math.max(0, 1 - (idleMs - 1500) / 2500)));
         }
         setLiveInstantWpm(instant);
-
-        // sample speed every 2 seconds for consistency calculation
-        if (Math.floor(elapsedSec) % 2 === 0 && Math.floor(elapsedSec) > 0) {
-          setSpeedSamples((s) => [...s, netWpmCalc]);
-        }
       }, 100);
 
       return () => clearInterval(interval);
     }
-  }, [isStarted, isPaused, isFinished, timeLimitSeconds, finishSession]);
+  }, [isStarted, isPaused, isFinished, isLesson, timeLimitSeconds, finishSession]);
 
   // Calculate Real-time Metrics
   const minutes = elapsedSeconds > 0 ? Math.max(0.05, Math.max(2.5, elapsedSeconds) / 60) : 0.05;
@@ -516,6 +528,7 @@ export default function TypingEngine({
     errorKeysRef.current = 0;
     totalKeysRef.current = 0;
     keystrokeTimestampsRef.current = [];
+    lastSpeedUpdateSecRef.current = 0;
     setLiveInstantWpm(0);
     setLiveNetWpm(0);
     if (inputRef.current) inputRef.current.focus();

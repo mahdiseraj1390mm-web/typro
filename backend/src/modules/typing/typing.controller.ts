@@ -26,8 +26,11 @@ export class TypingController {
   }
 
   @Get('user-stats/:userId')
-  getUserStats(@Param('userId') userId: string) {
-    return this.typingService.getUserStats(userId);
+  getUserStats(
+    @Param('userId') userId: string,
+    @Query('category') category?: string,
+  ) {
+    return this.typingService.getUserStats(userId, category);
   }
 
   @Get('leaderboard')

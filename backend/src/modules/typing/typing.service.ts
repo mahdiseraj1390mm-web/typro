@@ -16,6 +16,7 @@ export interface TypingSubmitDto {
   elapsedSeconds: number;
   mode: 'TEST' | 'LESSON' | 'PRACTICE' | 'RACE' | 'QURAN';
   language: 'fa' | 'en';
+  category?: 'fa' | 'en' | 'code' | 'numbers';
   keystrokes?: KeystrokeSample[];
   lessonId?: string;
 }
@@ -23,6 +24,8 @@ export interface TypingSubmitDto {
 export interface TypingAnalysisResult {
   id: string;
   userId: string;
+  category?: 'fa' | 'en' | 'code' | 'numbers';
+  language?: 'fa' | 'en';
   netWpm: number;
   rawWpm: number;
   cpm: number;
@@ -235,9 +238,17 @@ export class TypingService {
     const earnedXp = Math.round(netWpm * 1.5 + (accuracy >= 98 ? 30 : 10));
     const earnedCoins = Math.round(netWpm * 0.5 + (accuracy === 100 ? 25 : 5));
 
+    const determinedCategory: 'fa' | 'en' | 'code' | 'numbers' =
+      dto.category ||
+      (dto.originalText && /[{};=()=>]/.test(dto.originalText) && /[a-zA-Z]/.test(dto.originalText) ? 'code' : null) ||
+      (dto.originalText && /^[0-9\s]+$/.test(dto.originalText) ? 'numbers' : null) ||
+      (isEnglish || dto.language === 'en' ? 'en' : 'fa');
+
     const result: TypingAnalysisResult = {
       id: `res-${Date.now()}-${Math.floor(Math.random() * 1000)}`,
       userId: dto.userId,
+      category: determinedCategory,
+      language: dto.language || (isEnglish ? 'en' : 'fa'),
       netWpm,
       rawWpm,
       cpm,
@@ -274,8 +285,17 @@ export class TypingService {
     return [];
   }
 
-  getUserStats(userId: string) {
-    const userSessions = this.getUserHistory(userId);
+  getUserStats(userId: string, category?: string) {
+    let userSessions = this.getUserHistory(userId);
+    if (category && category !== 'all') {
+      userSessions = userSessions.filter((s) => {
+        if (s.category) return s.category === category;
+        if (category === 'code') return s.category === 'code';
+        if (category === 'en') return s.language === 'en';
+        if (category === 'fa') return !s.language || s.language === 'fa';
+        return false;
+      });
+    }
     if (userSessions.length === 0) {
       return {
         totalTests: 0,
