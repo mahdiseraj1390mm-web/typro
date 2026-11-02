@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState, useEffect, useMemo, useRef } from 'react';
+import React, { useState, useEffect, useMemo, useRef, useCallback } from 'react';
 import TypingEngine from '@/components/typing/TypingEngine';
 import { TYPING_TEST_POOL } from '@/lib/constants';
 import { shuffleDeck } from '@/lib/deckManager';
@@ -31,6 +31,7 @@ import {
   Check
 } from 'lucide-react';
 import Link from 'next/link';
+import { useAuth } from '@/context/AuthContext';
 import { typroApi } from '@/lib/api';
 import confetti from 'canvas-confetti';
 import { getTypingDisplayConfig, TypingDisplayConfig, DEFAULT_TYPING_DISPLAY_CONFIG } from '@/lib/typingDisplayConfig';
@@ -40,6 +41,7 @@ type TestCategory = 'fa' | 'en' | 'code' | 'numbers';
 type FaSubCategory = 'all' | 'scientific' | 'historical' | 'quran' | 'religious';
 
 export default function TypingTestPage() {
+  const { user, isAuthenticated } = useAuth();
   const [displayConfig, setDisplayConfig] = useState<TypingDisplayConfig>(DEFAULT_TYPING_DISPLAY_CONFIG);
 
   // Flow State: Is user currently taking the focused test, or in the setup screen?
@@ -54,9 +56,30 @@ export default function TypingTestPage() {
   // Video recording state (in setup screen)
   const [isRecording, setIsRecording] = useState(false);
 
+  // Authentic user test statistics state
+  const [userStats, setUserStats] = useState<{
+    totalTests: number;
+    bestWpm: number;
+    bestAccuracy: number;
+    bestLanguage: string;
+    averageWpm: number;
+    averageAccuracy: number;
+    averageConsistency: number;
+    hasData: boolean;
+  }>({
+    totalTests: 0,
+    bestWpm: 0,
+    bestAccuracy: 0,
+    bestLanguage: 'فارسی',
+    averageWpm: 0,
+    averageAccuracy: 0,
+    averageConsistency: 0,
+    hasData: false,
+  });
+
   // Performance metrics
   const [lastMetrics, setLastMetrics] = useState<TypingMetrics | null>(null);
-  const [bestWpm, setBestWpm] = useState(64);
+  const [bestWpm, setBestWpm] = useState(0);
   const [sessionReward, setSessionReward] = useState<{
     earnedXp: number;
     earnedCoins: number;
@@ -64,6 +87,107 @@ export default function TypingTestPage() {
     netWpm: number;
     accuracy: number;
   } | null>(null);
+
+  // Load authentic records and statistics
+  const loadAuthenticStats = useCallback(async () => {
+    try {
+      let localHistory: any[] = [];
+      if (typeof window !== 'undefined') {
+        try {
+          const raw = localStorage.getItem('typro_test_history');
+          if (raw) localHistory = JSON.parse(raw);
+        } catch {}
+      }
+
+      // Check target user ID
+      const targetUserId = user?.id || (isAuthenticated ? 'usr-admin' : 'user-active');
+      let apiStats: any = null;
+      try {
+        let res = await fetch(`/api/typing/user-stats/${targetUserId}`);
+        if (res.ok) {
+          apiStats = await res.json();
+        }
+        // If 0 tests found for specific ID, try fallback to 'user-active'
+        if ((!apiStats || apiStats.totalTests === 0) && targetUserId !== 'user-active') {
+          const fallbackRes = await fetch('/api/typing/user-stats/user-active');
+          if (fallbackRes.ok) {
+            const fallbackData = await fallbackRes.json();
+            if (fallbackData && fallbackData.totalTests > 0) {
+              apiStats = fallbackData;
+            }
+          }
+        }
+      } catch (err) {
+        console.warn('Could not fetch user stats from API:', err);
+      }
+
+      // Read single values from localStorage
+      const storedBestWpm = typeof window !== 'undefined' ? Number(localStorage.getItem('typro_best_wpm') || 0) : 0;
+      const storedBestAcc = typeof window !== 'undefined' ? Number(localStorage.getItem('typro_best_accuracy') || 0) : 0;
+      const storedConsistency = typeof window !== 'undefined' ? Number(localStorage.getItem('typro_consistency_accuracy') || 0) : 0;
+
+      let totalTests = apiStats?.totalTests || 0;
+      let bestWpmVal = apiStats?.bestWpm || 0;
+      let bestAccuracy = apiStats?.bestAccuracy || 0;
+      let averageWpm = apiStats?.averageWpm || 0;
+      let averageAccuracy = apiStats?.averageAccuracy || 0;
+      let averageConsistency = apiStats?.averageConsistency || 0;
+      let bestLanguage = 'فارسی';
+
+      if (localHistory.length > 0) {
+        const historyWpms = localHistory.map((h: any) => Number(h.netWpm) || 0);
+        const historyAccs = localHistory.map((h: any) => Number(h.accuracy) || 0);
+        const historyCons = localHistory.map((h: any) => Number(h.consistency ?? h.accuracy ?? 100) || 0);
+
+        const localMaxWpm = Math.max(...historyWpms, storedBestWpm);
+        const localAvgWpm = Math.round(historyWpms.reduce((a: number, b: number) => a + b, 0) / historyWpms.length);
+        const localAvgAcc = Math.round((historyAccs.reduce((a: number, b: number) => a + b, 0) / historyAccs.length) * 10) / 10;
+        const localAvgCons = Math.round(historyCons.reduce((a: number, b: number) => a + b, 0) / historyCons.length);
+
+        const bestItem = [...localHistory].sort((a, b) => (Number(b.netWpm) || 0) - (Number(a.netWpm) || 0))[0];
+        if (bestItem?.language) {
+          bestLanguage = bestItem.language;
+        }
+
+        if (localHistory.length >= totalTests) {
+          totalTests = localHistory.length;
+          bestWpmVal = localMaxWpm;
+          bestAccuracy = bestItem ? Number(bestItem.accuracy) : localAvgAcc;
+          averageWpm = localAvgWpm;
+          averageAccuracy = localAvgAcc;
+          averageConsistency = localAvgCons;
+        } else {
+          bestWpmVal = Math.max(bestWpmVal, localMaxWpm);
+        }
+      } else if (storedBestWpm > 0 && totalTests === 0) {
+        totalTests = 1;
+        bestWpmVal = storedBestWpm;
+        bestAccuracy = storedBestAcc || 100;
+        averageWpm = storedBestWpm;
+        averageAccuracy = storedBestAcc || 100;
+        averageConsistency = storedConsistency || storedBestAcc || 100;
+      }
+
+      setUserStats({
+        totalTests,
+        bestWpm: bestWpmVal,
+        bestAccuracy: bestAccuracy || (bestWpmVal > 0 ? 100 : 0),
+        bestLanguage,
+        averageWpm,
+        averageAccuracy,
+        averageConsistency: averageConsistency || (averageAccuracy ? Math.round(averageAccuracy) : 0),
+        hasData: totalTests > 0 || bestWpmVal > 0,
+      });
+
+      setBestWpm(bestWpmVal);
+    } catch (e) {
+      console.warn('Error loading authentic stats:', e);
+    }
+  }, [user, isAuthenticated]);
+
+  useEffect(() => {
+    loadAuthenticStats();
+  }, [loadAuthenticStats]);
 
   // Sync display config from Admin & localStorage
   useEffect(() => {
@@ -187,6 +311,24 @@ export default function TypingTestPage() {
     }
 
     if (typeof window !== 'undefined') {
+      let history: any[] = [];
+      try {
+        const raw = localStorage.getItem('typro_test_history');
+        if (raw) history = JSON.parse(raw);
+      } catch {}
+
+      history.unshift({
+        id: `test-${Date.now()}`,
+        netWpm: metrics.netWpm,
+        rawWpm: metrics.rawWpm,
+        accuracy: metrics.accuracy,
+        consistency: metrics.consistency || metrics.accuracy,
+        language: selectedCategory === 'en' ? 'انگلیسی' : selectedCategory === 'code' ? 'کدنویسی' : 'فارسی',
+        elapsedSeconds: metrics.elapsedSeconds,
+        date: new Date().toISOString(),
+      });
+      localStorage.setItem('typro_test_history', JSON.stringify(history));
+
       const prevBestWpm = Number(localStorage.getItem('typro_best_wpm') || 0);
       if (metrics.netWpm > prevBestWpm) {
         localStorage.setItem('typro_best_wpm', String(metrics.netWpm));
@@ -197,8 +339,8 @@ export default function TypingTestPage() {
       if (metrics.accuracy > prevBestAcc) {
         localStorage.setItem('typro_best_accuracy', String(metrics.accuracy));
       }
-      if (metrics.accuracy >= 95) {
-        localStorage.setItem('typro_consistency_accuracy', String(metrics.accuracy));
+      if (metrics.consistency || metrics.accuracy >= 95) {
+        localStorage.setItem('typro_consistency_accuracy', String(metrics.consistency || metrics.accuracy));
       }
       const today = new Date().toISOString().slice(0, 10);
       const lastDay = localStorage.getItem('typro_last_test_date');
@@ -305,7 +447,7 @@ export default function TypingTestPage() {
 
     try {
       await typroApi.typing.submitSession({
-        userId: 'user-active',
+        userId: user?.id || (isAuthenticated ? 'usr-admin' : 'user-active'),
         originalText: activeTargetText,
         typedText: activeTargetText,
         elapsedSeconds: metrics.elapsedSeconds,
@@ -315,6 +457,9 @@ export default function TypingTestPage() {
     } catch {
       // Offline fallback
     }
+
+    // Refresh authentic statistics
+    await loadAuthenticStats();
   };
 
   const isQualifiedForCert = lastMetrics && lastMetrics.netWpm >= 50 && lastMetrics.accuracy >= 95;
@@ -688,8 +833,14 @@ export default function TypingTestPage() {
           </div>
           <div>
             <span className="text-xs text-slate-500">بهترین رکورد شخصی شما</span>
-            <span className="text-2xl font-black text-slate-900 font-mono block">{bestWpm} WPM</span>
-            <span className="text-[10px] text-emerald-600 font-semibold">دقت ۹۸٪ • زبان فارسی استاندارد</span>
+            <span className="text-2xl font-black text-slate-900 font-mono block">
+              {userStats.bestWpm > 0 ? `${userStats.bestWpm.toLocaleString('fa-IR')} WPM` : '۰ WPM'}
+            </span>
+            <span className="text-[10px] text-emerald-600 font-semibold">
+              {userStats.bestWpm > 0
+                ? `دقت ${userStats.bestAccuracy.toLocaleString('fa-IR')}٪ • زبان ${userStats.bestLanguage} استاندارد`
+                : 'هنوز رکوردی ثبت نشده است'}
+            </span>
           </div>
         </div>
 
@@ -699,8 +850,14 @@ export default function TypingTestPage() {
           </div>
           <div>
             <span className="text-xs text-slate-500">میانگین آزمون‌های اخیر</span>
-            <span className="text-2xl font-black text-slate-900 font-mono block">۵۸ WPM</span>
-            <span className="text-[10px] text-slate-500 font-semibold">ثبت‌شده در ۱۴ آزمون رسمی</span>
+            <span className="text-2xl font-black text-slate-900 font-mono block">
+              {userStats.averageWpm > 0 ? `${userStats.averageWpm.toLocaleString('fa-IR')} WPM` : '۰ WPM'}
+            </span>
+            <span className="text-[10px] text-slate-500 font-semibold">
+              {userStats.totalTests > 0
+                ? `ثبت‌شده در ${userStats.totalTests.toLocaleString('fa-IR')} آزمون رسمی`
+                : 'هنوز آزمونی ثبت نشده است'}
+            </span>
           </div>
         </div>
 
@@ -710,8 +867,26 @@ export default function TypingTestPage() {
           </div>
           <div>
             <span className="text-xs text-slate-500">شاخص پایداری و ریتم ضربه</span>
-            <span className="text-2xl font-black text-slate-900 font-mono block">۹۶٪</span>
-            <span className="text-[10px] text-emerald-600 font-semibold">توزیع ضربه‌زنی پایدار و یکدست</span>
+            <span className="text-2xl font-black text-slate-900 font-mono block">
+              {userStats.averageConsistency > 0 ? `${userStats.averageConsistency.toLocaleString('fa-IR')}٪` : '۰٪'}
+            </span>
+            <span
+              className={`text-[10px] font-semibold ${
+                userStats.averageConsistency >= 90
+                  ? 'text-emerald-600'
+                  : userStats.averageConsistency > 0
+                  ? 'text-amber-600'
+                  : 'text-slate-400'
+              }`}
+            >
+              {userStats.totalTests === 0
+                ? 'پس از اولین آزمون محاسبه می‌شود'
+                : userStats.averageConsistency >= 95
+                ? 'توزیع ضربه‌زنی پایدار و یکدست'
+                : userStats.averageConsistency >= 85
+                ? 'ریتم تایپ متعادل و پیوسته'
+                : 'نیازمند تمرین برای تثبیت ریتم'}
+            </span>
           </div>
         </div>
       </div>
