@@ -28,6 +28,13 @@ export default function VipActivatedModal() {
     if (typeof window === 'undefined') return;
 
     const checkActivation = () => {
+      if (
+        sessionStorage.getItem('typro_vip_modal_dismissed') === 'true' ||
+        localStorage.getItem('typro_vip_modal_dismissed') === 'true'
+      ) {
+        return;
+      }
+
       const isSub =
         Boolean(user?.isSubscribed) ||
         localStorage.getItem('typro_user_is_subscribed') === 'true';
@@ -46,7 +53,11 @@ export default function VipActivatedModal() {
       const storageKey = `typro_vip_act_seen_${userIdKey}_${activePlan}`;
 
       // Show ONLY once per plan activation!
-      if (localStorage.getItem(storageKey) === 'true') {
+      if (
+        localStorage.getItem(storageKey) === 'true' ||
+        localStorage.getItem(`typro_vip_act_seen_${userIdKey}`) === 'true' ||
+        localStorage.getItem('typro_vip_act_seen_any') === 'true'
+      ) {
         return;
       }
 
@@ -71,6 +82,13 @@ export default function VipActivatedModal() {
 
       // Gentle delay so UI finishes rendering
       const timer = setTimeout(() => {
+        if (
+          sessionStorage.getItem('typro_vip_modal_dismissed') === 'true' ||
+          localStorage.getItem('typro_vip_modal_dismissed') === 'true'
+        ) {
+          return;
+        }
+
         setIsOpen(true);
         try {
           confetti({
@@ -98,7 +116,6 @@ export default function VipActivatedModal() {
               actionUrl: '/subscription',
             });
             localStorage.setItem('typro_user_notifications', JSON.stringify(notifs));
-            window.dispatchEvent(new Event('typro_notifications_updated'));
           }
         } catch {}
       }, 1000);
@@ -114,9 +131,14 @@ export default function VipActivatedModal() {
   if (!isOpen) return null;
 
   const handleDismiss = () => {
-    const userIdKey = user?.id || user?.username || 'me';
-    const storageKey = `typro_vip_act_seen_${userIdKey}_${planName}`;
-    localStorage.setItem(storageKey, 'true');
+    if (typeof window !== 'undefined') {
+      const userIdKey = user?.id || user?.username || 'me';
+      sessionStorage.setItem('typro_vip_modal_dismissed', 'true');
+      localStorage.setItem('typro_vip_modal_dismissed', 'true');
+      localStorage.setItem(`typro_vip_act_seen_${userIdKey}`, 'true');
+      localStorage.setItem(`typro_vip_act_seen_${userIdKey}_${planName}`, 'true');
+      localStorage.setItem('typro_vip_act_seen_any', 'true');
+    }
     setIsOpen(false);
   };
 

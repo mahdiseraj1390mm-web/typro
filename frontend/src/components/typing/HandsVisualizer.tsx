@@ -14,7 +14,18 @@ export default function HandsVisualizer({
   isError = false,
   language = 'fa'
 }: HandsVisualizerProps) {
-  const currentFinger = FINGER_MAP[currentExpectedChar.toLowerCase()] || null;
+  const normalizeDigit = (c: string): string => {
+    if (!c) return '';
+    const faDigits = ['۰','۱','۲','۳','۴','۵','۶','۷','۸','۹'];
+    const arDigits = ['٠','١','٢','٣','٤','٥','٦','٧','٨','٩'];
+    const fIdx = faDigits.indexOf(c);
+    if (fIdx !== -1) return String(fIdx);
+    const aIdx = arDigits.indexOf(c);
+    if (aIdx !== -1) return String(aIdx);
+    return c;
+  };
+  const normChar = normalizeDigit(currentExpectedChar).toLowerCase();
+  const currentFinger = FINGER_MAP[currentExpectedChar.toLowerCase()] || FINGER_MAP[normChar] || null;
 
   const isFingerActive = (hand: 'left' | 'right', finger: string) => {
     if (!currentFinger) return false;

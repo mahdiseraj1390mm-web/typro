@@ -410,13 +410,44 @@ export default function TypingEngine({
     }
 
     const expectedChar = cleanTargetText[cursorIndex];
-    const isNumbersMode = /^[0-9\s]+$/.test(cleanTargetText);
 
-    const normalizeDigit = (c: string) => {
+    // Numbers mode detection: Persian digits (۰-۹), Arabic digits (٠-٩), or English digits (0-9) + whitespace
+    const isNumbersMode = /^[\d\u06F0-\u06F9\u0660-\u0669\s]+$/.test(cleanTargetText);
+
+    // Bidirectional digit normalization supporting English, Persian, and Arabic digits
+    const normalizeDigit = (c: string): string => {
+      if (!c) return '';
       const faDigits = ['۰','۱','۲','۳','۴','۵','۶','۷','۸','۹'];
-      const idx = faDigits.indexOf(c);
-      return idx !== -1 ? String(idx) : c;
+      const arDigits = ['٠','١','٢','٣','٤','٥','٦','٧','٨','٩'];
+      const fIdx = faDigits.indexOf(c);
+      if (fIdx !== -1) return String(fIdx);
+      const aIdx = arDigits.indexOf(c);
+      if (aIdx !== -1) return String(aIdx);
+      return c;
     };
+
+    const normKey = normalizeDigit(key);
+    const normExpected = normalizeDigit(expectedChar);
+    const isDigitTarget = /\d/.test(normExpected);
+    const isDigitCode =
+      (e.code.startsWith('Numpad') && e.code.length === 7 && e.code.slice(6) === normExpected) ||
+      (e.code.startsWith('Digit') && e.code.length === 6 && e.code.slice(5) === normExpected);
+
+    const isDigitMatch = isDigitTarget && (normKey === normExpected || isDigitCode);
+
+    // Persian letter 'پ' multi-layout & Fingilish support:
+    // 1. Physical key Backquote (top-left, next to 1 / above Tab): produces ` or ~
+    // 2. Physical key Backslash (above / next to Enter): produces \ or |
+    // 3. Persian key 'پ'
+    // 4. In Persian mode, legacy Arabic mapping 'm' / 'M'
+    const isPeMatch = (expectedChar === 'پ') && (
+      key === 'پ' ||
+      e.code === 'Backquote' ||
+      e.code === 'Backslash' ||
+      key === '`' || key === '~' ||
+      key === '\\' || key === '|' ||
+      ((key === 'm' || key === 'M') && language === 'fa')
+    );
 
     const isSpaceKey = key === ' ' || e.code === 'Space' || key === '\u200c';
 
@@ -445,7 +476,8 @@ export default function TypingEngine({
 
     const isCorrect =
       key === expectedChar ||
-      (isNumbersMode && normalizeDigit(key) === expectedChar) ||
+      isDigitMatch ||
+      isPeMatch ||
       (isSpaceKey && isExpectedSpace) ||
       (language === 'fa' && normalizeChar(key) === normalizeChar(expectedChar));
     

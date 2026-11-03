@@ -115,7 +115,7 @@ export const FINGER_MAP: Record<string, { hand: 'left' | 'right'; finger: 'pinky
   'آ': { hand: 'right', finger: 'index', nameFa: 'انگشت اشاره راست' },
   'ت': { hand: 'right', finger: 'index', nameFa: 'انگشت اشاره راست' },
   'د': { hand: 'right', finger: 'index', nameFa: 'انگشت اشاره راست' },
-  'پ': { hand: 'right', finger: 'index', nameFa: 'انگشت اشاره راست' },
+  'پ': { hand: 'left', finger: 'pinky', nameFa: 'انگشت کوچک (کلید بالا یا کنار اینتر)' },
 
   '۸': { hand: 'right', finger: 'middle', nameFa: 'انگشت میانی راست' },
   'ه': { hand: 'right', finger: 'middle', nameFa: 'انگشت میانی راست' },

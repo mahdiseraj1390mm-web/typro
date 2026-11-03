@@ -757,7 +757,7 @@ export class AuthService {
           desc: `طرح «${planName}» با اعتبار ${durationText} توسط مدیریت برای حساب شما با موفقیت فعال گردید. اکنون تمام مزایای اختصاصی و پیست‌های ویژه برای شما در دسترس است.`,
           time: 'هم‌اکنون',
           read: false,
-          popupShown: false,
+          popupShown: true,
           actionLabel: 'مشاهده جزییات اشتراک',
           actionUrl: '/subscription',
           createdAt: Date.now(),

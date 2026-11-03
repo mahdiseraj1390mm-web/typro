@@ -20,6 +20,13 @@ export default function GlobalAdminMessageModal() {
   const [isOpen, setIsOpen] = useState(false);
 
   const checkForPendingMessages = useCallback(async () => {
+    if (typeof window === 'undefined') return;
+
+    // Check if dismissed in this browser session
+    if (sessionStorage.getItem('typro_admin_modal_closed') === 'true') {
+      return;
+    }
+
     // 1. Check if user is logged in and has unseen notifications
     const effectiveUserId = user?.id || user?.username || user?.mobile;
 
@@ -29,11 +36,15 @@ export default function GlobalAdminMessageModal() {
         const notifs = rawLocal ? JSON.parse(rawLocal) : [];
         if (Array.isArray(notifs)) {
           // Look for any notification with popupShown === false or missing popupShown
+          // Exclude VIP notifications which are handled exclusively by VipActivatedModal
           const pending = notifs.find(
             (n: any) =>
-              (n.category === 'system' || n.category === 'rewards' || n.sender) &&
+              (n.category === 'system' || n.sender) &&
+              !n.title?.includes('VIP') &&
+              !n.id?.includes('vip') &&
               n.popupShown === false &&
-              !n.readOnceDismissed
+              !n.readOnceDismissed &&
+              sessionStorage.getItem(`typro_admin_popup_dismissed_${n.id}`) !== 'true'
           );
 
           if (pending) {
@@ -61,7 +72,10 @@ export default function GlobalAdminMessageModal() {
           const seenBroadcastsRaw = localStorage.getItem('typro_seen_broadcasts');
           const seenBroadcasts: string[] = seenBroadcastsRaw ? JSON.parse(seenBroadcastsRaw) : [];
 
-          if (!seenBroadcasts.includes(broadcast.id)) {
+          if (
+            !seenBroadcasts.includes(broadcast.id) &&
+            sessionStorage.getItem(`typro_admin_popup_dismissed_${broadcast.id}`) !== 'true'
+          ) {
             setActiveMessage({
               id: broadcast.id,
               sender: broadcast.sender || 'مدیر سامانه تایپرو',
@@ -93,19 +107,32 @@ export default function GlobalAdminMessageModal() {
   }, [checkForPendingMessages]);
 
   const handleDismiss = () => {
-    if (!activeMessage) return;
+    if (typeof window !== 'undefined') {
+      sessionStorage.setItem('typro_admin_modal_closed', 'true');
+    }
+
+    if (!activeMessage) {
+      setIsOpen(false);
+      return;
+    }
 
     const notifId = activeMessage.id;
     const effectiveUserId = user?.id || user?.username || user?.mobile;
+
+    if (typeof window !== 'undefined') {
+      sessionStorage.setItem(`typro_admin_popup_dismissed_${notifId}`, 'true');
+    }
 
     // 1. Mark in localStorage so it never pops up again
     try {
       const rawLocal = localStorage.getItem('typro_user_notifications');
       if (rawLocal) {
         const notifs = JSON.parse(rawLocal);
-        const updated = notifs.map((n: any) =>
-          n.id === notifId ? { ...n, popupShown: true, readOnceDismissed: true } : n
-        );
+        const updated = notifs.map((n: any) => ({
+          ...n,
+          popupShown: true,
+          readOnceDismissed: n.id === notifId ? true : n.readOnceDismissed,
+        }));
         localStorage.setItem('typro_user_notifications', JSON.stringify(updated));
       }
 

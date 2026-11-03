@@ -136,8 +136,33 @@ function VirtualKeyboard({
 
   const targetCharNormalized = normalize(currentExpectedChar);
 
+  const normalizeDigit = (c: string): string => {
+    if (!c) return '';
+    const faDigits = ['۰','۱','۲','۳','۴','۵','۶','۷','۸','۹'];
+    const arDigits = ['٠','١','٢','٣','٤','٥','٦','٧','٨','٩'];
+    const fIdx = faDigits.indexOf(c);
+    if (fIdx !== -1) return String(fIdx);
+    const aIdx = arDigits.indexOf(c);
+    if (aIdx !== -1) return String(aIdx);
+    return c;
+  };
+
   const isKeyActive = (keyFa: string, keyEn: string) => {
     if (currentExpectedChar === ' ' && (keyFa === 'Space' || keyEn === 'Space')) return true;
+
+    // Number matching (supports English, Persian, and Arabic digits)
+    const normExp = normalizeDigit(currentExpectedChar);
+    if (/\d/.test(normExp)) {
+      return normalizeDigit(keyFa) === normExp || normalizeDigit(keyEn) === normExp;
+    }
+
+    // Letter 'پ' multi-position matching (top row ` or above enter \)
+    if (currentExpectedChar === 'پ') {
+      if (keyFa.includes('پ') || keyEn === '`' || keyEn === '\\') {
+        return true;
+      }
+    }
+
     return (
       normalize(keyFa) === targetCharNormalized ||
       normalize(keyEn) === targetCharNormalized
@@ -157,7 +182,7 @@ function VirtualKeyboard({
   // SVG Keyboard Key Definitions
   // Row 1: Numbers (y: 24)
   const row1Keys: KeyDef[] = [
-    { fa: '÷', en: '`', x: 25, w: 55 },
+    { fa: 'پ / ÷', en: '`', x: 25, w: 55 },
     { fa: '۱', en: '1', x: 86, w: 55 },
     { fa: '۲', en: '2', x: 147, w: 55 },
     { fa: '۳', en: '3', x: 208, w: 55 },
@@ -188,7 +213,7 @@ function VirtualKeyboard({
     { fa: 'ح', en: 'p', x: 662, w: 55 },
     { fa: 'ج', en: '[', x: 723, w: 55 },
     { fa: 'چ', en: ']', x: 784, w: 55 },
-    { fa: '\\', en: '\\', isMod: true, x: 845, w: 50 }
+    { fa: 'پ / \\', en: '\\', x: 845, w: 50 }
   ];
 
   // Row 3: Home row (y: 136)

@@ -146,6 +146,7 @@ export default function AdminSubscriptionsPage() {
           desc: `فیش واریزی شما تایید گردید و دسترسی به تمام امکانات ${receipt.planName} فعال شد.`,
           time: 'هم‌اکنون',
           read: false,
+          popupShown: true,
           actionLabel: 'ورود به مسابقه زنده',
           actionUrl: '/live-race',
         });
@@ -280,7 +281,7 @@ export default function AdminSubscriptionsPage() {
             desc: `طرح «${planName}» با موفقیت توسط مدیریت برای حساب شما فعال گردید. اکنون تمام مزایای ویژه در دسترس شماست.`,
             time: 'هم‌اکنون',
             read: false,
-            popupShown: false,
+            popupShown: true,
             actionLabel: 'مشاهده جزییات اشتراک',
             actionUrl: '/subscription',
           });

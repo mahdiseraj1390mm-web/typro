@@ -1292,13 +1292,42 @@ export default function LiveRaceTrack({
       room.id.includes('numbers') || 
       room.topic?.includes('اعداد') || 
       room.title?.includes('اعداد') ||
-      /^[0-9\s]+$/.test(targetText);
+      /^[\d\u06F0-\u06F9\u0660-\u0669\s]+$/.test(targetText);
 
-    const normalizeDigit = (c: string) => {
+    // Bidirectional digit normalization supporting English, Persian, and Arabic digits
+    const normalizeDigit = (c: string): string => {
+      if (!c) return '';
       const faDigits = ['۰','۱','۲','۳','۴','۵','۶','۷','۸','۹'];
-      const idx = faDigits.indexOf(c);
-      return idx !== -1 ? String(idx) : c;
+      const arDigits = ['٠','١','٢','٣','٤','٥','٦','٧','٨','٩'];
+      const fIdx = faDigits.indexOf(c);
+      if (fIdx !== -1) return String(fIdx);
+      const aIdx = arDigits.indexOf(c);
+      if (aIdx !== -1) return String(aIdx);
+      return c;
     };
+
+    const normKey = normalizeDigit(key);
+    const normExpected = normalizeDigit(expectedChar);
+    const isDigitTarget = /\d/.test(normExpected);
+    const isDigitCode =
+      (e.code.startsWith('Numpad') && e.code.length === 7 && e.code.slice(6) === normExpected) ||
+      (e.code.startsWith('Digit') && e.code.length === 6 && e.code.slice(5) === normExpected);
+
+    const isDigitMatch = isDigitTarget && (normKey === normExpected || isDigitCode);
+
+    // Persian letter 'پ' multi-layout & Fingilish support:
+    // 1. Physical key Backquote (top-left, next to 1 / above Tab): produces ` or ~
+    // 2. Physical key Backslash (above / next to Enter): produces \ or |
+    // 3. Persian key 'پ'
+    // 4. In Persian mode, legacy Arabic mapping 'm' / 'M'
+    const isPeMatch = (expectedChar === 'پ') && (
+      key === 'پ' ||
+      e.code === 'Backquote' ||
+      e.code === 'Backslash' ||
+      key === '`' || key === '~' ||
+      key === '\\' || key === '|' ||
+      ((key === 'm' || key === 'M') && room.language === 'fa')
+    );
 
     // In Numbers Room: Space key is never required. If pressed, smoothly ignore without penalty
     if (isNumbersRoom && isSpaceKey) {
@@ -1324,7 +1353,8 @@ export default function LiveRaceTrack({
 
     const isCorrect =
       key === expectedChar ||
-      (isNumbersRoom && normalizeDigit(key) === expectedChar) ||
+      isDigitMatch ||
+      isPeMatch ||
       (isSpaceKey && isExpectedSpace) ||
       (room.language === 'fa' && normalizeChar(key) === normalizeChar(expectedChar));
 
