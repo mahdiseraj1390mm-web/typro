@@ -1782,7 +1782,7 @@ export default function LiveRaceTrack({
         {raceState === 'ACTIVE' && (
           <div
             onClick={() => !isCurrentlySpectator && inputRef.current?.focus()}
-            className={`p-4 sm:p-5 rounded-2xl border-2 transition-colors relative shadow-xs ${
+            className={`p-4 sm:p-5 rounded-2xl border-2 transition-colors relative shadow-xs min-h-[160px] flex flex-col justify-between ${
               isCurrentlySpectator
                 ? 'bg-slate-100/90 border-slate-300 opacity-90 cursor-not-allowed'
                 : 'bg-white border-slate-200 hover:border-slate-300 focus-within:border-blue-500 cursor-text'
@@ -1823,7 +1823,7 @@ export default function LiveRaceTrack({
                     </strong>
                   </span>
                   {isPrecisionRoom && (
-                    <span className="flex items-center gap-1.5 px-2.5 py-0.5 rounded-xl bg-purple-50 border border-purple-200" title="فرصت‌های مجاز دقت در این متن (۳ اشتباه = تعویض)">
+                    <span className="flex items-center gap-1.5 px-2.5 py-1 rounded-xl bg-purple-50 border border-purple-200 shrink-0" title="فرصت‌های مجاز دقت در این متن (۳ اشتباه = تعویض)">
                       <span className="text-purple-700 font-bold">فرصت دقت:</span>
                       <span className="flex items-center gap-1 font-mono font-black text-xs">
                         {[1, 2, 3].map((slot) => {
@@ -1831,10 +1831,10 @@ export default function LiveRaceTrack({
                           return (
                             <span
                               key={slot}
-                              className={`w-4 h-4 rounded-full flex items-center justify-center text-[10px] transition-all ${
+                              className={`w-4 h-4 rounded-full flex items-center justify-center text-[10px] font-bold border transition-colors ${
                                 isLost
-                                  ? 'bg-rose-100 text-rose-500 border border-rose-300 font-bold'
-                                  : 'bg-emerald-500 text-white shadow-xs'
+                                  ? 'bg-rose-100 text-rose-600 border-rose-300'
+                                  : 'bg-emerald-500 text-white border-emerald-500 shadow-xs'
                               }`}
                             >
                               {isLost ? '✕' : slot}
@@ -1842,6 +1842,11 @@ export default function LiveRaceTrack({
                           );
                         })}
                       </span>
+                      {precisionFails >= 3 && (
+                        <span className="text-[10px] text-amber-800 bg-amber-100 px-1.5 py-0.5 rounded-md font-bold mr-1">
+                          پایان ۳ فرصت
+                        </span>
+                      )}
                     </span>
                   )}
                 </div>
@@ -1851,17 +1856,6 @@ export default function LiveRaceTrack({
                     {Math.min(100, Math.round((typedCount / Math.max(1, targetText.length)) * 100))}٪
                   </strong>
                 </div>
-              </div>
-            )}
-            {isPrecisionRoom && precisionFails >= 3 && (
-              <div className="mb-3 p-3 rounded-2xl bg-amber-50 border border-amber-300 text-amber-900 text-xs font-bold flex items-center justify-between gap-2 shadow-xs">
-                <div className="flex items-center gap-2">
-                  <AlertTriangle className="w-4 h-4 text-amber-600 shrink-0" />
-                  <span>شما ۳ بار در این متن خطا داشتید؛ فرصت‌های این دور شما به پایان رسید. اولویت با رانندگان در حال تایپ است.</span>
-                </div>
-                <span className="text-[11px] bg-amber-200/80 px-2.5 py-0.5 rounded-lg text-amber-950 font-black shrink-0">
-                  در انتظار راننده فعال
-                </span>
               </div>
             )}
             <input
@@ -1874,7 +1868,7 @@ export default function LiveRaceTrack({
               aria-label="Race typing input"
             />
             <div
-              className="text-base sm:text-lg md:text-xl font-bold leading-relaxed select-none whitespace-pre-wrap"
+              className="text-base sm:text-lg md:text-xl font-bold leading-relaxed select-none whitespace-pre-wrap min-h-[64px]"
               dir={room.language === 'fa' ? 'rtl' : 'ltr'}
             >
               {targetText.split('').map((char, i) => {

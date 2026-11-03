@@ -19,6 +19,7 @@ conn.on('ready', () => {
     const filesToUpload = [
       { local: path.resolve('backend_dist_update.tar.gz'), remote: '/home/typo/backend_dist_update.tar.gz' },
       { local: path.resolve('frontend_src_update.tar.gz'), remote: '/home/typo/frontend_src_update.tar.gz' },
+      { local: path.resolve('custom_texts.tar.gz'), remote: '/home/typo/custom_texts.tar.gz' },
     ];
 
     let uploadIndex = 0;
@@ -50,11 +51,13 @@ conn.on('ready', () => {
     const commands = [
       'echo "=== 1. Extracting backend dist into backend/dist ==="',
       'tar -xzf /home/typo/backend_dist_update.tar.gz -C /home/typo/typro/backend/',
-      'echo "=== 2. Extracting frontend src ==="',
+      'echo "=== 2. Extracting custom texts into backend/data ==="',
+      'tar -xzf /home/typo/custom_texts.tar.gz -C /home/typo/typro/backend/data/',
+      'echo "=== 3. Extracting frontend src ==="',
       'tar -xzf /home/typo/frontend_src_update.tar.gz -C /home/typo/typro/frontend/',
-      'echo "=== 3. Building frontend Next.js ==="',
+      'echo "=== 4. Building frontend Next.js ==="',
       'cd /home/typo/typro/frontend && npm run build',
-      'echo "=== 4. Restarting PM2 processes ==="',
+      'echo "=== 5. Restarting PM2 processes ==="',
       'pm2 restart all',
       'pm2 status'
     ];

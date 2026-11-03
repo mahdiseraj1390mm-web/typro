@@ -6,6 +6,8 @@ import {
   ROOM_2_TEXTS, 
   ROOM_3_TEXTS, 
   ROOM_4_TEXTS,
+  ROOM_5_TEXTS,
+  ROOM_6_TEXTS,
   ROOM_SCIENTIFIC_TEXTS,
   ROOM_HISTORICAL_TEXTS,
   ROOM_NUMBERS_TEXTS
@@ -132,6 +134,26 @@ export class RaceService {
       ROOM_4_TEXTS[0],
       45,
       ROOM_4_TEXTS
+    );
+
+    this.createRoom(
+      'room-5',
+      'اتاق ۵ (دقت فارسی): پیست تمرکز و دقت بالا (حداکثر ۱ خطا)',
+      'دقت و تمرکز (سقف ۲ خطا)',
+      'fa',
+      ROOM_5_TEXTS[0],
+      60,
+      ROOM_5_TEXTS
+    );
+
+    this.createRoom(
+      'room-6',
+      'Room 6 (English Precision): High Accuracy Sprint (Max 1 Error)',
+      'Precision Sprint (Max 2 Errors)',
+      'en',
+      ROOM_6_TEXTS[0],
+      60,
+      ROOM_6_TEXTS
     );
 
     this.createRoom(
@@ -280,7 +302,7 @@ export class RaceService {
         averageWpm: r.participants.size > 0
           ? Math.round(Array.from(r.participants.values()).reduce((acc, p) => acc + (p.wpm || 0), 0) / r.participants.size)
           : 0,
-        trackTheme: r.id === 'room-1' ? 'Cyber City' : r.id === 'room-2' ? 'Persian-inspired' : r.id === 'room-3' ? 'Space Odyssey' : 'Historic Persepolis',
+        trackTheme: r.id === 'room-1' ? 'Cyber City' : r.id === 'room-2' ? 'Persian-inspired' : r.id === 'room-3' ? 'Space Odyssey' : r.id === 'room-5' ? 'Neon Precision Arena' : r.id === 'room-6' ? 'Cyber Grid Precision' : 'Historic Persepolis',
         status: r.state,
         isPrivate: false,
         pinCode: undefined,
