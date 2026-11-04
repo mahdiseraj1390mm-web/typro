@@ -6,6 +6,7 @@ import Hero from '@/components/home/Hero';
 import HomeChatbot from '@/components/home/HomeChatbot';
 import TypingEngine from '@/components/typing/TypingEngine';
 import { TYPING_TEST_POOL, VEHICLE_SKINS } from '@/lib/constants';
+import QUICK_TEST_POOL from '@/data/quickTestPool.json';
 import { ALL_SKINS, SkinItem } from '@/lib/skins';
 import AnimatedVehicleSkin from '@/components/race/AnimatedVehicleSkin';
 import {
@@ -41,7 +42,27 @@ import {
 } from 'lucide-react';
 
 export default function HomePage() {
-  const [quickTestText, setQuickTestText] = useState(TYPING_TEST_POOL[0].text);
+  const [quickTestIndex, setQuickTestIndex] = useState(0);
+
+  // Initialize random attractive text safely on client mount
+  useEffect(() => {
+    if (QUICK_TEST_POOL && QUICK_TEST_POOL.length > 0) {
+      const rand = Math.floor(Math.random() * QUICK_TEST_POOL.length);
+      setQuickTestIndex(rand);
+    }
+  }, []);
+
+  const currentQuickItem = QUICK_TEST_POOL[quickTestIndex] || QUICK_TEST_POOL[0];
+  const quickTestText = currentQuickItem?.text || 'نظریه نسبیت عام انیشتین گرانش را حاصل انحنای فضا و زمان در حضور جرم می داند.';
+
+  const handleNextQuickText = () => {
+    setQuickTestIndex((prev) => {
+      let next = Math.floor(Math.random() * QUICK_TEST_POOL.length);
+      if (next === prev) next = (next + 1) % QUICK_TEST_POOL.length;
+      return next;
+    });
+  };
+
   const [selectedSkinId, setSelectedSkinId] = useState('skin-porsche');
   const [skinCategoryFilter, setSkinCategoryFilter] = useState<'all' | 'supercars' | 'motorcycles'>('all');
   const [openFaqIndex, setOpenFaqIndex] = useState<number | null>(0);
@@ -168,9 +189,15 @@ export default function HomePage() {
         <section className="space-y-6">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-b border-slate-200 pb-4">
             <div>
-              <div className="flex items-center gap-2">
+              <div className="flex flex-wrap items-center gap-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-blue-600 animate-pulse" />
                 <span className="text-xs font-black text-blue-600 uppercase tracking-wider">سنجش زنده سرعت</span>
+                <span className="px-2.5 py-0.5 rounded-full bg-blue-50 text-blue-700 text-[11px] font-bold border border-blue-200/60">
+                  {currentQuickItem?.topic || 'شگفتی‌های علم و کیهان'}
+                </span>
+                <span className="text-[11px] font-medium text-slate-400">
+                  (بیش از ۳۶۰ متن جذاب و متنوع)
+                </span>
               </div>
               <h2 className="text-xl sm:text-3xl font-black text-slate-900 mt-1">
                 تست سریع آنلاین مهارت تایپ (WPM)
@@ -191,11 +218,8 @@ export default function HomePage() {
             targetText={quickTestText}
             language="fa"
             allowChangeText={true}
-            onTextChangeRequest={() => {
-              const nextIndex = (TYPING_TEST_POOL.findIndex((p) => p.text === quickTestText) + 1) % TYPING_TEST_POOL.length;
-              setQuickTestText(TYPING_TEST_POOL[nextIndex].text);
-            }}
-            title="تست سریع سرعت تایپ ده‌انگشتی"
+            onTextChangeRequest={handleNextQuickText}
+            title={`تست سریع: ${currentQuickItem?.topic || 'تایپ ده‌انگشتی'}`}
           />
         </section>
 

@@ -1,0 +1,3602 @@
+[
+  {
+    "id": "quick-001",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "نظریه نسبیت عام انیشتین گرانش را حاصل انحنای فضا و زمان در حضور جرم می داند.",
+    "charCount": 76,
+    "wordCount": 16,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-002",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "مولکول دی ان ای نردبانی پیچ خورده است که دستورالعمل های حیات را در سلول ها حمل می کند.",
+    "charCount": 86,
+    "wordCount": 19,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-003",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "سیاه چاله ها اجرامی در فضا هستند که نیروی گرانش آن ها حتی مانع خروج نور می شود.",
+    "charCount": 79,
+    "wordCount": 18,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-004",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "تلسکوپ فضایی جیمز وب تصاویر بی نظیری از کهکشان های آغازین جهان ثبت کرده است.",
+    "charCount": 76,
+    "wordCount": 15,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-005",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "فتوسنتز فرایندی حیاتی است که طی آن گیاهان نور خورشید را به انرژی شیمیایی تبدیل می کنند.",
+    "charCount": 87,
+    "wordCount": 17,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-006",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "امواج الکترومغناطیسی با سرعت نور در خلأ حرکت کرده و انرژی را در کیهان منتقل می سازند.",
+    "charCount": 85,
+    "wordCount": 17,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-007",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "مغز انسان بیش از هشتاد میلیارد نورون دارد که پیام ها را با تکانه های الکتریکی مخابره می کنند.",
+    "charCount": 93,
+    "wordCount": 19,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-008",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "همجوشی هسته ای در هسته خورشید هیدروژن را به هلیوم تبدیل کرده و گرمای بیکران می آفریند.",
+    "charCount": 86,
+    "wordCount": 17,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-009",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "لایه ازن همانند سپری نامرئی پرتوهای فرابنفش زیان بار خورشید را جذب می کند.",
+    "charCount": 74,
+    "wordCount": 14,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-010",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "فیزیک کوانتوم نشان می دهد که ذرات زیراتمی می توانند همزمان در حالت های مختلفی قرار گیرند.",
+    "charCount": 89,
+    "wordCount": 17,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-011",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "سیاره مریخ دارای بزرگ ترین آتشفشان منظومه شمسی به نام کوه المپوس است.",
+    "charCount": 69,
+    "wordCount": 13,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-012",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "سیستم ایمنی بدن ارتشی مجهز از گلبول های سفید است که میکروب ها را نابود می سازد.",
+    "charCount": 79,
+    "wordCount": 17,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-013",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "فناوری نانو امکان دستکاری مواد در مقیاس اتمی برای ساخت ابزارهای نوین را میسر می کند.",
+    "charCount": 84,
+    "wordCount": 16,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-014",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "حرکت ورقه های پوسته زمین عامل اصلی پیدایش زلزله ها و شکل گیری رشته کوه ها است.",
+    "charCount": 78,
+    "wordCount": 17,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-015",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "میدان مغناطیسی زمین سیاره ما را در برابر بادهای خطرناک خورشیدی محافظت می کند.",
+    "charCount": 77,
+    "wordCount": 14,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-016",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "سرعت صوت در آب تقریبا چهار برابر سریع تر از سرعت حرکت آن در هوا است.",
+    "charCount": 68,
+    "wordCount": 16,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-017",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "گرافن ماده ای با ضخامت یک اتم کربن است که استحکام آن صدها برابر فولاد است.",
+    "charCount": 74,
+    "wordCount": 16,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-018",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "سلول های بنیادی توانایی شگفت انگیز تمایز به انواع مختلف بافت های بدن را دارا هستند.",
+    "charCount": 83,
+    "wordCount": 16,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-019",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "تلسکوپ هابل به بشر کمک کرد تا نرخ انبساط جهان هستی را با دقت اندازه گیری کند.",
+    "charCount": 77,
+    "wordCount": 17,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-020",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "پادتن ها پروتئین های هوشمندی هستند که به عوامل بیگانه چسبیده و آن ها را خنثی می کنند.",
+    "charCount": 85,
+    "wordCount": 18,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-021",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "اتم ها بیشتر از فضای خالی تشکیل شده اند و هسته سنگین در مرکز آن ها قرار دارد.",
+    "charCount": 77,
+    "wordCount": 18,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-022",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "پدید آمدن شفق قطبی حاصل برخورد ذرات باردار خورشیدی با گازهای جو زمین است.",
+    "charCount": 73,
+    "wordCount": 14,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-023",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "نور خورشید برای رسیدن به سطح کره زمین حدود هشت دقیقه و بیست ثانیه در سفر است.",
+    "charCount": 77,
+    "wordCount": 17,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-024",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "ابررساناها موادی هستند که در دماهای بسیار پایین الکتریسیته را بدون کمترین مقاومت منتقل می کنند.",
+    "charCount": 95,
+    "wordCount": 16,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-025",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "انرژی ژئوترمال گرمای پاک و تجدیدپذیر نهفته در اعماق پوسته زمین است.",
+    "charCount": 67,
+    "wordCount": 12,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-026",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "امواج گرانشی چین و شکن هایی در بافت کیهان هستند که بر اثر برخورد ستاره های نوترونی ایجاد می شوند.",
+    "charCount": 97,
+    "wordCount": 20,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-027",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "هورمون های بدن پیک های شیمیایی هستند که رشد و سوخت و ساز اندام ها را تنظیم می کنند.",
+    "charCount": 83,
+    "wordCount": 19,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-028",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "رایانش کوانتومی با بهره گیری از بیت های کوانتومی مسائل محاسباتی کلان را حل می نماید.",
+    "charCount": 84,
+    "wordCount": 16,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-029",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "سرعت گریز از سطح زمین حدود یازده کیلومتر در هر ثانیه برای ورود به مدار فضا است.",
+    "charCount": 79,
+    "wordCount": 17,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-030",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "چرخه آب در طبیعت با تبخیر از اقیانوس ها آغاز شده و به بارش باران ختم می شود.",
+    "charCount": 76,
+    "wordCount": 18,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-031",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "ستاره های نوترونی پس از انفجار ابرنواختری چگال ترین اجرام شناخته شده کیهان هستند.",
+    "charCount": 81,
+    "wordCount": 14,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-032",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "انعطاف پذیری عصبی به مغز انسان توانایی یادگیری مداوم و تغییر ساختار پس از تجربیات را می دهد.",
+    "charCount": 92,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-033",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "سنسورهای نوری فوتون های نور را دریافت کرده و به سیگنال های الکترونیکی دیجیتال تبدیل می نمایند.",
+    "charCount": 94,
+    "wordCount": 17,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-034",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "نقطه صفر مطلق سردترین دمای ممکن در جهان فیزیکی است که حرکت ذرات در آن متوقف می شود.",
+    "charCount": 83,
+    "wordCount": 18,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-035",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "قطب های مغناطیسی زمین در طول تاریخ زمین شناسی چندین بار جای خود را عوض کرده اند.",
+    "charCount": 80,
+    "wordCount": 17,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-036",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "میتوکندری موتورخانه تولید انرژی در تمامی سلول های جانوری و گیاهی به شمار می رود.",
+    "charCount": 80,
+    "wordCount": 15,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-037",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "طیف سنجی نوری به دانشمندان اجازه می دهد ترکیبات شیمیایی ستاره های دوردست را تشخیص دهند.",
+    "charCount": 87,
+    "wordCount": 16,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-038",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "پدیده درهم تنیدگی کوانتومی ارتباط آنی میان ذرات مستقل از فاصله را به نمایش می گذارد.",
+    "charCount": 84,
+    "wordCount": 16,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-039",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "فشار اتمسفر در سطح دریا ناشی از وزن کل ستون هوای بالای سر ما است.",
+    "charCount": 65,
+    "wordCount": 15,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-040",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "کشف آنتی بیوتیک ها در قرن بیستم انقلابی عظیم در درمان بیماری های عفونی رقم زد.",
+    "charCount": 78,
+    "wordCount": 16,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-041",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "پلاسما حالت چهارم ماده است که در آتش و صاعقه و ستاره های درخشان آسمان یافت می شود.",
+    "charCount": 82,
+    "wordCount": 18,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-042",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "پیوند هیدروژنی عامل خواص شگفت انگیز آب مانند نقطه جوش بالا و شناور ماندن یخ است.",
+    "charCount": 80,
+    "wordCount": 16,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-043",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "آندومتر و بافت های زیستی پیوسته سلول های فرسوده را بازسازی و جایگزین می نمایند.",
+    "charCount": 79,
+    "wordCount": 15,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-044",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "کاوشگرهای وویجر دورترین دست ساخته های بشر هستند که وارد فضای میان ستاره ای شده اند.",
+    "charCount": 83,
+    "wordCount": 16,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-045",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "قانون اول ترمودینامیک بیان می کند که انرژی نه خلق می شود و نه هرگز از بین می رود.",
+    "charCount": 81,
+    "wordCount": 19,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-046",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "رادیواکتیویته حاصل فروپاشی خودبه خودی هسته های ناپایدار و تابش پرتوهای پرانرژی است.",
+    "charCount": 83,
+    "wordCount": 13,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-047",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "میدان دید چشم انسان نتیجه انکسار دقیق نور در قرنیه و عدسی و ثبت در شبکیه است.",
+    "charCount": 77,
+    "wordCount": 17,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-048",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "الگوریتم های فراابتکاری از رفتارهای گروهی پرندگان و مورچه ها برای حل مسائل الهام می گیرند.",
+    "charCount": 90,
+    "wordCount": 16,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-049",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "یخچال های طبیعی قطب ها بزرگ ترین ذخایر آب شیرین در سیاره خاکی محسوب می شوند.",
+    "charCount": 76,
+    "wordCount": 16,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-050",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "شکافت هسته ای انرژی بسیار عظیمی را با تقسیم هسته اتم های سنگین اورانیوم آزاد می کند.",
+    "charCount": 84,
+    "wordCount": 17,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-051",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "نیروی اصطکاک گرچه بخشی از انرژی را هدر می دهد اما راه رفتن و ایستادن بدون آن ناممکن است.",
+    "charCount": 88,
+    "wordCount": 19,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-052",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "پدید آمدن رنگین کمان حاصل شکست و بازتاب نور خورشید در قطرات ریز باران معلق در هوا است.",
+    "charCount": 86,
+    "wordCount": 18,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-053",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "زیست تابی توانایی جالب برخی موجودات دریایی در تولید و تابش نور سرد در تاریکی اعماق است.",
+    "charCount": 87,
+    "wordCount": 17,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-054",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "ساعت زیستی بدن چرخه بیست و چهار ساعته خواب و بیداری را با ترشح ملاتونین تنظیم می کند.",
+    "charCount": 85,
+    "wordCount": 18,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-055",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "ماده تاریک بخش عمده جرم جهان را تشکیل می دهد اما نوری از خود بازتاب نمی کند.",
+    "charCount": 76,
+    "wordCount": 17,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-056",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "سلول های مخروطی شبکیه چشم مسئولیت تشخیص دقیق رنگ ها در روشنایی روز را بر عهده دارند.",
+    "charCount": 84,
+    "wordCount": 17,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-057",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "گرانش ماه عامل اصلی بالا و پایین رفتن آب اقیانوس ها در پدیده جزر و مد است.",
+    "charCount": 74,
+    "wordCount": 17,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-058",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "شتاب دهنده بزرگ هادرونی ذرات بنیادی را در سرعت های نزدیک به نور به یکدیگر برخورد می دهد.",
+    "charCount": 88,
+    "wordCount": 18,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-059",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "مهندسی ژنتیک امکان اصلاح بیماری های وراثتی را در مقیاس سلولی فراهم ساخته است.",
+    "charCount": 77,
+    "wordCount": 14,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-060",
+    "topic": "شگفتی‌های علم و کیهان",
+    "category": "science",
+    "text": "خورشید در هر ثانیه میلیون ها تن ماده را به انرژی خالص نور و گرما تبدیل می کند.",
+    "charCount": 78,
+    "wordCount": 18,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-061",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "منشور کوروش بزرگ کهن ترین بیانیه حقوق بشر جهان در احترام به آزادی و عقاید ملت ها است.",
+    "charCount": 85,
+    "wordCount": 18,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-062",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "تخت جمشید شاهکار معماری هخامنشیان نماد شکوه و هنر اصیل ایران باستان در جهان به شمار می رود.",
+    "charCount": 91,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-063",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "جاده ابریشم کهن ترین شاهراه تجاری بود که کاروان ها فرهنگ و کالای شرق و غرب را پیوند می دادند.",
+    "charCount": 93,
+    "wordCount": 20,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-064",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "دانشگاه جندی شاپور در عهد باستان بزرگ ترین مرکز گردهمایی دانشمندان و پزشکان جهان بود.",
+    "charCount": 85,
+    "wordCount": 15,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-065",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "کتاب قانون ابن سینا قرن ها در معتبرترین دانشگاه های جهان تدریس می شد و مرجع پزشکی بود.",
+    "charCount": 86,
+    "wordCount": 18,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-066",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "رصدخانه کهن مراغه به همت خواجه نصیرالدین طوسی دقیق ترین ابزارهای ستاره شناسی را در خود داشت.",
+    "charCount": 92,
+    "wordCount": 17,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-067",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "ابوریحان بیرونی شعاع کره زمین را با دانشی شگفت انگیز در کوه های نندنه محاسبه کرد.",
+    "charCount": 81,
+    "wordCount": 16,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-068",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "اختراع صنعت چاپ توسط گوتنبرگ آغازگر تحول فکری و گسترش همگانی علم در سراسر قاره اروپا شد.",
+    "charCount": 88,
+    "wordCount": 17,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-069",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "کتابخانه بزرگ اسکندریه مشعل علم دنیای باستان بود که صدها هزار طومار خطی را در خود نگه می داشت.",
+    "charCount": 94,
+    "wordCount": 19,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-070",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "تمدن ایلام با ساخت زیگورات چغازنبیل اوج هنر معماری و شهرسازی کهن خوزستان را به نمایش گذاشت.",
+    "charCount": 91,
+    "wordCount": 17,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-071",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "نهضت ترجمه در سده های نخستین اسلامی پیوند دهنده خرد یونان و ایران با علوم جهان اسلام گردید.",
+    "charCount": 91,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-072",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "شاه عباس صفوی اصفهان را به پایتختی شکوهمند با بناهای میدان نقش جهان و پل های تاریخی بدل ساخت.",
+    "charCount": 93,
+    "wordCount": 19,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-073",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "محمد زکریای رازی کاشف الکل و بنیان گذار روش های آزمایشگاهی نوین در دانش شیمی جهان بود.",
+    "charCount": 86,
+    "wordCount": 17,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-074",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "پاسارگاد و آرامگاه ساده کوروش نشانه ماندگار هویت و فروتنی در معماری پارسیان کهن است.",
+    "charCount": 84,
+    "wordCount": 15,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-075",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "داریوش بزرگ نخستین سامانه استاندارد سکه و شبکه راهداری منظم به نام راه شاهی را تاسیس کرد.",
+    "charCount": 89,
+    "wordCount": 17,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-076",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "کتیبه بیستون در دل کوه پرآوازه ترین سند تاریخی پیروزی های عهد هخامنشی به سه خط کهن است.",
+    "charCount": 87,
+    "wordCount": 18,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-077",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "سفرنامه مارکوپولو شگفتی های مشرق زمین و جاده ابریشم را به گوش مردمان مغرب رساند.",
+    "charCount": 80,
+    "wordCount": 15,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-078",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "فردوسی نامدار زبان پارسی و تاریخ حماسی نیاکان را با آفرینش شاهنامه جاودانه ساخت.",
+    "charCount": 80,
+    "wordCount": 14,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-079",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "پل خواجو و سی و سه پل شاهکارهای چشم نواز معماری و مهندسی هیدرولیک در عهد صفویان هستند.",
+    "charCount": 86,
+    "wordCount": 18,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-080",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "تمدن دره نیل و سازندگان اهرام مصر باستان دانش ریاضی و هندسه پیشرفته ای در اختیار داشتند.",
+    "charCount": 88,
+    "wordCount": 17,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-081",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "قلعه الموت در دل کوهستان البرز نماد مقاومت و داستان های شگفت انگیز دوران اسماعیلیان است.",
+    "charCount": 88,
+    "wordCount": 16,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-082",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "دیوار بزرگ چین یادگاری استوار از نبوغ انسان در ساخت موانع دفاعی در برابر تهاجم قبایل است.",
+    "charCount": 89,
+    "wordCount": 17,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-083",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "ابن بطوطه جهانگرد نامدار با پیمودن هزاران کیلومتر تصویری روشن از تمدن قرون وسطی نگاشت.",
+    "charCount": 86,
+    "wordCount": 15,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-084",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "عصر رنسانس در فلورانس ایتالیا نویدبخش احیای فلسفه و نقاشی و شکوفایی علم پس از دوران تاریک بود.",
+    "charCount": 94,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-085",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "شهر سوخته در سیستان کهن ترین نشانه های جراحی جمجمه و چشم مصنوعی را در تاریخ دارد.",
+    "charCount": 81,
+    "wordCount": 17,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-086",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "خیام نیشابوری دانشمند برجسته گاهشمار جلالی را به عنوان دقیق ترین تقویم خورشیدی ابداع کرد.",
+    "charCount": 89,
+    "wordCount": 15,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-087",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "انقلاب علمی قرن هفدهم با دیدگاه های کوپرنیک و نیوتن دیدگاه بشر درباره آسمان ها را متحول کرد.",
+    "charCount": 92,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-088",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "هنر کاشی کاری در مسجد شیخ لطف الله جلوه گاه نور و هارمونی بی نظیر رنگ های فیروزه ای است.",
+    "charCount": 88,
+    "wordCount": 20,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-089",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "تاسیس دارالفنون به دست امیرکبیر نقطه عطف ورود علوم و فناوری نوین به خاک ایران بود.",
+    "charCount": 82,
+    "wordCount": 16,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-090",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "تمدن بابل و حمورابی نخستین مجموعه مدون قوانین مدنی و جزایی تاریخ بشر را به نگارش درآوردند.",
+    "charCount": 90,
+    "wordCount": 17,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-091",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "دولت ساسانی با ایجاد نظام اداری منسجم و ارتش مجهز مرزهای ایران را قرن ها پایدار نگه داشت.",
+    "charCount": 89,
+    "wordCount": 18,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-092",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "گنبد سلطانیه در زنجان بزرگ ترین گنبد آجری جهان و الگوی ساخت بناهای تاریخی شرق است.",
+    "charCount": 82,
+    "wordCount": 16,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-093",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "ابن خلدون در کتاب مقدمه بنیان های جامعه شناسی و تحلیل علمی تاریخ را پی ریزی نمود.",
+    "charCount": 81,
+    "wordCount": 17,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-094",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "معماری قناتی ایرانیان آب خنک را از دل کوهستان به کویرهای تشنه هدایت می کرد.",
+    "charCount": 75,
+    "wordCount": 15,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-095",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "آکروپولیس آتن نماد شکوفایی فلسفه و زادگاه اندیشه های دموکراسی و خردورزی باستان بود.",
+    "charCount": 83,
+    "wordCount": 14,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-096",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "کشف نقشه جغرافیایی پیری رئیس در سده های قبل دقت دریانوردان کهن در نقشه برداری را نشان داد.",
+    "charCount": 90,
+    "wordCount": 18,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-097",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "طاق بستان در کرمانشاه روایتگر آیین های خسروپرویز و نقش برجسته های شکار در دوران باستان است.",
+    "charCount": 91,
+    "wordCount": 17,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-098",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "پترای باستانی در دل صخره های سرخ کوهستان شاهکار تمدن نبطی ها در بیابان های اردن است.",
+    "charCount": 84,
+    "wordCount": 17,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-099",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "ایرج میرزا و ملک الشعرای بهار با اشعار خود پیشگام تحولات فرهنگی دوران مشروطه در ایران بودند.",
+    "charCount": 92,
+    "wordCount": 17,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-100",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "تاج محل در هند شکوهی ماندگار از هنر معماری ایرانی و اسلامی در پاسداشت عشق است.",
+    "charCount": 78,
+    "wordCount": 16,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-101",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "دوران طلایی آندلس در اسپانیا پلی ارزشمند برای انتقال علوم مشرق زمین به اروپای باستان بود.",
+    "charCount": 89,
+    "wordCount": 16,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-102",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "فارابی به عنوان معلم ثانی منطق ارسطو را بازخوانی کرد و اصول مدینه فاضله را نگاشت.",
+    "charCount": 81,
+    "wordCount": 16,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-103",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "سکه های اشکانی اسنادی معتبر از استقلال و مقاومت دلاورانه پارتیان در برابر یونانیان هستند.",
+    "charCount": 89,
+    "wordCount": 15,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-104",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "حکیم عمر خیام در کنار سرودن رباعیات هندسه جبری و حل معادلات درجه سوم را بنیان نهاد.",
+    "charCount": 83,
+    "wordCount": 17,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-105",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "کاخ آپادانا با ستون های بلند بیست متری هنر سنگ تراشان شهرهای مختلف شاهنشاهی کهن بود.",
+    "charCount": 84,
+    "wordCount": 16,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-106",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "تمدن بین النهرین مخترع چرخ و خط میخی بود که پایه های نخستین ثبت اسناد در تاریخ را ساخت.",
+    "charCount": 87,
+    "wordCount": 19,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-107",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "سلسله افشاریه به فرماندهی نادرشاه امنیت کاروان ها و تمامیت ارضی کشور را بازگرداند.",
+    "charCount": 82,
+    "wordCount": 14,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-108",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "شهر یزد با بادگیرهای خشتی بلند شاهکار مهندسی همزیستی انسان با اقلیم کویر است.",
+    "charCount": 77,
+    "wordCount": 14,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-109",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "مورخان روم باستان رشادت های سورنا سردار ایرانی در نبرد حران را با شگفتی ستوده اند.",
+    "charCount": 82,
+    "wordCount": 16,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-110",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "مسجد جامع اصفهان آلبوم جامع سیر تحول معماری اسلامی در طول هزار سال تاریخ ایران است.",
+    "charCount": 83,
+    "wordCount": 16,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-111",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "کشف منشور حقوق بشر در بابل نام ایران را در ردیف نخستین پاسداران کرامت انسانی ثبت کرد.",
+    "charCount": 85,
+    "wordCount": 17,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-112",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "آئین پهلوانی و ورزش باستانی در زورخانه های کهن مظهر جوانمردی و ایثار نیاکان ما است.",
+    "charCount": 83,
+    "wordCount": 16,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-113",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "حمله اسکندر گرچه تخت جمشید را سوزاند اما فرهنگ پارسی همچنان زنده و بارور باقی ماند.",
+    "charCount": 83,
+    "wordCount": 16,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-114",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "باغ های ایرانی با ساختار چهارباغ و جریان آب روان نگین ثبت شده در میراث یونسکو هستند.",
+    "charCount": 84,
+    "wordCount": 17,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-115",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "تمدن کارتاژ با ناوگان دریایی قدرتمند خود تجارت در دریای مدیترانه باستان را در دست داشت.",
+    "charCount": 87,
+    "wordCount": 16,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-116",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "نبرد ترموپیل و دلاوری های سپاهیان باستان نمونه ای از رویارویی های نظامی تاریخ است.",
+    "charCount": 82,
+    "wordCount": 15,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-117",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "سفالینه های تپه سیلک کاشان قدمتی فراتر از هفت هزار سال از هنر و مدنیت در فلات ایران دارند.",
+    "charCount": 90,
+    "wordCount": 19,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-118",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "بازرگانان ونیزی در قرون وسطی با سفر به بنادر ایران ابریشم و ادویه را به اروپا منتقل می کردند.",
+    "charCount": 93,
+    "wordCount": 19,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-119",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "دانشگاه های نظامیه در بغداد و نیشابور معتبرترین کانون های تدریس علوم دینی و ادبی بودند.",
+    "charCount": 87,
+    "wordCount": 16,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-120",
+    "topic": "تاریخ و تمدن باستان",
+    "category": "history",
+    "text": "تاریخ نگاران باستان صلح طلبی و مدارای کوروش با ملل مغلوب را در متون خویش ستایش کرده اند.",
+    "charCount": 88,
+    "wordCount": 18,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-121",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "پیروزی حاصل گام‌های کوچک و استواری است که هر روز حتی در روزهای خاکستری با امید برداشته می‌شوند.",
+    "charCount": 95,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-122",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "بزرگ‌ترین مانع پیشرفت ترس از اشتباه است، کسی که شکست را تجربه نکرده هرگز طعم پیروزی واقعی را نچشیده است.",
+    "charCount": 104,
+    "wordCount": 20,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-123",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "سحرخیزی و نظم فردی همانند کلیدی جادویی درهای فرصت و نبوغ پنهان ذهن را به روی انسان می‌گشاید.",
+    "charCount": 92,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-124",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "به جای آرزو کردن شرایط آسان‌تر، توانمندی و صلابت روحی خود را برای رویارویی با سختی‌ها ارتقا دهید.",
+    "charCount": 97,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-125",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "موفقیت یک شب پدیدار نمی‌شود بلکه حاصل هزاران ساعت تلاش بی‌صدا و تمرکز عمیق روی اهداف والا است.",
+    "charCount": 94,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-126",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "ذهن انسان شبیه به باغچه‌ای پربار است، هر اندیشه‌ای که در آن بکارید در قالب رفتار و دستاورد جوانه خواهد زد.",
+    "charCount": 106,
+    "wordCount": 21,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-127",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "ارزش زمان بیش از هر گنجینه‌ای در جهان است زیرا ثروت از دست رفته بازمی‌گردد اما دقایق رفته هرگز تکرار نمی‌شوند.",
+    "charCount": 110,
+    "wordCount": 21,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-128",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "سکوت در برابر ناملایمات و تمرکز تمام‌عیار بر مسیر هدف، سلاح قدرتمند خردمندان در تلاطم‌های زندگی است.",
+    "charCount": 100,
+    "wordCount": 17,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-129",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "شجاعت به معنای نبودن ترس نیست بلکه پیش رفتن و اقدام کردن علیرغم وجود تپش‌های ترس درون است.",
+    "charCount": 90,
+    "wordCount": 18,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-130",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "هر روز صبح بوم نقاشی تازه‌ای در اختیار توست، انتخاب با توست که شاهکاری ماندگار بیافرینی یا خموده بمانی.",
+    "charCount": 103,
+    "wordCount": 19,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-131",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "آرامش درونی ریشه در پذیرش واقعیت‌ها و تلاش صبورانه برای ساختن فردایی روشن‌تر و زیباتر دارد.",
+    "charCount": 91,
+    "wordCount": 16,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-132",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "عادت‌های روزانه معماران پنهان سرنوشت ما هستند و سرنوشت هر فرد آینه دقیق تکرار رفتارهای کوچک اوست.",
+    "charCount": 97,
+    "wordCount": 17,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-133",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "برای رسیدن به قله‌هایی که کمتر کسی فتح کرده باید از راه‌هایی گذشت که کمتر کسی جرات پیمودن آن‌ها را داشته است.",
+    "charCount": 109,
+    "wordCount": 22,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-134",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "انرژی مثبت خود را صرف سرزنش گذشته نکنید زیرا رودخانه زمان رو به آینده در جریان است نه به گذشته.",
+    "charCount": 95,
+    "wordCount": 20,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-135",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "اعتماد به نفس واقعی از مقایسه با دیگران زاده نمی‌شود بلکه حاصل برتری امروز شما نسبت به دیروز خودتان است.",
+    "charCount": 104,
+    "wordCount": 20,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-136",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "تمرکز عمیق و پرهیز از پریشانی‌های دنیای دیجیتال، ابرقدرت کمیاب دنیای مدرن برای دستیابی به نبوغ است.",
+    "charCount": 99,
+    "wordCount": 17,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-137",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "صبر تلخ است اما بار و ثمره آن همواره شیرین‌ترین و پایدارترین دستاوردها را به ارمغان می‌آورد.",
+    "charCount": 92,
+    "wordCount": 17,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-138",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "هرگز از رویاهای بزرگ خود به خاطر مدت زمان طولانی تحقق آن‌ها دست نکشید زیرا زمان در هر صورت سپری خواهد شد.",
+    "charCount": 105,
+    "wordCount": 22,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-139",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "کلید شادمانی و پویایی در زندگی این است که شکرگزار داشته‌ها باشیم و با شور و شوق برای ساختن رویاها بکوشیم.",
+    "charCount": 105,
+    "wordCount": 21,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-140",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "بزرگ‌ترین کشف بشر این است که با دگرگون ساختن نگرش و اندیشه می‌توان تمام دنیای پیرامون را متحول ساخت.",
+    "charCount": 100,
+    "wordCount": 19,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-141",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "امید همانند ستاره‌ای درخشان در دل تاریک‌ترین شب‌ها مسیر رهایی و کامیابی را به ما نشان می‌دهد.",
+    "charCount": 93,
+    "wordCount": 17,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-142",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "کسانی که در سکوت عرق می‌ریزند و با جدیت کار می‌کنند، در روشنایی روز پاداش درخشش خود را جشن خواهند گرفت.",
+    "charCount": 103,
+    "wordCount": 21,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-143",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "یک هدف بدون برنامه تنها یک آرزوی خام است، اهداف بزرگ را به گام‌های کوچک و اجرایی خرد کنید.",
+    "charCount": 90,
+    "wordCount": 19,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-144",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "انعطاف‌پذیری در برابر دگرگونی‌های روزگار راز جاودانگی و پویایی درختان کهن در برابر تندبادهای حوادث است.",
+    "charCount": 103,
+    "wordCount": 16,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-145",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "هر تجربه زیسته دریچه‌ای تازه به سوی دانایی است، شکست‌ها آموزگاران راستین مسیر کمال انسانی به شمار می‌روند.",
+    "charCount": 106,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-146",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "اراده انسان نیرومندترین انرژی کائنات است، اراده‌ای پولادین صخره‌های مسیر را به پله‌های صعود بدل می‌کند.",
+    "charCount": 103,
+    "wordCount": 16,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-147",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "مهربانی و گشاده‌رویی بی هیچ هزینه‌ای جهان پیرامون را زیباتر و روح انسان را سرشار از نور می‌کند.",
+    "charCount": 95,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-148",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "برای دگرگون ساختن جهان نخست باید از دگرگونی افکار، کلام و رفتارهای روزمره خودمان آغاز نماییم.",
+    "charCount": 93,
+    "wordCount": 16,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-149",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "یادگیری بی‌پایان جوهره زنده بودن است، ذهنی که مدام تشنه آموختن باشد هرگز غبار کهنگی و فرسودگی نخواهد گرفت.",
+    "charCount": 106,
+    "wordCount": 19,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-150",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "آینده متعلق به کسانی است که به زیبایی رویاهای خود ایمان دارند و با جان و دل برای خلق آن تلاش می‌کنند.",
+    "charCount": 101,
+    "wordCount": 22,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-151",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "قدرت کلمات بی‌پایان است، کلماتی سرشار از امید، مهر و انگیزه می‌توانند روحی خسته را جان تازه‌ای ببخشند.",
+    "charCount": 102,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-152",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "اگر می‌خواهی پرواز را تجربه کنی باید ابتدا شهامت رها کردن شاخه‌های امن و آسایش را در خود بیابی.",
+    "charCount": 95,
+    "wordCount": 19,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-153",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "در میانه دشواری‌ها و پیچیدگی‌ها، همواره بهترین و ماندگارترین فرصت‌های رشد و پیروزی نهفته است.",
+    "charCount": 93,
+    "wordCount": 15,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-154",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "انگیزه جرقه‌ای برای آغاز مسیر است اما انضباط شخصی سوختی است که قطار پیشرفت را پیوسته به پیش می‌راند.",
+    "charCount": 100,
+    "wordCount": 19,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-155",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "خوشبختی مقصدی در پایان راه نیست بلکه کیفیتی از حضور و لذت بردن از تک‌تک گام‌های این سفر است.",
+    "charCount": 92,
+    "wordCount": 19,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-156",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "افکار مثبت سپری نفوذناپذیر در برابر استرس‌ها و امواج منفی دنیای پیرامون برای روح می‌سازند.",
+    "charCount": 90,
+    "wordCount": 15,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-157",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "بزرگ‌ترین سرمایه هر انسان دانایی، تجربه و مهارتی است که هیچ طوفانی قادر به ربودن آن نیست.",
+    "charCount": 89,
+    "wordCount": 17,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-158",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "تکرار منظم یک مهارت ساده در گذر ماه‌ها می‌تواند از یک نوآموز استادی بی‌همتا و کم‌نظیر بسازد.",
+    "charCount": 92,
+    "wordCount": 17,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-159",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "گاهی برای دیدن منظره‌های شگفت‌انگیز باید شجاعت عبور از گردنه‌های مه‌آلود و صخره‌های تند را داشت.",
+    "charCount": 96,
+    "wordCount": 16,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-160",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "همدلی با دیگران پلی از نور میان قلب‌ها می‌سازد و زندگی را سرشار از معنا و آرامش حقیقی می‌نماید.",
+    "charCount": 95,
+    "wordCount": 19,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-161",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "اشتیاق سوزان برای ساختن فردا، تمامی بهانه‌های تنبلی و خستگی را در آتش اراده خاکستر می‌کند.",
+    "charCount": 90,
+    "wordCount": 16,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-162",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "هیچ شاهکاری بدون بازبینی و تلاش دوباره خلق نشده است، تسلیم نشدن تنها تفاوت قهرمانان با دیگران است.",
+    "charCount": 98,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-163",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "هوشمندی یعنی سازگاری سریع با تغییرات و یافتن مسیرهای تازه هنگام بن‌بست‌های به ظاهر دشوار.",
+    "charCount": 89,
+    "wordCount": 15,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-164",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "پشتکار و اراده قوی حتی سخت‌ترین موانع فولادی را نیز سرانجام تسلیم عزم جزم انسان خواهد کرد.",
+    "charCount": 90,
+    "wordCount": 17,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-165",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "ذهن خود را از قضاوت‌های بیهوده تهی کنید تا گنجایش بیشتری برای یادگیری و خلاقیت‌های نو بیابید.",
+    "charCount": 93,
+    "wordCount": 17,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-166",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "هر کتاب خوبی که می‌خوانید گفتگویی پربار با درخشان‌ترین اذهان تاریخ بشر در طول هزاره‌ها است.",
+    "charCount": 91,
+    "wordCount": 16,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-167",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "فرصت‌ها در لباس کارهای سخت و چالش‌های دشوار پنهان شده‌اند، تیزبین باشید و آن‌ها را در آغوش بگیرید.",
+    "charCount": 98,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-168",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "روشنایی شمعی کوچک در تاریکی مطلق می‌تواند امیدی تازه در دل گم‌گشتگان مسیر پدید آورد.",
+    "charCount": 84,
+    "wordCount": 15,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-169",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "به جای ترس از آینده نامعلوم، هنر غوطه‌ور شدن در شکوه لحظه حال را تمرین و درک کنیم.",
+    "charCount": 82,
+    "wordCount": 18,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-170",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "تلاش صادقانه و خدمت به همنوعان پاک‌ترین چشمه‌ای است که روح انسان را از زلال زندگی سیراب می‌سازد.",
+    "charCount": 96,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-171",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "رمز موفقیت در تایپ سریع و زندگی، ریتم یکدست، تمرکز بر درستی کار و شتاب‌زدگی نکردن است.",
+    "charCount": 86,
+    "wordCount": 17,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-172",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "شادی حقیقی دستاورد دست‌های بخشنده و قلبی است که بدون چشمداشت برای دیگران آرزوی نیک دارد.",
+    "charCount": 88,
+    "wordCount": 16,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-173",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "اگر در راهی که بدان باور داری استوار بمانی، جهان به احترام گام‌های مصمم تو راه را خواهد گشود.",
+    "charCount": 93,
+    "wordCount": 19,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-174",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "برتری در هر زمینه‌ای نتیجه توجه وسواس‌گونه به ریزترین جزئیات و عشق بی‌پایان به پیشرفت است.",
+    "charCount": 90,
+    "wordCount": 16,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-175",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "صدایی که در درون با امید سخن می‌گوید همواره از غوغای تردیدهای دنیای بیرون قدرتمندتر و رساتر است.",
+    "charCount": 96,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-176",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "نقطه آغاز تمامی دستاوردهای شگفت‌انگیز تاریخ بشریت، یک اندیشه کوچک و جسارت باور کردن آن بوده است.",
+    "charCount": 96,
+    "wordCount": 17,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-177",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "هر روز را چنان سپری کن که گویی ارزشمندترین قطعه از پازل زندگی ماندگار تو در هستی است.",
+    "charCount": 85,
+    "wordCount": 18,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-178",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "ثبات قدم در روزهای بی‌حوصلگی، مرز قطعی میان افراد معمولی و اسطوره‌های ماندگار تاریخ است.",
+    "charCount": 88,
+    "wordCount": 15,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-179",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "شکست تنها فرصتی هوشمندانه‌تر برای آغازی دوباره با کوله‌باری از تجربه‌های گران‌بها و ناب است.",
+    "charCount": 92,
+    "wordCount": 15,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-180",
+    "topic": "موفقیت، ذهن و انگیزه",
+    "category": "motivation",
+    "text": "باور داشتن به خود نخستین پله از نردبانی است که سر به آسمان آرزوها و افتخارات می‌کشد.",
+    "charCount": 84,
+    "wordCount": 17,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-181",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "سعدی در بوستان می‌فرماید خردمند آن است که چون سخن گوید دلیل آورد و چون کار کند به عدل پردازد.",
+    "charCount": 93,
+    "wordCount": 20,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-182",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "فردوسی در شاهنامه خرد را والاترین گوهر هستی و راهنمای انسان در تاریکی‌های جهل و نادانی می‌داند.",
+    "charCount": 95,
+    "wordCount": 17,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-183",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "در گلستان آمده است که پادشاهی با توانایی عادلانه پایدار می‌ماند نه با گنج‌های سرشار و سپاه بی‌شمار.",
+    "charCount": 99,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-184",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "طوطی و بازرگان در مثنوی مولانا تمثیلی زیبا از رهایی جان انسان از بند تعلقات و تعلق‌های دنیوی است.",
+    "charCount": 97,
+    "wordCount": 19,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-185",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "عطار نیشابوری سیمرغ را آیینه‌ای در برابر مرغان حقیقت‌جو می‌داند که راز کمال را در درون خود کشف کردند.",
+    "charCount": 101,
+    "wordCount": 19,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-186",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "حافظ شیرازی گنج سعادت را در قناعت، طهارت باطن و انس با یاران موافق و یکدل جستجو می‌کند.",
+    "charCount": 87,
+    "wordCount": 18,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-187",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "حکیم ناصرخسرو درخت دانش را سرچشمه برومندی جان و میوه آن را کردار نیک و گفتار راست می‌شمارد.",
+    "charCount": 91,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-188",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "در کلیله و دمنه آمده است که دوستی پایدار بر پایه راستی، رازداری و یاری‌رسانی در روزهای سختی استوار است.",
+    "charCount": 103,
+    "wordCount": 20,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-189",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "خواجه نظام‌الملک در سیاست‌نامه بنیاد دادگری را در شنیدن سخن دادخواهان و پرهیز از ستم می‌داند.",
+    "charCount": 93,
+    "wordCount": 16,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-190",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "نظامی گنجوی در مخزن الاسرار انسان را به خاموشی گزیدن در هنگام خشم و شتاب در پوزش‌خواهی فرا می‌خواند.",
+    "charCount": 100,
+    "wordCount": 19,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-191",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "خیام نیشابوری جهان را کاروانسرایی گذرا می‌داند که خردمندان در آن به شادی و راستی روزگار می‌گذرانند.",
+    "charCount": 99,
+    "wordCount": 17,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-192",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "در اسرار التوحید آمده است که تصوف یعنی اندوه دیگران را بردن و باری از دوش خسته‌دلان برداشتن.",
+    "charCount": 92,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-193",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "قابوس‌نامه جوانان را به فراگیری پیشه، پرهیز از همنشین بد و تکریم آموزگاران و بزرگان پند می‌دهد.",
+    "charCount": 95,
+    "wordCount": 17,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-194",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "بیهقی تاریخ را آیینه‌ای عبرت‌آموز می‌داند که روزگار شاهان و رفتگان را بی هیچ پرده‌پوشی روایت می‌کند.",
+    "charCount": 100,
+    "wordCount": 17,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-195",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "سعدی می‌گوید دو کس رنج بیهوده بردند، یکی آن که اندوخت و نخورد و دیگر آن که آموخت و عمل نکرد.",
+    "charCount": 92,
+    "wordCount": 21,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-196",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "در مثنوی معنوی فیل در تاریکی نمادی از قضاوت‌های نارسا و کوته‌بینانه آدمیان از حقیقت کل هستی است.",
+    "charCount": 96,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-197",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "رودکی پدر شعر پارسی می‌سراید هر که ناموخت از گذشت روزگار، هیچ ناموزد ز هیچ آموزگار.",
+    "charCount": 83,
+    "wordCount": 16,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-198",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "در جوامع الحکایات عوفی بخشندگی و گذشت صفتی دانسته شده که دشمنان کینه‌توز را به دوستانی وفادار بدل می‌سازد.",
+    "charCount": 106,
+    "wordCount": 19,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-199",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "ابوریحان بیرونی در جستجوی راستی تا واپسین دقایق حیات دست از پژوهش و آموختن مسایل علمی برنداشت.",
+    "charCount": 94,
+    "wordCount": 17,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-200",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "بوعلی سینا خرد انسانی را پرتوی از عقل کل کیهان می‌دانست که به واسطه تفکر صیقل پیدا می‌کند.",
+    "charCount": 90,
+    "wordCount": 18,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-201",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "سهروردی در آواز پر جبرئیل از غربت روح در دنیای مادی و اشتیاق پرواز به سوی نور معرفت سخن می‌گوید.",
+    "charCount": 96,
+    "wordCount": 20,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-202",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "پندهای بزرگمهر بختگان چراغ راه اندیشمندانی بوده که علم را بر ثروت زودگذر ترجیح می‌دادند.",
+    "charCount": 88,
+    "wordCount": 15,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-203",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "سعدی در گلستان می‌نویسد توانگری به دل است نه به مال، و بزرگی به عقل است نه به سال.",
+    "charCount": 82,
+    "wordCount": 19,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-204",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "مولانا می‌فرماید آب کم جو تشنگی آور به دست، تا بجوشد آب از بالا و پست در جان و روان.",
+    "charCount": 84,
+    "wordCount": 20,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-205",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "در منطق الطیر سی مرغ پس از عبور از هفت وادی پرمخاطره حقیقت سیمرغ وجود خویش را دریافتند.",
+    "charCount": 87,
+    "wordCount": 18,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-206",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "شمس تبریزی می‌گوید اگر خواهی که روشن شوی، آتش عشق را در سینه برافروز و از خودبینی دوری گزین.",
+    "charCount": 92,
+    "wordCount": 19,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-207",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "جامی در هفت اورنگ دانش‌پژوهان را به ریاضت اندیشه و پاکی نیت در طلب حکمت و کمال دعوت می‌کند.",
+    "charCount": 91,
+    "wordCount": 19,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-208",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "پند دهقان کهنسال به فرزندانش در شاهنامه یادآور پیوند ناگسستنی دادگری و سرسبزی میهن کهن است.",
+    "charCount": 91,
+    "wordCount": 16,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-209",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "خواجه عبدالله انصاری در مناجات‌نامه خود فروتنی در برابر حقیقت و خدمت به خلق را اوج بندگی می‌خواند.",
+    "charCount": 98,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-210",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "کمال‌الدین بهزاد در مینیاتورهایش جلوه شگفت‌انگیز باغ‌های بهشتی و صلح و زیبایی را ماندگار ساخت.",
+    "charCount": 94,
+    "wordCount": 15,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-211",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "سعدی می‌گوید بنی آدم اعضای یک پیکرند، که در آفرینش ز یک گوهرند و غم دیگری غم همگان است.",
+    "charCount": 87,
+    "wordCount": 19,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-212",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "در بهارستان جامی داستان پادشاهی عادل نقل شده که ویرانی دهقانی را به شادمانی و رونق بدل کرد.",
+    "charCount": 91,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-213",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "باباطاهر عریان با دوبیتی‌های سوزناک خود راز پاکی دل و دوری از آلایش‌های دنیوی را نغمه سر داد.",
+    "charCount": 93,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-214",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "حکایت موسی و شبان در مثنوی درس شگفتی از درک نیت‌های پاک و بی‌تکلف قلوب آدمیان است.",
+    "charCount": 82,
+    "wordCount": 17,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-215",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "فردوسی در ستایش خرد می‌گوید خرد چشم جان است چون بنگری، تو بی چشم شادان جهان نسپری.",
+    "charCount": 82,
+    "wordCount": 17,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-216",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "عطار می‌فرماید دلی کز معرفت نوری ندارد، به حقیقت خاکستر مرده‌ای بیش در کالبد نیست.",
+    "charCount": 82,
+    "wordCount": 15,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-217",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "سعدی در حکایتی دیگر یادآور می‌شود که باران در لطافت طبعش خلاف نیست، در باغ لاله روید و در شوره بوم خس.",
+    "charCount": 102,
+    "wordCount": 22,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-218",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "حکمت لقمان بر پایه رازداری، حفظ امانت، خاموشی به موقع و نیکی به پدر و مادر استوار بوده است.",
+    "charCount": 91,
+    "wordCount": 19,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-219",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "در تاریخ جهانگشا رشادت و پایمردی ایرانیان در پاسداری از فرهنگ و تمدن خود بازتابی گسترده دارد.",
+    "charCount": 93,
+    "wordCount": 17,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-220",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "منوچهری دامغانی با توصیف‌های رنگارنگ از طبیعت بهار و پاییز زیبایی‌های گیتی را نقاشی کرده است.",
+    "charCount": 93,
+    "wordCount": 16,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-221",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "خاقانی شروانی در ایوان مدائن عبرت گرفتن از شکوه فروریخته کاخ‌های ستمگران را به تصویر می‌کشد.",
+    "charCount": 92,
+    "wordCount": 16,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-222",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "صائب تبریزی با تک‌بیت‌های صیقل‌خورده خود نگاهی فلسفی و اخلاقی به پیچیدگی‌های روح انسان دارد.",
+    "charCount": 92,
+    "wordCount": 15,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-223",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "مولانا می‌گوید تو مگو همه به جنگند و ز صلح من چه آید، تو یکی نه‌ای هزاری تو چراغ خود برافروز.",
+    "charCount": 93,
+    "wordCount": 21,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-224",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "سعدی می‌فرماید تن آدمی شریف است به جان آدمیت، نه همین لباس زیباست نشان آدمیت در گیتی.",
+    "charCount": 85,
+    "wordCount": 17,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-225",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "در مرزبان‌نامه تمثیل‌های دلکش حیوانات ابزاری برای بیان عمیق‌ترین آموزه‌های تدبیر و کشورداری است.",
+    "charCount": 96,
+    "wordCount": 14,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-226",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "سنایی غزنوی در حدیقه الحقیقه زنگار دل را با یاد خدا و پرهیز از آز و حسد شستشو می‌دهد.",
+    "charCount": 85,
+    "wordCount": 19,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-227",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "حکیم عمر خیام گردش افلاک را پندی برای زندگی در لحظه و کاشتن بذر محبت در دل‌ها می‌داند.",
+    "charCount": 86,
+    "wordCount": 18,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-228",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "فریدالدین عطار در تذکره الاولیاء شرح شوریدگی و آزادگی فرزانگان تاریخ را با قلمی سحرانگیز نگاشته است.",
+    "charCount": 100,
+    "wordCount": 17,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-229",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "سعدی می‌گوید اگر شب‌پره ناپسندد عیان، چشمه آفتاب را چه زیان که نورافشانی خورشید ابدی است.",
+    "charCount": 89,
+    "wordCount": 16,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-230",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "در اخلاق ناصری خواجه نصیرالدین طوسی اعتدال در قوای سه‌گانه نفس را سرچشمه فضایل چهارگانه می‌شمارد.",
+    "charCount": 97,
+    "wordCount": 16,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-231",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "نجم‌الدین رازی در مرصاد العباد مسیر عروج روح انسان را از خاکدان تیره تا اوج ملکوت تبیین می‌کند.",
+    "charCount": 95,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-232",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "سهراب سپهری در شعر معاصر می‌گوید چشم‌ها را باید شست جور دیگر باید دید و واژه‌ها را شستشو داد.",
+    "charCount": 93,
+    "wordCount": 19,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-233",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "نیما یوشیج با سرودن داروگ نوید باران طراوت‌بخش امید را در دشت‌های تشنه فرهنگ ایرانی جاری ساخت.",
+    "charCount": 94,
+    "wordCount": 17,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-234",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "ملک‌الشعرای بهار دماوند را دیو سپید پای در بند و نماد پایمردی و غرور جاودانه البرز نامید.",
+    "charCount": 89,
+    "wordCount": 17,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-235",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "پروین اعتصامی در مناظره‌های شورانگیز خود زبان گویای محرومان، کارگران و مظلومان تاریخ شد.",
+    "charCount": 88,
+    "wordCount": 14,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-236",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "شهریار با منظومه حیدربابایه سلام عطر کوچه‌های کاهگلی و خاطرات پاک کودکی در روستا را زنده کرد.",
+    "charCount": 93,
+    "wordCount": 17,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-237",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "مهدی اخوان ثالث با زمستان سرد خود آتش امید را در عمق جان پویندگان آزادی زنده نگاه داشت.",
+    "charCount": 87,
+    "wordCount": 18,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-238",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "سعدی بزرگوار می‌فرماید عاقبت گرگ‌زاده گرگ شود، گرچه با آدمی بزرگ شود پس اصل گوهر نیکو دار.",
+    "charCount": 90,
+    "wordCount": 17,
+    "difficulty": "آسان",
+    "language": "fa"
+  },
+  {
+    "id": "quick-239",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "مولانا در فیه ما فیه می‌گوید جان انسان همچون پرنده‌ای تیزپرواز است که قفس تن تاب مهارش را ندارد.",
+    "charCount": 96,
+    "wordCount": 19,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-240",
+    "topic": "حکمت و شاهکارهای ادب کهن",
+    "category": "wisdom",
+    "text": "فردوسی بزرگ در پایان شاهنامه سرود که نمیرم از این پس که من زنده‌ام، که تخم سخن را پراکنده‌ام.",
+    "charCount": 93,
+    "wordCount": 19,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-241",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "رایانه‌های کوانتومی با بهره‌گیری از کیوبیت‌ها محاسباتی را در چند ثانیه انجام می‌دهند که ابررایانه‌ها در هزاران سال عاجزند.",
+    "charCount": 122,
+    "wordCount": 19,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-242",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "هوش مصنوعی مولد مرزهای نوآوری را گسترش داده و به همکار خلاق پژوهشگران در کشف داروهای نوین بدل شده است.",
+    "charCount": 102,
+    "wordCount": 20,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-243",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "شهرهای هوشمند آینده با حسگرهای اینترنت اشیا مصرف انرژی را بهینه و ترافیک شهری را خودکار مدیریت می‌کنند.",
+    "charCount": 103,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-244",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "شبکه‌های عصبی عمیق با پردازش میلیاردها پارامتر زبانی درک ماشین‌ها از ظرافت‌های کلام انسان را دگرگون ساخته‌اند.",
+    "charCount": 110,
+    "wordCount": 17,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-245",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "تلسکوپ‌های نسل آینده در جستجوی سیارات زیست‌پذیر پرده از رازهای کهن پیدایش حیات در کیهان برمی‌دارند.",
+    "charCount": 99,
+    "wordCount": 16,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-246",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "فناوری کریسپر به دانشمندان این امکان را می‌دهد که با ویرایش دقیق ژنوم بیماری‌های وراثتی سخت را درمان نمایند.",
+    "charCount": 108,
+    "wordCount": 19,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-247",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "کاوشگرهای رباتیک در مریخ با تحلیل خاک و سنگ‌های باستانی نشانه‌های جریان آب در گذشته سرخ را آشکار کردند.",
+    "charCount": 103,
+    "wordCount": 19,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-248",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "خودروهای خودران با ترکیب رادارها و یادگیری ماشین ایمنی سفرهای جاده‌ای را به سطحی بی‌سابقه ارتقا می‌بخشند.",
+    "charCount": 105,
+    "wordCount": 17,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-249",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "چاپگرهای سه‌بعدی زیستی توانایی ساخت بافت‌های زنده و پیوند اعضای مصنوعی را در پزشکی نوین محقق می‌کنند.",
+    "charCount": 101,
+    "wordCount": 17,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-250",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "فناوری بلاک‌چین با ثبت توزیع‌شده داده‌ها بستری شفاف و غیرمتمرکز برای تبادلات مالی امن در جهان فراهم می‌سازد.",
+    "charCount": 108,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-251",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "سلول‌های خورشیدی نسل جدید با بهره‌وری چندبرابری انرژی پاک و رایگان خورشید را در سراسر گیتی دسترس‌پذیر می‌سازند.",
+    "charCount": 111,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-252",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "رابط‌های مغز و رایانه به افراد دارای آسیب نخاعی امکان می‌دهند تا تنها با نیروی فکر ابزارهای دیجیتال را مهار کنند.",
+    "charCount": 113,
+    "wordCount": 21,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-253",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "نانوربات‌های پزشکی در آینده نزدیک داروهای شیمی‌درمانی را مستقیما به سلول‌های سرطانی رسانده و بافت سالم را حفظ می‌کنند.",
+    "charCount": 118,
+    "wordCount": 19,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-254",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "واقعیت افزوده و دنیای مجازی تعاملی شیوه آموزش جراحی، مهندسی و سفر به نقاط ناشناخته زمین را متحول ساخته‌اند.",
+    "charCount": 107,
+    "wordCount": 19,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-255",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "انرژی همجوشی پاک شبیه‌سازی کوره خورشید در زمین است که می‌تواند انرژی پاک نامحدود و ایمن به بشر هدیه دهد.",
+    "charCount": 104,
+    "wordCount": 20,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-256",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "ربات‌های انسان‌نما در انبارهای لجستیکی و مأموریت‌های خطرناک فضایی دستیاران بی‌خستگی مهندسان شده‌اند.",
+    "charCount": 100,
+    "wordCount": 13,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-257",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "اینترنت ماهواره‌ای در مدار نزدیک زمین دسترسی پرسرعت به دنیای وب را برای دورافتاده‌ترین روستاهای جهان گشوده است.",
+    "charCount": 111,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-258",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "پایگاه‌های تحقیقاتی پایدار در قطب جنوب کلید درک تغییرات اقلیمی و جریان‌های عظیم اقیانوسی زمین هستند.",
+    "charCount": 100,
+    "wordCount": 16,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-259",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "الگوریتم‌های پیش‌بینی آب و هوا با هوش مصنوعی زمان وقوع طوفان‌ها و بلایای طبیعی را با دقت کم‌نظیری هشدار می‌دهند.",
+    "charCount": 112,
+    "wordCount": 20,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-260",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "مواد ابررسانای گرم در صورت کشف می‌توانند انتقال برق در خطوط سراسری را بدون حتی ذره‌ای هدررفت انرژی ممکن سازند.",
+    "charCount": 110,
+    "wordCount": 20,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-261",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "میکروپلاستیک‌ها چالشی نوین برای محیط زیست هستند و دانشمندان با باکتری‌های بازیافت‌کننده به جنگ آن‌ها رفته‌اند.",
+    "charCount": 110,
+    "wordCount": 16,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-262",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "پرنده‌های هدایت‌پذیر خودکار در کشاورزی دقیق مصرف آب و کود را به حداقل رسانده و بازدهی خاک را چندبرابر می‌کنند.",
+    "charCount": 110,
+    "wordCount": 20,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-263",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "رمزنگاری پساکوانتومی با فرمول‌های پیچیده ریاضی از اسرار دیجیتال شهروندان در برابر نفوذهای سایبری پاسداری می‌کند.",
+    "charCount": 112,
+    "wordCount": 16,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-264",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "سیستم‌های پردازش صوت زنده مکالمات به زبان‌های گوناگون را بی‌درنگ ترجمه و موانع ارتباطی میان ملت‌ها را برمی‌دارند.",
+    "charCount": 113,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-265",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "سفینه‌های بادبانی با نیروی محرکه پرتوهای لیزری در آینده می‌توانند فضاپیماها را تا بیست درصد سرعت نور شتاب دهند.",
+    "charCount": 111,
+    "wordCount": 19,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-266",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "خانه‌های هوشمند با مدیریت الگوریتم‌ها بر اساس حضور افراد نور، دما و امنیت را در تعادل مطلوب نگاه می‌دارند.",
+    "charCount": 106,
+    "wordCount": 19,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-267",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "بسته‌بندی‌های زیست‌تخریب‌پذیر ساخته‌شده از جلبک‌های دریایی جایگزین پایدار و شگفت‌انگیزی برای پلاستیک‌های سمی هستند.",
+    "charCount": 115,
+    "wordCount": 14,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-268",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "پروتزهای بیونیک هوشمند با دریافت پالس‌های عصبی عضلات حرکات طبیعی انگشتان و دست را با ظرافت بازسازی می‌کنند.",
+    "charCount": 107,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-269",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "هوش مصنوعی در نجوم داده‌های میلیاردی تلسکوپ‌ها را برای ردیابی امواج گرانشی و تولد ستاره‌ها غربالگری می‌کند.",
+    "charCount": 107,
+    "wordCount": 17,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-270",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "داده‌های بزرگ در بهداشت عمومی الگوهای ناشناخته بیماری‌ها را در مقیاس قاره‌ای ردیابی و مهار می‌سازند.",
+    "charCount": 100,
+    "wordCount": 16,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-271",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "باتری‌های حالت جامد با چگالی انرژی بالاتر و خطر اشتعال ناچیز انقلاب خودروهای برقی را سرعت بخشیده‌اند.",
+    "charCount": 101,
+    "wordCount": 17,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-272",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "گلخانه‌های طبقاتی عمودی در کلان‌شهرها بدون نیاز به خاک و با مصرف ده درصد آب سبزیجات تازه تولید می‌کنند.",
+    "charCount": 103,
+    "wordCount": 19,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-273",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "شبیه‌سازی دیجیتالی اعضای بدن به جراحان امکان می‌دهد پیش از عمل واقعی روند پیچیده جراحی را تمرین کنند.",
+    "charCount": 101,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-274",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "لباس‌های هوشمند با بافت‌های رسانا ضربان قلب و میزان آب بدن ورزشکاران را در هر ثانیه ارزیابی می‌نمایند.",
+    "charCount": 102,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-275",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "کاوشگرهای زیردریایی بدون سرنشین تاریک‌ترین اعماق خندق‌های اقیانوسی را در فشارهای خردکننده بررسی می‌کنند.",
+    "charCount": 104,
+    "wordCount": 14,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-276",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "فناوری شارژ بی‌سیم در جاده‌ها می‌تواند نیاز خودروهای الکتریکی به توقف‌های طولانی شارژ باتری را برطرف سازد.",
+    "charCount": 106,
+    "wordCount": 17,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-277",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "شبکه‌های حسگر بی‌سیم در جنگل‌ها کوچک‌ترین نشانه‌های دود و حریق را در همان ثانیه‌های اولیه گزارش می‌دهند.",
+    "charCount": 104,
+    "wordCount": 17,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-278",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "ژنومیک شخصی‌سازی‌شده درمان‌ها را متناسب با نقشه ژنتیکی اختصاصی هر بیمار تنظیم و اثربخشی را تضمین می‌کند.",
+    "charCount": 104,
+    "wordCount": 17,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-279",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "توربین‌های بادی فراساحلی شناور انرژی بی‌پایان امواج بادهای اقیانوسی را به شبکه‌های برق ساحلی هدایت می‌کنند.",
+    "charCount": 107,
+    "wordCount": 16,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-280",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "مدل‌های زبانی بزرگ گنجینه دانش ثبت‌شده بشریت را به دانشنامه‌ای پویا و تعاملی در دستان کاربران تبدیل کرده‌اند.",
+    "charCount": 109,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-281",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "عینک‌های هوشمند سبک واقعیت را با داده‌های کارآمد در برابر چشمان متخصصان صنایع پیچیده ترکیب می‌نمایند.",
+    "charCount": 101,
+    "wordCount": 16,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-282",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "تصفیه آب دریا با غشاهای گرافنی انقلابی در حل بحران کم‌آبی مناطق خشک و بیابانی کره زمین خواهد بود.",
+    "charCount": 97,
+    "wordCount": 19,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-283",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "سیستم‌های اتوماسیون اداری بار کارهای تکراری را از دوش کارکنان برداشته و فضا را برای خلاقیت باز می‌نمایند.",
+    "charCount": 105,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-284",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "ماهواره‌های راداری دید در شب و از میان ابرها امکان رصد مداوم تغییرات پوشش گیاهی و یخ‌های قطبی را دارند.",
+    "charCount": 103,
+    "wordCount": 20,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-285",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "توسعه اینترنت کوانتومی به دلیل قوانین فیزیک غیرقابل شنود و غیرقابل هک‌ترین بستر ارتباطی تاریخ را می‌سازد.",
+    "charCount": 105,
+    "wordCount": 17,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-286",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "شبیه‌سازهای پرواز نوین با هیدرولیک پیشرفته خلبانان را برای مهار غیرمنتظره‌ترین رویدادهای جوی آماده می‌کنند.",
+    "charCount": 107,
+    "wordCount": 15,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-287",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "تحلیل پیشگویانه هوش مصنوعی زمان نیاز به تعمیر توربین‌ها را قبل از بروز هرگونه شکست مکانیکی یادآوری می‌کند.",
+    "charCount": 106,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-288",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "مواد ترمیمی خودالتیام‌بخش ترک‌های پدیدارشده در بدنه پل‌ها و سازه‌های بتنی را با جذب رطوبت ترمیم می‌نمایند.",
+    "charCount": 106,
+    "wordCount": 17,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-289",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "هوش مصنوعی با کشف ساختار پروتئین‌ها گره‌های شصت‌ساله زیست‌شناسی را در کسری از ثانیه گشوده است.",
+    "charCount": 94,
+    "wordCount": 16,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-290",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "کپسول‌های نانوپزشکی هدفمند با رساندن مستقیم واکسن‌ها به غدد لنفاوی مقاومت سیستم ایمنی را چندبرابر می‌کنند.",
+    "charCount": 106,
+    "wordCount": 16,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-291",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "شبیه‌سازی‌های اخترفیزیکی برخورد دو سیاهچاله موج‌هایی از جنس تاب برداشتن تار و پود فضا را آشکار می‌سازند.",
+    "charCount": 104,
+    "wordCount": 17,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-292",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "انرژی ژئوترمال زمین‌گرمایی منبعی بی‌پایان و شبانه‌روزی از گرمای لایه‌های زیرین پوسته برای تولید الکتریسیته است.",
+    "charCount": 111,
+    "wordCount": 16,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-293",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "ریزپایگاه‌های داده بر پایه مولکول‌های دی ان ای می‌توانند کل اطلاعات اینترنت جهان را در چند گرم فشرده کنند.",
+    "charCount": 106,
+    "wordCount": 19,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-294",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "ساعت‌های اتمی پیشرفته با چنان دقتی کار می‌کنند که در میلیاردها سال کمتر از یک ثانیه دچار خطا نخواهند شد.",
+    "charCount": 104,
+    "wordCount": 20,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-295",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "روشنایی خیابانی با لامپ‌های زیستی و فیتوپلانکتون‌های درخشان رویایی سبز برای کاهش آلودگی نوری شهرهاست.",
+    "charCount": 101,
+    "wordCount": 15,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-296",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "موتورهای پلاسما با پرتاب یون‌های باردار سفینه‌ها را برای پیمایش‌های طولانی منظومه خورشیدی تغذیه می‌کنند.",
+    "charCount": 104,
+    "wordCount": 15,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-297",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "هوش مصنوعی بینایی ماشین در پزشکی رادیولوژی الگوهای نادیده در تصاویر اشعه ایکس را با هوشیاری کشف می‌کند.",
+    "charCount": 103,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-298",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "شبکه‌های برق هوشمند نوسانات لحظه‌ای تولید مزارع خورشیدی و بادی را با مخازن ذخیره انرژی تعدیل می‌نمایند.",
+    "charCount": 103,
+    "wordCount": 17,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-299",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "ربات‌های مینیاتوری حشره‌نما در بحران‌های زلزله به درون آوارها نفوذ کرده و مکان مصدومان را مخابره می‌کنند.",
+    "charCount": 105,
+    "wordCount": 17,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-300",
+    "topic": "فناوری و جهان آینده",
+    "category": "tech",
+    "text": "تلاش‌های بشریت برای تبدیل کربن جذب‌شده از هوا به سوخت‌های پاک و سنگ‌های رسوبی نویدبخش نجات اقلیم زمین است.",
+    "charCount": 106,
+    "wordCount": 19,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-301",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "جنگل‌های بارانی آمازون با تولید بخش عمده اکسیژن و جذب دی‌اکسید کربن شش‌های سبز و حیاتی کره زمین هستند.",
+    "charCount": 102,
+    "wordCount": 19,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-302",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "شفق‌های قطبی رقصی جادویی از نورهای سبز و بنفش هستند که حاصل برخورد ذرات باردار خورشید با جو زمین می‌باشند.",
+    "charCount": 106,
+    "wordCount": 20,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-303",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "دلفین‌ها با امواج صوتی سونوگرافی جهان پیرامون خود را با جزئیاتی باورنکردنی ترسیم و شناسایی می‌نمایند.",
+    "charCount": 101,
+    "wordCount": 16,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-304",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "درختان کهنسال سکویا در کالیفرنیا بلندترین موجودات زنده زمین هستند که تا صد متر در آسمان قد کشیده‌اند.",
+    "charCount": 101,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-305",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "گودال ماریانا در اقیانوس آرام با ژرفای یازده کیلومتر ژرف‌ترین و ناشناخته‌ترین نقطه در سیاره زمین به شمار می‌رود.",
+    "charCount": 112,
+    "wordCount": 19,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-306",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "مهاجرت حماسی پروانه‌های شهریار در پهنه هزاران کیلومتر میان کانادا و مکزیک معجزه‌ای از جهت‌یابی طبیعی است.",
+    "charCount": 105,
+    "wordCount": 17,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-307",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "زنبورهای عسل با رقص‌های زاویه‌دار شگفت‌انگیز نشانی دقیق مزارع پر از شهد را به هم‌نوعان در کندو پیام می‌دهند.",
+    "charCount": 108,
+    "wordCount": 19,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-308",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "کوه اورست در رشته‌کوه‌های هیمالیا بلندترین بام جهان است که صخره‌هایش ریشه در رسوبات اقیانوس‌های کهن دارند.",
+    "charCount": 106,
+    "wordCount": 17,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-309",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "صخره‌های مرجانی بزرگ استرالیا عظیم‌ترین ساختار ساخته‌شده به دست موجودات زنده در پهنه اقیانوس‌ها هستند.",
+    "charCount": 102,
+    "wordCount": 15,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-310",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "نهنگ‌های آبی با جثه‌ای به وزن دویست تن بزرگ‌ترین موجوداتی هستند که تاکنون بر روی کره زمین زیسته‌اند.",
+    "charCount": 100,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-311",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "کویر لوت ایران با ثبت گرم‌ترین دمای سطحی زمین یکی از شگفت‌انگیزترین شاهکارهای زمین‌شناسی باد و خاک است.",
+    "charCount": 103,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-312",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "پنگوئن‌های امپراتور در سرمای طاقت‌فرسای منهای پنجاه درجه قطب جنوب با گرد هم آمدن تخم‌های خود را حفظ می‌کنند.",
+    "charCount": 108,
+    "wordCount": 19,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-313",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "قارچ‌های زیرزمینی شبکه‌ای متصل از تارها به نام میسلیوم می‌سازند که مانند اینترنت پیام‌ها را میان درختان رد و بدل می‌کند.",
+    "charCount": 120,
+    "wordCount": 21,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-314",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "دریاچه ارومیه و تالاب‌های ایران زیستگاه سالانه صدها هزار فلامینگو و پرنده مهاجر در مسیرهای بین‌المللی هستند.",
+    "charCount": 108,
+    "wordCount": 17,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-315",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "بادهای موسمی با حمل بخار آب از اقیانوس هند طراوت و حیات را به شالیزارها و جنگل‌های آسیای جنوبی هدیه می‌دهند.",
+    "charCount": 108,
+    "wordCount": 21,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-316",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "یخچال‌های طبیعی قطبی مانند کپسول‌های زمان حباب‌هایی از هوای میلیون‌ها سال پیش زمین را درون خود محبوس کرده‌اند.",
+    "charCount": 110,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-317",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "استتار حیرت‌انگیز اختاپوس‌ها با تغییر فوری رنگ و بافت پوست آن‌ها را در برابر دیدگان شکارچیان نامرئی می‌سازد.",
+    "charCount": 108,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-318",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "کاکتوس‌ها در صحراهای سوزان با ذخیره آب در ساقه‌های گوشتی و تیغ‌های محافظ خشکی‌های طولانی را سپری می‌کنند.",
+    "charCount": 105,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-319",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "فوران آتشفشان‌ها اگرچه هولناک است اما با پرتاب املاح معدنی خاک‌های حاصلخیزی برای مزارع آینده می‌آفریند.",
+    "charCount": 103,
+    "wordCount": 16,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-320",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "پرندگان مهاجر با حس کردن میدان مغناطیسی زمین در شب‌های تاریک بی‌هیچ قطب‌نمایی مسیر هزاران فرسنگی را می‌یابند.",
+    "charCount": 109,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-321",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "زیستگاه‌های مانگرو در خلیج فارس سدی طبیعی در برابر فرسایش ساحلی و پناهگاه امن نوزادان آبزیان دریا هستند.",
+    "charCount": 104,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-322",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "عمر برخی گونه‌های عروس دریایی نامیرا است و توانایی بازگشت از مرحله کهولت به جوانی شگفتی بی‌پایان زیست‌شناسان است.",
+    "charCount": 113,
+    "wordCount": 19,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-323",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "درخت بائوباب با تنه غول‌پیکر خود همانند منبع ذخیره آب طبیعی در دشت‌های آفریقا مایه نجات قبایل و وحوش است.",
+    "charCount": 105,
+    "wordCount": 20,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-324",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "صدای آواز نهنگ‌های گوژپشت در عمق اقیانوس‌ها هزاران کیلومتر سفر کرده و رازهای عاطفی آن‌ها را طنین‌انداز می‌کند.",
+    "charCount": 110,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-325",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "یوزپلنگ آسیایی در دشت‌های مرکزی ایران سریع‌ترین دونده خشکی نماد افتخار و اهمیت پاسداری از حیات وحش است.",
+    "charCount": 103,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-326",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "پوشش فصلی جنگل‌های هیرکانی با بیش از چهل میلیون سال قدمت موزه زنده و میراث طبیعی بی‌همتای شمال ایران است.",
+    "charCount": 105,
+    "wordCount": 20,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-327",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "چرخه آب و ابر باران پایه‌ای‌ترین فرآیندی است که طراوت را از اقیانوس‌ها بر فراز قاره‌ها به گردش درمی‌آورد.",
+    "charCount": 105,
+    "wordCount": 19,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-328",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "کرم‌های شب‌تاب با تولید نور شیمیایی سرد بدون ذره‌ای اتلاف گرما زیباترین فانوس‌های شبانه دشت‌ها را برمی‌افروزند.",
+    "charCount": 111,
+    "wordCount": 17,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-329",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "ریشه‌های عمیق درختان بلوط زاگرس مانع فرسایش خاک‌های حاصلخیز کوهستانی و حامی منابع آب‌های زیرزمینی هستند.",
+    "charCount": 104,
+    "wordCount": 16,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-330",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "فلامینگوها با فیلتر کردن آب گل‌آلود سخت‌پوستان ریز را شکار کرده و رنگ سرخ پرهای خود را از آنها وام می‌گیرند.",
+    "charCount": 108,
+    "wordCount": 21,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-331",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "دره‌های عمیق گرند کانیون تاریخ دومیلیارد ساله رسوب‌گذاری و فرسایش رودخانه را همانند کتابی باز به نمایش گذاشته‌اند.",
+    "charCount": 114,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-332",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "تار عنکبوت در نسبت با وزن خود از فولاد محکم‌تر و از نایلون کشسان‌تر بوده و شاهکار مهندسی زیستی در طبیعت است.",
+    "charCount": 108,
+    "wordCount": 22,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-333",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "مورچه‌ها با تقسیم کار پیشرفته و ساخت شهرهای زیرزمینی یکی از موفق‌ترین جوامع زیستی در کره زمین به شمار می‌روند.",
+    "charCount": 110,
+    "wordCount": 20,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-334",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "رنگین‌کمان پدیده‌ای دل‌انگیز از شکست و بازتاب نور خورشید در قطرات ریز باران معلق در فضای آسمان است.",
+    "charCount": 99,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-335",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "پدیده‌های غارشناسی و چکیده‌سنگ‌ها در غار علیصدر شاهدی بر هنر صبورانه چکه‌های آب در گذر هزاره‌ها هستند.",
+    "charCount": 102,
+    "wordCount": 17,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-336",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "هوش و حافظه فوق‌العاده کلاغ‌ها در ابزارسازی و حل مسائل پیچیده منطقی شگفتی پژوهشگران علوم اعصاب را برانگیخته است.",
+    "charCount": 112,
+    "wordCount": 19,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-337",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "شیرهای دریایی و فوک‌ها با لایه ضخیم چربی در برابر آب‌های یخ‌زده قطبی پناهگاهی گرم و ایمن برای بقا دارند.",
+    "charCount": 104,
+    "wordCount": 20,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-338",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "جاده‌های بی‌پایان ماسه‌ای در کویرهای شنی با وزش باد مدام دگرگون شده و فرم‌های نوینی از تپه‌های ماسه‌ای می‌سازند.",
+    "charCount": 112,
+    "wordCount": 19,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-339",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "آبشارهای نیاگارا و آنجل با خروش پرشکوه آب قدرت بی‌پایان و زلال انرژی جاری طبیعت را به انسان یادآوری می‌کنند.",
+    "charCount": 108,
+    "wordCount": 20,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-340",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "تغذیه پرندگان شهدخوار با سرعت بال‌زدن هشتاد بار در ثانیه شاهکاری کم‌نظیر از آیرودینامیک حشرات و پرندگان است.",
+    "charCount": 108,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-341",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "چشمه‌های آب گرم با منشا گدازه‌های زیرزمینی سرشار از گوگرد و مواد معدنی شفا بخش برای دردها و بیماری‌ها هستند.",
+    "charCount": 108,
+    "wordCount": 20,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-342",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "جغدها با طراحی خاص پرهای خود بی‌صدا‌ترین پرواز جهان را دارند و در سکوت کامل شبانه به شکار می‌پردازند.",
+    "charCount": 101,
+    "wordCount": 19,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-343",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "اکوسیستم دشت‌های استپ با پوشش گیاهی مقاوم پناهگاه گورخر ایرانی، غزال‌ها و پرندگان نایاب بومی است.",
+    "charCount": 97,
+    "wordCount": 16,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-344",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "تنفس درختان در طول روز با جذب گازهای گلخانه‌ای از افزایش دمای اتمسفر و گرمایش زمین جلوگیری می‌نماید.",
+    "charCount": 100,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-345",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "دریاچه بایکال در سیبری کهن‌ترین و ژرف‌ترین دریاچه آب شیرین جهان است که بیست درصد آب شیرین مایع را دارد.",
+    "charCount": 103,
+    "wordCount": 20,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-346",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "هم‌زیستی مورچه‌ها و شته‌ها نمونه‌ای جذاب از دامداری در دنیای حشرات و تبادل شیره در برابر امنیت است.",
+    "charCount": 99,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-347",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "بامبو سریع‌ترین گیاه در حال رشد روی زمین است که در طول شبانه‌روز می‌تواند تا یک متر قد بکشد.",
+    "charCount": 92,
+    "wordCount": 19,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-348",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "حرکت صفحه‌های تکتونیکی پوسته زمین با سرعت چند سانتی‌متر در سال کوه‌ها و اقیانوس‌های تازه را شکل می‌دهد.",
+    "charCount": 103,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-349",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "خرس‌های قطبی با بویایی فوق‌العاده می‌توانند طعمه خود را از فرسنگ‌ها دورتر در زیر یخ‌های ضخیم ردیابی کنند.",
+    "charCount": 105,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-350",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "طبیعت مادری بخشنده است که برای هر دردی در جهان گیاهی دارویی و راهی برای شفا در سینه خود نهفته دارد.",
+    "charCount": 99,
+    "wordCount": 21,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-351",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "رودخانه پرخروش کارون طولانی‌ترین رودخانه ایران است که در مسیر خود تمدن‌های کهن و دشت‌های حاصلخیز آفریده است.",
+    "charCount": 108,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-352",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "سکوتی که در کویرهای پرستاره ایران در شب حاکم است آرامشی ژرف و بی‌همتا به جان انسان هدیه می‌بخشد.",
+    "charCount": 96,
+    "wordCount": 19,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-353",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "کرگدن‌ها با پوست ضخیم و جثه تنومند خود علف‌خوارانی صبور و از کهن‌ترین بازماندگان عصر دایناسورها هستند.",
+    "charCount": 102,
+    "wordCount": 17,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-354",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "رشد کریستال‌های بلورین در غارهای معدنی هندسه باشکوه و نظم شگفت‌انگیز اتم‌ها در دل سنگ‌ها را نشان می‌دهد.",
+    "charCount": 104,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-355",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "نور مهتاب در شب‌های کوهستان راهنمای کاروان‌ها و الهام‌بخش شاعران در سرودن شورانگیزترین اشعار عاشقانه بوده است.",
+    "charCount": 110,
+    "wordCount": 17,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-356",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "مهاجرت میلیونی ماهیان سالمون خلاف جهت جریان تند رودخانه‌ها برای زادآوری شاهدی بر نیروی غریزه در طبیعت است.",
+    "charCount": 106,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-357",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "سایه‌سار درختان کهن در چله تابستان پناهگاهی خنک و گوارا برای کاروان‌های خسته از راه بیابان بوده است.",
+    "charCount": 100,
+    "wordCount": 18,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-358",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "آسمان پاک کوهستان در شب تصویری شفاف از راه شیری با صدها میلیارد ستاره تابان را در برابر چشم می‌گشاید.",
+    "charCount": 101,
+    "wordCount": 20,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-359",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "دریای خزر بزرگ‌ترین پهنه آبی محصور در خشکی جهان زیستگاه خاویار اصیل و نماد ثروت زیستی شمال ایران است.",
+    "charCount": 101,
+    "wordCount": 19,
+    "difficulty": "متوسط",
+    "language": "fa"
+  },
+  {
+    "id": "quick-360",
+    "topic": "شگفتی‌های زمین و طبیعت",
+    "category": "nature",
+    "text": "احترام به طبیعت و مهربانی با حیوانات نشانه‌ای بارز از بلوغ فرهنگی و مسئولیت اخلاقی انسان خردمند امروز است.",
+    "charCount": 106,
+    "wordCount": 19,
+    "difficulty": "متوسط",
+    "language": "fa"
+  }
+]
