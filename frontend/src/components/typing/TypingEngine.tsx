@@ -91,6 +91,28 @@ export default function TypingEngine({
   // Pre-split characters into memoized array for 0ms render overhead
   const textChars = React.useMemo(() => cleanTargetText.split(''), [cleanTargetText]);
 
+  // Memoized word chunks: prevents layout shift (jumping between lines) while keeping character-by-character coloring
+  const wordChunks = React.useMemo(() => {
+    const words: { chars: { char: string; globalIndex: number }[] }[] = [];
+    let currentWord: { char: string; globalIndex: number }[] = [];
+
+    for (let i = 0; i < cleanTargetText.length; i++) {
+      const char = cleanTargetText[i];
+      currentWord.push({ char, globalIndex: i });
+
+      if (char === ' ') {
+        words.push({ chars: currentWord });
+        currentWord = [];
+      }
+    }
+
+    if (currentWord.length > 0) {
+      words.push({ chars: currentWord });
+    }
+
+    return words;
+  }, [cleanTargetText]);
+
   // Typing state
   const [cursorIndex, setCursorIndex] = useState(0);
   const [charStates, setCharStates] = useState<('untyped' | 'correct' | 'incorrect')[]>([]);
@@ -248,12 +270,11 @@ export default function TypingEngine({
     const finalTotal = totalKeysRef.current;
 
     // Standard Typing Speed (Typeo / ISIRI 9147 standard):
-    // 5 characters per word (international and Typeo standard CPM / 5)
-    const charsPerWord = 5;
+    // 4.5 characters per word in Persian, 5 in English
+    const charsPerWord = language === 'fa' ? 4.5 : 5.0;
 
-    // Typeo standard Net WPM: 1 error deducts 1 character from net count, NO double/2.5x penalty
-    const netChars = Math.max(0, finalCorrect - finalErrors);
-    const finalNet = Math.max(0, Math.round((netChars / charsPerWord) / finalMinutes));
+    // Typeo standard Net WPM
+    const finalNet = Math.max(0, Math.round((finalCorrect / charsPerWord) / finalMinutes));
     const finalRaw = Math.round((finalTotal / charsPerWord) / finalMinutes);
     const finalAcc = finalTotal > 0 ? Math.round((finalCorrect / finalTotal) * 100) : 100;
 
@@ -320,24 +341,19 @@ export default function TypingEngine({
           return;
         }
 
-        // 1. Stable, calm Cumulative Net WPM (استاندارد بدون نوسان و دقیق):
-        // Only calculate and display after at least 3 seconds so the number doesn't jump wildly.
-        // Update cadence: 1 second with exponential smoothing (EMA).
+        // 1. Live Responsive Net WPM (Typeo standard):
         const currentSecond = Math.floor(elapsedSec);
-        if (elapsedSec >= 2.5 && currentSecond !== lastSpeedUpdateSecRef.current) {
+        if (elapsedSec >= 1.0 && currentSecond !== lastSpeedUpdateSecRef.current) {
           lastSpeedUpdateSecRef.current = currentSecond;
           const elapsedMinutes = elapsedSec / 60;
-          const netChars = Math.max(0, correctKeysRef.current - errorKeysRef.current);
-          const rawNetWpm = Math.max(0, Math.round((netChars / 5) / elapsedMinutes));
+          const charsPerWord = language === 'fa' ? 4.5 : 5.0;
+          const calculatedNetWpm = Math.max(0, Math.round((correctKeysRef.current / charsPerWord) / elapsedMinutes));
 
-          setLiveNetWpm((prev) => {
-            if (prev === 0) return rawNetWpm;
-            return Math.round(prev * 0.4 + rawNetWpm * 0.6);
-          });
+          setLiveNetWpm(calculatedNetWpm);
 
           // sample speed every 2 seconds for consistency calculation
           if (currentSecond % 2 === 0) {
-            setSpeedSamples((s) => [...s, rawNetWpm]);
+            setSpeedSamples((s) => [...s, calculatedNetWpm]);
           }
         }
 
@@ -861,49 +877,51 @@ export default function TypingEngine({
           className={`${fontSizeClass} ${lineSpacingClass} font-bold select-none w-full mx-auto py-1 whitespace-pre-wrap`}
           dir={language === 'fa' ? 'rtl' : 'ltr'}
         >
-          {textChars.map((char, idx) => {
-            const state = charStates[idx] || 'untyped';
-            const isCursor = idx === cursorIndex && !isFinished;
-            const hadError = errorIndicesRef.current.has(idx) || state === 'incorrect';
+          {wordChunks.map((word, wIdx) => (
+            <span key={wIdx} className="inline-block whitespace-nowrap">
+              {word.chars.map(({ char, globalIndex }) => {
+                const state = charStates[globalIndex] || 'untyped';
+                const isCursor = globalIndex === cursorIndex && !isFinished;
+                const hadError = errorIndicesRef.current.has(globalIndex) || state === 'incorrect';
 
-            let customColor = displayConfig.defaultTextColor || '#020617';
-            let bgClass = '';
-            if (isCursor && hasErrorAtCursor) {
-              customColor = displayConfig.errorColor || '#e11d48';
-              bgClass = 'bg-rose-500/15 text-rose-600 rounded-xs ring-1 ring-rose-500/40';
-            } else if (isCursor) {
-              // Cursor letter is NOT yet typed - keep normal font color to prevent ligatures (like کاملا) from premature highlighting
-              customColor = displayConfig.defaultTextColor || '#020617';
-              bgClass = '';
-            } else if (idx < cursorIndex && hadError) {
-              // Letter typed with error: STAYS PERMANENTLY RED with subtle pink highlight and underline
-              customColor = displayConfig.errorColor || '#e11d48';
-              bgClass = 'bg-rose-100/80 text-rose-600 border-b-2 border-rose-400 rounded-xs font-bold';
-            } else if (state === 'correct') {
-              customColor = displayConfig.highlightColor || '#2563eb';
-            }
+                let customColor = displayConfig.defaultTextColor || '#0f172a';
+                let bgClass = '';
+                if (isCursor && hasErrorAtCursor) {
+                  customColor = displayConfig.errorColor || '#e11d48';
+                  bgClass = 'bg-rose-500/15 text-rose-600 rounded-xs';
+                } else if (isCursor) {
+                  customColor = displayConfig.defaultTextColor || '#0f172a';
+                  bgClass = '';
+                } else if (globalIndex < cursorIndex && hadError) {
+                  customColor = displayConfig.errorColor || '#e11d48';
+                  bgClass = 'bg-rose-100/80 text-rose-600 rounded-xs font-bold';
+                } else if (state === 'correct') {
+                  customColor = displayConfig.highlightColor || '#2563eb';
+                }
 
-            return (
-              <span
-                key={idx}
-                ref={isCursor ? activeCharRef : null}
-                style={{ color: customColor }}
-                className={`relative font-bold transition-none ${bgClass}`}
-              >
-                {isCursor && (
+                return (
                   <span
-                    style={{
-                      backgroundColor: hasErrorAtCursor
-                        ? (displayConfig.errorColor || '#e11d48')
-                        : (displayConfig.highlightColor || '#2563eb')
-                    }}
-                    className="absolute inset-x-0 -bottom-0.5 h-[3px] rounded-full pointer-events-none shadow-xs"
-                  />
-                )}
-                {char}
-              </span>
-            );
-          })}
+                    key={globalIndex}
+                    ref={isCursor ? activeCharRef : null}
+                    style={{ color: customColor }}
+                    className={`relative font-bold transition-none ${bgClass}`}
+                  >
+                    {isCursor && (
+                      <span
+                        style={{
+                          backgroundColor: hasErrorAtCursor
+                            ? (displayConfig.errorColor || '#e11d48')
+                            : (displayConfig.highlightColor || '#2563eb')
+                        }}
+                        className="absolute inset-x-0 -bottom-0.5 h-[3px] rounded-full pointer-events-none shadow-xs"
+                      />
+                    )}
+                    {char}
+                  </span>
+                );
+              })}
+            </span>
+          ))}
         </div>
       </div>
 

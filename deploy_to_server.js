@@ -88,6 +88,7 @@ conn.on('ready', () => {
   process.exit(1);
 }).connect({
   host: '192.168.1.93',
+  localAddress: '192.168.2.191',
   port: 22,
   username: 'typo',
   password: 'typo@12345',

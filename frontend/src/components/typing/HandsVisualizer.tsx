@@ -9,7 +9,7 @@ interface HandsVisualizerProps {
   language?: 'fa' | 'en';
 }
 
-export default function HandsVisualizer({
+function HandsVisualizer({
   currentExpectedChar,
   isError = false,
   language = 'fa'
@@ -553,3 +553,5 @@ export default function HandsVisualizer({
     </div>
   );
 }
+
+export default React.memo(HandsVisualizer);

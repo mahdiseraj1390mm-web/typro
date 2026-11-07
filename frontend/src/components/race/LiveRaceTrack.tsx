@@ -571,6 +571,25 @@ export default function LiveRaceTrack({
       .trim();
   }, [activeText, room.text]);
 
+  // Memoized word chunks: prevents layout shift (jumping between lines) while keeping character-by-character coloring
+  const wordChunks = React.useMemo(() => {
+    const words: { chars: { char: string; index: number }[] }[] = [];
+    let currentWord: { char: string; index: number }[] = [];
+
+    for (let i = 0; i < targetText.length; i++) {
+      const char = targetText[i];
+      currentWord.push({ char, index: i });
+      if (char === ' ') {
+        words.push({ chars: currentWord });
+        currentWord = [];
+      }
+    }
+    if (currentWord.length > 0) {
+      words.push({ chars: currentWord });
+    }
+    return words;
+  }, [targetText]);
+
   // Robust match for local player (handles logged-in user, guest, and local IDs)
   const myUserId = user?.id || currentUserId;
   const isMyUser = React.useCallback(
@@ -1414,9 +1433,10 @@ export default function LiveRaceTrack({
       const isFin = finalNextCount >= targetText.length;
       const finishElapsedSec = Math.max(0.5, (now - typingStart) / 1000);
       const finishElapsedMin = finishElapsedSec / 60;
+      const charsPerWord = room.language === 'fa' ? 4.5 : 5.0;
       const netWpm = triggeredPowerUp 
-        ? Math.max(90, Math.round((finalNextCount / 5) / (isFin ? finishElapsedMin : elapsedMin)))
-        : Math.max(0, Math.round((netChars / 5) / (isFin ? finishElapsedMin : elapsedMin)));
+        ? Math.max(90, Math.round((finalNextCount / charsPerWord) / (isFin ? finishElapsedMin : elapsedMin)))
+        : Math.max(0, Math.round((finalNextCount / charsPerWord) / (isFin ? finishElapsedMin : elapsedMin)));
       const totalKeys = finalNextCount + errorCount;
       const calcAcc = totalKeys > 0 ? Math.max(0, Math.min(100, Math.round((finalNextCount / totalKeys) * 100))) : 100;
 
@@ -1901,49 +1921,50 @@ export default function LiveRaceTrack({
               className="text-base sm:text-lg md:text-xl font-bold leading-relaxed select-none whitespace-pre-wrap min-h-[64px]"
               dir={room.language === 'fa' ? 'rtl' : 'ltr'}
             >
-              {targetText.split('').map((char, i) => {
-                const isCursor = i === typedCount;
-                const isTyped = i < typedCount;
-                const hadError = errorIndicesRef.current.has(i);
+              {wordChunks.map((word, wIdx) => (
+                <span key={wIdx} className="inline-block whitespace-nowrap">
+                  {word.chars.map(({ char, index: i }) => {
+                    const isCursor = i === typedCount;
+                    const isTyped = i < typedCount;
+                    const hadError = errorIndicesRef.current.has(i);
 
-                let customColor = displayConfig.defaultTextColor || '#020617';
-                let bgClass = '';
-                if (isCursor && hasError) {
-                  customColor = displayConfig.errorColor || '#e11d48';
-                  bgClass = 'bg-rose-100 rounded-xs';
-                } else if (isCursor) {
-                  // Cursor letter is NOT yet typed - keep default text color so ligatures (e.g. کاملا) do not double-highlight!
-                  customColor = displayConfig.defaultTextColor || '#020617';
-                  bgClass = '';
-                } else if (isTyped && hadError) {
-                  // Letter typed with error: STAYS PERMANENTLY RED with subtle pink highlight and underline
-                  customColor = displayConfig.errorColor || '#e11d48';
-                  bgClass = 'bg-rose-100/80 text-rose-600 border-b-2 border-rose-400 rounded-xs font-bold';
-                } else if (isTyped) {
-                  customColor = displayConfig.highlightColor || '#2563eb';
-                }
+                    let customColor = displayConfig.defaultTextColor || '#020617';
+                    let bgClass = '';
+                    if (isCursor && hasError) {
+                      customColor = displayConfig.errorColor || '#e11d48';
+                      bgClass = 'bg-rose-100 rounded-xs';
+                    } else if (isCursor) {
+                      customColor = displayConfig.defaultTextColor || '#020617';
+                      bgClass = '';
+                    } else if (isTyped && hadError) {
+                      customColor = displayConfig.errorColor || '#e11d48';
+                      bgClass = 'bg-rose-100/80 text-rose-600 rounded-xs font-bold';
+                    } else if (isTyped) {
+                      customColor = displayConfig.highlightColor || '#2563eb';
+                    }
 
-                return (
-                  <span
-                    key={i}
-                    style={{ color: customColor }}
-                    className={`relative transition-none font-bold ${bgClass}`}
-                  >
-                    {/* Non-shifting absolute cursor indicator (۰ پیکسل تغییر فضا) */}
-                    {isCursor && (
+                    return (
                       <span
-                        style={{
-                          backgroundColor: hasError
-                            ? (displayConfig.errorColor || '#e11d48')
-                            : (displayConfig.highlightColor || '#2563eb')
-                        }}
-                        className="absolute inset-x-0 -bottom-0.5 h-[3px] rounded-full pointer-events-none shadow-xs"
-                      />
-                    )}
-                    {char}
-                  </span>
-                );
-              })}
+                        key={i}
+                        style={{ color: customColor }}
+                        className={`relative transition-none font-bold ${bgClass}`}
+                      >
+                        {isCursor && (
+                          <span
+                            style={{
+                              backgroundColor: hasError
+                                ? (displayConfig.errorColor || '#e11d48')
+                                : (displayConfig.highlightColor || '#2563eb')
+                            }}
+                            className="absolute inset-x-0 -bottom-0.5 h-[3px] rounded-full pointer-events-none shadow-xs"
+                          />
+                        )}
+                        {char}
+                      </span>
+                    );
+                  })}
+                </span>
+              ))}
             </div>
           </div>
         )}

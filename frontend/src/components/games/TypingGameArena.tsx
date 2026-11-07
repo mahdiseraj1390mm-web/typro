@@ -1333,57 +1333,25 @@ export default function TypingGameArena({
       ? activeTargetId === targetId
       : false;
 
-    const chars = Array.from(target);
-    const matchedCount = isTargeted ? inputWord.length : 0;
+    const matchedCount = isTargeted ? Math.min(inputWord.length, target.length) : 0;
+    const typedPart = target.slice(0, matchedCount);
+    const remainingPart = target.slice(matchedCount);
 
     return (
-      <span className="inline-flex items-center justify-center flex-wrap gap-[1px] font-sans dir-rtl select-none">
-        {chars.map((char, idx) => {
-          if (idx < matchedCount) {
-            return (
-              <span
-                key={idx}
-                className="text-emerald-400 font-black drop-shadow-[0_0_10px_rgba(52,211,153,0.95)] transition-none"
-              >
-                {char}
-              </span>
-            );
-          }
-
-          if (idx === matchedCount && isTargeted) {
-            if (errorChar) {
-              return (
-                <span
-                  key={idx}
-                  className="text-white bg-rose-600/90 border border-rose-400 shadow-[0_0_15px_rgba(244,63,94,1)] px-1.5 py-0.5 rounded-md animate-pulse scale-110 font-black transition-none"
-                  title={`کلید اشتباه: ${errorChar}`}
-                >
-                  {char}
-                </span>
-              );
-            } else {
-              return (
-                <span
-                  key={idx}
-                  className="text-white font-black underline decoration-cyan-400 decoration-[3px] underline-offset-4 animate-pulse drop-shadow-[0_0_8px_rgba(6,182,212,0.8)] transition-none"
-                >
-                  {char}
-                </span>
-              );
-            }
-          }
-
-          return (
-            <span
-              key={idx}
-              className={`${
-                isTargeted ? 'text-white/90' : 'text-white/75'
-              } font-bold transition-none`}
-            >
-              {char}
-            </span>
-          );
-        })}
+      <span className="inline-block font-sans select-none tracking-normal font-black text-center whitespace-nowrap" dir="rtl">
+        {matchedCount > 0 && (
+          <span className="text-emerald-400 drop-shadow-[0_0_10px_rgba(52,211,153,0.95)]">
+            {typedPart}
+          </span>
+        )}
+        {isTargeted && errorChar && remainingPart.length > 0 ? (
+          <span className="text-white bg-rose-600/90 rounded px-1 animate-pulse border border-rose-400">
+            {remainingPart.slice(0, 1)}
+          </span>
+        ) : null}
+        <span className={isTargeted ? 'text-white drop-shadow-sm' : 'text-white/80'}>
+          {isTargeted && errorChar && remainingPart.length > 0 ? remainingPart.slice(1) : remainingPart}
+        </span>
       </span>
     );
   };
