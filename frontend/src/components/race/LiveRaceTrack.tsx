@@ -412,7 +412,7 @@ export default function LiveRaceTrack({
   const precisionFailsRef = useRef<number>(0);
   const [precisionFails, setPrecisionFails] = useState<number>(0);
   const inputRef = useRef<HTMLInputElement>(null);
-  const keystrokeTimestampsRef = useRef<{ time: number }[]>([]);
+  const keystrokeTimestampsRef = useRef<{ time: number; isCorrect?: boolean }[]>([]);
   const typedCountRef = useRef<number>(0);
   const errorCountRef = useRef<number>(0);
   const powerUpTriggeredRef = useRef<boolean>(false);
@@ -604,19 +604,27 @@ export default function LiveRaceTrack({
       timestamps.shift();
     }
 
-    let strokeCount = 0;
+    let correctCount = 0;
+    let errorCount = 0;
     let earliestInWindow = now;
     for (let i = timestamps.length - 1; i >= 0; i--) {
       const k = timestamps[i];
       if (k.time < windowStart) break;
-      strokeCount++;
-      earliestInWindow = k.time;
+      if (k.isCorrect !== false) {
+        correctCount++;
+        earliestInWindow = k.time;
+      } else {
+        errorCount++;
+        earliestInWindow = Math.min(earliestInWindow, k.time);
+      }
     }
 
-    if (strokeCount === 0) return 0;
+    // Standard Net WPM penalty: each mistake deducts 1 character from net count in this window
+    const netStrokes = Math.max(0, correctCount - errorCount);
+    if (netStrokes === 0) return 0;
 
     const start = typingStartTimeRef.current || earliestInWindow;
-    const totalElapsedSec = (now - start) / 1000;
+    const totalElapsedSec = Math.max(0.2, (now - start) / 1000);
 
     let windowDurationSec: number;
     if (totalElapsedSec < windowMs / 1000) {
@@ -626,15 +634,15 @@ export default function LiveRaceTrack({
     }
 
     const charsPerWord = 5.0;
-    const wordsInWindow = strokeCount / charsPerWord;
+    const wordsInWindow = netStrokes / charsPerWord;
     const minutesInWindow = windowDurationSec / 60;
     let instantWpm = Math.round(wordsInWindow / minutesInWindow);
 
-    // Smooth idle decay if player pauses typing
+    // Smooth idle decay if player pauses typing (مکث در حین تایپ)
     const lastStroke = timestamps[timestamps.length - 1];
     const idleMs = now - lastStroke.time;
-    if (idleMs > 600) {
-      const decay = Math.max(0, 1 - (idleMs - 600) / 1600);
+    if (idleMs > 500) {
+      const decay = Math.max(0, 1 - (idleMs - 500) / 1500);
       instantWpm = Math.round(instantWpm * decay);
     }
 
@@ -1474,7 +1482,7 @@ export default function LiveRaceTrack({
       setTypedCount(finalNextCount);
       typedCountRef.current = finalNextCount;
       errorCountRef.current = errorCount;
-      keystrokeTimestampsRef.current.push({ time: Date.now() });
+      keystrokeTimestampsRef.current.push({ time: Date.now(), isCorrect: true });
       lastStrokeTimeRef.current = Date.now();
 
       const progress = Math.min(100, Math.round((finalNextCount / targetText.length) * 100));
@@ -1486,9 +1494,10 @@ export default function LiveRaceTrack({
       const finishElapsedMin = finishElapsedSec / 60;
       const charsPerWord = 5.0;
 
-      // Typeo standard: Instant WPM during race (responsive to current stroke rhythm), and true overall cumulative WPM upon finishing
+      // Typeo standard: Instant WPM during race (responsive to current stroke rhythm), and true overall cumulative Net WPM upon finishing
       const liveInstant = triggeredPowerUp ? 95 : calculateInstantWpm(now);
-      const finalCumulativeWpm = Math.max(0, Math.round((finalNextCount / charsPerWord) / finishElapsedMin));
+      const netChars = Math.max(0, finalNextCount - errorCount);
+      const finalCumulativeWpm = Math.max(0, Math.round((netChars / charsPerWord) / finishElapsedMin));
       const netWpm = isFin ? finalCumulativeWpm : (liveInstant > 0 ? liveInstant : finalCumulativeWpm);
       const totalKeys = finalNextCount + errorCount;
       const calcAcc = totalKeys > 0 ? Math.max(0, Math.min(100, Math.round((finalNextCount / totalKeys) * 100))) : 100;
@@ -1586,28 +1595,30 @@ export default function LiveRaceTrack({
       errorCountRef.current = newErrors;
       errorIndicesRef.current.add(typedCount);
       setErrorIndicesCount(errorIndicesRef.current.size);
-      keystrokeTimestampsRef.current.push({ time: Date.now() });
-      lastStrokeTimeRef.current = Date.now();
+
+      const now = Date.now();
+      keystrokeTimestampsRef.current.push({ time: now, isCorrect: false });
+      lastStrokeTimeRef.current = now;
 
       const spot = Math.min(100, Math.round((typedCount / targetText.length) * 100));
       if (!errorSpotsRef.current.includes(spot)) {
         errorSpotsRef.current.push(spot);
       }
 
-      // Recalculate live accuracy immediately on every keystroke error
+      // Recalculate live accuracy and penalized instant speed immediately on error
       const totalKeys = typedCount + newErrors;
       const calcAcc = totalKeys > 0 ? Math.max(0, Math.min(100, Math.round((typedCount / totalKeys) * 100))) : 100;
       const progress = Math.min(100, Math.round((typedCount / targetText.length) * 100));
-      const curWpm = currentPlayer?.wpm || 0;
+      const penalizedWpm = calculateInstantWpm(now);
 
       if (onProgressUpdate) {
-        onProgressUpdate(progress, curWpm, calcAcc, newErrors);
+        onProgressUpdate(progress, penalizedWpm, calcAcc, newErrors);
       }
 
       setParticipants((prev) =>
         prev.map((p) =>
           isMyUser(p.odUserId)
-            ? { ...p, accuracy: calcAcc, errors: newErrors }
+            ? { ...p, wpm: penalizedWpm, accuracy: calcAcc, errors: newErrors }
             : p
         )
       );

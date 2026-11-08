@@ -251,8 +251,9 @@ export default function TypingEngine({
     // 5.0 characters per word (international and Typeo standard CPM / 5)
     const charsPerWord = 5.0;
 
-    // Typeo standard Net WPM
-    const finalNet = Math.max(0, Math.round((finalCorrect / charsPerWord) / finalMinutes));
+    // Typeo standard Net WPM: each error deducts 1 character from net count
+    const netChars = Math.max(0, finalCorrect - finalErrors);
+    const finalNet = Math.max(0, Math.round((netChars / charsPerWord) / finalMinutes));
     const finalRaw = Math.round((finalTotal / charsPerWord) / finalMinutes);
     const finalAcc = finalTotal > 0 ? Math.round((finalCorrect / finalTotal) * 100) : 100;
 
@@ -318,22 +319,28 @@ export default function TypingEngine({
       timestamps.shift();
     }
 
-    // Count correct keystrokes in window
-    let strokeCount = 0;
+    // Count correct keystrokes and errors in window
+    let correctCount = 0;
+    let errorCount = 0;
     let earliestInWindow = now;
     for (let i = timestamps.length - 1; i >= 0; i--) {
       const k = timestamps[i];
       if (k.time < windowStart) break;
       if (k.isCorrect) {
-        strokeCount++;
+        correctCount++;
         earliestInWindow = k.time;
+      } else {
+        errorCount++;
+        earliestInWindow = Math.min(earliestInWindow, k.time);
       }
     }
 
-    if (strokeCount === 0) return 0;
+    // Standard Net WPM penalty: each mistake deducts 1 character from net count in this window
+    const netStrokes = Math.max(0, correctCount - errorCount);
+    if (netStrokes === 0) return 0;
 
     const sessionStart = startTimeRef.current || earliestInWindow;
-    const totalElapsedSec = (now - sessionStart - totalPausedTimeRef.current) / 1000;
+    const totalElapsedSec = Math.max(0.2, (now - sessionStart - totalPausedTimeRef.current) / 1000);
 
     // Duration of recent window in seconds:
     let windowDurationSec: number;
@@ -345,15 +352,15 @@ export default function TypingEngine({
 
     // Standard 5 characters = 1 word
     const charsPerWord = 5.0;
-    const wordsInWindow = strokeCount / charsPerWord;
+    const wordsInWindow = netStrokes / charsPerWord;
     const minutesInWindow = windowDurationSec / 60;
     let instantWpm = Math.round(wordsInWindow / minutesInWindow);
 
-    // Smooth idle decay if user paused typing
+    // Smooth idle decay if user paused typing (مکث در حین تایپ)
     const lastStroke = timestamps[timestamps.length - 1];
     const idleMs = now - lastStroke.time;
-    if (idleMs > 600) {
-      const decay = Math.max(0, 1 - (idleMs - 600) / 1600);
+    if (idleMs > 500) {
+      const decay = Math.max(0, 1 - (idleMs - 500) / 1500);
       instantWpm = Math.round(instantWpm * decay);
     }
 
@@ -583,6 +590,11 @@ export default function TypingEngine({
         updated[cursorIndex] = 'incorrect'; // turns RED
         return updated;
       });
+
+      // Immediately deduct and update instant WPM on error penalty (0ms reaction)
+      const now = Date.now();
+      const penalizedInstant = calculateInstantWpm(now);
+      setLiveInstantWpm(penalizedInstant);
     }
   };
 
