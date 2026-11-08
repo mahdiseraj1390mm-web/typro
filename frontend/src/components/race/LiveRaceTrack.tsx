@@ -20,6 +20,7 @@ import {
   playChatNotificationSound,
   playPrecisionResetSound
 } from '@/lib/raceAudio';
+import { vehicleAudioEngine } from '@/lib/vehicleSoundEngine';
 import AnimatedVehicleSkin from './AnimatedVehicleSkin';
 import GamingLevelBadge from '@/components/common/GamingLevelBadge';
 import PublicProfileModal, { PublicUserProfile } from './PublicProfileModal';
@@ -396,6 +397,11 @@ export default function LiveRaceTrack({
     const nextMuted = !isAudioMutedState;
     setIsAudioMutedState(nextMuted);
     setRaceAudioMuted(nextMuted);
+    if (nextMuted) {
+      vehicleAudioEngine.stopEngine();
+    } else if (raceState === 'ACTIVE' && !isCurrentlySpectator && !currentPlayer?.isFinished) {
+      vehicleAudioEngine.startEngine(selectedSkinId);
+    }
     showToast(nextMuted ? '🔇 صدای مسابقه قطع شد.' : '🔊 صدای مسابقه فعال شد.');
   };
 
@@ -749,9 +755,15 @@ export default function LiveRaceTrack({
     if (raceState !== 'ACTIVE' || currentPlayer?.isFinished) return;
 
     const tickInterval = setInterval(() => {
-      if (!typingStartTimeRef.current || typedCountRef.current === 0) return;
       const now = Date.now();
       const currentWpm = calculateInstantWpm(now);
+
+      // Realistic vehicle engine acoustics (Local to current user's equipped vehicle)
+      if (!isCurrentlySpectator) {
+        vehicleAudioEngine.updateTypingState(currentWpm, currentPlayer?.isFinished || false);
+      }
+
+      if (!typingStartTimeRef.current || typedCountRef.current === 0) return;
       setParticipants((prev) =>
         prev.map((p) => {
           if (isMyUser(p.odUserId) && !p.isFinished) {
@@ -764,7 +776,7 @@ export default function LiveRaceTrack({
     }, 100);
 
     return () => clearInterval(tickInterval);
-  }, [raceState, currentPlayer?.isFinished, isMyUser, calculateInstantWpm]);
+  }, [raceState, currentPlayer?.isFinished, isMyUser, isCurrentlySpectator, calculateInstantWpm]);
 
   // Save full race telemetry when race completes for Race Replay & Telemetry
   useEffect(() => {
@@ -856,6 +868,19 @@ export default function LiveRaceTrack({
       }
     }
   }, [currentPlayer?.isFinished, raceState, awardHandReward]);
+
+  // Stop vehicle engine sounds on unmount, or when results review modal shows
+  useEffect(() => {
+    if (resultsReviewRemaining !== null) {
+      vehicleAudioEngine.stopEngine();
+    }
+  }, [resultsReviewRemaining]);
+
+  useEffect(() => {
+    return () => {
+      vehicleAudioEngine.stopEngine();
+    };
+  }, []);
 
   // Sync participants when room prop changes, skin changes, or user profile name updates (Smooth, Jitter-free)
   useEffect(() => {
@@ -1111,6 +1136,9 @@ export default function LiveRaceTrack({
     const timer = setInterval(() => {
       setRoundIntermissionSeconds((prev) => {
         if (prev === null) return null;
+        if (prev === 2 && !isCurrentlySpectator) {
+          vehicleAudioEngine.startEngine(selectedSkinId);
+        }
         if (prev <= 1) {
           clearInterval(timer);
           setTimeout(() => handleStartNextRound(), 50);
@@ -1134,6 +1162,9 @@ export default function LiveRaceTrack({
     typingStartTimeRef.current = null;
     precisionFailsRef.current = 0;
     setPrecisionFails(0);
+    if (!isCurrentlySpectator) {
+      vehicleAudioEngine.startEngine(selectedSkinId);
+    }
     if (textChangeTimeoutRef.current) {
       clearTimeout(textChangeTimeoutRef.current);
       textChangeTimeoutRef.current = null;
@@ -1315,6 +1346,11 @@ export default function LiveRaceTrack({
     // Standard mechanical keystroke audio feedback (Local to user only)
     playKeyClickSound(isSpaceKey);
 
+    // Realistic vehicle throttle blip (Local to user's equipped vehicle)
+    if (!isCurrentlySpectator) {
+      vehicleAudioEngine.handleKeystroke(selectedSkinId);
+    }
+
     // Start timing on the player's first keystroke (Typro / Typeo standard)
     if (typingStartTimeRef.current === null) {
       typingStartTimeRef.current = Date.now();
@@ -1481,6 +1517,9 @@ export default function LiveRaceTrack({
         prev.map((p) => {
           if (isMyUser(p.odUserId)) {
             const isFin = finalNextCount >= targetText.length;
+            if (isFin) {
+              vehicleAudioEngine.stopEngine();
+            }
             if (isFin && !p.isFinished) {
               if (!triggeredPowerUp) {
                 confetti({ particleCount: 150, spread: 80, origin: { y: 0.5 } });
