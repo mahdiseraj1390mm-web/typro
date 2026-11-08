@@ -248,8 +248,8 @@ export default function TypingEngine({
     const finalTotal = totalKeysRef.current;
 
     // Standard Typing Speed (Typeo / ISIRI 9147 standard):
-    // 4.5 characters per word in Persian, 5 in English
-    const charsPerWord = language === 'fa' ? 4.5 : 5.0;
+    // 5.0 characters per word (international and Typeo standard CPM / 5)
+    const charsPerWord = 5.0;
 
     // Typeo standard Net WPM
     const finalNet = Math.max(0, Math.round((finalCorrect / charsPerWord) / finalMinutes));
@@ -302,6 +302,64 @@ export default function TypingEngine({
     setLiveNetWpm(0);
   }, [cleanTargetText]);
 
+  // Typeo standard high-precision instantaneous speed calculator (WPM)
+  const calculateInstantWpm = useCallback((now: number = Date.now()): number => {
+    if (!startTimeRef.current || correctKeysRef.current === 0) return 0;
+
+    const timestamps = keystrokeTimestampsRef.current;
+    if (timestamps.length === 0) return 0;
+
+    // Sliding window of the last 2200ms
+    const windowMs = 2200;
+    const windowStart = now - windowMs;
+
+    // Prune very old timestamps to keep memory small
+    while (timestamps.length > 50 && timestamps[0].time < now - 10000) {
+      timestamps.shift();
+    }
+
+    // Count correct keystrokes in window
+    let strokeCount = 0;
+    let earliestInWindow = now;
+    for (let i = timestamps.length - 1; i >= 0; i--) {
+      const k = timestamps[i];
+      if (k.time < windowStart) break;
+      if (k.isCorrect) {
+        strokeCount++;
+        earliestInWindow = k.time;
+      }
+    }
+
+    if (strokeCount === 0) return 0;
+
+    const sessionStart = startTimeRef.current || earliestInWindow;
+    const totalElapsedSec = (now - sessionStart - totalPausedTimeRef.current) / 1000;
+
+    // Duration of recent window in seconds:
+    let windowDurationSec: number;
+    if (totalElapsedSec < windowMs / 1000) {
+      windowDurationSec = Math.max(0.4, totalElapsedSec);
+    } else {
+      windowDurationSec = Math.max(0.6, Math.min(windowMs / 1000, (now - earliestInWindow + 150) / 1000));
+    }
+
+    // Standard 5 characters = 1 word
+    const charsPerWord = 5.0;
+    const wordsInWindow = strokeCount / charsPerWord;
+    const minutesInWindow = windowDurationSec / 60;
+    let instantWpm = Math.round(wordsInWindow / minutesInWindow);
+
+    // Smooth idle decay if user paused typing
+    const lastStroke = timestamps[timestamps.length - 1];
+    const idleMs = now - lastStroke.time;
+    if (idleMs > 600) {
+      const decay = Math.max(0, 1 - (idleMs - 600) / 1600);
+      instantWpm = Math.round(instantWpm * decay);
+    }
+
+    return Math.max(0, Math.min(280, instantWpm));
+  }, []);
+
   // High-Precision Real-time Timer runner conforming strictly to Typeo and EdClub
   useEffect(() => {
     if (isStarted && !isPaused && !isFinished) {
@@ -319,45 +377,36 @@ export default function TypingEngine({
           return;
         }
 
-        // 1. Live Responsive Net WPM (Typeo standard):
+        // 1. Live Instantaneous WPM (سرعت لحظه‌ای دقیق و روان):
+        const instantSpeed = calculateInstantWpm(now);
+        setLiveInstantWpm(instantSpeed);
+
+        // 2. Cumulative Net WPM update and sampling:
         const currentSecond = Math.floor(elapsedSec);
         if (elapsedSec >= 1.0 && currentSecond !== lastSpeedUpdateSecRef.current) {
           lastSpeedUpdateSecRef.current = currentSecond;
           const elapsedMinutes = elapsedSec / 60;
-          const charsPerWord = language === 'fa' ? 4.5 : 5.0;
+          const charsPerWord = 5.0;
           const calculatedNetWpm = Math.max(0, Math.round((correctKeysRef.current / charsPerWord) / elapsedMinutes));
 
           setLiveNetWpm(calculatedNetWpm);
 
           // sample speed every 2 seconds for consistency calculation
           if (currentSecond % 2 === 0) {
-            setSpeedSamples((s) => [...s, calculatedNetWpm]);
+            setSpeedSamples((s) => [...s, instantSpeed > 0 ? instantSpeed : calculatedNetWpm]);
           }
         }
-
-        // 2. Instantaneous Speed (سرعت لحظه‌ای ۳ ثانیه اخیر):
-        const windowMs = 3000;
-        const recentStrokes = keystrokeTimestampsRef.current.filter((k) => k.time >= now - windowMs && k.isCorrect).length;
-        const lastKeyTime = keystrokeTimestampsRef.current.length > 0
-          ? keystrokeTimestampsRef.current[keystrokeTimestampsRef.current.length - 1].time
-          : now;
-        const idleMs = now - lastKeyTime;
-        let instant = Math.round((recentStrokes / 5) / (windowMs / 60000));
-        if (idleMs > 1500) {
-          instant = Math.max(0, Math.round(instant * Math.max(0, 1 - (idleMs - 1500) / 2500)));
-        }
-        setLiveInstantWpm(instant);
       }, 100);
 
       return () => clearInterval(interval);
     }
-  }, [isStarted, isPaused, isFinished, isLesson, timeLimitSeconds, finishSession]);
+  }, [isStarted, isPaused, isFinished, isLesson, timeLimitSeconds, finishSession, calculateInstantWpm]);
 
   // Calculate Real-time Metrics
   const minutes = elapsedSeconds > 0 ? Math.max(0.05, Math.max(2.5, elapsedSeconds) / 60) : 0.05;
   const rawWpm = Math.round((totalKeystrokes / 5) / minutes) || 0;
-  const netWpm = liveNetWpm;
-  const wpm = liveNetWpm;
+  const netWpm = liveInstantWpm > 0 ? liveInstantWpm : liveNetWpm;
+  const wpm = liveInstantWpm > 0 ? liveInstantWpm : liveNetWpm;
   const accuracy = totalKeystrokes > 0 ? Math.round((correctKeystrokes / totalKeystrokes) * 100) : 100;
   const remainingSeconds = timeLimitSeconds ? Math.max(0, timeLimitSeconds - elapsedSeconds) : null;
 
@@ -483,6 +532,11 @@ export default function TypingEngine({
       soundEffects.playKeyClick();
       correctKeysRef.current += 1;
       setCorrectKeystrokes((prev) => prev + 1);
+
+      // Instantaneous speed update on keystroke (0ms reaction)
+      const now = Date.now();
+      const immediateInstant = calculateInstantWpm(now);
+      setLiveInstantWpm(immediateInstant);
       const hadError = errorIndicesRef.current.has(cursorIndex) || hasErrorAtCursor;
       if (hasErrorAtCursor) {
         setHasErrorAtCursor(false);
@@ -651,10 +705,10 @@ export default function TypingEngine({
         <div className="flex items-center gap-3 sm:gap-6 text-sm">
           {/* Main Speed */}
           <div className="flex flex-col items-center">
-            <span className="text-[10px] text-slate-500 font-bold">سرعت</span>
+            <span className="text-[10px] text-slate-500 font-bold">سرعت لحظه‌ای</span>
             <div className="flex items-baseline">
               <span className="text-xl sm:text-2xl font-black text-blue-600 font-mono tracking-tight">
-                {liveNetWpm}
+                {liveInstantWpm}
               </span>
             </div>
           </div>

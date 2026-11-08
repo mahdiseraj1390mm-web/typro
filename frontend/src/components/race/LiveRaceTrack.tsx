@@ -591,6 +591,56 @@ export default function LiveRaceTrack({
   const isCurrentlySpectator = isSpectator || Boolean(currentPlayer?.isSpectator);
   const activeSkin = getSkinById(selectedSkinId);
 
+  // Typeo standard high-precision instantaneous speed calculator for live race (WPM)
+  const calculateInstantWpm = React.useCallback((now: number = Date.now()): number => {
+    const timestamps = keystrokeTimestampsRef.current;
+    if (timestamps.length === 0) return 0;
+
+    const windowMs = 2200;
+    const windowStart = now - windowMs;
+
+    // Prune old timestamps
+    while (timestamps.length > 50 && timestamps[0].time < now - 10000) {
+      timestamps.shift();
+    }
+
+    let strokeCount = 0;
+    let earliestInWindow = now;
+    for (let i = timestamps.length - 1; i >= 0; i--) {
+      const k = timestamps[i];
+      if (k.time < windowStart) break;
+      strokeCount++;
+      earliestInWindow = k.time;
+    }
+
+    if (strokeCount === 0) return 0;
+
+    const start = typingStartTimeRef.current || earliestInWindow;
+    const totalElapsedSec = (now - start) / 1000;
+
+    let windowDurationSec: number;
+    if (totalElapsedSec < windowMs / 1000) {
+      windowDurationSec = Math.max(0.4, totalElapsedSec);
+    } else {
+      windowDurationSec = Math.max(0.6, Math.min(windowMs / 1000, (now - earliestInWindow + 150) / 1000));
+    }
+
+    const charsPerWord = 5.0;
+    const wordsInWindow = strokeCount / charsPerWord;
+    const minutesInWindow = windowDurationSec / 60;
+    let instantWpm = Math.round(wordsInWindow / minutesInWindow);
+
+    // Smooth idle decay if player pauses typing
+    const lastStroke = timestamps[timestamps.length - 1];
+    const idleMs = now - lastStroke.time;
+    if (idleMs > 600) {
+      const decay = Math.max(0, 1 - (idleMs - 600) / 1600);
+      instantWpm = Math.round(instantWpm * decay);
+    }
+
+    return Math.max(0, Math.min(280, instantWpm));
+  }, []);
+
   // Hand award guard (prevents double awarding per hand, resets on each new round)
   const handAwardedRef = useRef<boolean>(false);
 
@@ -732,6 +782,31 @@ export default function LiveRaceTrack({
 
     return () => clearInterval(sampleInterval);
   }, [raceState, currentPlayer?.isFinished, currentPlayer?.progressPercent, currentPlayer?.wpm, currentPlayer?.accuracy, errorCount, typedCount, participants, currentUserId]);
+
+  // Real-time speed decay updater while race is active (smooth idle deceleration)
+  useEffect(() => {
+    if (raceState !== 'ACTIVE' || currentPlayer?.isFinished) return;
+
+    const decayInterval = setInterval(() => {
+      if (!lastStrokeTimeRef.current || !typingStartTimeRef.current) return;
+      const now = Date.now();
+      const idleMs = now - lastStrokeTimeRef.current;
+      if (idleMs > 500) {
+        const decayedWpm = calculateInstantWpm(now);
+        setParticipants((prev) =>
+          prev.map((p) => {
+            if (isMyUser(p.odUserId) && !p.isFinished) {
+              if (p.wpm === decayedWpm) return p;
+              return { ...p, wpm: decayedWpm };
+            }
+            return p;
+          })
+        );
+      }
+    }, 120);
+
+    return () => clearInterval(decayInterval);
+  }, [raceState, currentPlayer?.isFinished, isMyUser, calculateInstantWpm]);
 
   // Save full race telemetry when race completes for Race Replay & Telemetry
   useEffect(() => {
@@ -1405,19 +1480,16 @@ export default function LiveRaceTrack({
       const progress = Math.min(100, Math.round((finalNextCount / targetText.length) * 100));
 
       const now = Date.now();
-      const typingStart = typingStartTimeRef.current || raceStartTimeRef.current;
-      const elapsedSec = (now - typingStart) / 1000;
-      // Typro standard: soft clamp during the first second (Math.max(1.0, elapsedSec)) to prevent initial infinity spikes
-      const effectiveSec = Math.max(1.0, elapsedSec);
-      const elapsedMin = effectiveSec / 60;
-      const netChars = Math.max(0, finalNextCount - errorCount);
+      const typingStart = typingStartTimeRef.current || raceStartTimeRef.current || now;
       const isFin = finalNextCount >= targetText.length;
       const finishElapsedSec = Math.max(0.5, (now - typingStart) / 1000);
       const finishElapsedMin = finishElapsedSec / 60;
-      const charsPerWord = room.language === 'fa' ? 4.5 : 5.0;
-      const netWpm = triggeredPowerUp 
-        ? Math.max(90, Math.round((finalNextCount / charsPerWord) / (isFin ? finishElapsedMin : elapsedMin)))
-        : Math.max(0, Math.round((finalNextCount / charsPerWord) / (isFin ? finishElapsedMin : elapsedMin)));
+      const charsPerWord = 5.0;
+
+      // Typeo standard: Instant WPM during race (responsive to current stroke rhythm), and true overall cumulative WPM upon finishing
+      const liveInstant = triggeredPowerUp ? 95 : calculateInstantWpm(now);
+      const finalCumulativeWpm = Math.max(0, Math.round((finalNextCount / charsPerWord) / finishElapsedMin));
+      const netWpm = isFin ? finalCumulativeWpm : (liveInstant > 0 ? liveInstant : finalCumulativeWpm);
       const totalKeys = finalNextCount + errorCount;
       const calcAcc = totalKeys > 0 ? Math.max(0, Math.min(100, Math.round((finalNextCount / totalKeys) * 100))) : 100;
 
