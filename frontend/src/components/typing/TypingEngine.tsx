@@ -177,6 +177,8 @@ export default function TypingEngine({
   const totalKeysRef = useRef<number>(0);
   const keystrokeTimestampsRef = useRef<{ time: number; isCorrect: boolean }[]>([]);
   const lastSpeedUpdateSecRef = useRef<number>(0);
+  const smoothSpeedRef = useRef<number>(0);
+  const lastKeyTimeRef = useRef<number>(0);
   const inputRef = useRef<HTMLInputElement>(null);
   const activeCharRef = useRef<HTMLSpanElement>(null);
   const canvasContainerRef = useRef<HTMLDivElement>(null);
@@ -299,30 +301,16 @@ export default function TypingEngine({
     totalKeysRef.current = 0;
     keystrokeTimestampsRef.current = [];
     lastSpeedUpdateSecRef.current = 0;
+    smoothSpeedRef.current = 0;
+    lastKeyTimeRef.current = 0;
     setLiveInstantWpm(0);
     setLiveNetWpm(0);
   }, [cleanTargetText]);
 
-  // Typeo & EdClub standard Net WPM calculator (with 0ms real-time responsiveness)
+  // Typeo & EdClub standard live responsive speed calculator (WPM)
   const calculateStandardWpm = useCallback((now: number = Date.now()): number => {
     if (!startTimeRef.current || correctKeysRef.current === 0) return 0;
-
-    const sessionStart = startTimeRef.current;
-    const totalElapsedMs = Math.max(0, now - sessionStart - totalPausedTimeRef.current);
-    if (totalElapsedMs < 200) return 0;
-
-    const totalElapsedSec = totalElapsedMs / 1000;
-    // Dampen the very first 1.8 seconds to avoid erratic swings on the first 1-2 keystrokes
-    const effectiveSec = Math.max(1.8, totalElapsedSec);
-    const minutes = effectiveSec / 60;
-
-    // Standard 5.0 characters = 1 word (International / Typeo / EdClub standard)
-    const charsPerWord = 5.0;
-    // Standard Net WPM: each mistake deducts 1 character from net count
-    const netChars = Math.max(0, correctKeysRef.current - errorKeysRef.current);
-    const netWpm = Math.round((netChars / charsPerWord) / minutes);
-
-    return Math.max(0, Math.min(280, netWpm));
+    return Math.max(0, Math.min(280, Math.round(smoothSpeedRef.current)));
   }, []);
 
   // High-Precision Real-time Timer runner conforming strictly to Typeo and EdClub
@@ -342,15 +330,21 @@ export default function TypingEngine({
           return;
         }
 
-        // 1. Live Standard WPM (سرعت زنده بر مبنای استاندارد تایپو و ادکلاب با واکنش بلادرنگ و افت نرم در مکث):
-        const currentSpeed = calculateStandardWpm(now);
-        setLiveInstantWpm(currentSpeed);
-        setLiveNetWpm(currentSpeed);
+        // Natural pause handling: within 1000ms grace period, finger transitions between words don't drop speed.
+        // On prolonged pauses (> 1000ms), gently and smoothly decelerate at ~3 WPM per second (0.3 WPM per 100ms)
+        const idleMs = lastKeyTimeRef.current > 0 ? now - lastKeyTimeRef.current : 0;
+        if (idleMs > 1000 && smoothSpeedRef.current > 0) {
+          smoothSpeedRef.current = Math.max(0, smoothSpeedRef.current - 0.3);
+          const currentSpeed = Math.round(smoothSpeedRef.current);
+          setLiveInstantWpm(currentSpeed);
+          setLiveNetWpm(currentSpeed);
+        }
 
-        // 2. Sampling speed for consistency calculation
+        // Sampling speed for consistency calculation
         const currentSecond = Math.floor(elapsedSec);
         if (elapsedSec >= 1.0 && currentSecond !== lastSpeedUpdateSecRef.current) {
           lastSpeedUpdateSecRef.current = currentSecond;
+          const currentSpeed = Math.round(smoothSpeedRef.current);
           if (currentSecond % 2 === 0) {
             setSpeedSamples((s) => [...s, currentSpeed]);
           }
@@ -359,7 +353,7 @@ export default function TypingEngine({
 
       return () => clearInterval(interval);
     }
-  }, [isStarted, isPaused, isFinished, isLesson, timeLimitSeconds, finishSession, calculateStandardWpm]);
+  }, [isStarted, isPaused, isFinished, isLesson, timeLimitSeconds, finishSession]);
 
   // Calculate Real-time Metrics
   const minutes = elapsedSeconds > 0 ? Math.max(0.05, Math.max(2.5, elapsedSeconds) / 60) : 0.05;
@@ -492,9 +486,26 @@ export default function TypingEngine({
       correctKeysRef.current += 1;
       setCorrectKeystrokes((prev) => prev + 1);
 
-      // Instantaneous speed update on keystroke (0ms reaction)
+      // High-precision smooth responsive speed update on keystroke (0ms reaction)
       const now = Date.now();
-      const immediateSpeed = calculateStandardWpm(now);
+      const prevTime = lastKeyTimeRef.current;
+      lastKeyTimeRef.current = now;
+
+      let deltaMs = prevTime > 0 ? now - prevTime : 240;
+      // Soft clamp: natural inter-keystroke interval. Cap at 650ms so inter-word gaps don't crash speed.
+      deltaMs = Math.min(650, Math.max(60, deltaMs));
+      const instantKeystrokeWpm = 12000 / deltaMs;
+      const clampedWpm = Math.min(180, Math.max(15, instantKeystrokeWpm));
+
+      if (smoothSpeedRef.current === 0) {
+        smoothSpeedRef.current = clampedWpm;
+      } else {
+        // Smooth EMA filter (75% previous + 25% current)
+        const alpha = 0.25;
+        smoothSpeedRef.current = (1 - alpha) * smoothSpeedRef.current + alpha * clampedWpm;
+      }
+
+      const immediateSpeed = Math.round(smoothSpeedRef.current);
       setLiveInstantWpm(immediateSpeed);
       setLiveNetWpm(immediateSpeed);
       const hadError = errorIndicesRef.current.has(cursorIndex) || hasErrorAtCursor;
@@ -544,9 +555,13 @@ export default function TypingEngine({
         return updated;
       });
 
-      // Immediately deduct and update WPM on error penalty (0ms reaction)
+      // Standard calibrated penalty on mistake (0ms reaction, balanced 2-3 WPM deduction)
       const now = Date.now();
-      const penalizedSpeed = calculateStandardWpm(now);
+      lastKeyTimeRef.current = now;
+      const penalty = Math.min(3, Math.max(1.5, smoothSpeedRef.current * 0.04));
+      smoothSpeedRef.current = Math.max(0, smoothSpeedRef.current - penalty);
+
+      const penalizedSpeed = Math.round(smoothSpeedRef.current);
       setLiveInstantWpm(penalizedSpeed);
       setLiveNetWpm(penalizedSpeed);
     }
@@ -575,6 +590,8 @@ export default function TypingEngine({
     totalKeysRef.current = 0;
     keystrokeTimestampsRef.current = [];
     lastSpeedUpdateSecRef.current = 0;
+    smoothSpeedRef.current = 0;
+    lastKeyTimeRef.current = 0;
     setLiveInstantWpm(0);
     setLiveNetWpm(0);
     if (inputRef.current) inputRef.current.focus();
