@@ -1429,27 +1429,49 @@ export default function LiveRaceTrack({
         }
       }
 
-      setTypedCount(finalNextCount);
-      typedCountRef.current = finalNextCount;
-      errorCountRef.current = errorCount;
       const now = Date.now();
-      lastStrokeTimeRef.current = now;
-      keystrokeTimestampsRef.current.push({ time: now, isCorrect: true });
-
-      const progress = Math.min(100, Math.round((finalNextCount / targetText.length) * 100));
-
       const typingStart = typingStartTimeRef.current || raceStartTimeRef.current || now;
-      const isFin = finalNextCount >= targetText.length;
       const finishElapsedSec = Math.max(0.5, (now - typingStart) / 1000);
       const finishElapsedMin = finishElapsedSec / 60;
       const charsPerWord = room.language === 'fa' ? 4.2 : 5.0;
 
+      // Real user typing speed and accuracy at this exact stroke (based on actual user typed characters: nextCount)
+      const realStrokeWpm = Math.round((nextCount / charsPerWord) / finishElapsedMin);
+      const realAccAtMoment = (nextCount + errorCount) > 0
+        ? Math.max(0, Math.min(100, Math.round((nextCount / (nextCount + errorCount)) * 100)))
+        : 100;
+
+      setTypedCount(finalNextCount);
+      typedCountRef.current = finalNextCount;
+      errorCountRef.current = errorCount;
+      lastStrokeTimeRef.current = now;
+      keystrokeTimestampsRef.current.push({ time: now, isCorrect: true });
+
+      const progress = Math.min(100, Math.round((finalNextCount / targetText.length) * 100));
+      const isFin = finalNextCount >= targetText.length;
+
       // Typeo standard: Instant live WPM during race and true overall cumulative WPM upon finishing
-      const liveInstant = triggeredPowerUp ? 95 : calculateInstantWpm(now);
-      const finalCumulativeWpm = Math.max(0, Math.round((finalNextCount / charsPerWord) / finishElapsedMin));
-      const netWpm = isFin ? finalCumulativeWpm : (liveInstant > 0 ? liveInstant : finalCumulativeWpm);
-      const totalKeys = finalNextCount + errorCount;
-      const calcAcc = totalKeys > 0 ? Math.max(0, Math.min(100, Math.round((finalNextCount / totalKeys) * 100))) : 100;
+      // When power-up triggers (any capability e.g. 45%, 70%, 80%, 90%):
+      // - Progress reaches 100% (car reaches finish line)
+      // - Speed (netWpm) and accuracy (calcAcc) strictly reflect the exact real typing metrics at the moment of activation
+      // - No artificial inflation (no hardcoded 95, no inflated cumulative speed from boosted characters)
+      let netWpm: number;
+      let calcAcc: number;
+
+      if (triggeredPowerUp) {
+        netWpm = Math.max(0, Math.min(260, realStrokeWpm));
+        calcAcc = realAccAtMoment;
+      } else if (isFin) {
+        const finalCumulativeWpm = Math.max(0, Math.round((finalNextCount / charsPerWord) / finishElapsedMin));
+        netWpm = Math.max(0, Math.min(260, finalCumulativeWpm));
+        const totalKeys = finalNextCount + errorCount;
+        calcAcc = totalKeys > 0 ? Math.max(0, Math.min(100, Math.round((finalNextCount / totalKeys) * 100))) : 100;
+      } else {
+        const liveInstant = calculateInstantWpm(now);
+        netWpm = liveInstant > 0 ? liveInstant : Math.max(0, Math.min(260, realStrokeWpm));
+        const totalKeys = finalNextCount + errorCount;
+        calcAcc = totalKeys > 0 ? Math.max(0, Math.min(100, Math.round((finalNextCount / totalKeys) * 100))) : 100;
+      }
 
       if (onProgressUpdate) {
         onProgressUpdate(progress, netWpm, calcAcc, errorCount);
@@ -1459,8 +1481,10 @@ export default function LiveRaceTrack({
         prev.map((p) => {
           if (isMyUser(p.odUserId)) {
             const isFin = finalNextCount >= targetText.length;
-            if (isFin && !p.isFinished && !triggeredPowerUp) {
-              confetti({ particleCount: 150, spread: 80, origin: { y: 0.5 } });
+            if (isFin && !p.isFinished) {
+              if (!triggeredPowerUp) {
+                confetti({ particleCount: 150, spread: 80, origin: { y: 0.5 } });
+              }
 
               // Calculate Hand Score immediately on finish (starts at 40 for 100% accuracy)
               let handScore = 40;
@@ -1688,9 +1712,9 @@ export default function LiveRaceTrack({
   });
   const myRank = Math.max(1, sortedByProgress.findIndex((p) => isMyUser(p.odUserId)) + 1);
   const totalAttemptedKeys = typedCount + errorCount;
-  const liveAccuracy = totalAttemptedKeys > 0
-    ? Math.max(0, Math.min(100, Math.round((typedCount / totalAttemptedKeys) * 100)))
-    : 100;
+  const liveAccuracy = currentPlayer?.isFinished && typeof currentPlayer.accuracy === 'number'
+    ? currentPlayer.accuracy
+    : (totalAttemptedKeys > 0 ? Math.max(0, Math.min(100, Math.round((typedCount / totalAttemptedKeys) * 100))) : 100);
   const liveScore = Math.max(0, Math.round((typedCount * 10) + ((currentPlayer?.wpm || 0) * 15) - (errorCount * 25)));
 
   return (
