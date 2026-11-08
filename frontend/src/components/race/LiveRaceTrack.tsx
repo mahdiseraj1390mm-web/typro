@@ -592,13 +592,30 @@ export default function LiveRaceTrack({
   const activeSkin = getSkinById(selectedSkinId);
 
   // Typeo & EdClub standard live responsive speed calculator for live race (WPM)
-  // Formula: (Correct Characters Typed / 5.0) / (Elapsed Seconds / 60) = (typedCount * 12) / elapsedSec
-  const calculateInstantWpm = React.useCallback((now: number = Date.now()): number => {
-    if (!typingStartTimeRef.current || typedCountRef.current === 0) return 0;
-    const activeElapsedMs = Math.max(0, now - typingStartTimeRef.current);
-    const elapsedSec = Math.max(1.0, activeElapsedMs / 1000);
-    const calculatedWpm = Math.round((typedCountRef.current * 12) / elapsedSec);
-    return Math.max(0, Math.min(280, calculatedWpm));
+  // Measures true keystroke cadence over recent strokes, capping inter-word pauses so speed isn't deflated or dropped abruptly
+  const calculateInstantWpm = React.useCallback((): number => {
+    const timestamps = keystrokeTimestampsRef.current;
+    if (timestamps.length < 2) return 0;
+
+    const correctStrokes = timestamps.filter((k) => k.isCorrect !== false);
+    if (correctStrokes.length < 2) return 0;
+
+    const windowSize = Math.min(8, correctStrokes.length);
+    const recent = correctStrokes.slice(-windowSize);
+
+    let activeDurationMs = 0;
+    for (let i = 1; i < recent.length; i++) {
+      const gap = recent[i].time - recent[i - 1].time;
+      activeDurationMs += Math.min(500, Math.max(50, gap));
+    }
+
+    if (activeDurationMs < 80) return 0;
+
+    const durationSec = activeDurationMs / 1000;
+    const strokesCount = recent.length - 1;
+    const wpm = Math.round((strokesCount * 12) / durationSec);
+
+    return Math.max(0, Math.min(260, wpm));
   }, []);
 
   // Hand award guard (prevents double awarding per hand, resets on each new round)
@@ -749,8 +766,7 @@ export default function LiveRaceTrack({
 
     const tickInterval = setInterval(() => {
       if (!typingStartTimeRef.current || typedCountRef.current === 0) return;
-      const now = Date.now();
-      const currentWpm = calculateInstantWpm(now);
+      const currentWpm = calculateInstantWpm();
       setParticipants((prev) =>
         prev.map((p) => {
           if (isMyUser(p.odUserId) && !p.isFinished) {
@@ -1444,7 +1460,7 @@ export default function LiveRaceTrack({
       const charsPerWord = 5.0;
 
       // Typeo standard: Instant live WPM during race and true overall cumulative WPM upon finishing
-      const liveInstant = triggeredPowerUp ? 95 : calculateInstantWpm(now);
+      const liveInstant = triggeredPowerUp ? 95 : calculateInstantWpm();
       const finalCumulativeWpm = Math.max(0, Math.round((finalNextCount / charsPerWord) / finishElapsedMin));
       const netWpm = isFin ? finalCumulativeWpm : (liveInstant > 0 ? liveInstant : finalCumulativeWpm);
       const totalKeys = finalNextCount + errorCount;
@@ -1557,7 +1573,7 @@ export default function LiveRaceTrack({
       const totalKeys = typedCount + newErrors;
       const calcAcc = totalKeys > 0 ? Math.max(0, Math.min(100, Math.round((typedCount / totalKeys) * 100))) : 100;
       const progress = Math.min(100, Math.round((typedCount / targetText.length) * 100));
-      const curWpm = calculateInstantWpm(now);
+      const curWpm = calculateInstantWpm();
 
       if (onProgressUpdate) {
         onProgressUpdate(progress, curWpm, calcAcc, newErrors);

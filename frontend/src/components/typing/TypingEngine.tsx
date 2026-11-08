@@ -304,13 +304,31 @@ export default function TypingEngine({
   }, [cleanTargetText]);
 
   // Standard Typeo & EdClub Speed Calculator (WPM):
-  // Formula: (Correct Characters Typed / 5.0) / (Elapsed Seconds / 60) = (Correct Characters * 12) / Elapsed Seconds
-  const calculateStandardWpm = useCallback((now: number = Date.now()): number => {
-    if (!startTimeRef.current || correctKeysRef.current === 0) return 0;
-    const activeElapsedMs = Math.max(0, now - startTimeRef.current - totalPausedTimeRef.current);
-    const elapsedSec = Math.max(1.0, activeElapsedMs / 1000);
-    const calculatedWpm = Math.round((correctKeysRef.current * 12) / elapsedSec);
-    return Math.max(0, Math.min(280, calculatedWpm));
+  // Measures true keystroke cadence over recent strokes, capping inter-word pauses so speed isn't deflated or dropped abruptly
+  const calculatePaceWpm = useCallback((): number => {
+    const timestamps = keystrokeTimestampsRef.current;
+    if (timestamps.length < 2) return 0;
+
+    const correctStrokes = timestamps.filter((k) => k.isCorrect);
+    if (correctStrokes.length < 2) return 0;
+
+    const windowSize = Math.min(8, correctStrokes.length);
+    const recent = correctStrokes.slice(-windowSize);
+
+    let activeDurationMs = 0;
+    for (let i = 1; i < recent.length; i++) {
+      const gap = recent[i].time - recent[i - 1].time;
+      // Normal inter-keystroke interval is 60-600ms. Cap inter-word transitions at 500ms so pauses don't crush speed
+      activeDurationMs += Math.min(500, Math.max(50, gap));
+    }
+
+    if (activeDurationMs < 80) return 0;
+
+    const durationSec = activeDurationMs / 1000;
+    const strokesCount = recent.length - 1;
+    const wpm = Math.round((strokesCount * 12) / durationSec);
+
+    return Math.max(0, Math.min(260, wpm));
   }, []);
 
   // High-Precision Real-time Timer runner conforming strictly to Typeo and EdClub
@@ -330,24 +348,19 @@ export default function TypingEngine({
           return;
         }
 
-        // Live standard speed: naturally adjusts as time ticks forward
-        const currentWpm = calculateStandardWpm(now);
-        setLiveInstantWpm(currentWpm);
-        setLiveNetWpm(currentWpm);
-
-        // Sampling speed for consistency calculation
+        // Sampling speed for consistency calculation every 2 seconds
         const currentSecond = Math.floor(elapsedSec);
         if (elapsedSec >= 1.0 && currentSecond !== lastSpeedUpdateSecRef.current) {
           lastSpeedUpdateSecRef.current = currentSecond;
           if (currentSecond % 2 === 0) {
-            setSpeedSamples((s) => [...s, currentWpm]);
+            setSpeedSamples((s) => [...s, liveInstantWpm]);
           }
         }
       }, 100);
 
       return () => clearInterval(interval);
     }
-  }, [isStarted, isPaused, isFinished, isLesson, timeLimitSeconds, finishSession, calculateStandardWpm]);
+  }, [isStarted, isPaused, isFinished, isLesson, timeLimitSeconds, finishSession, liveInstantWpm]);
 
   // Calculate Real-time Metrics
   const minutes = elapsedSeconds > 0 ? Math.max(0.05, Math.max(2.5, elapsedSeconds) / 60) : 0.05;
@@ -481,10 +494,11 @@ export default function TypingEngine({
       setCorrectKeystrokes((prev) => prev + 1);
 
       // Real-time speed update on keystroke (0ms reaction)
-      const now = Date.now();
-      const currentWpm = calculateStandardWpm(now);
-      setLiveInstantWpm(currentWpm);
-      setLiveNetWpm(currentWpm);
+      const currentSpeed = calculatePaceWpm();
+      if (currentSpeed > 0) {
+        setLiveInstantWpm(currentSpeed);
+        setLiveNetWpm(currentSpeed);
+      }
       const hadError = errorIndicesRef.current.has(cursorIndex) || hasErrorAtCursor;
       if (hasErrorAtCursor) {
         setHasErrorAtCursor(false);
