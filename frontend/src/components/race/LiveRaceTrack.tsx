@@ -591,62 +591,25 @@ export default function LiveRaceTrack({
   const isCurrentlySpectator = isSpectator || Boolean(currentPlayer?.isSpectator);
   const activeSkin = getSkinById(selectedSkinId);
 
-  // Typeo standard high-precision instantaneous speed calculator for live race (WPM)
+  // Typeo & EdClub standard Net WPM calculator for live race (WPM)
   const calculateInstantWpm = React.useCallback((now: number = Date.now()): number => {
-    const timestamps = keystrokeTimestampsRef.current;
-    if (timestamps.length === 0) return 0;
+    if (!typingStartTimeRef.current || typedCountRef.current === 0) return 0;
 
-    const windowMs = 2200;
-    const windowStart = now - windowMs;
+    const start = typingStartTimeRef.current;
+    const totalElapsedMs = Math.max(0, now - start);
+    if (totalElapsedMs < 200) return 0;
 
-    // Prune old timestamps
-    while (timestamps.length > 50 && timestamps[0].time < now - 10000) {
-      timestamps.shift();
-    }
-
-    let correctCount = 0;
-    let errorCount = 0;
-    let earliestInWindow = now;
-    for (let i = timestamps.length - 1; i >= 0; i--) {
-      const k = timestamps[i];
-      if (k.time < windowStart) break;
-      if (k.isCorrect !== false) {
-        correctCount++;
-        earliestInWindow = k.time;
-      } else {
-        errorCount++;
-        earliestInWindow = Math.min(earliestInWindow, k.time);
-      }
-    }
-
-    // Standard Net WPM penalty: each mistake deducts 1 character from net count in this window
-    const netStrokes = Math.max(0, correctCount - errorCount);
-    if (netStrokes === 0) return 0;
-
-    const start = typingStartTimeRef.current || earliestInWindow;
-    const totalElapsedSec = Math.max(0.2, (now - start) / 1000);
-
-    let windowDurationSec: number;
-    if (totalElapsedSec < windowMs / 1000) {
-      windowDurationSec = Math.max(0.4, totalElapsedSec);
-    } else {
-      windowDurationSec = Math.max(0.6, Math.min(windowMs / 1000, (now - earliestInWindow + 150) / 1000));
-    }
+    const totalElapsedSec = totalElapsedMs / 1000;
+    // Soft dampening for early start
+    const effectiveSec = Math.max(1.8, totalElapsedSec);
+    const minutes = effectiveSec / 60;
 
     const charsPerWord = 5.0;
-    const wordsInWindow = netStrokes / charsPerWord;
-    const minutesInWindow = windowDurationSec / 60;
-    let instantWpm = Math.round(wordsInWindow / minutesInWindow);
+    // Standard Net WPM: each mistake deducts 1 character from net count
+    const netChars = Math.max(0, typedCountRef.current - errorCountRef.current);
+    const raceWpm = Math.round((netChars / charsPerWord) / minutes);
 
-    // Smooth idle decay if player pauses typing (مکث در حین تایپ)
-    const lastStroke = timestamps[timestamps.length - 1];
-    const idleMs = now - lastStroke.time;
-    if (idleMs > 500) {
-      const decay = Math.max(0, 1 - (idleMs - 500) / 1500);
-      instantWpm = Math.round(instantWpm * decay);
-    }
-
-    return Math.max(0, Math.min(280, instantWpm));
+    return Math.max(0, Math.min(280, raceWpm));
   }, []);
 
   // Hand award guard (prevents double awarding per hand, resets on each new round)
@@ -791,7 +754,7 @@ export default function LiveRaceTrack({
     return () => clearInterval(sampleInterval);
   }, [raceState, currentPlayer?.isFinished, currentPlayer?.progressPercent, currentPlayer?.wpm, currentPlayer?.accuracy, errorCount, typedCount, participants, currentUserId]);
 
-  // Real-time speed decay updater while race is active (smooth idle deceleration)
+  // Real-time speed updater while race is active (smooth natural deceleration on prolonged pauses)
   useEffect(() => {
     if (raceState !== 'ACTIVE' || currentPlayer?.isFinished) return;
 
@@ -799,7 +762,8 @@ export default function LiveRaceTrack({
       if (!lastStrokeTimeRef.current || !typingStartTimeRef.current) return;
       const now = Date.now();
       const idleMs = now - lastStrokeTimeRef.current;
-      if (idleMs > 500) {
+      // When player pauses, update speedometer smoothly as race time ticks forward (natural deceleration)
+      if (idleMs > 800) {
         const decayedWpm = calculateInstantWpm(now);
         setParticipants((prev) =>
           prev.map((p) => {
@@ -811,7 +775,7 @@ export default function LiveRaceTrack({
           })
         );
       }
-    }, 120);
+    }, 200);
 
     return () => clearInterval(decayInterval);
   }, [raceState, currentPlayer?.isFinished, isMyUser, calculateInstantWpm]);
