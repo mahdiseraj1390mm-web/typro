@@ -761,7 +761,7 @@ export default function LiveRaceTrack({
           return p;
         })
       );
-    }, 200);
+    }, 100);
 
     return () => clearInterval(tickInterval);
   }, [raceState, currentPlayer?.isFinished, isMyUser, calculateInstantWpm]);
@@ -1600,37 +1600,6 @@ export default function LiveRaceTrack({
     window.addEventListener('keydown', handleGlobalKeyDown);
     return () => window.removeEventListener('keydown', handleGlobalKeyDown);
   }, [isCurrentlySpectator, raceState, roundIntermissionSeconds, resultsReviewRemaining, handleTyping]);
-
-  // Real-time speed ticker for player (100% authentic Net WPM matching Typro standard)
-  useEffect(() => {
-    if (raceState !== 'ACTIVE' || currentPlayer?.isFinished) return;
-
-    const interval = setInterval(() => {
-      const count = typedCountRef.current;
-      const errors = errorCountRef.current;
-      if (count === 0 || !typingStartTimeRef.current) return;
-
-      const now = Date.now();
-      const elapsedSec = (now - typingStartTimeRef.current) / 1000;
-      const effectiveSec = Math.max(1.0, elapsedSec);
-      const totalElapsedMin = effectiveSec / 60;
-
-      // Cumulative Net WPM matching typing calculations exactly (no countdown leakage or artificial suppression)
-      const netChars = Math.max(0, count - errors);
-      const realWpm = Math.max(0, Math.round((netChars / 5) / totalElapsedMin));
-
-      setParticipants((prev) =>
-        prev.map((p) =>
-          isMyUser(p.odUserId) && !p.isFinished
-            ? { ...p, wpm: realWpm }
-            : p
-        )
-      );
-    }, 250);
-
-    return () => clearInterval(interval);
-  }, [raceState, currentPlayer?.isFinished, currentUserId]);
-
 
   const sendChatMessage = (e: React.FormEvent) => {
     e.preventDefault();
