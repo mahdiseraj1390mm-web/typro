@@ -177,8 +177,6 @@ export default function TypingEngine({
   const totalKeysRef = useRef<number>(0);
   const keystrokeTimestampsRef = useRef<{ time: number; isCorrect: boolean }[]>([]);
   const lastSpeedUpdateSecRef = useRef<number>(0);
-  const smoothSpeedRef = useRef<number>(0);
-  const lastKeyTimeRef = useRef<number>(0);
   const inputRef = useRef<HTMLInputElement>(null);
   const activeCharRef = useRef<HTMLSpanElement>(null);
   const canvasContainerRef = useRef<HTMLDivElement>(null);
@@ -301,16 +299,18 @@ export default function TypingEngine({
     totalKeysRef.current = 0;
     keystrokeTimestampsRef.current = [];
     lastSpeedUpdateSecRef.current = 0;
-    smoothSpeedRef.current = 0;
-    lastKeyTimeRef.current = 0;
     setLiveInstantWpm(0);
     setLiveNetWpm(0);
   }, [cleanTargetText]);
 
-  // Typeo & EdClub standard live responsive speed calculator (WPM)
+  // Standard Typeo & EdClub Speed Calculator (WPM):
+  // Formula: (Correct Characters Typed / 5.0) / (Elapsed Seconds / 60) = (Correct Characters * 12) / Elapsed Seconds
   const calculateStandardWpm = useCallback((now: number = Date.now()): number => {
     if (!startTimeRef.current || correctKeysRef.current === 0) return 0;
-    return Math.max(0, Math.min(280, Math.round(smoothSpeedRef.current)));
+    const activeElapsedMs = Math.max(0, now - startTimeRef.current - totalPausedTimeRef.current);
+    const elapsedSec = Math.max(1.0, activeElapsedMs / 1000);
+    const calculatedWpm = Math.round((correctKeysRef.current * 12) / elapsedSec);
+    return Math.max(0, Math.min(280, calculatedWpm));
   }, []);
 
   // High-Precision Real-time Timer runner conforming strictly to Typeo and EdClub
@@ -330,30 +330,24 @@ export default function TypingEngine({
           return;
         }
 
-        // Natural pause handling: within 1000ms grace period, finger transitions between words don't drop speed.
-        // On prolonged pauses (> 1000ms), gently and smoothly decelerate at ~3 WPM per second (0.3 WPM per 100ms)
-        const idleMs = lastKeyTimeRef.current > 0 ? now - lastKeyTimeRef.current : 0;
-        if (idleMs > 1000 && smoothSpeedRef.current > 0) {
-          smoothSpeedRef.current = Math.max(0, smoothSpeedRef.current - 0.3);
-          const currentSpeed = Math.round(smoothSpeedRef.current);
-          setLiveInstantWpm(currentSpeed);
-          setLiveNetWpm(currentSpeed);
-        }
+        // Live standard speed: naturally adjusts as time ticks forward
+        const currentWpm = calculateStandardWpm(now);
+        setLiveInstantWpm(currentWpm);
+        setLiveNetWpm(currentWpm);
 
         // Sampling speed for consistency calculation
         const currentSecond = Math.floor(elapsedSec);
         if (elapsedSec >= 1.0 && currentSecond !== lastSpeedUpdateSecRef.current) {
           lastSpeedUpdateSecRef.current = currentSecond;
-          const currentSpeed = Math.round(smoothSpeedRef.current);
           if (currentSecond % 2 === 0) {
-            setSpeedSamples((s) => [...s, currentSpeed]);
+            setSpeedSamples((s) => [...s, currentWpm]);
           }
         }
       }, 100);
 
       return () => clearInterval(interval);
     }
-  }, [isStarted, isPaused, isFinished, isLesson, timeLimitSeconds, finishSession]);
+  }, [isStarted, isPaused, isFinished, isLesson, timeLimitSeconds, finishSession, calculateStandardWpm]);
 
   // Calculate Real-time Metrics
   const minutes = elapsedSeconds > 0 ? Math.max(0.05, Math.max(2.5, elapsedSeconds) / 60) : 0.05;
@@ -486,28 +480,11 @@ export default function TypingEngine({
       correctKeysRef.current += 1;
       setCorrectKeystrokes((prev) => prev + 1);
 
-      // High-precision smooth responsive speed update on keystroke (0ms reaction)
+      // Real-time speed update on keystroke (0ms reaction)
       const now = Date.now();
-      const prevTime = lastKeyTimeRef.current;
-      lastKeyTimeRef.current = now;
-
-      let deltaMs = prevTime > 0 ? now - prevTime : 240;
-      // Soft clamp: natural inter-keystroke interval. Cap at 650ms so inter-word gaps don't crash speed.
-      deltaMs = Math.min(650, Math.max(60, deltaMs));
-      const instantKeystrokeWpm = 12000 / deltaMs;
-      const clampedWpm = Math.min(180, Math.max(15, instantKeystrokeWpm));
-
-      if (smoothSpeedRef.current === 0) {
-        smoothSpeedRef.current = clampedWpm;
-      } else {
-        // Smooth EMA filter (75% previous + 25% current)
-        const alpha = 0.25;
-        smoothSpeedRef.current = (1 - alpha) * smoothSpeedRef.current + alpha * clampedWpm;
-      }
-
-      const immediateSpeed = Math.round(smoothSpeedRef.current);
-      setLiveInstantWpm(immediateSpeed);
-      setLiveNetWpm(immediateSpeed);
+      const currentWpm = calculateStandardWpm(now);
+      setLiveInstantWpm(currentWpm);
+      setLiveNetWpm(currentWpm);
       const hadError = errorIndicesRef.current.has(cursorIndex) || hasErrorAtCursor;
       if (hasErrorAtCursor) {
         setHasErrorAtCursor(false);
@@ -554,16 +531,6 @@ export default function TypingEngine({
         updated[cursorIndex] = 'incorrect'; // turns RED
         return updated;
       });
-
-      // Standard calibrated penalty on mistake (0ms reaction, balanced 2-3 WPM deduction)
-      const now = Date.now();
-      lastKeyTimeRef.current = now;
-      const penalty = Math.min(3, Math.max(1.5, smoothSpeedRef.current * 0.04));
-      smoothSpeedRef.current = Math.max(0, smoothSpeedRef.current - penalty);
-
-      const penalizedSpeed = Math.round(smoothSpeedRef.current);
-      setLiveInstantWpm(penalizedSpeed);
-      setLiveNetWpm(penalizedSpeed);
     }
   };
 
@@ -590,8 +557,6 @@ export default function TypingEngine({
     totalKeysRef.current = 0;
     keystrokeTimestampsRef.current = [];
     lastSpeedUpdateSecRef.current = 0;
-    smoothSpeedRef.current = 0;
-    lastKeyTimeRef.current = 0;
     setLiveInstantWpm(0);
     setLiveNetWpm(0);
     if (inputRef.current) inputRef.current.focus();
