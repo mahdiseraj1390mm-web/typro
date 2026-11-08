@@ -592,31 +592,15 @@ export default function LiveRaceTrack({
   const activeSkin = getSkinById(selectedSkinId);
 
   // Typeo & EdClub standard live responsive speed calculator for live race (WPM)
-  // Measures true keystroke cadence over recent strokes, capping inter-word pauses so speed isn't deflated or dropped abruptly
-  const calculateInstantWpm = React.useCallback((): number => {
-    const timestamps = keystrokeTimestampsRef.current;
-    if (timestamps.length < 2) return 0;
-
-    const correctStrokes = timestamps.filter((k) => k.isCorrect !== false);
-    if (correctStrokes.length < 2) return 0;
-
-    const windowSize = Math.min(8, correctStrokes.length);
-    const recent = correctStrokes.slice(-windowSize);
-
-    let activeDurationMs = 0;
-    for (let i = 1; i < recent.length; i++) {
-      const gap = recent[i].time - recent[i - 1].time;
-      activeDurationMs += Math.min(500, Math.max(50, gap));
-    }
-
-    if (activeDurationMs < 80) return 0;
-
-    const durationSec = activeDurationMs / 1000;
-    const strokesCount = recent.length - 1;
-    const wpm = Math.round((strokesCount * 12) / durationSec);
-
+  // Persian standard is 4.2 characters per word (ISIRI 9147 & Typeo), English is 5.0
+  const calculateInstantWpm = React.useCallback((now: number = Date.now()): number => {
+    if (!typingStartTimeRef.current || typedCountRef.current === 0) return 0;
+    const activeElapsedMs = Math.max(0, now - typingStartTimeRef.current);
+    const elapsedMinutes = Math.max(2.0 / 60, activeElapsedMs / 60000);
+    const charsPerWord = room.language === 'fa' ? 4.2 : 5.0;
+    const wpm = Math.round((typedCountRef.current / charsPerWord) / elapsedMinutes);
     return Math.max(0, Math.min(260, wpm));
-  }, []);
+  }, [room.language]);
 
   // Hand award guard (prevents double awarding per hand, resets on each new round)
   const handAwardedRef = useRef<boolean>(false);
@@ -766,7 +750,8 @@ export default function LiveRaceTrack({
 
     const tickInterval = setInterval(() => {
       if (!typingStartTimeRef.current || typedCountRef.current === 0) return;
-      const currentWpm = calculateInstantWpm();
+      const now = Date.now();
+      const currentWpm = calculateInstantWpm(now);
       setParticipants((prev) =>
         prev.map((p) => {
           if (isMyUser(p.odUserId) && !p.isFinished) {
@@ -1457,10 +1442,10 @@ export default function LiveRaceTrack({
       const isFin = finalNextCount >= targetText.length;
       const finishElapsedSec = Math.max(0.5, (now - typingStart) / 1000);
       const finishElapsedMin = finishElapsedSec / 60;
-      const charsPerWord = 5.0;
+      const charsPerWord = room.language === 'fa' ? 4.2 : 5.0;
 
       // Typeo standard: Instant live WPM during race and true overall cumulative WPM upon finishing
-      const liveInstant = triggeredPowerUp ? 95 : calculateInstantWpm();
+      const liveInstant = triggeredPowerUp ? 95 : calculateInstantWpm(now);
       const finalCumulativeWpm = Math.max(0, Math.round((finalNextCount / charsPerWord) / finishElapsedMin));
       const netWpm = isFin ? finalCumulativeWpm : (liveInstant > 0 ? liveInstant : finalCumulativeWpm);
       const totalKeys = finalNextCount + errorCount;
@@ -1573,7 +1558,7 @@ export default function LiveRaceTrack({
       const totalKeys = typedCount + newErrors;
       const calcAcc = totalKeys > 0 ? Math.max(0, Math.min(100, Math.round((typedCount / totalKeys) * 100))) : 100;
       const progress = Math.min(100, Math.round((typedCount / targetText.length) * 100));
-      const curWpm = calculateInstantWpm();
+      const curWpm = calculateInstantWpm(now);
 
       if (onProgressUpdate) {
         onProgressUpdate(progress, curWpm, calcAcc, newErrors);

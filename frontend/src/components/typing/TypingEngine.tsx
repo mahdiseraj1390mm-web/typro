@@ -248,8 +248,8 @@ export default function TypingEngine({
     const finalTotal = totalKeysRef.current;
 
     // Standard Typing Speed (Typeo / ISIRI 9147 standard):
-    // 5.0 characters per word (international and Typeo standard CPM / 5)
-    const charsPerWord = 5.0;
+    // 4.2 characters per word in Persian, 5.0 in English
+    const charsPerWord = language === 'fa' ? 4.2 : 5.0;
 
     // Typeo standard Net WPM: each error deducts 1 character from net count
     const netChars = Math.max(0, finalCorrect - finalErrors);
@@ -303,33 +303,17 @@ export default function TypingEngine({
     setLiveNetWpm(0);
   }, [cleanTargetText]);
 
-  // Standard Typeo & EdClub Speed Calculator (WPM):
-  // Measures true keystroke cadence over recent strokes, capping inter-word pauses so speed isn't deflated or dropped abruptly
-  const calculatePaceWpm = useCallback((): number => {
-    const timestamps = keystrokeTimestampsRef.current;
-    if (timestamps.length < 2) return 0;
-
-    const correctStrokes = timestamps.filter((k) => k.isCorrect);
-    if (correctStrokes.length < 2) return 0;
-
-    const windowSize = Math.min(8, correctStrokes.length);
-    const recent = correctStrokes.slice(-windowSize);
-
-    let activeDurationMs = 0;
-    for (let i = 1; i < recent.length; i++) {
-      const gap = recent[i].time - recent[i - 1].time;
-      // Normal inter-keystroke interval is 60-600ms. Cap inter-word transitions at 500ms so pauses don't crush speed
-      activeDurationMs += Math.min(500, Math.max(50, gap));
-    }
-
-    if (activeDurationMs < 80) return 0;
-
-    const durationSec = activeDurationMs / 1000;
-    const strokesCount = recent.length - 1;
-    const wpm = Math.round((strokesCount * 12) / durationSec);
-
+  // Typeo & EdClub Standard Speed Calculator (WPM):
+  // Persian standard is 4.2 characters per word (ISIRI 9147 & Typeo), English is 5.0
+  const calculateTypeoWpm = useCallback((now: number = Date.now()): number => {
+    if (!startTimeRef.current || correctKeysRef.current === 0) return 0;
+    const activeElapsedMs = Math.max(0, now - startTimeRef.current - totalPausedTimeRef.current);
+    // Graceful start damping: minimum 2.0 seconds in denominator so initial ramp is steady and never erratic
+    const elapsedMinutes = Math.max(2.0 / 60, activeElapsedMs / 60000);
+    const charsPerWord = language === 'fa' ? 4.2 : 5.0;
+    const wpm = Math.round((correctKeysRef.current / charsPerWord) / elapsedMinutes);
     return Math.max(0, Math.min(260, wpm));
-  }, []);
+  }, [language]);
 
   // High-Precision Real-time Timer runner conforming strictly to Typeo and EdClub
   useEffect(() => {
@@ -348,19 +332,24 @@ export default function TypingEngine({
           return;
         }
 
+        // Live standard Typeo WPM (smooth, stable, non-erratic)
+        const currentWpm = calculateTypeoWpm(now);
+        setLiveInstantWpm(currentWpm);
+        setLiveNetWpm(currentWpm);
+
         // Sampling speed for consistency calculation every 2 seconds
         const currentSecond = Math.floor(elapsedSec);
         if (elapsedSec >= 1.0 && currentSecond !== lastSpeedUpdateSecRef.current) {
           lastSpeedUpdateSecRef.current = currentSecond;
           if (currentSecond % 2 === 0) {
-            setSpeedSamples((s) => [...s, liveInstantWpm]);
+            setSpeedSamples((s) => [...s, currentWpm]);
           }
         }
       }, 100);
 
       return () => clearInterval(interval);
     }
-  }, [isStarted, isPaused, isFinished, isLesson, timeLimitSeconds, finishSession, liveInstantWpm]);
+  }, [isStarted, isPaused, isFinished, isLesson, timeLimitSeconds, finishSession, calculateTypeoWpm]);
 
   // Calculate Real-time Metrics
   const minutes = elapsedSeconds > 0 ? Math.max(0.05, Math.max(2.5, elapsedSeconds) / 60) : 0.05;
@@ -494,11 +483,10 @@ export default function TypingEngine({
       setCorrectKeystrokes((prev) => prev + 1);
 
       // Real-time speed update on keystroke (0ms reaction)
-      const currentSpeed = calculatePaceWpm();
-      if (currentSpeed > 0) {
-        setLiveInstantWpm(currentSpeed);
-        setLiveNetWpm(currentSpeed);
-      }
+      const now = Date.now();
+      const currentSpeed = calculateTypeoWpm(now);
+      setLiveInstantWpm(currentSpeed);
+      setLiveNetWpm(currentSpeed);
       const hadError = errorIndicesRef.current.has(cursorIndex) || hasErrorAtCursor;
       if (hasErrorAtCursor) {
         setHasErrorAtCursor(false);
